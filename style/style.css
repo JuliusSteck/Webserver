@@ -1,19 +1,41 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 
-
-body
+:root
 {
-  background-color: #f5f5f5;
+  --highlight-color: #E63946;
+  --text-color: #F1FAEE;
+  --light-secondary-color: #A8DADC;
+  --primary-color: #457B9D;
+  --background-color: #1D3557;
 }
 
 *
 {
-  font-family: 'Playfair Display', sans-serif;
-  font-weight: normal;
   margin: 0;
   padding: 0;
+}
+
+body
+{
   text-align: center;
-  color: #1D3557;
+  color: var(--text-color);
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: normal;
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+h1
+{
+  font-size: 80px;
+  margin: 10px;
+  color: var(--highlight-color);
+}
+
+p
+{
+    font-size: 30px;
+    margin: 10px;
 }
 
 .container
@@ -25,31 +47,9 @@ body
   padding-left: 10px;
 }
 
-h1
-{
-  font-size: 48px;
-  margin: 10px;
-  color: #E63946;
-}
-
-p
-{
-    font-size: 30px;
-    margin: 10px;
-}
-
 .center
 {
    display: flex;
    justify-content: center;
    align-items: center;
-}
-
-a :visited
-{
-    color: #E63946;
-    color: #F1FAEE;
-    color: #A8DADC;
-    color: #457B9D;
-    color: #1D3557;
 }
