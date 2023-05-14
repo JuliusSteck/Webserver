@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap);
+
 
 :root{
   --light-secondary-color: #3A5A40;
@@ -18,7 +20,7 @@
 
 body{
   color: var(--text-color);
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Inconsolata', sans-serif;
   font-weight: normal;
   text-decoration: none;
   background-color: var(--background-color);
@@ -26,7 +28,7 @@ body{
   border: 30px solid var(--border-color);
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1700px){
   body{
     border: none;
   }
@@ -58,6 +60,10 @@ header{
   margin-top: 60px;
   margin-bottom: 30px;
   justify-content: space-between;
+}
+
+h2{
+  font-size: 40px;
 }
 
 nav{
@@ -109,7 +115,7 @@ label[for="menu"] span{
   font-size: 50px;
 }
 
-@media(max-width: 900px){
+@media(max-width: 1500px){
   .header_container{
     display: block;
   }
@@ -147,11 +153,13 @@ label[for="menu"] span{
 #caption h1 {
   font-size: 80px;
   color: var(--text-color);
+  font-weight: normal;
 }
 
 #caption h1 span{
   font-size: 80px;
   margin-left: 10px;
+  padding: 10px;
   background-color: var(--text-color);
   color: var(--background-color);
 }
@@ -163,9 +171,54 @@ label[for="menu"] span{
   margin-bottom: 30px;
 }
 
-@media(max-width: 800px){
-  h1{
-    font-size: 20vw;
-    text-align: center;
+.blog_container{
+  width: 60%;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+#blog ul{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+#blog a{
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  padding: 5px;
+  font-size: 20px;
+}
+
+#blog a:hover{
+  color: var(--secondary-color);
+}
+
+#blog a::after{
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 200ms ease-in-out;
+}
+
+#blog a:hover::after{
+  width: 100%;
+}
+
+@media(max-width: 900px){
+  #blog ul{
+    flex-direction: column;
   }
+
+}
+
+.filter{
+  margin-bottom: 20px;
+}
 }
