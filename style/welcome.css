@@ -1,0 +1,171 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+
+:root{
+  --light-secondary-color: #3A5A40;
+  --secondary-color: #344E41;
+  --text-color: #000000;
+  --light-primary-color: #A3B18A;
+  --primary-color: #A3B18A;
+  --dark-background-color: #DAD7CD;
+  --background-color: #F2F2F2;
+  --border-color: #ffffff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  color: var(--text-color);
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  border: 30px solid var(--border-color);
+}
+
+@media(max-width: 1000px){
+  body{
+    border: none;
+  }
+}
+
+header{
+  background-color: none;
+  opacity: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.header_scrolled{
+  background: var(--border-color);
+  opacity: 0.9;
+  transition: 250ms ease-in-out;
+}
+
+.header_not_scrolled{
+  transition: 250ms ease-in-out;
+}
+
+.header_container{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+nav{
+ margin-left: 50%;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a{
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  padding: 5px;
+  font-size: 20px;
+}
+
+nav a:hover{
+  color: var(--secondary-color);
+}
+
+nav a::after{
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 200ms ease-in-out;
+}
+
+nav a:hover::after{
+  width: 100%;
+}
+
+#menu{
+  display: none;
+}
+
+label[for="menu"] {
+  display: none;
+}
+
+label[for="menu"] span{
+  font-size: 50px;
+}
+
+@media(max-width: 900px){
+  .header_container{
+    display: block;
+  }
+
+  nav{
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  nav ul li a{
+    color: var(--text-color);
+  }
+
+  nav ul{
+    display: none;
+    flex-direction: column;
+  }
+
+  #menu:checked ~ nav ul{
+    display: flex;
+  }
+
+  label[for="menu"] {
+    display: block;
+    position: fixed;
+    right: 30px;
+    top: 45px;
+  }
+}
+
+#caption{
+
+}
+
+#caption h1 {
+  font-size: 80px;
+  color: var(--text-color);
+}
+
+#caption h1 span{
+  font-size: 80px;
+  margin-left: 10px;
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.caption_container{
+  width: 60%;
+  margin: auto;
+  margin-top: 200px;
+  margin-bottom: 30px;
+}
+
+@media(max-width: 800px){
+  h1{
+    font-size: 20vw;
+    text-align: center;
+  }
+}

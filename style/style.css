@@ -33,12 +33,11 @@ h1
 }
 
 @media(max-width: 800px){
-  hi{
+  h1{
     font-size: 20vw;
     text-align: center;
   }
 }
-
 
 p
 {

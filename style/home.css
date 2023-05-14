@@ -1,3 +1,108 @@
+header{
+  padding: 100px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.header_text{
+  width: 700px;
+}
+
+.header_image{
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20%;
+  max-height: 80vw;
+  max-width: 80vw;
+  border: 10px solid var(--primary-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_foto img{
+  height: 100%;
+}
+
+nav{
+  margin-bottom: 100px;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a{
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  padding: 5px;
+  font-size: 30px;
+}
+
+nav a:hover{
+  color: var(--light-text-color);
+}
+
+nav a::after{
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: var(--light-text-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 200ms ease-in-out;
+}
+
+nav a:hover::after{
+  width: 100%;
+}
+
+#menu{
+  display: none;
+}
+
+label[for="menu"] {
+  display: none;
+}
+
+label[for="menu"] span{
+  font-size: 50px;
+}
+
+@media(max-width: 800px){
+  nav{
+    background: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+    border-radius: 0 0 20px 0;
+  }
+  nav ul li a{
+    color: var(--background-color);
+  }
+  nav ul{
+    display: none;
+    flex-direction: column;
+  }
+  #menu:checked ~ ul{
+    display: flex;
+  }
+  label[for="menu"] {
+    display: block;
+  }
+}
+
+
 #about{
   padding: 100px 0;
   background-color: var(--primary-color);
@@ -86,4 +191,42 @@ h2{
 
 .card a:hover{
   background: var(--highlight-color);
+}
+
+
+footer{
+  background-color: var(--background-color);
+  padding: 70px;
+}
+
+.grid{
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  gap: 20px;
+  grid-template-areas:
+  "grid_1 grid_1 grid_2 grid_3"
+  "grid_4 grid_5 grid_5 grid_3";
+}
+
+.grid_item{
+  background-color: var(--primary-color);
+}
+
+#grid_1{
+  grid-area: grid_1;
+}
+
+#grid_2{
+  grid-area: grid_2;
+}
+#grid_3{
+  grid-area: grid_3;
+}
+#grid_4{
+  grid-area: grid_4;
+}
+#grid_5{
+  grid-area: grid_5;
 }
