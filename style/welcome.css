@@ -62,6 +62,29 @@ header{
   justify-content: space-between;
 }
 
+#black{
+  width: 100%;
+  height: 100%;
+  background: var(--text-color);
+  opacity: 0.9;
+  position: fixed;
+  top:0px;
+  left: 0px;ss
+}
+
+.visible{
+  display: block;
+}
+
+.invisible{
+  display: none;
+}
+
+.inverse{
+  background: none;
+  color: var(--border-color);
+}
+
 h2{
   font-size: 40px;
 }
@@ -120,13 +143,21 @@ label[for="menu"] span{
     display: block;
   }
 
+  h2{
+    font-size: 30px;
+  }
+
+  h1{
+    font-size: 40px;
+  }
+
   nav{
     margin: auto;
     margin-top: 30px;
   }
 
   nav ul li a{
-    color: var(--text-color);
+    color: var(--border-color);
   }
 
   nav ul{
@@ -150,13 +181,13 @@ label[for="menu"] span{
 
 }
 
-#caption h1 {
+h1 {
   font-size: 80px;
   color: var(--text-color);
   font-weight: normal;
 }
 
-#caption h1 span{
+h1 span{
   font-size: 80px;
   margin-left: 10px;
   padding: 10px;
@@ -169,6 +200,17 @@ label[for="menu"] span{
   margin: auto;
   margin-top: 200px;
   margin-bottom: 30px;
+}
+
+
+@media(max-width: 1500px){
+  h1{
+    font-size: 60px;
+  }
+
+  h1 span{
+    font-size: 60px;
+  }
 }
 
 .blog_container{
@@ -211,14 +253,34 @@ label[for="menu"] span{
   width: 100%;
 }
 
+#dropdown{
+  display: none;
+}
+
+label[for="dropdown"] {
+  display: none;
+}
+
+label[for="dropdown"] span{
+  font-size: 50px;
+}
+
 @media(max-width: 900px){
   #blog ul{
+    display: none;
     flex-direction: column;
+  }
+
+  label[for="dropdown"]{
+    display: block;
+  }
+
+  #dropdown:checked ~ ul{
+    display: flex;
   }
 
 }
 
 .filter{
   margin-bottom: 20px;
-}
 }
