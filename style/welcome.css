@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display);
 @import url(https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap);
 
-
 :root{
   --light-secondary-color: #3A5A40;
   --secondary-color: #344E41;
@@ -69,7 +68,7 @@ header{
   opacity: 0.9;
   position: fixed;
   top:0px;
-  left: 0px;ss
+  left: 0px;
 }
 
 .visible{
@@ -90,13 +89,22 @@ h2{
 }
 
 nav{
- margin-left: 50%;
+
 }
 
 nav ul{
   list-style: none;
   display: flex;
   gap: 20px;
+}
+
+nav li{
+  margin-top: 15px;
+  display: flex;
+}
+
+.form_li{
+  margin-top: 10px;
 }
 
 nav a{
@@ -108,6 +116,7 @@ nav a{
 }
 
 nav a:hover{
+
 }
 
 nav a::after{
@@ -129,6 +138,57 @@ nav a:hover::after{
   background: var(--border-color);
 }
 
+#magnifying_glass{
+  display: none;
+}
+
+label[for="magnifying_glass"] span{
+  font-size: 25px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+nav input{
+  background: none;
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+  padding: 5px;
+  color: var(--text-color);
+  font-size: 20px;
+  font-family: 'Inconsolata', sans-serif;
+  width: 200px;
+  transition: 200ms ease-in-out;
+  display: none;
+}
+
+nav input::placeholder{
+  color: var(--text-color);
+  font-size: 20px;
+  font-family: 'Inconsolata', sans-serif;
+  opacity: 1;
+}
+
+nav input:focus{
+  outline: none;
+}
+
+nav input:focus::placeholder{
+  opacity: 0.1;
+}
+
+.inverse nav input{
+  border: 2px solid var(--border-color);
+  color: var(--border-color);
+  width: 80%;
+}
+
+.inverse nav input::placeholder{
+  color: var(--border-color);
+}
+
+nav button{
+  display: none;
+}
 
 #menu{
   display: none;
@@ -140,6 +200,10 @@ label[for="menu"] {
 
 label[for="menu"] span{
   font-size: 50px;
+}
+
+#magnifying_glass:checked ~ form input{
+  display: block;
 }
 
 @media(max-width: 1500px){
@@ -172,14 +236,33 @@ label[for="menu"] span{
   label[for="menu"] {
     display: block;
     position: fixed;
-    right: 30px;
+    right: 200px;
     top: 45px;
+  }
+
+  nav li{
+    margin-top: 0px;
+  }
+
+  label[for="magnifying_glass"] {
+    display: none;
+  }
+
+  nav input{
+    display: block;
   }
 }
 
 @media(max-width: 900px){
   h2{
     font-size: 20px;
+  }
+
+  label[for="menu"] {
+    display: block;
+    position: fixed;
+    right: 30px;
+    top: 45px;
   }
 }
 
@@ -188,7 +271,7 @@ label[for="menu"] span{
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 70px;
   color: var(--text-color);
   font-weight: normal;
   margin-right: 10px;
@@ -196,7 +279,7 @@ h1 {
 }
 
 h1 span{
-  font-size: 80px;
+  font-size: 70px;
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 1.5;
@@ -207,7 +290,7 @@ h1 span{
 .caption_container{
   width: 60%;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 180px;
   margin-bottom: 30px;
 }
 
@@ -222,12 +305,14 @@ h1 span{
 
   .caption_container{
     height: 120px;
+    margin-top: 140px;
   }
 }
 
 @media(max-width: 900px){
   .caption_container{
     margin-top: 120px;
+    height: 70px;
   }
 
   h1{
@@ -237,12 +322,7 @@ h1 span{
   h1 span{
     font-size: 25px;
   }
-
-  .caption_container{
-    height: 70px;
-  }
 }
-
 
 .cursor{
   color: var(--text-color);
@@ -270,7 +350,7 @@ h1 span{
 }
 
 #blog a:hover{
-  color: var(--text-color);
+
 }
 
 #blog a::after{
