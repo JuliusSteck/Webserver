@@ -108,14 +108,13 @@ nav a{
 }
 
 nav a:hover{
-  color: var(--secondary-color);
 }
 
 nav a::after{
   content: "";
   height: 2px;
   width: 0%;
-  background: var(--primary-color);
+  background: var(--text-color);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -125,6 +124,11 @@ nav a::after{
 nav a:hover::after{
   width: 100%;
 }
+
+.inverse a::after{
+  background: var(--border-color);
+}
+
 
 #menu{
   display: none;
@@ -144,7 +148,7 @@ label[for="menu"] span{
   }
 
   h2{
-    font-size: 30px;
+    font-size: 20px;
   }
 
   h1{
@@ -185,11 +189,11 @@ h1 {
   font-size: 80px;
   color: var(--text-color);
   font-weight: normal;
+  margin-right: 10px;
 }
 
 h1 span{
   font-size: 80px;
-  margin-left: 10px;
   padding: 10px;
   background-color: var(--text-color);
   color: var(--background-color);
@@ -202,14 +206,17 @@ h1 span{
   margin-bottom: 30px;
 }
 
+.cursor{
+  color: var(--text-color);
+}
 
 @media(max-width: 1500px){
   h1{
-    font-size: 60px;
+    font-size: 40px;
   }
 
   h1 span{
-    font-size: 60px;
+    font-size: 40px;
   }
 }
 
@@ -235,14 +242,14 @@ h1 span{
 }
 
 #blog a:hover{
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 #blog a::after{
   content: "";
   height: 2px;
   width: 0%;
-  background: var(--primary-color);
+  background: var(--text-color);
   position: absolute;
   bottom: 0;
   left: 0;
