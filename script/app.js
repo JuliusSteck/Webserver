@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const black = document.getElementById('black');
   const flexible_caption = document.getElementById('flexible_caption');
   const cursor = document.getElementById("cursor");
+  const path = window.location.pathname;
 
   window.addEventListener("scroll", () => {
     if (window.scrollY >= 10) {
@@ -28,7 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const words = ["Julius_Steck", "a_Data_Scientist", "a_Math_Lover", "a_Developer", "very_enthusiastic", "seaching_for_love"];
+  let words;
+
+  if (path.includes("/en/")) {
+    words =  ["Julius_Steck", "a_Data_Scientist", "creative", "a_Math_Lover", "a_Developer", "seaching"];
+  } else if (path.includes("/de/")) {
+    words =  ["Julius_Steck", "ein_Data_Scientist", "kreativ", "Mathe_begeistert", "ein_Entwickler", "auf_der_Suche"];
+  } else {
+    words =  ["Julius_Steck", "a_Data_Scientist", "creative", "a_Math_Lover", "a_Developer", "seaching"];
+  }
+
 
   let currentIndex = 0;
   let currentWord = '';
@@ -74,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function blinkCursor() {
     cursor.classList.toggle("cursor");
-    setTimeout(blinkCursor, 500); 
+    setTimeout(blinkCursor, 500);
   }
 
   blinkCursor();
