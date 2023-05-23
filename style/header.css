@@ -5,6 +5,7 @@ header{
   left: 30px;
   top: 0;
   width: calc(100% - 60px);
+  z-index: 100;
 }
 
 @media(max-width: 1700px){
@@ -39,6 +40,7 @@ header{
   position: fixed;
   top: 0px;
   left: 0px;
+  z-index: 100;
 }
 
 .visible{
@@ -53,14 +55,23 @@ h2{
   font-size: 40px;
 }
 
+nav{
+
+}
+
 nav ul{
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav li{
+nav ul li{
   display: flex;
+  margin-top: 15px;
+}
+
+.search{
+  margin-top: 10px;
 }
 
 #magnifying_glass{
@@ -68,9 +79,9 @@ nav li{
 }
 
 label[for="magnifying_glass"] span{
-  font-size: 20px;
-  margin-top: 5px;
+  font-size: 25px;
   margin-right: 5px;
+  margin-top: 2px;
 }
 
 nav input{
@@ -79,7 +90,7 @@ nav input{
   border: 2px solid var(--text-color);
   padding: 5px;
   color: var(--text-color);
-  font-size: 15px;
+  font-size: 18px;
   font-family: 'Inconsolata', sans-serif;
   width: 200px;
   display: none;
@@ -87,7 +98,7 @@ nav input{
 
 nav input::placeholder{
   color: var(--text-color);
-  font-size: 15px;
+  font-size: 18px;
   font-family: 'Inconsolata', sans-serif;
   opacity: 1;
 }

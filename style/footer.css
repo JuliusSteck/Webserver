@@ -1,0 +1,12 @@
+footer{
+  background-color: var(--medium-background-color);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer ul{
+  list-style: none;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
