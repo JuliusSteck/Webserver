@@ -29,7 +29,7 @@
 
           echo "<h2>$entryTitle</h2>";
           echo "<p>Date: $entryDate</p>";
-          echo "<img src='images/"$entryCover)"' alt='Entry Cover'>";
+          echo "<img src='images/"$entryCover"' alt='Entry Cover'>";
       }
     ?>
 
