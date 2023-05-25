@@ -9,11 +9,26 @@
 
 <body>
     <div class="container">
-        <p >
-         <?php
-        echo "Hello World!";
-        ?>
-        </p>
+
+          <?php
+
+            $pdo = new PDO('mysql:localhost;dbname=JuliusSteckWebserver', 'ikrz2a6ngl7w', 'JuliusSteckWebserver#1');
+
+            $entryID = 1;
+            $query = "SELECT EntryCover FROM Blog WHERE EntryID = :entryID";
+            $statement = $pdo->prepare($query);
+            $statement->bindParam(':entryID', $entryID, PDO::PARAM_INT);
+            $statement->execute();
+
+            $row = $statement->fetch(PDO::FETCH_ASSOC);
+            $imageData = $row['EntryCover'];
+
+            header('Content-Type: image/jpeg');
+
+
+            echo $imageData;
+            ?>
+
     </div>
 </body>
 </html>
