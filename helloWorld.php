@@ -65,13 +65,13 @@
                 //echo "<img src='images/$entryCover' alt='Entry Cover'>";
             }
 
-            echo "<div class='flex' id='column_1'>"
+            echo "<div class='flex' id='column_1'>";
 
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == 0){
                 echo "<a href='$entries[$i][0]'>";
                   echo "<div class='element'>";
-                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>"
+                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>";
                     echo "<div class='element_background'>";
                       echo "<div class='element_description'>";
                         echo "<h3>$entries[$i][1]</h3>";
@@ -83,15 +83,15 @@
                 }
               }
 
-            echo "</div>"
+            echo "</div>";
 
-            echo "<div class='flex' id='column_2'>"
+            echo "<div class='flex' id='column_2'>";
 
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == 1){
                 echo "<a href='$entries[$i][0]'>";
                   echo "<div class='element'>";
-                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>"
+                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>";
                     echo "<div class='element_background'>";
                       echo "<div class='element_description'>";
                         echo "<h3>$entries[$i][1]</h3>";
@@ -103,16 +103,16 @@
                 }
               }
 
-            echo "</div>"
+            echo "</div>";
 
 
-            echo "<div class='flex' id='column_3'>"
+            echo "<div class='flex' id='column_3'>";
 
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == 2){
                 echo "<a href='$entries[$i][0]'>";
                   echo "<div class='element'>";
-                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>"
+                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>";
                     echo "<div class='element_background'>";
                       echo "<div class='element_description'>";
                         echo "<h3>$entries[$i][1]</h3>";
@@ -124,16 +124,16 @@
                 }
               }
 
-            echo "</div>"
+            echo "</div>";
 
 
-            echo "<div class='flex' id='column_4'>"
+            echo "<div class='flex' id='column_4'>";
 
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == 3){
                 echo "<a href='$entries[$i][0]'>";
                   echo "<div class='element'>";
-                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>"
+                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>";
                     echo "<div class='element_background'>";
                       echo "<div class='element_description'>";
                         echo "<h3>$entries[$i][1]</h3>";
@@ -145,7 +145,7 @@
                 }
               }
 
-            echo "</div>"
+            echo "</div>";
           ?>
 
         <!--  <div class="flex" id="column_3">
