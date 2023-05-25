@@ -27,10 +27,9 @@
           $entryDate = $row['EntryDate'];
           $entryCover = $row['EntryCover'];
 
-          echo $entryID;
           echo "<h2>$entryTitle</h2>";
           echo "<p>Date: $entryDate</p>";
-          echo "<img src='data:image/jpeg;base64," . base64_encode($entryCover) . "' alt='Entry Cover'>";
+          echo "<img src='images/"$entryCover)"' alt='Entry Cover'>";
       }
     ?>
 
