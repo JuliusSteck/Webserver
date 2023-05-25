@@ -69,13 +69,19 @@
 
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == 0){
-                echo "<a href='$entries[$i][0]'>";
+
+                $entryID = $entries[$i][0];
+                $entryTitle = $entries[$i][1];
+                $entryDate = $entries[$i][2];
+                $entryCover = $entries[$i][3];
+
+                echo "<a href='$entryID'>";
                   echo "<div class='element'>";
-                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>";
+                    echo "<img class='element_image' src='images/$entryCover' alt='Entry Cover'>";
                     echo "<div class='element_background'>";
                       echo "<div class='element_description'>";
-                        echo "<h3>$entries[$i][1]</h3>";
-                        echo "<p>Date: $entries[$i][2]</p>";
+                        echo "<h3>$entryTitle</h3>";
+                        echo "<p>Date: $entryDate</p>";
                       echo "</div>";
                     echo "</div>";
                   echo "</div>";
@@ -89,13 +95,19 @@
 
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == 1){
-                echo "<a href='$entries[$i][0]'>";
+
+                $entryID = $entries[$i][0];
+                $entryTitle = $entries[$i][1];
+                $entryDate = $entries[$i][2];
+                $entryCover = $entries[$i][3];
+
+                echo "<a href='$entryID'>";
                   echo "<div class='element'>";
-                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>";
+                    echo "<img class='element_image' src='images/$entryCover' alt='Entry Cover'>";
                     echo "<div class='element_background'>";
                       echo "<div class='element_description'>";
-                        echo "<h3>$entries[$i][1]</h3>";
-                        echo "<p>Date: $entries[$i][2]</p>";
+                        echo "<h3>$entryTitle</h3>";
+                        echo "<p>Date: $entryDate</p>";
                       echo "</div>";
                     echo "</div>";
                   echo "</div>";
@@ -110,13 +122,19 @@
 
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == 2){
-                echo "<a href='$entries[$i][0]'>";
+
+                $entryID = $entries[$i][0];
+                $entryTitle = $entries[$i][1];
+                $entryDate = $entries[$i][2];
+                $entryCover = $entries[$i][3];
+
+                echo "<a href='$entryID'>";
                   echo "<div class='element'>";
-                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>";
+                    echo "<img class='element_image' src='images/$entryCover' alt='Entry Cover'>";
                     echo "<div class='element_background'>";
                       echo "<div class='element_description'>";
-                        echo "<h3>$entries[$i][1]</h3>";
-                        echo "<p>Date: $entries[$i][2]</p>";
+                        echo "<h3>$entryTitle</h3>";
+                        echo "<p>Date: $entryDate</p>";
                       echo "</div>";
                     echo "</div>";
                   echo "</div>";
@@ -131,13 +149,19 @@
 
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == 3){
-                echo "<a href='$entries[$i][0]'>";
+
+                $entryID = $entries[$i][0];
+                $entryTitle = $entries[$i][1];
+                $entryDate = $entries[$i][2];
+                $entryCover = $entries[$i][3];
+
+                echo "<a href='$entryID'>";
                   echo "<div class='element'>";
-                    echo "<img class='element_image' src='images/$entries[$i][3]' alt='Entry Cover'>";
+                    echo "<img class='element_image' src='images/$entryCover' alt='Entry Cover'>";
                     echo "<div class='element_background'>";
                       echo "<div class='element_description'>";
-                        echo "<h3>$entries[$i][1]</h3>";
-                        echo "<p>Date: $entries[$i][2]</p>";
+                        echo "<h3>$entryTitle</h3>";
+                        echo "<p>Date: $entryDate</p>";
                       echo "</div>";
                     echo "</div>";
                   echo "</div>";
