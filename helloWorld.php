@@ -8,12 +8,8 @@
 </head>
 
 <body>
-
     <?php
-
-    use PDO;
-
-      echo "Hello World";
+      use PDO;
 
       $host = "localhost";
       $database = "JuliusSteckWebserver";
@@ -22,11 +18,8 @@
 
       $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
 
-
       $query = "SELECT EntryID, EntryTitle, EntryDate, EntryCover FROM Blog";
       $statement = $pdo->query($query);
-
-      echo $host;
 
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
           $entryID = $row['EntryID'];
@@ -35,10 +28,9 @@
           $entryCover = $row['EntryCover'];
 
           echo $entryID;
-          //echo "<h2>"$entryTitle"</h2>";
-        //  echo "<p>Date:" $entryDate"</p>";
-        //  echo "<img src='data:image/jpeg;base64," . base64_encode($entryCover) . "' alt='Entry Cover'>";
-
+          echo "<h2>"$entryTitle"</h2>";
+          echo "<p>Date:" $entryDate"</p>";
+          echo "<img src='data:image/jpeg;base64," . base64_encode($entryCover) . "' alt='Entry Cover'>";
       }
     ?>
 
