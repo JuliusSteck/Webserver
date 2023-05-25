@@ -10,10 +10,6 @@
 <body>
 
     <?php
-      echo "Hello World!";
-    ?>
-
-    <?php
 
     use PDO;
 
@@ -37,8 +33,8 @@
           $entryCover = $row['EntryCover'];
 
 
-          echo "<h2>$entryTitle</h2>";
-          echo "<p>Date: $entryDate</p>";
+          echo "<h2>"$entryTitle"</h2>";
+          echo "<p>Date:" $entryDate"</p>";
           echo "<img src='data:image/jpeg;base64," . base64_encode($entryCover) . "' alt='Entry Cover'>";
           echo "<hr>";
       }
