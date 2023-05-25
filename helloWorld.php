@@ -14,10 +14,10 @@
     ?>
 
     <?php
-      // Establish a database connection
+
       $host = "localhost";
       $database = "JuliusSteckWebserver";
-      $username = "ikrz2a6ngl7";
+      $username = "JuliusSteck";
       $password = "JuliusSteckWebserver#1";
 
       $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
