@@ -15,6 +15,9 @@
 
     <?php
 
+    use PDO;
+
+
       $host = "localhost";
       $database = "JuliusSteckWebserver";
       $username = "JuliusSteck";
