@@ -66,21 +66,6 @@
 
   <section id="blog">
     <div class="container">
-      <div id="filter" class="filter">
-        <input type="checkbox" id="dropdown">
-        <label for="dropdown">
-          <span class="material-symbols-rounded">expand_more</span>
-        </label>
-
-        <ul>
-          <li><a href="" class="aktiv">Alles</a></li>
-          <li><a href="">Arbeit</a></li>
-          <li><a href="">Freizeit</a></li>
-          <li><a href="">Ankündigungen</a></li>
-          <li><a href="">Technologie</a></li>
-          <li><a href="">Politik</a></li>
-        </ul>
-      </div>
 
       <!-- <div class="line"></div> -->
 
@@ -110,25 +95,21 @@
               $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover);
           }
 
-          $entryID = $entries[1][0];
-          $entryTitle = $entries[1][1];
-          $entryDate = $entries[1][2];
-          $entryCover = $entries[1][3];
+          $entryID = $entries[0][0];
+          $entryTitle = $entries[0][1];
+          $entryDate = $entries[0][2];
+          $entryCover = $entries[0][3];
 
-              echo "<a href='blog.php?id=$entryID'>";
-                echo "<div class='element'>";
-                  echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class='element_background'>";
-                    echo "<div class='element_description'>";
+          echo "<div class='flex' id='column_1'>";
+                echo "<div class=''>";
+                  echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
+                  echo "<div class=''>";
+                    echo "<div class=''>";
                       echo "<h3>$entryTitle</h3>";
                       echo "<p> $entryDate</p>";
                     echo "</div>";
                   echo "</div>";
                 echo "</div>";
-              echo "</a>";
-              }
-            }
-
           echo "</div>";
 
         ?>
