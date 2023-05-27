@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/blog.css">
+    <link rel="stylesheet" href="../style/login.css">
+    <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
+    <script src="../script/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -32,19 +34,20 @@
 
       <nav>
         <ul>
-          <li><a href="">About_me</a></li>
-          <li><a href="">Blog</a></li>
-          <li><a href="">Podcast</a></li>
-          <li><a href="">Contact</a></li>
-          <li>
+          <li><a href="about_me.php">Über_mich</a></li>
+          <li><a href="" class="aktiv">Blog</a></li>
+          <li><a href="podcast.php">Podcast</a></li>
+          <li><a href="shop.php">Shop</a></li>
+          <li><a href="contact.php">Kontakt</a></li>
+          <li class="search">
             <input type="checkbox" id="magnifying_glass">
             <label for="magnifying_glass">
               <span class="material-symbols-rounded">search</span>
             </label>
 
             <form id="search-form">
-              <input type="text" id="search-input" placeholder="Search" name="search">
-              <button type="submit" id="search-button">search</button>
+              <input type="text" id="search-input" placeholder="Suchen" name="search">
+              <button type="submit" id="search-button">suchen</button>
             </form>
           </li>
         </ul>
@@ -56,35 +59,31 @@
 
   <section id="caption">
     <div class="container">
-        <h1>I am <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
+        <h1>Hier <span  class="flexible_caption">anmelden</span><span id="cursor" class="cursor">_</span> </h1>
     </div>
 
   </section>
 
-  <section id="blog">
+  <section id="login" class="login">
     <div class="container">
-      <div id="filter" class="filter">
-        <input type="checkbox" id="dropdown">
-        <label for="dropdown">
-          <span class="material-symbols-rounded">expand_more</span>
-        </label>
-
-        <ul>
-          <li><a href="">Work</a></li>
-          <li><a href="">Freetime</a></li>
-          <li><a href="">Announcements</a></li>
-          <li><a href="">Technology</a></li>
-          <li><a href="">Politics</a></li>
-        </ul>
-      </div>
-
-      <div class="line"></div>
-
-      <div id="layout" class="layout">
-
-      </div>
+      <form id="login-form">
+        <label for="username">Username: </label>
+        <input type="text" id="username" placeholder="Username" name="username">
+        <label for="password">Passwort: </label>
+        <input type="text" id="password" placeholder="Password" name="password">
+        <button type="submit" id="login-button">Login</button>
+      </form>
     </div>
   </section>
 
+  <footer>
+    <div class="container">
+      <ul>
+        <li><a href="impressum.php">Impressum</a></li>
+        <li><a href="data_protection.php">Datenschutz</a></li>
+        <li><a href="login.php">Login</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,53 @@
+.login input{
+  background: none;
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+  padding: 5px;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: 'Inconsolata', sans-serif;
+  width: 200px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.login input::placeholder{
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: 'Inconsolata', sans-serif;
+  opacity: 1;
+}
+
+.login input:focus{
+  outline: none;
+}
+
+.login input:focus::placeholder{
+  opacity: 0.1;
+}
+
+#login{
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.login button{
+  background: none;
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+  padding: 5px;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: 'Inconsolata', sans-serif;
+  width: 214px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.login button:hover{
+  background: var(--text-color);
+  color: var(--border-color);
+  cursor: pointer;
+}

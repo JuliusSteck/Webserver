@@ -34,10 +34,10 @@
       <nav>
         <ul>
           <li><a href="" class="aktiv">Über_mich</a></li>
-          <li><a href="welcome.html">Blog</a></li>
-          <li><a href="podcast.html">Podcast</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="welcome.php">Blog</a></li>
+          <li><a href="podcast.php">Podcast</a></li>
+          <li><a href="shop.php">Shop</a></li>
+          <li><a href="contact.php">Kontakt</a></li>
           <li class="search">
             <input type="checkbox" id="magnifying_glass">
             <label for="magnifying_glass">
@@ -169,18 +169,15 @@
       </div>
 
 
-
-
-
     </div>
   </section>
 
   <footer>
     <div class="container">
       <ul>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="data_protection.html">Datenschutz</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="impressum.php">Impressum</a></li>
+        <li><a href="data_protection.php">Datenschutz</a></li>
+        <li><a href="login.php">Login</a></li>
       </ul>
     </div>
   </footer>

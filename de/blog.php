@@ -92,9 +92,11 @@
           $username = "JuliusSteck";
           $password = "JuliusSteckWebserver#1";
 
+          $id = $_GET['id'];
+
           $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
 
-          $query = "SELECT EntryID, EntryTitle, EntryDate, EntryCover FROM Blog";
+          $query = "SELECT EntryID, EntryTitle, EntryDate, EntryCover FROM Blog WHERE EntryID = $id";
           $statement = $pdo->query($query);
 
           $entries = array();
@@ -108,15 +110,10 @@
               $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover);
           }
 
-          echo "<div class='flex' id='column_1'>";
-
-          for ($i = 0; $i < count($entries); $i++) {
-            if(($i  %  4) == 0){
-
-              $entryID = $entries[$i][0];
-              $entryTitle = $entries[$i][1];
-              $entryDate = $entries[$i][2];
-              $entryCover = $entries[$i][3];
+          $entryID = $entries[1][0];
+          $entryTitle = $entries[1][1];
+          $entryDate = $entries[1][2];
+          $entryCover = $entries[1][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
@@ -134,106 +131,8 @@
 
           echo "</div>";
 
-          echo "<div class='flex' id='column_2'>";
-
-          for ($i = 0; $i < count($entries); $i++) {
-            if(($i  %  4) == 1){
-
-              $entryID = $entries[$i][0];
-              $entryTitle = $entries[$i][1];
-              $entryDate = $entries[$i][2];
-              $entryCover = $entries[$i][3];
-
-              echo "<a href='blog.php?id=$entryID'>";
-                echo "<div class='element'>";
-                  echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class='element_background'>";
-                    echo "<div class='element_description'>";
-                      echo "<h3>$entryTitle</h3>";
-                      echo "<p> $entryDate</p>";
-                    echo "</div>";
-                  echo "</div>";
-                echo "</div>";
-              echo "</a>";
-              }
-            }
-
-          echo "</div>";
-
-
-          echo "<div class='flex' id='column_3'>";
-
-          for ($i = 0; $i < count($entries); $i++) {
-            if(($i  %  4) == 2){
-
-              $entryID = $entries[$i][0];
-              $entryTitle = $entries[$i][1];
-              $entryDate = $entries[$i][2];
-              $entryCover = $entries[$i][3];
-
-              echo "<a href='blog.php?id=$entryID'>";
-                echo "<div class='element'>";
-                  echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class='element_background'>";
-                    echo "<div class='element_description'>";
-                      echo "<h3>$entryTitle</h3>";
-                      echo "<p> $entryDate</p>";
-                    echo "</div>";
-                  echo "</div>";
-                echo "</div>";
-              echo "</a>";
-              }
-            }
-
-          echo "</div>";
-
-
-          echo "<div class='flex' id='column_4'>";
-
-          for ($i = 0; $i < count($entries); $i++) {
-            if(($i  %  4) == 3){
-
-              $entryID = $entries[$i][0];
-              $entryTitle = $entries[$i][1];
-              $entryDate = $entries[$i][2];
-              $entryCover = $entries[$i][3];
-
-              echo "<a href='blog.php?id=$entryID'>";
-                echo "<div class='element'>";
-                  echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class='element_background'>";
-                    echo "<div class='element_description'>";
-                      echo "<h3>$entryTitle</h3>";
-                      echo "<p> $entryDate</p>";
-                    echo "</div>";
-                  echo "</div>";
-                echo "</div>";
-              echo "</a>";
-              }
-            }
-
-          echo "</div>";
         ?>
 
-      <!--  <div class="flex" id="column_3">
-
-          <a href="">
-            <div class="element">
-              <img class="element_image" src="../images/Julius_Strand_2022.jpg" />
-              <div class="element_background">
-                <div class="element_description">
-                  <h3>This image looks super neat.</h3>
-                  <p>September 2022  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <div class="flex" id="column_4">
-
-        </div> -->
     </div>
   </section>
 
