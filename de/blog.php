@@ -36,7 +36,8 @@
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $entryID = $row['EntryID'];
-      $entryTitle = $row['EntryTitle'];
+      $entryTitle = $row['EntryTitle_de'];
+      $entryDescription = $row['EntryDescription_de'];
       $entryDate = $row['EntryDate'];
       $entryCover = $row['EntryCover'];
 
@@ -97,20 +98,20 @@
   <section id="blog">
     <div class="container">
 
-      <!-- <div class="line"></div> -->
+      <?php
+        echo "<div class='description'>";
+          echo "<h3>$entryTitle</h3>";
+          echo "<p> $entryDate</p>";
+        echo "</div>";
+      ?>
 
       <div id="entry" class="entry">
-
         <?php
-
-          echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
           echo "<div class='description'>";
-            echo "<h3>$entryTitle</h3>";
-            echo "<p> $entryDate</p>";
+            echo "<p> $entryDescription</p>";
           echo "</div>";
-
+          echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
         ?>
-
     </div>
   </section>
 

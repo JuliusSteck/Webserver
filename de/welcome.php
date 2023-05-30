@@ -101,7 +101,7 @@
 
           while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
               $entryID = $row['EntryID'];
-              $entryTitle = $row['EntryTitle'];
+              $entryTitle = $row['EntryTitle_de'];
               $entryDate = $row['EntryDate'];
               $entryCover = $row['EntryCover'];
 
