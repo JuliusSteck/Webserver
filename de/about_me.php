@@ -54,8 +54,6 @@
     </div>
   </header>
 
-
-
   <section id="caption">
     <div class="container">
         <h1>Ich bin <span  class="flexible_caption">Julius Steck</span><span id="cursor" class="cursor">_</span> </h1>
@@ -167,8 +165,6 @@
           <li>CSS</li>
         </ul>
       </div>
-
-
     </div>
   </section>
 

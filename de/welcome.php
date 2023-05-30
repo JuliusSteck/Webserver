@@ -55,13 +55,10 @@
     </div>
   </header>
 
-
-
   <section id="caption">
     <div class="container">
         <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
     </div>
-
   </section>
 
   <section id="blog">
@@ -161,7 +158,6 @@
 
           echo "</div>";
 
-
           echo "<div class='flex' id='column_3'>";
 
           for ($i = 0; $i < count($entries); $i++) {
@@ -187,7 +183,6 @@
             }
 
           echo "</div>";
-
 
           echo "<div class='flex' id='column_4'>";
 
@@ -215,7 +210,6 @@
 
           echo "</div>";
         ?>
-
     </div>
   </section>
 

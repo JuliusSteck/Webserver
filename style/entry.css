@@ -4,8 +4,8 @@
 }
 
 .title{
-  margin-top: 100px;
-  margin-bottom: 60px;
+  margin-top: 175px;
+  margin-bottom: 100px;
 }
 
 .flex{
@@ -51,7 +51,7 @@
 }
 
 .home span{
-  margin-left: 3px
+  margin-left: 5px
 }
 
 @media(max-width: 800px){
@@ -76,7 +76,17 @@
     border-radius: 50%;
   }
 
+  .disabled{
+    background: var(--text-color);
+    color: var(--background-color);
+  }
+
   .home span{
     margin-left: 2px
+  }
+
+  .title{
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
 }

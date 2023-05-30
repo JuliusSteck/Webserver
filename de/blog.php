@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="../style/entry.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
-    <script src="../script/caption.js"></script>
-    <script src="../script/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
@@ -51,9 +49,6 @@
     {
       $maxEntryID = $row['MaxEntryID'];
     }
-
-
-
    ?>
 
   <div id="black" class="invisible"></div>
@@ -125,35 +120,48 @@
           {
             $nextID = $entryID + 1;
             echo "<a href='blog.php?id=$nextID'>";
+            echo '<div class="navigation_link disabled">';
+          }
+          else{
+            echo '<div class="navigation_link">';
           }
         ?>
 
-        <div class="navigation_button">
           <span class="material-symbols-rounded">arrow_back_ios</span>
-        </div>
 
         <?php
-          echo "</a>";
-          echo "<a href='welcome.php'>";
+          echo "</div>";
+          if($entryID < $maxEntryID)
+          {
+            echo "</a>";
+          }
         ?>
 
-        <div class="navigation_button home">
-          <span class="material-symbols-rounded">apps</span>
-        </div>
+          <a href='welcome.php'>
+            <div class="navigation_link home">
+              <span class="material-symbols-rounded">apps</span>
+            </div>
+          </a>
 
         <?php
-          echo "</a>";
           if($entryID > 1) {
             $previousID = $entryID - 1;
             echo "<a href='blog.php?id=$previousID'>";
+            echo "  <div class='navigation_link'>";
+          }
+          else{
+            echo "  <div class='navigation_link disabled'>";
           }
         ?>
-        <div class="navigation_button">
+
           <span class="material-symbols-rounded">arrow_forward_ios</span>
-        </div>
 
         <?php
-          echo "</a>";
+          echo "</div>";
+          if($entryID > 1) {
+            $previousID = $entryID - 1;
+            echo "</a>";
+          }
         ?>
 
       </div>
