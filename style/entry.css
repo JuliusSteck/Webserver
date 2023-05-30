@@ -47,5 +47,15 @@
 }
 
 .home span{
-  margin-left: 0px
+  margin-left: 2px
+}
+
+@media(max-width: 800px){
+  #blog{
+    margin-top: 50px;
+  }
+
+  .layout{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
