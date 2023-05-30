@@ -94,7 +94,7 @@
 
           $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
 
-          $query = "SELECT EntryID, EntryTitle, EntryDate, EntryCover FROM Blog";
+          $query = "SELECT EntryID, EntryTitle_de, EntryDate, EntryCover FROM Blog";
           $statement = $pdo->query($query);
 
           $entries = array();

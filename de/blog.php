@@ -29,10 +29,8 @@
 
   $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
 
-  $query = "SELECT EntryID, EntryTitle, EntryDate, EntryCover FROM Blog WHERE EntryID = $id";
+  $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover FROM Blog WHERE EntryID = $id";
   $statement = $pdo->query($query);
-
-  $entries = array();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $entryID = $row['EntryID'];
@@ -41,13 +39,8 @@
       $entryDate = $row['EntryDate'];
       $entryCover = $row['EntryCover'];
 
-      $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover);
   }
 
-  $entryID = $entries[0][0];
-  $entryTitle = $entries[0][1];
-  $entryDate = $entries[0][2];
-  $entryCover = $entries[0][3];
    ?>
 
   <div id="black" class="invisible"></div>
