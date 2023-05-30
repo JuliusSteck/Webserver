@@ -27,6 +27,7 @@
 }
 
 .navigation{
+  margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -34,11 +35,17 @@
 
 .navigation span{
   font-size: 30px;
+  margin-top: 3px;
+  margin-left: 6px
 }
 
 .navigation_button{
-  background: var(--dark-background-clolor);
+  background: var(--dark-background-color);
   height: 35px;
   width: 35px;
   border-radius: 50%;
+}
+
+.navigation_button .center span{
+  margin-left: 0px
 }

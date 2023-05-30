@@ -119,7 +119,7 @@
           echo "<a href='welcome.php'>";
         ?>
 
-        <div class="navigation_button">
+        <div class="navigation_button center">
           <span class="material-symbols-rounded">apps</span>
         </div>
 
