@@ -41,7 +41,7 @@
       $entryTitle = "Fortsetzung folgt";
       $entryDescription = "Bleibt gespannt";
       $entryDate = "in der Zukunft";
-      $entryCover = "Julius_Anzug_2020";
+      $entryCover = "Julius_Anzug_2020.jpg";
     }
 
     $query = "SELECT MAX(EntryID) AS MaxEntryID FROM Blog";
