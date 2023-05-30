@@ -123,7 +123,7 @@
             echo '<div class="navigation_link">';
           }
           else{
-            echo '<div class="navigation_link" disabled>';
+            echo '<div class="navigation_link disabled">';
           }
         ?>
 

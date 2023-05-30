@@ -54,7 +54,7 @@
   margin-left: 5px
 }
 
-.disabled{
+.disabled span{
   color: var(--background-color);
 }
 
