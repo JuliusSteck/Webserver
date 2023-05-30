@@ -13,8 +13,6 @@
     <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -23,9 +21,11 @@
 
   <header id="header">
     <div class="top container">
-      <h2>
-        Julius_Steck
-      </h2>
+      <a href="welcome.php">
+        <h2>
+          Julius_Steck
+        </h2>
+      </a>
 
       <input type="checkbox" id="menu">
       <label for="menu">
@@ -34,8 +34,8 @@
 
       <nav>
         <ul>
-          <li><a href="about_me.php">Über_mich</a></li>
           <li><a href="welcome.php" >Blog</a></li>
+          <li><a href="about_me.php">Über_mich</a></li>
           <li><a href="podcast.php">Podcast</a></li>
           <li><a href="shop.php">Shop</a></li>
           <li><a href="contact.php">Kontakt</a></li>
@@ -69,7 +69,7 @@
       <form id="login-form">
         <label for="username">Username: </label>
         <input type="text" id="username" placeholder="Username" name="username">
-        <label for="password">Passwort: </label>
+        <label for="password">Passwort: <span class="material-symbols-rounded">key </span></label>
         <input type="text" id="password" placeholder="Password" name="password">
         <button type="submit" id="login-button">Login</button>
       </form>

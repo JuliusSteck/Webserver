@@ -1,5 +1,5 @@
 #blog{
-  margin-top: 300px;
+  margin-top: 180px;
   margin-bottom: 100px;
 }
 
@@ -23,4 +23,5 @@
 
 .flex img{
   width: 100%;
+  border: 10px solid var(--border-color);
 }

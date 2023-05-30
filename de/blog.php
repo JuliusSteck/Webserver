@@ -13,8 +13,6 @@
     <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -47,9 +45,11 @@
 
   <header id="header">
     <div class="top container">
-      <h2>
-        Julius_Steck
-      </h2>
+      <a href="welcome.php">
+        <h2>
+          Julius_Steck
+        </h2>
+      </a>
 
       <input type="checkbox" id="menu">
       <label for="menu">
@@ -58,8 +58,8 @@
 
       <nav>
         <ul>
-          <li><a href="about_me.php">Über_mich</a></li>
           <li><a href="welcome.php" class="aktiv">Blog</a></li>
+          <li><a href="about_me.php">Über_mich</a></li>
           <li><a href="podcast.php">Podcast</a></li>
           <li><a href="shop.php">Shop</a></li>
           <li><a href="contact.php">Kontakt</a></li>
@@ -100,6 +100,13 @@
             echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
           echo "</div>";
         ?>
+      </div>
+
+      <div class="navigation">
+        <span class="material-symbols-rounded">arrow_back_ios</span>
+        <span class="material-symbols-rounded">apps</span>
+        <span class="material-symbols-rounded">arrow_forward_ios</span>
+
       </div>
     </div>
   </section>
