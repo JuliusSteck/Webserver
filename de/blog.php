@@ -83,13 +83,14 @@
 
   <section id="blog">
     <div class="container">
-
-      <?php
-        echo "<div class='title'>";
-          echo "<h1>$entryTitle</h1>";
-          echo "<h3> $entryDate</h3>";
-        echo "</div>";
-        ?>
+      <div>
+        <?php
+          echo "<div class='title'>";
+            echo "<h1>$entryTitle</h1>";
+            echo "<h3> $entryDate</h3>";
+          echo "</div>";
+          ?>
+      </div>
 
       <div id="layout" class="layout">
         <?php
@@ -105,25 +106,33 @@
       <div class="navigation">
 
         <?php
-          $previousID = $entryID - 1;
-          echo "<a href='blog.php?id=$previousID'>";
+          $nextID = $entryID + 1;
+          echo "<a href='blog.php?id=$nextID'>";
         ?>
-        <span class="material-symbols-rounded">arrow_back_ios</span>
+
+        <div class="navigation_button">
+          <span class="material-symbols-rounded">arrow_back_ios</span>
+        </div>
 
         <?php
           echo "</a>";
           echo "<a href='welcome.php'>";
         ?>
 
-        <span class="material-symbols-rounded">apps</span>
+        <div class="navigation_button">
+          <span class="material-symbols-rounded">apps</span>
+        </div>
 
         <?php
           echo "</a>";
-          $nextID = $entryID + 1;
-          echo "<a href='blog.php?id=$nextID'>";
+          if($entryId > 1) {
+            $previousID = $entryID - 1;
+            echo "<a href='blog.php?id=$previousID'>";
+          }
         ?>
-
-        <span class="material-symbols-rounded">arrow_forward_ios</span>
+        <div class="navigation_button">
+          <span class="material-symbols-rounded">arrow_forward_ios</span>
+        </div>
 
         <?php
           echo "</a>";
