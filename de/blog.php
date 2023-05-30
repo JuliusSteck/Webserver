@@ -79,22 +79,15 @@
     </div>
   </header>
 
-
-
-  <section id="caption">
-    <div class="container">
-        <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
-    </div>
-
   </section>
 
   <section id="blog">
     <div class="container">
 
       <?php
-        echo "<div class='description'>";
-          echo "<h3>$entryTitle</h3>";
-          echo "<p> $entryDate</p>";
+        echo "<div class='title'>";
+          echo "<h1>$entryTitle</h1>";
+          echo "<h3> $entryDate</h3>";
         echo "</div>";
       ?>
 
@@ -105,7 +98,8 @@
           echo "</div>";
           echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
         ?>
-    </div>
+      </div>
+    <div>
   </section>
 
   <footer>

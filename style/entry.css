@@ -9,4 +9,10 @@
 .entry img{
   width: 50%;
   border: 5px solid var(--border-color);
+  height:
+}
+
+.entry .description{
+  width: 50%;
+  overflow: scroll;
 }
