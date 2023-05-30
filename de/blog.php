@@ -89,17 +89,19 @@
           echo "<h1>$entryTitle</h1>";
           echo "<h3> $entryDate</h3>";
         echo "</div>";
-      ?>
+        ?>
 
-      <div id="entry" class="entry">
+      <div id="layout" class="layout">
         <?php
-          echo "<div class='description'>";
+          echo "<div class='flex' id='column_1'>"
             echo "<p> $entryDescription</p>";
-          echo "</div>";
-          echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
+          echo "</div>"
+          echo "<div class='flex' id='column_2'>"
+            echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
+          echo "</div>"
         ?>
       </div>
-    <div>
+    </div>
   </section>
 
   <footer>

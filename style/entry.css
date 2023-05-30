@@ -1,18 +1,22 @@
+#blog{
+  margin-top: 200px;
+}
+
 #entry{
   margin-top: 100px;
   margin-bottom: 100px;
 }
- .entry{
-   display: flex;
- }
 
-.entry img{
-  width: 50%;
-  border: 5px solid var(--border-color);
-  height:
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.entry .description{
-  width: 50%;
-  overflow: scroll;
+.layout{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  grid-gap: 20px;
 }
