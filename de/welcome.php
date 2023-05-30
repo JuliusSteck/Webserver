@@ -34,11 +34,11 @@
 
       <nav>
         <ul>
-          <li><a href="welcome.php" class="aktiv">Blog</a></li>
-          <li><a href="about_me.php">Über_mich</a></li>
-          <li><a href="podcast.php">Podcast</a></li>
-          <li><a href="shop.php">Shop</a></li>
-          <li><a href="contact.php">Kontakt</a></li>
+          <li><a href="welcome.php" class="underline aktiv">Blog</a></li>
+          <li><a href="about_me.php" class="underline">Über_mich</a></li>
+          <li><a href="podcast.php" class="underline">Podcast</a></li>
+          <li><a href="shop.php" class="underline">Shop</a></li>
+          <li><a href="contact.php" class="underline">Kontakt</a></li>
           <li class="search">
             <input type="checkbox" id="magnifying_glass">
             <label for="magnifying_glass">
@@ -74,12 +74,12 @@
         </label>
 
         <ul>
-          <li><a href="" class="aktiv">Alles</a></li>
-          <li><a href="">Arbeit</a></li>
-          <li><a href="">Freizeit</a></li>
-          <li><a href="">Ankündigungen</a></li>
-          <li><a href="">Technologie</a></li>
-          <li><a href="">Politik</a></li>
+          <li><a href="" class="underline aktiv">Alles</a></li>
+          <li><a href="" class="underline">Arbeit</a></li>
+          <li><a href="" class="underline">Freizeit</a></li>
+          <li><a href="" class="underline">Ankündigungen</a></li>
+          <li><a href="" class="underline">Technologie</a></li>
+          <li><a href="" class="underline">Politik</a></li>
         </ul>
       </div>
 
@@ -111,8 +111,8 @@
 
           echo "<div class='flex' id='column_1'>";
 
-          for ($i = 0; $i < count($entries); $i++) {
-            if(($i  %  4) == 0){
+          for ($i = count($entries) - 1; $i >= 0; $i--) {
+            if(($i  %  4) == 1){
 
               $entryID = $entries[$i][0];
               $entryTitle = $entries[$i][1];
@@ -137,8 +137,8 @@
 
           echo "<div class='flex' id='column_2'>";
 
-          for ($i = 0; $i < count($entries); $i++) {
-            if(($i  %  4) == 1){
+          for ($i = count($entries) - 1; $i >= 0; $i--) {
+            if(($i  %  4) == 2){
 
               $entryID = $entries[$i][0];
               $entryTitle = $entries[$i][1];
@@ -164,8 +164,8 @@
 
           echo "<div class='flex' id='column_3'>";
 
-          for ($i = 0; $i < count($entries); $i++) {
-            if(($i  %  4) == 2){
+          for ($i = count($entries) - 1; $i >= 0; $i--) {
+            if(($i  %  4) == 3){
 
               $entryID = $entries[$i][0];
               $entryTitle = $entries[$i][1];
@@ -191,8 +191,8 @@
 
           echo "<div class='flex' id='column_4'>";
 
-          for ($i = 0; $i < count($entries); $i++) {
-            if(($i  %  4) == 3){
+          for ($i = count($entries) - 1; $i >= 0; $i--) {
+            if(($i  %  4) == 0){
 
               $entryID = $entries[$i][0];
               $entryTitle = $entries[$i][1];
@@ -216,34 +216,15 @@
           echo "</div>";
         ?>
 
-      <!--  <div class="flex" id="column_3">
-
-          <a href="">
-            <div class="element">
-              <img class="element_image" src="../images/Julius_Strand_2022.jpg" />
-              <div class="element_background">
-                <div class="element_description">
-                  <h3>This image looks super neat.</h3>
-                  <p>September 2022  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <div class="flex" id="column_4">
-
-        </div> -->
     </div>
   </section>
 
   <footer>
     <div class="container">
       <ul>
-        <li><a href="impressum.php">Impressum</a></li>
-        <li><a href="data_protection.php">Datenschutz</a></li>
-        <li><a href="login.php">Login</a></li>
+        <li><a href="impressum.php" class="underline">Impressum</a></li>
+        <li><a href="data_protection.php" class="underline">Datenschutz</a></li>
+        <li><a href="login.php" class="underline">Login</a></li>
       </ul>
     </div>
   </footer>

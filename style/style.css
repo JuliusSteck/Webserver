@@ -40,7 +40,7 @@ body{
   margin-right: auto;
 }
 
-a{
+.underline{
   color: var(--text-color);
   text-decoration: none;
   position: relative;
@@ -48,11 +48,11 @@ a{
   padding-bottom: 5px;
 }
 
-a:hover{
+.underline:hover{
 
 }
 
-a::after{
+.underline::after{
   content: "";
   height: 2px;
   width: 0%;
@@ -63,11 +63,11 @@ a::after{
   transition: 200ms ease-in-out;
 }
 
-.aktiv::after{
+.underilne .aktiv::after{
   width: 100%;
 }
 
-a:hover::after{
+.underline:hover::after{
   width: 100%;
 }
 

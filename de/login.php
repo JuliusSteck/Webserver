@@ -34,11 +34,11 @@
 
       <nav>
         <ul>
-          <li><a href="welcome.php" >Blog</a></li>
-          <li><a href="about_me.php">Über_mich</a></li>
-          <li><a href="podcast.php">Podcast</a></li>
-          <li><a href="shop.php">Shop</a></li>
-          <li><a href="contact.php">Kontakt</a></li>
+          <li><a href="welcome.php" class="underline">Blog</a></li>
+          <li><a href="about_me.php" class="underline">Über_mich</a></li>
+          <li><a href="podcast.php" class="underline">Podcast</a></li>
+          <li><a href="shop.php" class="underline">Shop</a></li>
+          <li><a href="contact.php" class="underline">Kontakt</a></li>
           <li class="search">
             <input type="checkbox" id="magnifying_glass">
             <label for="magnifying_glass">
@@ -79,9 +79,9 @@
   <footer>
     <div class="container">
       <ul>
-        <li><a href="impressum.php">Impressum</a></li>
-        <li><a href="data_protection.php">Datenschutz</a></li>
-        <li><a href="login.php">Login</a></li>
+        <li><a href="impressum.php" class="underline">Impressum</a></li>
+        <li><a href="data_protection.php" class="underline">Datenschutz</a></li>
+        <li><a href="login.php" class="underline">Login</a></li>
       </ul>
     </div>
   </footer>
