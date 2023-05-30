@@ -96,7 +96,7 @@
           echo "<div class='flex' id='column_1'>";
             echo "<p> $entryDescription</p>";
           echo "</div>";
-          echo "<div class='flex' id='column_2'>"
+          echo "<div class='flex' id='column_2'>";
             echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
           echo "</div>";
         ?>
