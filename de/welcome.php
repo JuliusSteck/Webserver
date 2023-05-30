@@ -111,13 +111,13 @@
 
           echo "<div class='flex' id='column_1'>";
 
-          for ($i = count($entries) - 1; $i >= 0; $i--) {
-            if(($i  %  4) == 1){
+          for ($i = 0; $i < count($entries); $i++) {
+            if(($i  %  4) == 0){
 
-              $entryID = $entries[$i][0];
-              $entryTitle = $entries[$i][1];
-              $entryDate = $entries[$i][2];
-              $entryCover = $entries[$i][3];
+              $entryID = $entries[count($entries) - $i][0];
+              $entryTitle = $entries[count($entries) - $i][1];
+              $entryDate = $entries[count($entries) - $i][2];
+              $entryCover = $entries[count($entries) - $i][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
@@ -137,13 +137,13 @@
 
           echo "<div class='flex' id='column_2'>";
 
-          for ($i = count($entries) - 1; $i >= 0; $i--) {
-            if(($i  %  4) == 2){
+          for ($i = 0; $i < count($entries); $i++) {
+            if(($i  %  4) == 1){
 
-              $entryID = $entries[$i][0];
-              $entryTitle = $entries[$i][1];
-              $entryDate = $entries[$i][2];
-              $entryCover = $entries[$i][3];
+              $entryID = $entries[count($entries) - $i][0];
+              $entryTitle = $entries[count($entries) - $i][1];
+              $entryDate = $entries[count($entries) - $i][2];
+              $entryCover = $entries[count($entries) - $i][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
@@ -164,13 +164,13 @@
 
           echo "<div class='flex' id='column_3'>";
 
-          for ($i = count($entries) - 1; $i >= 0; $i--) {
-            if(($i  %  4) == 3){
+          for ($i = 0; $i < count($entries); $i++) {
+            if(($i  %  4) == 2){
 
-              $entryID = $entries[$i][0];
-              $entryTitle = $entries[$i][1];
-              $entryDate = $entries[$i][2];
-              $entryCover = $entries[$i][3];
+              $entryID = $entries[count($entries) - $i][0];
+              $entryTitle = $entries[count($entries) - $i][1];
+              $entryDate = $entries[count($entries) - $i][2];
+              $entryCover = $entries[count($entries) - $i][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
@@ -191,13 +191,13 @@
 
           echo "<div class='flex' id='column_4'>";
 
-          for ($i = count($entries) - 1; $i >= 0; $i--) {
-            if(($i  %  4) == 0){
+          for ($i = 0; $i < count($entries); $i++) {
+            if(($i  %  4) == 3){
 
-              $entryID = $entries[$i][0];
-              $entryTitle = $entries[$i][1];
-              $entryDate = $entries[$i][2];
-              $entryCover = $entries[$i][3];
+              $entryID = $entries[count($entries) - $i][0];
+              $entryTitle = $entries[count($entries) - $i][1];
+              $entryDate = $entries[count($entries) - $i][2];
+              $entryCover = $entries[count($entries) - $i][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
