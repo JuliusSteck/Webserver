@@ -114,10 +114,10 @@
           for ($i = 0; $i < count($entries); $i++) {
             if(($i  %  4) == 0){
 
-              $entryID = $entries[count($entries) - $i][0];
-              $entryTitle = $entries[count($entries) - $i][1];
-              $entryDate = $entries[count($entries) - $i][2];
-              $entryCover = $entries[count($entries) - $i][3];
+              $entryID = $entries[count($entries) - ($i + 1)][0];
+              $entryTitle = $entries[count($entries) - ($i + 1)][1];
+              $entryDate = $entries[count($entries) - ($i + 1)][2];
+              $entryCover = $entries[count($entries) - ($i + 1)][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
@@ -140,10 +140,10 @@
           for ($i = 0; $i < count($entries); $i++) {
             if(($i  %  4) == 1){
 
-              $entryID = $entries[count($entries) - $i][0];
-              $entryTitle = $entries[count($entries) - $i][1];
-              $entryDate = $entries[count($entries) - $i][2];
-              $entryCover = $entries[count($entries) - $i][3];
+              $entryID = $entries[count($entries) - ($i + 1)][0];
+              $entryTitle = $entries[count($entries) - ($i + 1)][1];
+              $entryDate = $entries[count($entries) - ($i + 1)][2];
+              $entryCover = $entries[count($entries) - ($i + 1)][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
@@ -167,10 +167,10 @@
           for ($i = 0; $i < count($entries); $i++) {
             if(($i  %  4) == 2){
 
-              $entryID = $entries[count($entries) - $i][0];
-              $entryTitle = $entries[count($entries) - $i][1];
-              $entryDate = $entries[count($entries) - $i][2];
-              $entryCover = $entries[count($entries) - $i][3];
+              $entryID = $entries[count($entries) - ($i + 1)][0];
+              $entryTitle = $entries[count($entries) - ($i + 1)][1];
+              $entryDate = $entries[count($entries) - ($i + 1)][2];
+              $entryCover = $entries[count($entries) - ($i + 1)][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
@@ -194,10 +194,10 @@
           for ($i = 0; $i < count($entries); $i++) {
             if(($i  %  4) == 3){
 
-              $entryID = $entries[count($entries) - $i][0];
-              $entryTitle = $entries[count($entries) - $i][1];
-              $entryDate = $entries[count($entries) - $i][2];
-              $entryCover = $entries[count($entries) - $i][3];
+              $entryID = $entries[count($entries) - ($i + 1)][0];
+              $entryTitle = $entries[count($entries) - ($i + 1)][1];
+              $entryDate = $entries[count($entries) - ($i + 1)][2];
+              $entryCover = $entries[count($entries) - ($i + 1)][3];
 
               echo "<a href='blog.php?id=$entryID'>";
                 echo "<div class='element'>";
