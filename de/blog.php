@@ -119,13 +119,13 @@
           echo "<a href='welcome.php'>";
         ?>
 
-        <div class="navigation_button center">
+        <div class="navigation_button home">
           <span class="material-symbols-rounded">apps</span>
         </div>
 
         <?php
           echo "</a>";
-          if($entryId > 1) {
+          if($entryID > 1) {
             $previousID = $entryID - 1;
             echo "<a href='blog.php?id=$previousID'>";
           }
