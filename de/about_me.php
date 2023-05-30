@@ -33,7 +33,7 @@
 
       <nav>
         <ul>
-          <li><a href="" class="aktiv">Über_mich</a></li>
+          <li><a href="about_me.php" class="aktiv">Über_mich</a></li>
           <li><a href="welcome.php">Blog</a></li>
           <li><a href="podcast.php">Podcast</a></li>
           <li><a href="shop.php">Shop</a></li>

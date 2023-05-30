@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/blog.css">
+    <link rel="stylesheet" href="../style/entry.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
@@ -18,6 +18,36 @@
 </head>
 
 <body>
+
+  <?php
+  $host = "localhost";
+  $database = "JuliusSteckWebserver";
+  $username = "JuliusSteck";
+  $password = "JuliusSteckWebserver#1";
+
+  $id = $_GET['id'];
+
+  $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+
+  $query = "SELECT EntryID, EntryTitle, EntryDate, EntryCover FROM Blog WHERE EntryID = $id";
+  $statement = $pdo->query($query);
+
+  $entries = array();
+
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      $entryID = $row['EntryID'];
+      $entryTitle = $row['EntryTitle'];
+      $entryDate = $row['EntryDate'];
+      $entryCover = $row['EntryCover'];
+
+      $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover);
+  }
+
+  $entryID = $entries[0][0];
+  $entryTitle = $entries[0][1];
+  $entryDate = $entries[0][2];
+  $entryCover = $entries[0][3];
+   ?>
 
   <div id="black" class="invisible"></div>
 
@@ -35,7 +65,7 @@
       <nav>
         <ul>
           <li><a href="about_me.php">Über_mich</a></li>
-          <li><a href="" class="aktiv">Blog</a></li>
+          <li><a href="welcome.php" class="aktiv">Blog</a></li>
           <li><a href="podcast.php">Podcast</a></li>
           <li><a href="shop.php">Shop</a></li>
           <li><a href="contact.php">Kontakt</a></li>
@@ -69,47 +99,14 @@
 
       <!-- <div class="line"></div> -->
 
-      <div id="layout" class="layout">
+      <div id="entry" class="entry">
 
         <?php
-          $host = "localhost";
-          $database = "JuliusSteckWebserver";
-          $username = "JuliusSteck";
-          $password = "JuliusSteckWebserver#1";
 
-          $id = $_GET['id'];
-
-          $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
-
-          $query = "SELECT EntryID, EntryTitle, EntryDate, EntryCover FROM Blog WHERE EntryID = $id";
-          $statement = $pdo->query($query);
-
-          $entries = array();
-
-          while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-              $entryID = $row['EntryID'];
-              $entryTitle = $row['EntryTitle'];
-              $entryDate = $row['EntryDate'];
-              $entryCover = $row['EntryCover'];
-
-              $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover);
-          }
-
-          $entryID = $entries[0][0];
-          $entryTitle = $entries[0][1];
-          $entryDate = $entries[0][2];
-          $entryCover = $entries[0][3];
-
-          echo "<div class='flex' id='column_1'>";
-                echo "<div class=''>";
-                  echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class=''>";
-                    echo "<div class=''>";
-                      echo "<h3>$entryTitle</h3>";
-                      echo "<p> $entryDate</p>";
-                    echo "</div>";
-                  echo "</div>";
-                echo "</div>";
+          echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
+          echo "<div class='description'>";
+            echo "<h3>$entryTitle</h3>";
+            echo "<p> $entryDate</p>";
           echo "</div>";
 
         ?>

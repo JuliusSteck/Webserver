@@ -35,7 +35,7 @@
       <nav>
         <ul>
           <li><a href="about_me.php">Über_mich</a></li>
-          <li><a href="" class="aktiv">Blog</a></li>
+          <li><a href="welcome.php" class="aktiv">Blog</a></li>
           <li><a href="podcast.php">Podcast</a></li>
           <li><a href="shop.php">Shop</a></li>
           <li><a href="contact.php">Kontakt</a></li>
