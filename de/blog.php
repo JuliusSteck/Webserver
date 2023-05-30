@@ -93,7 +93,7 @@
 
       <div id="layout" class="layout">
         <?php
-          echo "<div class='flex' id='column_1'>"
+          echo "<div class='flex' id='column_1'>";
             echo "<p> $entryDescription</p>";
           echo "</div>";
           echo "<div class='flex' id='column_2'>"
