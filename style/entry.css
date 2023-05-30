@@ -38,13 +38,13 @@
 }
 
 .navigation span{
+  color: var(--text-color);
   font-size: 50px;
   margin-top: 5px;
   margin-left: 8px
 }
 
 .navigation_button{
-  background: var(--dark-background-color);
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -52,6 +52,10 @@
 
 .home span{
   margin-left: 5px
+}
+
+.disabled{
+  color: var(--background-color);
 }
 
 @media(max-width: 800px){
@@ -74,11 +78,6 @@
     height: 35px;
     width: 35px;
     border-radius: 50%;
-  }
-
-  .disabled{
-    background: var(--text-color);
-    color: var(--background-color);
   }
 
   .home span{

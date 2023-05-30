@@ -120,10 +120,10 @@
           {
             $nextID = $entryID + 1;
             echo "<a href='blog.php?id=$nextID'>";
-            echo '<div class="navigation_link disabled">';
+            echo '<div class="navigation_link">';
           }
           else{
-            echo '<div class="navigation_link">';
+            echo '<div class="navigation_link" disabled>';
           }
         ?>
 
@@ -150,7 +150,7 @@
             echo "  <div class='navigation_link'>";
           }
           else{
-            echo "  <div class='navigation_link disabled'>";
+            echo "<div class='navigation_link disabled'>";
           }
         ?>
 
