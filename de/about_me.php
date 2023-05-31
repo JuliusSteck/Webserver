@@ -34,7 +34,7 @@
       <nav>
         <ul>
           <li><a href="welcome.php" class="underline">Blog</a></li>
-          <li><a href="about_me.php" class="underline aktiv">Über_mich</a></li>
+          <li><a href="resume.php" class="underline aktiv">Über_mich</a></li>
           <li><a href="podcast.php" class="underline">Podcast</a></li>
           <li><a href="shop.php" class="underline">Shop</a></li>
           <li><a href="contact.php" class="underline">Kontakt</a></li>

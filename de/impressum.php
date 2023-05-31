@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/blog.css">
     <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/resume.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
@@ -69,24 +70,24 @@
         <div class="line"></div>
       </div>
       <p>
-        Impressum
-
+        <br>
         Dieses Impressum gilt für die Seite www.julius-steck.de sowie für die Seiten von Julius Steck in sozialen Netzwerken und den Podcast "Die Generaldebatte".
-
+        <br>
         Julius Steck
-
+        <br>
         Karlshulderstraße 11a
         85051 Ingolstadt
-
+        <br>
         Kontakt:
-
+        <br>
         E-Mail: kontakt@julius-steck.de
-
+        <br>
         Telefon: +59 01575 1200 817
-
+        <br>
         Julius Steck ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch dazu verpflichtet.
-
+        <br>
         Plattform der EU-Kommission zur Online-Streitbeilegung:
+        <br>
       </p>
       <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage" class = underline>
         Plattform der EU-Kommision zur Online-Streitbeilegung
