@@ -18,7 +18,7 @@
         <li><a href="welcome.php" class="underline">Blog</a></li>
         <li><a href="resume.php" class="underline">Über_mich</a></li>
         <li><a href="podcast.php" class="underline">Podcast</a></li>
-        <li><a href="shop.php" class="underline aktiv">Shop</a></li>
+        <li><a href="shop.php" class="underline">Shop</a></li>
         <li><a href="contact.php" class="underline">Kontakt</a></li>
         <li class="search">
           <input type="checkbox" id="magnifying_glass">

@@ -71,6 +71,10 @@ a{
   transition: 200ms ease-in-out;
 }
 
+.underline:hover::after{
+  width:100%;
+}
+
 .aktiv::after{
   width: 100%;
   background: var(--text-color);
@@ -91,7 +95,7 @@ a{
   background: var(--text-color);
 }
 
-p::selection, a::selection, h1::selection, h2::selection, h3::selection {
+p::selection, span::selection, a::selection, h1::selection, h2::selection, h3::selection {
   background-color: var(--text-color);
   color: var(--light-text-color);
 }
