@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (element) {
       matchingItems.push(element);
     }
-  });
+  }
 
   console.log(matchingItems);
 
