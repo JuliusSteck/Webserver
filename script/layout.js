@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var count = document.getElementById("count").getAttribute('count');
   var entries = [];
   var columns = [];
+  var buttons = [buttonAlles, buttonArbeit, buttonFreizeit, buttonAnkuendigungen, buttonTechnologie, buttonPolitik];
 
   for (var i = 1; i <= count; i++) {
     var elementID = "entry_" + i;
@@ -107,4 +108,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
   }
+
+  function styleActive(button){
+    buttons.forEach(function(button) {
+      button.classList.remove("active");
+    }
+    buttons[button].classList.add("active");
+  });
 });
