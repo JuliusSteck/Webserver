@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('header');
   const menu = document.getElementById('menu');
   const black = document.getElementById('black');
-  menu.value = false;
+  menu.checked = false;
 
   window.addEventListener("scroll", () => {
     if (window.scrollY >= 10) {
