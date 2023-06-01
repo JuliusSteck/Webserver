@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
   for (var i = 1; i <= 4; i++) {
     var columnID = "column_" + i;
     var column = document.getElementById(columnID);
-    if (element) {
-      columns.push(element);
+    if (column) {
+      columns.push(column);
     }
   }
 
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(columns);
 
   buttonAlles.addEventListener("click", function() {
+    clear();
     var display = entries;
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
@@ -54,21 +55,25 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   buttonArbeit.addEventListener("click", function() {
+    clear();
     restructure("Work");
     console.log("Arbeit button clicked");
   });
 
   buttonFreizeit.addEventListener("click", function() {
+    clear();
     restructure("Freetime");
     console.log("Freizeit button clicked");
   });
 
   buttonAnkuendigungen.addEventListener("click", function() {
+    clear();
     restructure("Announcement");
     console.log("Ankündigungen button clicked");
   });
 
   buttonTechnologie.addEventListener("click", function() {
+    clear();
     restructure("Technology");
     console.log("Technologie button clicked");
   });
@@ -104,5 +109,13 @@ document.addEventListener("DOMContentLoaded", function() {
           break;
       }
     }
+  }
+
+  function clear(){
+    columns.forEach(function() {
+      while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+      }
+    });
   }
 });
