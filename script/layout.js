@@ -31,60 +31,60 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(columns);
 
   buttonAlles.addEventListener("click", function() {
-    clear(columns);
+    console.log("Alles button clicked");
+    clear();
     var display = entries;
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
         case 0:
-          columns[i + 1].appendChild(display[display.length - i]);
+          columns[i + 1].appendChild(display[display.length - 1 - i]);
           break;
         case 1:
-          columns[i + 2].appendChild(display[display.length - i]);
+          columns[i + 2].appendChild(display[display.length - 1 - i]);
           break;
         case 2:
-          columns[i + 3].appendChild(display[display.length - i]);
+          columns[i + 3].appendChild(display[display.length - 1 - i]);
           break;
         case 3:
-          columns[i + 4].appendChild(display[display.length - i]);
+          columns[i + 4].appendChild(display[display.length - 1 - i]);
           break;
         default:
           break;
       }
     }
-    console.log("Alles button clicked");
   });
 
   buttonArbeit.addEventListener("click", function() {
-    clear(columns);
-    restructure("Work", entries);
     console.log("Arbeit button clicked");
+    clear();
+    restructure("Work");
   });
 
   buttonFreizeit.addEventListener("click", function() {
-    clear(columns);
-    restructure("Freetime", entries);
     console.log("Freizeit button clicked");
+    clear();
+    restructure("Freetime");
   });
 
   buttonAnkuendigungen.addEventListener("click", function() {
-    clear(columns);
-    restructure("Announcement", entries);
     console.log("Ankündigungen button clicked");
+    clear();
+    restructure("Announcement");
   });
 
   buttonTechnologie.addEventListener("click", function() {
-    clear(columns);
-    restructure("Technology", entries);
     console.log("Technologie button clicked");
+    clear();
+    restructure("Technology");
   });
 
   buttonPolitik.addEventListener("click", function() {
-    clear(columns);
-    restructure("Politics", entries);
     console.log("Politik button clicked");
+    clear();
+    restructure("Politics");
   });
 
-  function restructure(filter, entries) {
+  function restructure(filter) {
     console.log(filter);
     var display = [];
     for(var i = 0; i < entries.length; i++){
@@ -99,16 +99,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
         case 0:
-          columns[i + 1].appendChild(display[display.length - i]);
+          columns[i + 1].appendChild(display[display.length - 1 - i]);
           break;
         case 1:
-          columns[i + 2].appendChild(display[display.length - i]);
+          columns[i + 2].appendChild(display[display.length - 1 - i]);
           break;
         case 2:
-          columns[i + 3].appendChild(display[display.length - i]);
+          columns[i + 3].appendChild(display[display.length - 1 - i]);
           break;
         case 3:
-          columns[i + 4].appendChild(display[display.length - i]);
+          columns[i + 4].appendChild(display[display.length -1 - i]);
           break;
         default:
           break;
@@ -116,12 +116,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  function clear(columns){
+  function clear(){
     console.log("clear");
     columns.forEach(function(parent) {
       while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
       }
+
     });
   }
 });
