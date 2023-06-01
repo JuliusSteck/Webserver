@@ -91,10 +91,10 @@
             if(($i  %  4) == 0){
 
               $entryID = $entries[$count - ($i + 1)][0];
-              $entryTitle = $count - ($i + 1)][1];
-              $entryDate = $count - ($i + 1)][2];
-              $entryCover = $count - ($i + 1)][3];
-              $Category = $count - ($i + 1)][4];
+              $entryTitle = $entries[$count - ($i + 1)][1];
+              $entryDate = $entries[$count - ($i + 1)][2];
+              $entryCover = $entries[$count - ($i + 1)][3];
+              $Category = $entries[$count - ($i + 1)][4];
 
               echo "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>";
                 echo "<div class='element'>";
