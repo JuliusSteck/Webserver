@@ -68,7 +68,7 @@ a{
 }
 
 .underline:hover{
-  color:red;
+
 }
 
 .underline:hover::after{
