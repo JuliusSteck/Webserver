@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(columns);
 
   buttonAlles.addEventListener("click", function() {
-    clear();
+    log(columns);
+    clear(columns);
     var display = entries;
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
@@ -55,41 +56,45 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   buttonArbeit.addEventListener("click", function() {
-    clear();
+    clear(columns);
     restructure("Work");
     console.log("Arbeit button clicked");
   });
 
   buttonFreizeit.addEventListener("click", function() {
-    clear();
+    clear(columns);
     restructure("Freetime");
     console.log("Freizeit button clicked");
   });
 
   buttonAnkuendigungen.addEventListener("click", function() {
-    clear();
+    clear(columns);
     restructure("Announcement");
     console.log("Ankündigungen button clicked");
   });
 
   buttonTechnologie.addEventListener("click", function() {
-    clear();
+    clear(columns);
     restructure("Technology");
     console.log("Technologie button clicked");
   });
 
   buttonPolitik.addEventListener("click", function() {
+    clear(columns);
     restructure("Politics");
     console.log("Politik button clicked");
   });
 
   function restructure(filter) {
+    console.log(filter);
     var display = [];
     for(var i = 0; i < entries.length; i++){
       if(entries[i].getAttribute('category') == filter){
         display.push(entries[i]);
       }
     }
+
+    console.log(display);
 
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
@@ -109,13 +114,17 @@ document.addEventListener("DOMContentLoaded", function() {
           break;
       }
     }
+
+    log(columns);
   }
 
-  function clear(){
-    columns.forEach(function() {
+  function clear(columns){
+    console.log("clear");
+    columns.forEach(function(parent) {
       while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
       }
     });
+    log(columns);
   }
 });
