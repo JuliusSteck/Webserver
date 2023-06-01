@@ -33,25 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
   buttonAlles.addEventListener("click", function() {
     console.log("Alles button clicked");
     clear();
-    var display = entries;
-    for (var i = 0; i < display.length;  i++){
-      switch (i % 4) {
-        case 0:
-          columns[1].appendChild(display[display.length - 1 - i]);
-          break;
-        case 1:
-          columns[2].appendChild(display[display.length - 1 - i]);
-          break;
-        case 2:
-          columns[3].appendChild(display[display.length - 1 - i]);
-          break;
-        case 3:
-          columns[4].appendChild(display[display.length - 1 - i]);
-          break;
-        default:
-          break;
-      }
-    }
+    restructure("all");
   });
 
   buttonArbeit.addEventListener("click", function() {
@@ -88,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(filter);
     var display = [];
     for(var i = 0; i < entries.length; i++){
-      if(entries[i].getAttribute('category') == filter){
+      if(entries[i].getAttribute('category') == filter || filter == "all"){
         display.push(entries[i]);
         console.log(entries[i]);
       }
@@ -99,16 +81,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
         case 0:
-          columns[1].appendChild(display[display.length - 1 - i]);
+          columns[0].appendChild(display[display.length - 1 - i]);
           break;
         case 1:
-          columns[2].appendChild(display[display.length - 1 - i]);
+          columns[1].appendChild(display[display.length - 1 - i]);
           break;
         case 2:
-          columns[3].appendChild(display[display.length - 1 - i]);
+          columns[2].appendChild(display[display.length - 1 - i]);
           break;
         case 3:
-          columns[4].appendChild(display[display.length -1 - i]);
+          columns[3].appendChild(display[display.length -1 - i]);
           break;
         default:
           break;
