@@ -5,6 +5,7 @@
   --light-secondary-color: #3A5A40;
   --secondary-color: #344E41;
   --text-color: #000000;
+  --light-text-color: #777777;
   --light-primary-color: #A3B18A;
   --primary-color: #A3B18A;
   --dark-background-color: #DAD7CD;
@@ -70,12 +71,15 @@ a{
   transition: 200ms ease-in-out;
 }
 
-.underilne .aktiv::after{
+.aktiv::after{
   width: 100%;
-}
-
-.underline:hover::after{
-  width: 100%;
+  background: var(--text-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 200ms ease-in-out;
+  content: "";
+  height: 2px;
 }
 
 .line{
@@ -85,6 +89,11 @@ a{
   height: 2px;
   border-radius: 2px;
   background: var(--text-color);
+}
+
+p::selection, a::selection, h1::selection, h2::selection, h3::selection {
+  background-color: var(--text-color);
+  color: var(--light-text-color);
 }
 
 @media(max-width: 1500px){

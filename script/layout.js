@@ -7,6 +7,20 @@ document.addEventListener("DOMContentLoaded", function() {
   var buttonTechnologie = document.getElementById("button_technologie");
   var buttonPolitik = document.getElementById("button_politik");
 
+  var entryIDs = document.getElementById("count").getAttribute('count');
+  var matchingItems = [];
+
+  entryIDs.forEach(function(entryID) {
+    var elementID = "entry_" + entryID;
+    var element = document.getElementById(elementID);
+    if (element) {
+      matchingItems.push(element);
+    }
+  });
+
+  console.log(matchingItems);
+
+
 
   buttonAlles.addEventListener("click", function() {
     alert("Alles button clicked");
