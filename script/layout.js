@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var columns = [];
   var buttons = [buttonAlles, buttonArbeit, buttonFreizeit, buttonAnkuendigungen, buttonTechnologie, buttonPolitik];
 
-  for (var i = 1; i <= count; i++) {
+  for (var i = 1; i <= count; i++){
     var elementID = "entry_" + i;
     var element = document.getElementById(elementID);
     if (element) {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  for (var i = 1; i <= 4; i++) {
+  for (var i = 1; i <= 4; i++){
     var columnID = "column_" + i;
     var column = document.getElementById(columnID);
     if (column) {
@@ -28,43 +28,43 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  buttonAlles.addEventListener("click", function() {
+  buttonAlles.addEventListener("click", function(){
     clear();
     restructure("all");
     styleActive(0);
   });
 
-  buttonArbeit.addEventListener("click", function() {
+  buttonArbeit.addEventListener("click", function(){
     clear();
     restructure("Work");
     styleActive(1);
   });
 
-  buttonFreizeit.addEventListener("click", function() {
+  buttonFreizeit.addEventListener("click", function(){
     clear();
     restructure("Freetime");
     styleActive(2);
   });
 
-  buttonAnkuendigungen.addEventListener("click", function() {
+  buttonAnkuendigungen.addEventListener("click", function(){
     clear();
     restructure("Announcement");
     styleActive(3);
   });
 
-  buttonTechnologie.addEventListener("click", function() {
+  buttonTechnologie.addEventListener("click", function(){
     clear();
     restructure("Technology");
     styleActive(4);
   });
 
-  buttonPolitik.addEventListener("click", function() {
+  buttonPolitik.addEventListener("click", function(){
     clear();
     restructure("Politics");
     styleActive(5);
   });
 
-  function restructure(filter) {
+  function restructure(filter){
     var display = [];
     for(var i = 0; i < entries.length; i++){
       if(entries[i].getAttribute('category') == filter || filter == "all"){
@@ -93,16 +93,15 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function clear(){
-    columns.forEach(function(parent) {
+    columns.forEach(function(parent){
       while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
       }
-
     });
   }
 
   function styleActive(button){
-    buttons.forEach(function(button)) {
+    buttons.forEach(function(button){
       button.classList.remove("active");
     }
     buttons[button].classList.add("active");
