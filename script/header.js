@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('header');
   const menu = document.getElementById('menu');
   const black = document.getElementById('black');
-  var menu = document.getElementById('menu');
   menu.value = false;
 
   window.addEventListener("scroll", () => {
