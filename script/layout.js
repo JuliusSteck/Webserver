@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(columns);
 
   buttonAlles.addEventListener("click", function() {
-    log(columns);
+    console.log(columns);
     clear(columns);
     var display = entries;
     for (var i = 0; i < display.length;  i++){
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
 
-    log(columns);
+    console.log(columns);
   }
 
   function clear(columns){
@@ -125,6 +125,6 @@ document.addEventListener("DOMContentLoaded", function() {
         parent.removeChild(parent.firstChild);
       }
     });
-    log(columns);
+    console.log(columns);
   }
 });
