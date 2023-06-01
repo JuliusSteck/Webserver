@@ -37,16 +37,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
         case 0:
-          columns[i + 1].appendChild(display[display.length - 1 - i]);
+          columns[1].appendChild(display[display.length - 1 - i]);
           break;
         case 1:
-          columns[i + 2].appendChild(display[display.length - 1 - i]);
+          columns[2].appendChild(display[display.length - 1 - i]);
           break;
         case 2:
-          columns[i + 3].appendChild(display[display.length - 1 - i]);
+          columns[3].appendChild(display[display.length - 1 - i]);
           break;
         case 3:
-          columns[i + 4].appendChild(display[display.length - 1 - i]);
+          columns[4].appendChild(display[display.length - 1 - i]);
           break;
         default:
           break;
@@ -99,16 +99,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
         case 0:
-          columns[i + 1].appendChild(display[display.length - 1 - i]);
+          columns[1].appendChild(display[display.length - 1 - i]);
           break;
         case 1:
-          columns[i + 2].appendChild(display[display.length - 1 - i]);
+          columns[2].appendChild(display[display.length - 1 - i]);
           break;
         case 2:
-          columns[i + 3].appendChild(display[display.length - 1 - i]);
+          columns[3].appendChild(display[display.length - 1 - i]);
           break;
         case 3:
-          columns[i + 4].appendChild(display[display.length -1 - i]);
+          columns[4].appendChild(display[display.length -1 - i]);
           break;
         default:
           break;
