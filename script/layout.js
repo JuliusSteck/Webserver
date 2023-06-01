@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   for (var i = 1; i <= 4; i++) {
     var columnID = "column_" + i;
-    var column = document.getElementById(coulmnID);
+    var column = document.getElementById(columnID);
     if (element) {
       columns.push(element);
     }
