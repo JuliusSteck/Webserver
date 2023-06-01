@@ -28,56 +28,49 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  console.log(entries);
-  console.log(columns);
-
   buttonAlles.addEventListener("click", function() {
-    console.log("Alles button clicked");
     clear();
     restructure("all");
+    styleActive(0);
   });
 
   buttonArbeit.addEventListener("click", function() {
-    console.log("Arbeit button clicked");
     clear();
     restructure("Work");
+    styleActive(1);
   });
 
   buttonFreizeit.addEventListener("click", function() {
-    console.log("Freizeit button clicked");
     clear();
     restructure("Freetime");
+    styleActive(2);
   });
 
   buttonAnkuendigungen.addEventListener("click", function() {
-    console.log("Ankündigungen button clicked");
     clear();
     restructure("Announcement");
+    styleActive(3);
   });
 
   buttonTechnologie.addEventListener("click", function() {
-    console.log("Technologie button clicked");
     clear();
     restructure("Technology");
+    styleActive(4);
   });
 
   buttonPolitik.addEventListener("click", function() {
-    console.log("Politik button clicked");
     clear();
     restructure("Politics");
+    styleActive(5);
   });
 
   function restructure(filter) {
-    console.log(filter);
     var display = [];
     for(var i = 0; i < entries.length; i++){
       if(entries[i].getAttribute('category') == filter || filter == "all"){
         display.push(entries[i]);
-        console.log(entries[i]);
       }
     }
-
-    console.log(display);
 
     for (var i = 0; i < display.length;  i++){
       switch (i % 4) {
@@ -100,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function clear(){
-    console.log("clear");
     columns.forEach(function(parent) {
       while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
