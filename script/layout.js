@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function styleActive(button){
     buttons.forEach(function(parent){
       parent.classList.remove("active");
-    }
+    });
     buttons[button].classList.add("active");
-  });
+  }
 });
