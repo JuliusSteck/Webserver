@@ -71,7 +71,7 @@ a{
   transition: 200ms ease-in-out;
 }
 
-.underline::after:hover{
+.underline:hover::after{
   width:100%;
 }
 
