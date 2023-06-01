@@ -122,19 +122,11 @@ label[for="dropdown"] span{
   margin-top: 5px;
   margin-bottom: 5px;
   padding-bottom: 5px;
+  position: relative;
 }
 
 .filter button:hover{
-  background: none;
-  border-radius: 5px;
-  border: none;
-  padding: 0px;
   color: var(--light-text-color);
-  font-size: 18px;
-  font-family: 'Inconsolata', sans-serif;
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 
