@@ -56,10 +56,6 @@ a{
   padding-bottom: 5px;
 }
 
-.underline:hover{
-
-}
-
 .underline::after{
   content: "";
   height: 2px;
@@ -69,6 +65,10 @@ a{
   bottom: 0;
   left: 0;
   transition: 200ms ease-in-out;
+}
+
+.underline:hover{
+  color:red;
 }
 
 .underline:hover::after{
