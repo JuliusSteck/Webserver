@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var entryIDs = document.getElementById("count").getAttribute('count');
   var matchingItems = [];
 
-  entryIDs.forEach(function(entryID) {
+  for (var i = 1; i <= entryIDs; i++)) {
     var elementID = "entry_" + entryID;
     var element = document.getElementById(elementID);
     if (element) {
