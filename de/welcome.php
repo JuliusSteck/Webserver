@@ -37,13 +37,14 @@
         </label>
 
         <ul>
-          <li><a href="" class="underline aktiv">Alles</a></li>
-          <li><a href="" class="underline">Arbeit</a></li>
-          <li><a href="" class="underline">Freizeit</a></li>
-          <li><a href="" class="underline">Ankündigungen</a></li>
-          <li><a href="" class="underline">Technologie</a></li>
-          <li><a href="" class="underline">Politik</a></li>
+          <li><button type="button" id="button_alles" class="underline aktiv">Alles</button></li>
+          <li><button type="button" id="button_arbeit" class="underline">Arbeit</button></li>
+          <li><button type="button" id="button_freizeit" class="underline">Freizeit</button></li>
+          <li><button type="button" id="button_ankuendigungen" class="underline">Ankündigungen</button></li>
+          <li><button type="button" id="button_technologie" class="underline">Technologie</button></li>
+          <li><button type="button" id="button_politik" class="underline">Politik</button></li>
         </ul>
+
       </div>
 
       <!-- <div class="line"></div> -->

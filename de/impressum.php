@@ -49,9 +49,7 @@
         <br>
         Kontakt:
         <br>
-        <br>
         E-Mail: kontakt@julius-steck.de
-        <br>
         <br>
         Telefon: +59 01575 1200 817
         <br>
