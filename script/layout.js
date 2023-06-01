@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function styleActive(button){
-    buttons.forEach(function(button) {
+    buttons.forEach(function(button)) {
       button.classList.remove("active");
     }
     buttons[button].classList.add("active");

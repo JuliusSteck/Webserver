@@ -46,8 +46,6 @@
         </ul>
       </div>
 
-      <!--<div class="line"></div> -->
-
       <div id="layout" class="layout">
 
         <?php
