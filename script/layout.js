@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var matchingItems = [];
 
   for (var i = 1; i <= entryIDs; i++) {
-    var elementID = "entry_" + entryID;
+    var elementID = "entry_" + i;
     var element = document.getElementById(elementID);
     if (element) {
       matchingItems.push(element);
