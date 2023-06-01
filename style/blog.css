@@ -121,6 +121,7 @@ label[for="dropdown"] span{
   display: block;
   margin-top: 5px;
   margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .filter button:hover{

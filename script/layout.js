@@ -7,48 +7,102 @@ document.addEventListener("DOMContentLoaded", function() {
   var buttonTechnologie = document.getElementById("button_technologie");
   var buttonPolitik = document.getElementById("button_politik");
 
-  var entryIDs = document.getElementById("count").getAttribute('count');
-  var matchingItems = [];
+  var count = document.getElementById("count").getAttribute('count');
+  var entries = [];
+  var columns = [];
 
-  for (var i = 1; i <= entryIDs; i++) {
+  for (var i = 1; i <= count; i++) {
     var elementID = "entry_" + i;
     var element = document.getElementById(elementID);
     if (element) {
-      matchingItems.push(element);
+      entries.push(element);
     }
   }
 
-  console.log(matchingItems);
+  for (var i = 1; i <= 4; i++) {
+    var columnID = "column_" + i;
+    var column = document.getElementById(coulmnID);
+    if (element) {
+      columns.push(element);
+    }
+  }
 
-
+  console.log(entries);
+  console.log(columns);
 
   buttonAlles.addEventListener("click", function() {
-    alert("Alles button clicked");
+    var display = entries;
+    for (var i = 0; i < display.length;  i++){
+      switch (i % 4) {
+        case 0:
+          columns[i + 1].appendChild(display[display.length - i]);
+          break;
+        case 1:
+          columns[i + 2].appendChild(display[display.length - i]);
+          break;
+        case 2:
+          columns[i + 3].appendChild(display[display.length - i]);
+          break;
+        case 3:
+          columns[i + 4].appendChild(display[display.length - i]);
+          break;
+        default:
+          break;
+      }
+    }
     console.log("Alles button clicked");
   });
 
   buttonArbeit.addEventListener("click", function() {
-    alert("Arbeit button clicked");
+    restructure("Work");
     console.log("Arbeit button clicked");
   });
 
   buttonFreizeit.addEventListener("click", function() {
-    alert("Freizeit button clicked");
+    restructure("Freetime");
     console.log("Freizeit button clicked");
   });
 
   buttonAnkuendigungen.addEventListener("click", function() {
-    alert("Ankündigungen button clicked");
+    restructure("Announcement");
     console.log("Ankündigungen button clicked");
   });
 
   buttonTechnologie.addEventListener("click", function() {
-    alert("Technologie button clicked");
+    restructure("Technology");
     console.log("Technologie button clicked");
   });
 
   buttonPolitik.addEventListener("click", function() {
-    alert("Politik button clicked");
+    restructure("Politics");
     console.log("Politik button clicked");
   });
+
+  function restructure(filter) {
+    var display = [];
+    for(var i = 0; i < entries.length; i++){
+      if(entries[i].getAttribute('category') == filter){
+        display.push(entries[i]);
+      }
+    }
+
+    for (var i = 0; i < display.length;  i++){
+      switch (i % 4) {
+        case 0:
+          columns[i + 1].appendChild(display[display.length - i]);
+          break;
+        case 1:
+          columns[i + 2].appendChild(display[display.length - i]);
+          break;
+        case 2:
+          columns[i + 3].appendChild(display[display.length - i]);
+          break;
+        case 3:
+          columns[i + 4].appendChild(display[display.length - i]);
+          break;
+        default:
+          break;
+      }
+    }
+  }
 });
