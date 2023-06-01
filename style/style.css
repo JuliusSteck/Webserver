@@ -37,6 +37,7 @@ body{
 
 a{
   color: var(--text-color);
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -52,7 +53,6 @@ a{
 
 .underline{
   position: relative;
-  font-size: 18px;
   padding-bottom: 5px;
 }
 
@@ -71,7 +71,7 @@ a{
   transition: 200ms ease-in-out;
 }
 
-.underline:hover::after{
+.underline::after:hover{
   width:100%;
 }
 

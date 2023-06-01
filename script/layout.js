@@ -103,9 +103,9 @@ document.addEventListener("DOMContentLoaded", function() {
   function styleActive(button){
     buttons.forEach(function(parent){
       console.log(parent);
-      parent.classList.remove("active");
+      parent.classList.remove("activ");
     });
     console.log(button);
-    buttons[button].classList.add("active");
+    buttons[button].classList.add("activ");
   }
 });
