@@ -77,7 +77,7 @@
             echo "<div class='flex' id='column_$j'>";
 
             for ($i = 0; $i < $count; $i++) {
-              if(($i  %  ($j - 1)) == 0){
+              if(($i  %  4) == ($j - 1)){
 
                 $entryID = $entries[$count - ($i + 1)][0];
                 $entryTitle = $entries[$count - ($i + 1)][1];
