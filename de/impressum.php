@@ -51,7 +51,7 @@
         <br>
         E-Mail: kontakt@julius-steck.de
         <br>
-        Telefon: +59 01575 1200 817
+        Telefon: +49 01575 1200 817
         <br>
         <br>
         Julius Steck ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch dazu verpflichtet.

@@ -73,113 +73,34 @@
 
           $count = count($entries);
 
-          echo "<div class='flex' id='column_1'>";
+          for($j = 1; $j < 5; $j++){
+            echo "<div class='flex' id='column_$j'>";
 
-          for ($i = 0; $i < $count; $i++) {
-            if(($i  %  4) == 0){
+            for ($i = 0; $i < $count; $i++) {
+              if(($i  %  ($j - 1)) == 0){
 
-              $entryID = $entries[$count - ($i + 1)][0];
-              $entryTitle = $entries[$count - ($i + 1)][1];
-              $entryDate = $entries[$count - ($i + 1)][2];
-              $entryCover = $entries[$count - ($i + 1)][3];
-              $Category = $entries[$count - ($i + 1)][4];
+                $entryID = $entries[$count - ($i + 1)][0];
+                $entryTitle = $entries[$count - ($i + 1)][1];
+                $entryDate = $entries[$count - ($i + 1)][2];
+                $entryCover = $entries[$count - ($i + 1)][3];
+                $Category = $entries[$count - ($i + 1)][4];
 
-              echo "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>";
-                echo "<div class='element'>";
-                  echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class='element_background'>";
-                    echo "<div class='element_description'>";
-                      echo "<h3>$entryTitle</h3>";
-                      echo "<p> $entryDate</p>";
+                echo "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>";
+                  echo "<div class='element'>";
+                    echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
+                    echo "<div class='element_background'>";
+                      echo "<div class='element_description'>";
+                        echo "<h3>$entryTitle</h3>";
+                        echo "<p> $entryDate</p>";
+                      echo "</div>";
                     echo "</div>";
                   echo "</div>";
-                echo "</div>";
-              echo "</a>";
+                echo "</a>";
+              }
             }
+
+            echo "</div>";
           }
-
-          echo "</div>";
-
-          echo "<div class='flex' id='column_2'>";
-
-          for ($i = 0; $i < $count; $i++) {
-            if(($i  %  4) == 1){
-
-              $entryID = $entries[$count - ($i + 1)][0];
-              $entryTitle = $entries[$count - ($i + 1)][1];
-              $entryDate = $entries[$count - ($i + 1)][2];
-              $entryCover = $entries[$count - ($i + 1)][3];
-              $Category = $entries[$count - ($i + 1)][4];
-
-              echo "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>";
-                echo "<div class='element'>";
-                  echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class='element_background'>";
-                    echo "<div class='element_description'>";
-                      echo "<h3>$entryTitle</h3>";
-                      echo "<p> $entryDate</p>";
-                    echo "</div>";
-                  echo "</div>";
-                echo "</div>";
-              echo "</a>";
-            }
-          }
-
-          echo "</div>";
-
-          echo "<div class='flex' id='column_3'>";
-
-          for ($i = 0; $i < $count; $i++) {
-            if(($i  %  4) == 2){
-
-              $entryID = $entries[$count - ($i + 1)][0];
-              $entryTitle = $entries[$count - ($i + 1)][1];
-              $entryDate = $entries[$count - ($i + 1)][2];
-              $entryCover = $entries[$count - ($i + 1)][3];
-              $Category = $entries[$count - ($i + 1)][4];
-
-              echo "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>";
-                echo "<div class='element'>";
-                  echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class='element_background'>";
-                    echo "<div class='element_description'>";
-                      echo "<h3>$entryTitle</h3>";
-                      echo "<p> $entryDate</p>";
-                    echo "</div>";
-                  echo "</div>";
-                echo "</div>";
-              echo "</a>";
-            }
-          }
-
-          echo "</div>";
-
-          echo "<div class='flex' id='column_4'>";
-
-          for ($i = 0; $i < $count; $i++) {
-            if(($i  %  4) == 3){
-
-              $entryID = $entries[$count - ($i + 1)][0];
-              $entryTitle = $entries[$count - ($i + 1)][1];
-              $entryDate = $entries[$count - ($i + 1)][2];
-              $entryCover = $entries[$count - ($i + 1)][3];
-              $Category = $entries[$count - ($i + 1)][4];
-
-              echo "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>";
-                echo "<div class='element'>";
-                  echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                  echo "<div class='element_background'>";
-                    echo "<div class='element_description'>";
-                      echo "<h3>$entryTitle</h3>";
-                      echo "<p> $entryDate</p>";
-                    echo "</div>";
-                  echo "</div>";
-                echo "</div>";
-              echo "</a>";
-            }
-          }
-
-          echo "</div>";
 
           echo "<div id='count' count='$count'>";
           echo "</div>";

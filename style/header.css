@@ -186,6 +186,10 @@ label[for="menu"] span{
     color: var(--border-color);
   }
 
+  .inverse a{
+    color: var(--border-color);
+  }
+
   .inverse a::after{
     background: var(--border-color);
   }
