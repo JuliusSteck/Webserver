@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../style/data_protection.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
+    <script src="../script/caption.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
@@ -17,6 +18,12 @@
   <?php
     include 'header.php';
    ?>
+
+   <section id="caption">
+     <div class="container">
+         <h1>Das ist <span class="flexible_caption"> Datenschutz</span><span id="cursor" class="cursor">_</span> </h1>
+     </div>
+   </section>
 
   <section id="data_protection">
     <div class="container">

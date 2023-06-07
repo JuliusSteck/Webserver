@@ -1,3 +1,8 @@
+#login{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 .login input{
   background: none;
   border-radius: 5px;
@@ -25,11 +30,6 @@
 
 .login input:focus::placeholder{
   opacity: 0.1;
-}
-
-#login{
-  margin-top: 100px;
-  margin-bottom: 200px;
 }
 
 .login button{
