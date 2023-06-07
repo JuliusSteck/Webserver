@@ -29,11 +29,6 @@
        echo "</div>";
      echo "</section>";
   ?>
-  <section id="caption">
-    <div class="container">
-        <h1>Suche: <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
-    </div>
-  </section>
 
   <section id="blog">
     <div class="container">
