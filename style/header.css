@@ -205,6 +205,11 @@ label[for="menu"] span{
   }
 }
 
+.inverse img::selection, .inverse p::selection,.inverse span::selection,.inverse a::selection,.inverse h1::selection,.inverse h2::selection,.inverse h3::selection {
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
+
 @media(max-width: 900px){
   h2{
     font-size: 20px;

@@ -23,7 +23,7 @@
 
   <section id="caption">
     <div class="container">
-        <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
+        <h1>Die  <span  class="flexible_caption">Generaldebatte </span><span id="cursor" class="cursor">_</span> </h1>
     </div>
   </section>
 

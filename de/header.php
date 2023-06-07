@@ -26,7 +26,7 @@
             <span class="material-symbols-rounded">search</span>
           </label>
 
-          <form id="search-form">
+          <form id="search-form" action="search.php">
             <input type="text" id="search-input" placeholder="Suchen" name="search">
             <button type="submit" id="search-button">suchen</button>
           </form>

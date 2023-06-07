@@ -68,7 +68,7 @@
       <div class="position">
         <h4>Data Science</h4>
         <p> Februar 2023 - heute </p>
-        <a href="https://www.achtzig20.de"> 8020.eco</a>
+        <a href="https://www.thi.de"> Technische Hochschule Ingolstadt</a>
         <ul>
           <li>Volkswagen - AG EG-3 Data Governance</li>
           <li>Audi AG -  PX-I Company IT NEV CO China</li>
@@ -81,7 +81,7 @@
       <div class="position">
         <h4>Wirtschaftsinformatik</h4>
         <p> September 2019 - Juli 2022</p>
-        <a href="https://www.audi.de"> Audi AG</a>
+        <a href="https://www.thi.de">Technische Hochschule Ingolstadt</a>
         <ul>
           <li>Volkswagen - AG EG-3 Data Governance</li>
           <li>Audi AG -  PX-I Company IT NEV CO China</li>
@@ -91,16 +91,33 @@
 
       <br>
 
-      <div class="position">
+    <!--  <div class="position">
         <h4>Mathematik</h4>
-        <p> September 2019 - Juli 2022</p>
-        <a href="https://www.audi.de"> Audi AG</a>
+        <p> September 2023 - </p>
+        <a href="https://www.tum.de"> Technische Universität München</a>
         <ul>
-          <li>Volkswagen - AG EG-3 Data Governance</li>
-          <li>Audi AG -  PX-I Company IT NEV CO China</li>
-          <li>Volkswagen AG - EKEK-4 Sound Design</li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div> -->
+      <div class="devider">
+        <div class="line"></div>
+        <h3>Projekte</h3>
+        <div class="line"></div>
+      </div>
+
+      <div class="position">
+        <h4>Sprachen</h4>
+        <ul>
+          <li>Deutsch - AG EG-3 Data Governance</li>
+          <li>Englisch -  PX-I Company IT NEV CO China</li>
+          <li>Französisch - EKEK-4 Sound Design</li>
+          <li>Chinesisch - EKEK-4 Sound Design</li>
         </ul>
       </div>
+
+      <br>
 
       <div class="devider">
         <div class="line"></div>
@@ -122,6 +139,36 @@
 
       <div class="position">
         <h4>Programmierung</h4>
+        <ul>
+          <li>Python</li>
+          <li>Java</li>
+          <li>JavaScript</li>
+          <li>SQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </div>
+
+      <div class="devider">
+        <div class="line"></div>
+        <h3>Freizeit</h3>
+        <div class="line"></div>
+      </div>
+
+      <div class="position">
+        <h4>Sprachen</h4>
+        <ul>
+          <li>Deutsch - AG EG-3 Data Governance</li>
+          <li>Englisch -  PX-I Company IT NEV CO China</li>
+          <li>Französisch - EKEK-4 Sound Design</li>
+          <li>Chinesisch - EKEK-4 Sound Design</li>
+        </ul>
+      </div>
+
+      <br>
+
+      <div class="position">
+        <h4>Engagement</h4>
         <ul>
           <li>Python</li>
           <li>Java</li>

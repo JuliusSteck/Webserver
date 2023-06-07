@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../style/footer.css">
     <link rel="stylesheet" href="../style/resume.css">
     <script src="../script/header.js"></script>
-    <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -21,12 +20,6 @@
   <?php
     include 'header.php';
    ?>
-
-  <section id="caption">
-    <div class="container">
-        <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
-    </div>
-  </section>
 
   <section id="impressum">
     <div class="container">
