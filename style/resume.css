@@ -26,3 +26,15 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+@media(max-width: 1200px){
+  #resume{
+    margin-top: 50px;
+  }
+}
+
+@media(max-width: 800px){
+  #resume{
+    margin-top: 30px;
+  }
+}

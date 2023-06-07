@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/data_protection.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
@@ -90,7 +91,7 @@
         <br>
         <br>
         Beim Verwenden Besuchen der Website fallen serverseitig Protokolldaten (wie z.B. Zugriffszeitpunkt, IP-Adresse, Name der Ressource)
-        an. Diese Daten helfen Neerby, die Sicherheit und Stabilität des Systems zu verbessern. Die Protokolldaten werden nicht mit
+        an. Die Erhebung dieser Daten ist nötig, um den Diesnt anzubieten. Die Protokolldaten werden nicht mit
         anderen Daten von dir zusammengeführt. Die Erhebung und Verarbeitung der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
         auf Basis eines berechtigten Interesses. Die Daten werden nicht an Dritte weitergegeben und nach spätestens 30 Tagen vom Server
         gelöscht.
