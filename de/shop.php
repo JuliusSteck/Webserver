@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/blog.css">
+    <link rel="stylesheet" href="../style/shop.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
@@ -23,11 +24,11 @@
 
   <section id="caption">
     <div class="container">
-        <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
+        <h1>Der <span  class="flexible_caption">Shop </span><span id="cursor" class="cursor">_</span> </h1>
     </div>
   </section>
 
-  <section id="impressum">
+  <section id="shop">
     <div class="container">
 
     </div>

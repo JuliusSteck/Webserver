@@ -21,6 +21,14 @@
     include 'header.php';
    ?>
 
+   <?php
+   $Word = $_GET['search'];
+     echo "<section id='caption'>";
+       echo "<div class='container'>";
+           echo "<h1>Suche: <span class='flexible_caption'>$Word </span><span id='cursor' class='cursor'>_</span> </h1>";
+       echo "</div>";
+     echo "</section>";
+  ?>
   <section id="caption">
     <div class="container">
         <h1>Suche: <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
@@ -32,7 +40,6 @@
       <div id="filter" class="filter">
         <input type="checkbox" id="dropdown">
         <label for="dropdown">
-          <!--<span class="material-symbols-rounded">expand_more</span> -->
           <span class="material-symbols-rounded">arrow_drop_down</span>
         </label>
 
@@ -104,6 +111,7 @@
           }
 
           echo "<div id='count' count='$count'>";
+                echo "<p> Ergebnisse: $count </p>";
           echo "</div>";
         ?>
 

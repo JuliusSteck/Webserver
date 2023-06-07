@@ -46,8 +46,6 @@
         </ul>
       </div>
 
-      <br>
-
       <div class="position">
         <h4>Dualer Student</h4>
         <p> September 2019 - Juli 2022</p>
@@ -76,8 +74,6 @@
         </ul>
       </div>
 
-      <br>
-
       <div class="position">
         <h4>Wirtschaftsinformatik</h4>
         <p> September 2019 - Juli 2022</p>
@@ -88,8 +84,6 @@
           <li>Volkswagen AG - EKEK-4 Sound Design</li>
         </ul>
       </div>
-
-      <br>
 
     <!--  <div class="position">
         <h4>Mathematik</h4>
@@ -117,8 +111,6 @@
         </ul>
       </div>
 
-      <br>
-
       <div class="devider">
         <div class="line"></div>
         <h3>Fähigkeiten</h3>
@@ -134,8 +126,6 @@
           <li>Chinesisch - EKEK-4 Sound Design</li>
         </ul>
       </div>
-
-      <br>
 
       <div class="position">
         <h4>Programmierung</h4>
@@ -164,8 +154,6 @@
           <li>Chinesisch - EKEK-4 Sound Design</li>
         </ul>
       </div>
-
-      <br>
 
       <div class="position">
         <h4>Engagement</h4>

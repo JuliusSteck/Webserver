@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/podcast.css">
+    <link rel="stylesheet" href="../style/blog.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
+    <script src="../script/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
@@ -26,7 +28,7 @@
     </div>
   </section>
 
-  <section id="impressum">
+  <section id="podcast">
     <div class="container">
 
     </div>
