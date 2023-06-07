@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/blog.css">
+    <link rel="stylesheet" href="../style/data_protection.css">
     <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/resume.css">
     <script src="../script/header.js"></script>
-    <script src="../script/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
@@ -21,55 +18,79 @@
     include 'header.php';
    ?>
 
-  <section id="data-protection">
+  <section id="data_protection">
     <div class="container">
       <div class="devider">
         <div class="line"></div>
         <h3> Datenschutz</h3>
         <div class="line"></div>
       </div>
+
       <p>
         <br>
         Kontaktdaten des Verantwortlichen
+        <br>
         Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO):
+        <br>
         Julius Steck Karlshulderstraße 11a 85051 Ingolstadt kontakt@julius-steck.de Tel. +49 01575 1200 817
+        <br>
+        <br>
 
         I. Einleitung
+        <br>
+        <br>
         Willkommen!
-
+        <br>
+        <br>
         Mir ist der Schutz deiner Daten ein großes Anliegen. Du allein sollst bestimmen, welche Informationen über dich du an julius-steck.de
         weitergibst. Wie und welche deiner Daten verarbeitet werden, wird dir in der nachfolgenden Datenschutzerklärung erklärt. Für Fragen
         kannst du dich gerne an mich wenden.
-
+        <br>
+        <br>
         II. Begriffe
-
+        <br>
+        <br>
         Vorab noch ein paar Begriffsdefinitionen, die das Lesen der Datenschutzerklärung erleichtern und klarer machen sollen.
+        <br>
         „Seite“ oder „Website“ meint die Website unter der Domain julius-steck.de.
+        <br>
         „User“ sind Personen, die mit julius-steck.de in Kontakt treten.
-
+        <br>
+        <br>
         III. Gültigkeitsbereich und Änderungen
+        <br>
+        <br>
         Die Datenschutzerklärung bezieht sich auf die Verarbeitung von Daten im Rahmen deiner Nutzung der Seite.
 
-
+        <br>
         Ich behalte mir das Recht vor, diese Datenschutzerklärung jederzeit anzupassen. Die Bekanntmachung der Änderung erfolgt durch
         das Veröffentlichen der neuen Datenschutzerklärung auf der Website. Sofern nicht anders festgelegt, gilt eine aktualisierte
         Datenschutzerklärung unverzüglich. Sehe daher bitte regelmäßig nach, ob sich die Version in der Zwischenzeit geändert hat.
-
+        <br>
+        <br>
         IV. Nutzungsstatistik
+        <br>
+        <br>
 
         Um den Dienst ständig zu verbessern und weiterzuentwickeln, werde ich in der Zukunft Nutzungsdaten (wie bspw. Seitenaufrufe,
         Button-Betätigungen, Funktionsaufrufe, Sitzungsdauer etc.) analysieren. Die Rechtsgrundlage für die Datenerhebung ist Art.
         6 Abs. 1 lit. f DSGVO auf Basis eines berechtigten Interesses. Der Beginn der Erfassung wird auf der Website verkündigt werden
         und diese Datenschutzerklärung wird aktualisiert werden.
+        <br>
+        <br>
 
         V. Datenverarbeitung bei Nutzung der Website
+        <br>
+        <br>
         Beim Verwenden Besuchen der Website fallen serverseitig Protokolldaten (wie z.B. Zugriffszeitpunkt, IP-Adresse, Name der Ressource)
         an. Diese Daten helfen Neerby, die Sicherheit und Stabilität des Systems zu verbessern. Die Protokolldaten werden nicht mit
         anderen Daten von dir zusammengeführt. Die Erhebung und Verarbeitung der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
         auf Basis eines berechtigten Interesses. Die Daten werden nicht an Dritte weitergegeben und nach spätestens 30 Tagen vom Server
         gelöscht.
-
+        <br>
+        <br>
         ES WIRD KEINE HAFTUNG FÜR INHALTE ANDERER WEBSITE-ANBIETER ÜBERNOMMEN, DIE ÜBER DIESE WEBSITE VERLINKT SIND.
+        <br>
         ES GELTEN DIE DATENSCHUTZBESTIMMUNGEN DER JEWEILIGEN WEBSITE.
 
         <br>

@@ -3,11 +3,6 @@
   margin-bottom: 300px;
 }
 
-.devider{
-  display: flex;
-  gap: 5px;
-}
-
 .position h3{
   font-size: 25px;
   padding: 10px;

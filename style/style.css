@@ -94,10 +94,15 @@ a{
   background: var(--text-color);
 }
 
-.inverse img::selection, p::selection, span::selection, a::selection, h1::selection, h2::selection, h3::selection {
+img::selection, p::selection, span::selection, a::selection, h1::selection, h2::selection, h3::selection {
   background-color: var(--text-color);
   color: var(--border-color);
   padding: 2px;
+}
+
+.devider{
+  display: flex;
+  gap: 5px;
 }
 
 @media(max-width: 1500px){

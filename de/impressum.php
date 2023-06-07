@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/blog.css">
+    <link rel="stylesheet" href="../style/impressum.css">
     <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/resume.css">
     <script src="../script/header.js"></script>
-    <script src="../script/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
