@@ -17,42 +17,42 @@
 
   <?php
     include 'header.php';
-   ?>
-
-  <?php
-    $host = "localhost";
-    $database = "JuliusSteckWebserver";
-    $username = "JuliusSteck";
-    $password = "JuliusSteckWebserver#1";
-
     $id = $_GET['id'];
 
-    $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+    require_once '../database_connection.php';
 
-    $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover FROM Blog WHERE EntryID = $id";
-    $statement = $pdo->query($query);
+    try {
+      $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover FROM Blog WHERE EntryID = $id";
+      $statement = $pdo->query($query);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $entryID = $row['EntryID'];
-        $entryTitle = $row['EntryTitle_de'];
-        $entryDescription = $row['EntryDescription_de'];
-        $entryDate = $row['EntryDate'];
-        $entryCover = $row['EntryCover'];
-    } else {
-      $entryID = "0";
-      $entryTitle = "Fortsetzung folgt";
-      $entryDescription = "Bleibt gespannt";
-      $entryDate = "in der Zukunft";
-      $entryCover = "Julius_Anzug_2020.jpg";
+      if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+          $entryID = $row['EntryID'];
+          $entryTitle = $row['EntryTitle_de'];
+          $entryDescription = $row['EntryDescription_de'];
+          $entryDate = $row['EntryDate'];
+          $entryCover = $row['EntryCover'];
+      } else {
+        $entryID = "0";
+        $entryTitle = "Fortsetzung folgt";
+        $entryDescription = "Bleibt gespannt";
+        $entryDate = "in der Zukunft";
+        $entryCover = "Julius_Anzug_2020.jpg";
+      }
+
+      $query = "SELECT MAX(EntryID) AS MaxEntryID FROM Blog";
+      $statement = $pdo->query($query);
+
+      if ($row = $statement->fetch(PDO::FETCH_ASSOC))
+      {
+        $maxEntryID = $row['MaxEntryID'];
+      }
+      $statement = null;
+    } catch (PDOException $e) {
+    echo "An error occurred: " . $e->getMessage();
+    exit;
     }
 
-    $query = "SELECT MAX(EntryID) AS MaxEntryID FROM Blog";
-    $statement = $pdo->query($query);
-
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
-      $maxEntryID = $row['MaxEntryID'];
-    }
+    $pdo = null;
    ?>
 
   <section id="blog">

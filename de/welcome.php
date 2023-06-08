@@ -67,7 +67,7 @@
                 $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
             }
             $count = count($entries);
-            $stmt = null;
+            $statement = null;
           } catch (PDOException $e) {
           echo "An error occurred: " . $e->getMessage();
           exit;

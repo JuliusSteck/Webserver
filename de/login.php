@@ -29,7 +29,7 @@
 
   <section id="login" class="login">
     <div class="container">
-      <form id="login-form" action="management.php">
+      <form id="login-form" action="management.php" method="post">
         <label for="username">Username: </label>
         <input type="text" id="username" placeholder="Username" name="username">
         <label for="password">Passwort: <span class="material-symbols-rounded">key </span></label>

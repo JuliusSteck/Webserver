@@ -29,7 +29,7 @@
     </div>
   </section>
 
-  <section id="newsletter">
+  <section id="newsletter" class='newsletter'>
     <div class="container">
       <form id="newsletter-form" action="registration.php" method="post">
         <label for="name">Name: </label>

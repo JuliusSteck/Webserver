@@ -52,30 +52,32 @@
       <div id="layout" class="layout">
 
         <?php
-          $host = "localhost";
-          $database = "JuliusSteckWebserver";
-          $username = "JuliusSteck";
-          $password = "JuliusSteckWebserver#1";
+          require_once '../database_connection.php';
           $search = $_GET['search'];
 
-          $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+          try {
+            $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover FROM Blog WHERE EntryTitle_de LIKE '%$search%' OR EntryDescription_de LIKE '%$search%'";
+            $statement = $pdo->query($query);
 
-          $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover FROM Blog WHERE EntryTitle_de LIKE '%$search%' OR EntryDescription_de LIKE '%$search%'";
-          $statement = $pdo->query($query);
+            $entries = array();
 
-          $entries = array();
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                $entryID = $row['EntryID'];
+                $entryTitle = $row['EntryTitle_de'];
+                $entryDate = $row['EntryDate'];
+                $entryCover = $row['EntryCover'];
+                $Category = $row['Category'];
 
-          while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-              $entryID = $row['EntryID'];
-              $entryTitle = $row['EntryTitle_de'];
-              $entryDate = $row['EntryDate'];
-              $entryCover = $row['EntryCover'];
-              $Category = $row['Category'];
-
-              $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
+                $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
+            }  
+            $count = count($entries);
+            $statement = null;
+          } catch (PDOException $e) {
+          echo "An error occurred: " . $e->getMessage();
+          exit;
           }
 
-          $count = count($entries);
+          $pdo = null;
 
           for($j = 1; $j < 5; $j++){
             echo "<div class='flex' id='column_$j'>";
