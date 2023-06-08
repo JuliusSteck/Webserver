@@ -27,5 +27,5 @@
 
   $pdo = null;
 
-  header("Location: welcome.php");
+  header("Location: success.php");
 ?>
