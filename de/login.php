@@ -19,7 +19,7 @@
   <?php
     include 'header.php';
 
-    if (isset($_COOKIE['username'] && isset($_COOKIE['password'])) {
+    if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
     header("Location: management.php");
     }
   ?>
