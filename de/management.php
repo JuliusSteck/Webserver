@@ -37,7 +37,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        if (isset($_COOKIE['username'] && isset($_COOKIE['password'])) {
+        if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
           $username = $_COOKIE['username'];
           $password = $_COOKIE['password'];
         }
