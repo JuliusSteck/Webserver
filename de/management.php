@@ -44,6 +44,9 @@
 
           $statement->bindParam(':username', $username, PDO::PARAM_STR);
           $statement->bindParam(':password', $password, PDO::PARAM_STR);
+
+          echo $query;
+          echo $statement;
           $statement = $pdo->query($query);
 
           if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
