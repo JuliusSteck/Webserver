@@ -36,6 +36,12 @@
 
         $username = $_POST['username'];
         $password = $_POST['password'];
+
+        if (isset($_COOKIE['username'] && isset($_COOKIE['password'])) {
+          $username = $_COOKIE['username'];
+          $password = $_COOKIE['password'];
+        }
+
         $login = false;
 
         try {
@@ -61,6 +67,8 @@
 
         if($login){
           echo "Hallo $username";
+          setcookie('username', $username, time() + 3600);
+          setcookie('password', $password, time() + 3600);
         }
        ?>
     </div>
