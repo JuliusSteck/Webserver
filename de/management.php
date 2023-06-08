@@ -39,7 +39,7 @@
         $login = false;
 
         try {
-          $query = "SELECT username FROM users WHERE username = :username and password = :password)";
+          $query = "SELECT * FROM users WHERE username = :username AND password = PASSWORD(:password))";
           $statement = $pdo->prepare($query);
 
           $statement->bindParam(':username', $username, PDO::PARAM_STR);
@@ -57,7 +57,6 @@
         }
 
         $pdo = null;
-
 
         if($login){
           echo "Hallo $username";
