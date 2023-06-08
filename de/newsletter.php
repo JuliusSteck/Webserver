@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/podcast.css">
+    <link rel="stylesheet" href="../style/newsletter.css">
     <link rel="stylesheet" href="../style/welcome.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>

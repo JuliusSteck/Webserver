@@ -1,0 +1,72 @@
+#newsletter{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.newsletter input{
+  background: none;
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+  padding: 5px;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: 'Inconsolata', sans-serif;
+  width: 200px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.newsletter input::placeholder{
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: 'Inconsolata', sans-serif;
+  opacity: 1;
+}
+
+.newsletter input:focus{
+  outline: none;
+}
+
+.newsletter input:focus::placeholder{
+  opacity: 0.1;
+}
+
+.newsletter button{
+  background: none;
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+  padding: 5px;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: 'Inconsolata', sans-serif;
+  width: 214px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.newsletter button:hover{
+  background: var(--text-color);
+  color: var(--border-color);
+  cursor: pointer;
+}
+
+@media(max-width: 1200px){
+  #login{
+    margin-top: 50px;
+  }
+
+  .newsletter form
+  {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+}
+
+@media(max-width: 800px){
+  #login{
+    margin-top: 30px;
+  }
+}
