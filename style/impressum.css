@@ -2,3 +2,15 @@
   margin-top: 100px;
   margin-bottom: 100px;
 }
+
+@media(max-width: 1200px){
+  #impressum{
+    margin-top: 50px;
+  }
+}
+
+@media(max-width: 800px){
+  #impressum{
+    margin-top: 30px;
+  }
+}

@@ -69,11 +69,4 @@
   #login{
     margin-top: 30px;
   }
-
-  .login form
-  {
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content
-  }
 }

@@ -134,10 +134,6 @@ label[for="dropdown"] span{
   .layout{
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .filter ul{
-    gap: 5px;
-  }
 }
 
 @media(max-width: 800px){
@@ -165,5 +161,9 @@ label[for="dropdown"] span{
   .element_background{
     visibility: visible;
     opacity: 0.7;
+  }
+
+  .filter ul{
+    gap: 5px;
   }
 }

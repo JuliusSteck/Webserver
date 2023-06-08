@@ -4,13 +4,13 @@
 }
 
 @media(max-width: 1200px){
-  #resume{
+  #data_protection{
     margin-top: 50px;
   }
 }
 
 @media(max-width: 800px){
-  #resume{
+  #data_protection{
     margin-top: 30px;
   }
 }
