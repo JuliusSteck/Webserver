@@ -50,7 +50,7 @@
       <div id="layout" class="layout">
 
         <?php
-          require_once '../database_connect.php';
+          require_once '../database_connection.php';
 
           try {
             $query = "SELECT EntryID, EntryTitle_de, EntryDate, EntryCover, Category FROM Blog";
