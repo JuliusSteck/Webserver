@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang='de'>
 <head>
     <title>Julius Steck</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" >
+    <meta http-equiv='content-type' content="text/html; charset=utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/icon.png">
     <link rel="stylesheet" href="../style/style.css">
@@ -22,7 +22,7 @@
     include 'header.php';
    ?>
 
-  <section id="caption">
+  <section id='caption'>
     <div class="container">
         <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
     </div>
