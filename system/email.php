@@ -15,7 +15,7 @@
         $SubscriberEmail = $row['email'];
         $SubscriberDate = $row['subscribed_date'];
 
-        $subsrcibers[] = array($subscriberID, $subscriberName, $Subscriberate);
+        $subsrcibers[] = array($subscriberID, $subscriberName, $SubscriberDate);
     }
     $statement = null;
 
