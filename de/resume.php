@@ -173,7 +173,6 @@
             <li>Students' Life e.V.</li>
             <li>Studentischer Börsenverein e.V.</li>
             <li>Diverses politisches Engagement</li>
-            <li>CSS</li>
           </ul>
         </div>
       </div>

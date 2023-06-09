@@ -205,7 +205,7 @@ label[for="menu"] span{
   }
 }
 
-.inverse img::selection, .inverse p::selection,.inverse span::selection,.inverse a::selection,.inverse h1::selection,.inverse h2::selection,.inverse h3::selection {
+.inverse img::selection, .inverse p::selection,.inverse span::selection,.inverse a::selection,.inverse h1::selection,.inverse h2::selection,.inverse h3::selection,.inverse h4::selection,.inverse li::selection {
   background-color: var(--border-color);
   color: var(--text-color);
 }
