@@ -10,11 +10,12 @@
     $subscribers = array();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $subscriberID = $row['ID'];
+        $subscriberID = $row['id'];
         $subscriberName = $row['name'];
         $SubscriberEmail = $row['email'];
+        $SubscriberDate = $row['subscribed_date'];
 
-        $subsrcibers[] = array($subscriberID, $subscriberName, $SubscriberEmail);
+        $subsrcibers[] = array($subscriberID, $subscriberName, $Subscriberate);
     }
     $statement = null;
 

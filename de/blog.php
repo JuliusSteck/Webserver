@@ -79,21 +79,22 @@
         ?>
       </div>
 
-      <div class="navigation">
-        <div id="filter" class="filter">
-          <input type="checkbox" id="dropdown">
-          <label for="dropdown">
-            <span class="material-symbols-rounded">arrow_drop_down</span>
-          </label>
+      <div id="filter" class="filter">
+        <input type="checkbox" id="dropdown">
+        <label for="dropdown">
+          <span class="material-symbols-rounded">arrow_drop_down</span>
+        </label>
 
-          <ul>
-            <li>Navigation sortiert nach:</li>
-            <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
-            <li><button type="button" id="button_arbeit" class="">In der Kategorie</button></li>
-            <li><button type="button" id="button_freizeit" class="">In der Geschichte</button></li>
-            <li><button type="button" id="button_ankuendigungen" class="">In den Suchergebnissen</button></li>
-          </ul>
-        </div>
+        <ul>
+          <li>Navigation sortiert nach:</li>
+          <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
+          <li><button type="button" id="button_arbeit" class="">In der Kategorie</button></li>
+          <li><button type="button" id="button_freizeit" class="">In der Geschichte</button></li>
+          <li><button type="button" id="button_ankuendigungen" class="">In den Suchergebnissen</button></li>
+        </ul>
+      </div>
+
+      <div class="navigation">
 
         <?php
           if($entryID < $maxEntryID)
