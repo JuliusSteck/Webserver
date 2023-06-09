@@ -36,26 +36,29 @@
         <div class="line"></div>
       </div>
 
-      <div class="position">
-        <h4>Junior Consultant</h4>
-        <p> Februar 2023 - heute </p>
-        <a href="https://www.achtzig20.de"> 8020.eco</a>
-        <ul>
-          <li>Volkswagen - AG EG-3 Data Governance</li>
-          <li>Audi AG -  PX-I Company IT NEV CO China</li>
-          <li>Volkswagen AG - EKEK-4 Sound Design</li>
-        </ul>
-      </div>
+      <div class='chapter'>
+        <div class="position">
+          <h4>Junior Consultant</h4>
+          <p> Februar 2023 - heute </p>
+          <a href="https://www.achtzig20.de"> 8020.eco</a>
+          <ul>
+            <li>Volkswagen - AG EG-3 Data Governance</li>
+            <li>Audi AG -  PX-I Company IT NEV CO China</li>
+            <li>Volkswagen AG - EKEK-4 Sound Design</li>
+          </ul>
+        </div>
 
-      <div class="position">
-        <h4>Dualer Student</h4>
-        <p> September 2019 - Juli 2022</p>
-        <a href="https://www.audi.de"> Audi AG</a>
-        <ul>
-          <li>Volkswagen - AG EG-3 Data Governance</li>
-          <li>Audi AG -  PX-I Company IT NEV CO China</li>
-          <li>Volkswagen AG - EKEK-4 Sound Design</li>
-        </ul>
+        <div class="position">
+          <h4>Dualer Student</h4>
+          <p> September 2019 - Juli 2022</p>
+          <a href="https://www.audi.de"> Audi AG</a>
+          <ul>
+            <li>I/VX-2 Website und Ponfigurator</li>
+            <li>I/PX-I Projektmanagement PPE Copmany IT NEV CO China</li>
+            <li>I/GG-S2 Unternehmensstrategie Digitalisierung</li>
+            <li>I/BS-N Digitalisierung der Beschaffung und Data Analytics</li>
+          </ul>
+        </div>
       </div>
 
       <div class="devider">
@@ -64,52 +67,54 @@
         <div class="line"></div>
       </div>
 
-      <div class="position">
-        <h4>Data Science</h4>
-        <p> Februar 2023 - heute </p>
-        <a href="https://www.thi.de"> Technische Hochschule Ingolstadt</a>
-        <ul>
-          <li>Volkswagen - AG EG-3 Data Governance</li>
-          <li>Audi AG -  PX-I Company IT NEV CO China</li>
-          <li>Volkswagen AG - EKEK-4 Sound Design</li>
-        </ul>
+      <div class='chapter'>
+        <div class="position">
+          <h4>Data Science</h4>
+          <p> Februar 2023 - heute </p>
+          <a href="https://www.thi.de"> Technische Hochschule Ingolstadt</a>
+          <ul>
+            <li>Notenschnitt: 1.0</li>
+          </ul>
+        </div>
+
+        <div class="position">
+          <h4>Wirtschaftsinformatik</h4>
+          <p> September 2019 - Juli 2022</p>
+          <a href="https://www.thi.de">Technische Hochschule Ingolstadt</a>
+          <ul>
+            <li>Notenschnitt: 2.0</li>
+          </ul>
+        </div>
+
+      <!--  <div class="position">
+          <h4>Mathematik</h4>
+          <p> September 2023 - </p>
+          <a href="https://www.tum.de"> Technische Universität München</a>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div> -->
       </div>
 
-      <div class="position">
-        <h4>Wirtschaftsinformatik</h4>
-        <p> September 2019 - Juli 2022</p>
-        <a href="https://www.thi.de">Technische Hochschule Ingolstadt</a>
-        <ul>
-          <li>Volkswagen - AG EG-3 Data Governance</li>
-          <li>Audi AG -  PX-I Company IT NEV CO China</li>
-          <li>Volkswagen AG - EKEK-4 Sound Design</li>
-        </ul>
-      </div>
-
-    <!--  <div class="position">
-        <h4>Mathematik</h4>
-        <p> September 2023 - </p>
-        <a href="https://www.tum.de"> Technische Universität München</a>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div> -->
       <div class="devider">
         <div class="line"></div>
         <h3>Projekte</h3>
         <div class="line"></div>
       </div>
 
-      <div class="position">
-        <h4>Sprachen</h4>
-        <ul>
-          <li>Deutsch - AG EG-3 Data Governance</li>
-          <li>Englisch -  PX-I Company IT NEV CO China</li>
-          <li>Französisch - EKEK-4 Sound Design</li>
-          <li>Chinesisch - EKEK-4 Sound Design</li>
-        </ul>
+      <div class='chapter'>
+        <div class="position">
+          <h4>Entwicklung Respect@THI App</h4>
+          <p> September 2020 - Mai 2022 </p>
+          <a href="https://www.sueddeutsche.de/bayern/ingolstadt-diskriminierung-app-hochschule-thi-1.5585689"> Süddeutsche Zeitung</a>
+          <ul>
+            <li>Design der Funktionen</li>
+            <li>Programmierung der Nutzeroberfläche</li>
+            <li>Abstimmung mit Stakeholdern</li>
+          </ul>
+        </div>
       </div>
 
       <div class="devider">
@@ -118,27 +123,31 @@
         <div class="line"></div>
       </div>
 
-      <div class="position">
-        <h4>Sprachen</h4>
-        <ul>
-          <li>Deutsch - AG EG-3 Data Governance</li>
-          <li>Englisch -  PX-I Company IT NEV CO China</li>
-          <li>Französisch - EKEK-4 Sound Design</li>
-          <li>Chinesisch - EKEK-4 Sound Design</li>
-        </ul>
-      </div>
+      <div class='chapter'>
+        <div class="position">
+          <h4>Sprachen</h4>
+          <ul>
+            <li>Deutsch - AG EG-3 Data Governance</li>
+            <li>Englisch -  PX-I Company IT NEV CO China</li>
+            <li>Französisch - EKEK-4 Sound Design</li>
+            <li>Chinesisch - EKEK-4 Sound Design</li>
+          </ul>
+        </div>
 
-      <div class="position">
-        <h4>Programmierung</h4>
-        <ul>
-          <li>Python</li>
-          <li>Java</li>
-          <li>JavaScript</li>
-          <li>SQL</li>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
-      </div>
+        <div class="position">
+          <h4>Programmierung</h4>
+          <ul>
+            <li>Python</li>
+            <li>Mojo</li>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>SQL</li>
+            <li>HTML</li>
+            <li>PHP</li>
+            <li>CSS</li>
+          </ul>
+        </div>
+      <div>
 
       <div class="devider">
         <div class="line"></div>
@@ -146,26 +155,27 @@
         <div class="line"></div>
       </div>
 
-      <div class="position">
-        <h4>Sprachen</h4>
-        <ul>
-          <li>Deutsch - AG EG-3 Data Governance</li>
-          <li>Englisch -  PX-I Company IT NEV CO China</li>
-          <li>Französisch - EKEK-4 Sound Design</li>
-          <li>Chinesisch - EKEK-4 Sound Design</li>
-        </ul>
-      </div>
+      <div class='chapter'>
+        <div class="position">
+          <h4>Hobbies</h4>
+          <ul>
+            <li>Kraftsport</li>
+            <li>Segeln</li>
+            <li>Klavier</li>
+          </ul>
+        </div>
 
-      <div class="position">
-        <h4>Engagement</h4>
-        <ul>
-          <li>Python</li>
-          <li>Java</li>
-          <li>JavaScript</li>
-          <li>SQL</li>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
+        <div class="position">
+          <h4>Engagement</h4>
+          <ul>
+            <li>Jugendarbeit Evangelische Gemeinde Brunnenreuth</li>
+            <li>Neuland Ingolstadt e.V.</li>
+            <li>Students' Life e.V.</li>
+            <li>Studentischer Börsenverein e.V.</li>
+            <li>Diverses politisches Engagement</li>
+            <li>CSS</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

@@ -3,6 +3,10 @@
   margin-bottom: 100px;
 }
 
+.chapter{
+  display: flex;
+}
+
 .position h3{
   font-size: 25px;
   padding: 10px;
@@ -35,6 +39,7 @@
 
 @media(max-width: 800px){
   #resume{
+    display: block;
     margin-top: 30px;
   }
 }
