@@ -147,7 +147,7 @@
             <li>CSS</li>
           </ul>
         </div>
-      <div>
+      </div>
 
       <div class="devider">
         <div class="line"></div>

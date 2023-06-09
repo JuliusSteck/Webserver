@@ -5,6 +5,7 @@
 
 .chapter{
   display: flex;
+  margin-bottom: 30px;
 }
 
 .position h3{
@@ -28,7 +29,7 @@
 .position{
   margin-left: 10px;
   margin-top: 10px;
-  margin-bottom: 30px;
+  gap: 20px;
 }
 
 @media(max-width: 1200px){
