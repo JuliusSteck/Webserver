@@ -35,15 +35,18 @@
 
 @media(max-width: 1200px){
   #resume{
+    margin-top: 50px;
+  }
+
+  .chapter{
     display: block;
     width: 100%;
-    margin-top: 50px;
   }
 }
 
 @media(max-width: 800px){
   #resume{
-    
+
     margin-top: 30px;
   }
 }
