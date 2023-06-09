@@ -70,7 +70,7 @@
           setcookie('password', $password, time() + 3600);
 
           echo
-          '<form action="email.php" method="POST">
+          '<form action="../system/email.php" method="POST">
               <label for="headline">Betreff:</label>
               <input type="text" name="headline" id="headline">
 

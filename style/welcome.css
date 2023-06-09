@@ -141,9 +141,10 @@ label[for="dropdown"] span{
     margin-top: 30px;
   }
 
-  #blog ul{
+  .filter ul{
     display: none;
     flex-direction: column;
+    gap: 5px;
   }
 
   label[for="dropdown"]{
@@ -161,9 +162,5 @@ label[for="dropdown"] span{
   .element_background{
     visibility: visible;
     opacity: 0.7;
-  }
-
-  .filter ul{
-    gap: 5px;
   }
 }
