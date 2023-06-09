@@ -40,6 +40,9 @@
 
   .chapter{
     display: block;
+  }
+
+  .position{
     width: 100%;
   }
 }
