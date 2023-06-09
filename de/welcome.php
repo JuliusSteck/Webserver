@@ -87,25 +87,27 @@
                 $entryCover = $entries[$count - ($i + 1)][3];
                 $Category = $entries[$count - ($i + 1)][4];
 
-                echo "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>";
-                  echo "<div class='element'>";
-                    echo "<img class='element_image' src='../images/$entryCover' alt='Entry Cover'>";
-                    echo "<div class='element_background'>";
-                      echo "<div class='element_description'>";
-                        echo "<h3>$entryTitle</h3>";
-                        echo "<p> $entryDate</p>";
-                      echo "</div>";
-                    echo "</div>";
-                  echo "</div>";
-                echo "</a>";
+                echo
+                "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>
+                  <div class='element'>
+                    <img class='element_image' src='../images/$entryCover' alt='Entry Cover'>
+                    <div class='element_background'>
+                      <div class='element_description'>
+                        <h3>$entryTitle</h3>
+                        <p> $entryDate</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>";
               }
             }
 
             echo "</div>";
           }
 
-          echo "<div id='count' count='$count'>";
-          echo "</div>";
+          echo
+          "<div id='count' count='$count'>
+         </div>";
         ?>
 
         <!--

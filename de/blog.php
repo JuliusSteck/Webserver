@@ -59,32 +59,49 @@
     <div class="container">
       <div>
         <?php
-          echo "<div class='title'>";
-            echo "<h1>$entryTitle</h1>";
-            echo "<h3> $entryDate</h3>";
-          echo "</div>";
+          echo
+          "<div class='title'>
+            <h1>$entryTitle</h1>
+            <h3> $entryDate</h3>
+          </div>";
           ?>
       </div>
 
       <div id="layout" class="layout">
         <?php
-          echo "<div class='flex' id='column_1'>";
-            echo "<p> $entryDescription</p>";
-          echo "</div>";
-          echo "<div class='flex' id='column_2'>";
-            echo "<img class='' src='../images/$entryCover' alt='Entry Cover'>";
-          echo "</div>";
+          echo
+          "<div class='flex' id='column_1'>
+            <p> $entryDescription</p>
+          </div>
+          <div class='flex' id='column_2'>
+            <img class='' src='../images/$entryCover' alt='Entry Cover'>
+           </div>";
         ?>
       </div>
 
       <div class="navigation">
+        <div id="filter" class="filter">
+          <input type="checkbox" id="dropdown">
+          <label for="dropdown">
+            <span class="material-symbols-rounded">arrow_drop_down</span>
+          </label>
+
+          <ul>
+            <li>Navigation sortiert nach:</li>
+            <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
+            <li><button type="button" id="button_arbeit" class="">In der Kategorie</button></li>
+            <li><button type="button" id="button_freizeit" class="">In der Geschichte</button></li>
+            <li><button type="button" id="button_ankuendigungen" class="">In den Suchergebnissen</button></li>
+          </ul>
+        </div>
 
         <?php
           if($entryID < $maxEntryID)
           {
             $nextID = $entryID + 1;
-            echo "<a href='blog.php?id=$nextID'>";
-            echo '<div class="navigation_link">';
+            echo
+            "<a href='blog.php?id=$nextID'>
+              <div class='navigation_link'>";
           }
           else{
             echo '<div class="navigation_link disabled">';
@@ -110,8 +127,9 @@
         <?php
           if($entryID > 1) {
             $previousID = $entryID - 1;
-            echo "<a href='blog.php?id=$previousID'>";
-            echo "  <div class='navigation_link'>";
+            echo
+            "<a href='blog.php?id=$previousID'>
+              <div class='navigation_link'>";
           }
           else{
             echo "<div class='navigation_link disabled'>";

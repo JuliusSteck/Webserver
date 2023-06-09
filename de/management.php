@@ -66,9 +66,22 @@
         $pdo = null;
 
         if($login){
-          echo "Hallo $username";
           setcookie('username', $username, time() + 3600);
           setcookie('password', $password, time() + 3600);
+
+          echo
+          '<form action="email.php" method="POST">
+              <label for="headline">Betreff:</label>
+              <input type="text" name="headline" id="headline">
+
+              <label for="message">Nachricht:</label>
+              <textarea name="message" id="message"></textarea>
+
+              <input type="submit" value="Submit">
+          </form>';
+
+        }else{
+          header("Location: login.php");
         }
        ?>
     </div>
