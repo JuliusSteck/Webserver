@@ -31,7 +31,7 @@
           $entryDescription = $row['EntryDescription_de'];
           $entryDate = $row['EntryDate'];
           $entryCover = $row['EntryCover'];
-          $entryStory = $row['Story'];
+          $entryStory = $row['story'];
           $entryCategory = $row['Category'];
       } else {
         $entryID = "0";
@@ -62,7 +62,7 @@
         $previousID = '0';
       }
 
-      $query = "SELECT * FROM Blog WHERE Category = $entryCategory AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $query = "SELECT EntryID FROM Blog WHERE Category = $entryCategory AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
       $statement = $pdo->query($query);
 
       if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -72,7 +72,7 @@
         $nextCategoryID = "0";
       }
 
-      $query = "SELECT * FROM Blog WHERE Category = $entryCategory AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $query = "SELECT EntryID FROM Blog WHERE Category = $entryCategory AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
       $statement = $pdo->query($query);
 
       if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -82,7 +82,7 @@
         $previousCategoryID = "0";
       }
 
-      $query = "SELECT * FROM Blog WHERE story = $entryStory AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $query = "SELECT EntryID FROM Blog WHERE story = $entryStory AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
       $statement = $pdo->query($query);
 
       if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -92,7 +92,7 @@
         $nextStoryID = "0";
       }
 
-      $query = "SELECT * FROM Blog WHERE story = $entryStory AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $query = "SELECT EntryID FROM Blog WHERE story = $entryStory AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
       $statement = $pdo->query($query);
 
       if ($row = $statement->fetch(PDO::FETCH_ASSOC))
