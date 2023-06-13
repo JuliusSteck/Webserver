@@ -22,7 +22,7 @@
     require_once '../database_connection.php';
 
     try {
-      $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover, Category, Story FROM Blog WHERE EntryID = $id";
+      $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover, Category, story FROM Blog WHERE EntryID = $id";
       $statement = $pdo->query($query);
 
       if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
@@ -62,7 +62,7 @@
         $previousID = '0';
       }
 
-      $query = "SELECT * FROM Blog WHERE category = $entryCategory AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $query = "SELECT * FROM Blog WHERE Category = $entryCategory AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
       $statement = $pdo->query($query);
 
       if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -72,7 +72,7 @@
         $nextCategoryID = "0";
       }
 
-      $query = "SELECT * FROM Blog WHERE category = $entryCategory AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $query = "SELECT * FROM Blog WHERE Category = $entryCategory AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
       $statement = $pdo->query($query);
 
       if ($row = $statement->fetch(PDO::FETCH_ASSOC))
