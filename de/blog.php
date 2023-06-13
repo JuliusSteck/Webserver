@@ -34,7 +34,7 @@
           $entryStory = $row['story'];
           $entryCategory = $row['Category'];
       } else {
-        $entryID = "0";
+        $entryID = 0;
         $entryTitle = "Fortsetzung folgt";
         $entryDescription = "Bleibt gespannt";
         $entryDate = "in der Zukunft";
@@ -52,14 +52,14 @@
         if($maxEntryID > $entryID){
           $nextID = $entryID + 1;
         } else {
-          $nextID = '0';
+          $nextID = 0;
         }
       }
 
       if($entryID > 1){
         $previousID = $entryID - 1;
       } else {
-        $previousID = '0';
+        $previousID = 0;
       }
 
       $query = "SELECT EntryID FROM Blog WHERE Category = '$entryCategory' AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
@@ -69,7 +69,7 @@
       {
         $nextCategoryID = $row['EntryID'];
       } else {
-        $nextCategoryID = "0";
+        $nextCategoryID = 0;
       }
 
       $query = "SELECT EntryID FROM Blog WHERE Category = '$entryCategory' AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
@@ -79,7 +79,7 @@
       {
         $previousCategoryID = $row['EntryID'];
       } else {
-        $previousCategoryID = "0";
+        $previousCategoryID = 0;
       }
 
       $query = "SELECT EntryID FROM Blog WHERE story = '$entryStory' AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
@@ -89,7 +89,7 @@
       {
         $nextStoryID = $row['EntryID'];
       } else {
-        $nextStoryID = "0";
+        $nextStoryID = 0;
       }
 
       $query = "SELECT EntryID FROM Blog WHERE story = '$entryStory' AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
@@ -99,7 +99,7 @@
       {
         $previousStoryID = $row['EntryID'];
       } else {
-        $previousStoryID = "0";
+        $previousStoryID = 0;
       }
 
       $statement = null;
@@ -182,8 +182,8 @@
             if($previousID > 0)
             {
               echo
-              "<a href='blog.php?id=$previoustID'>
-                <div class='navigation_link' nextID='$previousID' nextCategoryID='$previousCategoryID' nextStoryID='$previousStoryID'>
+              "<a href='blog.php?id=$previousID'>
+                <div class='navigation_link' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
                 <span class='material-symbols-rounded'>arrow_back_ios</span>
                 </div>
               </a>";
@@ -191,8 +191,8 @@
             else{
               echo
               "<a href=''>
-                <div class='navigation_link disabled' nextID='$previousID' nextCategoryID='$previousCategoryID' nextStoryID='$previousStoryID'>
-                <span class='material-symbols-rounded'>arrow_back_ios</span>
+                <div class='navigation_link disabled' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
+                <span class='material-symbols-rounded'>arrow_forward_ios</span>
                 </div>
               </a>";
             }
