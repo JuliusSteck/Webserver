@@ -25,13 +25,13 @@
 
   <section id="caption">
     <div class="container">
-        <h1>Erfolgreich <span  class="flexible_caption">angemeldet</span><span id="cursor" class="cursor">_</span> </h1>
+        <h1>Erfolgreich <span  class="flexible_caption">durchgeführt</span><span id="cursor" class="cursor">_</span> </h1>
     </div>
   </section>
 
   <section id="success">
     <div class="container">
-      <h3>Vielen Dank für dein Interesse</h3>
+      <h3>Vielen Dank für dein Interesse an meinen Beiträgen, sieh dich doch noch etwas um.</h3>
     </div>
   </section>
 

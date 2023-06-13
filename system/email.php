@@ -20,8 +20,7 @@
     $statement = null;
 
     foreach ($subscribers as $subscriber) {
-        // Send email
-        $content = "Hi $subscriber[1], /n $message, /n Deabbonieren: https://julius-steck.de/Webserver/system/unsubscribe?id=$subscriber[0].php";
+        $content = "Hi $subscriber[1], \n $message, \n Deabbonieren: https://julius-steck.de/Webserver/system/unsubscribe.php?id=$subscriber[0].php";
         mail($subscriber[2], $headline, $content);
     }
 

@@ -22,7 +22,7 @@
     require_once '../database_connection.php';
 
     try {
-      $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover FROM Blog WHERE EntryID = $id";
+      $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover, Category, Story FROM Blog WHERE EntryID = $id";
       $statement = $pdo->query($query);
 
       if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
@@ -31,12 +31,16 @@
           $entryDescription = $row['EntryDescription_de'];
           $entryDate = $row['EntryDate'];
           $entryCover = $row['EntryCover'];
+          $entryStory = $row['Story'];
+          $entryCategory = $row['Category'];
       } else {
         $entryID = "0";
         $entryTitle = "Fortsetzung folgt";
         $entryDescription = "Bleibt gespannt";
         $entryDate = "in der Zukunft";
         $entryCover = "Julius_Anzug_2020.jpg";
+        $entryStory = $row['-'];
+        $entryCategory = $row['-'];
       }
 
       $query = "SELECT MAX(EntryID) AS MaxEntryID FROM Blog";
@@ -45,7 +49,59 @@
       if ($row = $statement->fetch(PDO::FETCH_ASSOC))
       {
         $maxEntryID = $row['MaxEntryID'];
+        if($maxEntryID > $entryID){
+          $nextID = $entryID + 1;
+        } else {
+          $nextID = '0';
+        }
       }
+
+      if($entryID > 2){
+        $previousID = $entryID - 1;
+      } else {
+        $previousID = '0';
+      }
+
+      $query = "SELECT * FROM Blog WHERE category = $entryCategory AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $statement = $pdo->query($query);
+
+      if ($row = $statement->fetch(PDO::FETCH_ASSOC))
+      {
+        $nextCategoryID = $row['EntryID'];
+      } else {
+        $nextCategoryID = "0";
+      }
+
+      $query = "SELECT * FROM Blog WHERE category = $entryCategory AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $statement = $pdo->query($query);
+
+      if ($row = $statement->fetch(PDO::FETCH_ASSOC))
+      {
+        $previousCategoryID = $row['EntryID'];
+      } else {
+        $previousCategoryID = "0";
+      }
+
+      $query = "SELECT * FROM Blog WHERE story = $entryStory AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $statement = $pdo->query($query);
+
+      if ($row = $statement->fetch(PDO::FETCH_ASSOC))
+      {
+        $nextStoryID = $row['EntryID'];
+      } else {
+        $nextStoryID = "0";
+      }
+
+      $query = "SELECT * FROM Blog WHERE story = $entryStory AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+      $statement = $pdo->query($query);
+
+      if ($row = $statement->fetch(PDO::FETCH_ASSOC))
+      {
+        $previousStoryID = $row['EntryID'];
+      } else {
+        $previousStoryID = "0";
+      }
+
       $statement = null;
     } catch (PDOException $e) {
     echo "An error occurred: " . $e->getMessage();
@@ -90,19 +146,18 @@
           <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
           <li><button type="button" id="button_arbeit" class="">In der Kategorie</button></li>
           <li><button type="button" id="button_freizeit" class="">In der Geschichte</button></li>
-          <li><button type="button" id="button_ankuendigungen" class="">In den Suchergebnissen</button></li>
+        <!--  <li><button type="button" id="button_ankuendigungen" class="">In den Suchergebnissen</button></li> -->
         </ul>
       </div>
 
       <div class="navigation">
 
         <?php
-          if($entryID < $maxEntryID)
+          if($nextID > 0)
           {
-            $nextID = $entryID + 1;
             echo
             "<a href='blog.php?id=$nextID'>
-              <div class='navigation_link'>";
+              <div class='navigation_link' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>";
           }
           else{
             echo '<div class="navigation_link disabled">';
@@ -126,8 +181,7 @@
           </a>
 
         <?php
-          if($entryID > 1) {
-            $previousID = $entryID - 1;
+          if($previousID > 0) {
             echo
             "<a href='blog.php?id=$previousID'>
               <div class='navigation_link'>";
