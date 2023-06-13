@@ -56,7 +56,7 @@
         }
       }
 
-      if($entryID > 2){
+      if($entryID > 1){
         $previousID = $entryID - 1;
       } else {
         $previousID = '0';
@@ -142,7 +142,7 @@
         </label>
 
         <ul>
-          <li>Navigation sortiert nach:</li>
+          <li><h3>Navigation sortiert nach:<h3></li>
           <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
           <li><button type="button" id="button_arbeit" class="">In der Kategorie</button></li>
           <li><button type="button" id="button_freizeit" class="">In der Geschichte</button></li>
@@ -157,20 +157,18 @@
           {
             echo
             "<a href='blog.php?id=$nextID'>
-              <div class='navigation_link' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>";
+              <div class='navigation_link' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
+              <span class='material-symbols-rounded'>arrow_back_ios</span>
+              </div>
+            </a>";
           }
           else{
-            echo '<div class="navigation_link disabled">';
-          }
-        ?>
-
-          <span class="material-symbols-rounded">arrow_back_ios</span>
-
-        <?php
-          echo "</div>";
-          if($entryID < $maxEntryID)
-          {
-            echo "</a>";
+            echo
+            "<a href=''>
+              <div class='navigation_link disabled' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
+              <span class='material-symbols-rounded'>arrow_back_ios</span>
+              </div>
+            </a>";
           }
         ?>
 
@@ -180,26 +178,25 @@
             </div>
           </a>
 
-        <?php
-          if($previousID > 0) {
-            echo
-            "<a href='blog.php?id=$previousID'>
-              <div class='navigation_link'>";
-          }
-          else{
-            echo "<div class='navigation_link disabled'>";
-          }
-        ?>
-
-          <span class="material-symbols-rounded">arrow_forward_ios</span>
-
-        <?php
-          echo "</div>";
-          if($entryID > 1) {
-            $previousID = $entryID - 1;
-            echo "</a>";
-          }
-        ?>
+          <?php
+            if($previousID > 0)
+            {
+              echo
+              "<a href='blog.php?id=$previoustID'>
+                <div class='navigation_link' nextID='$previousID' nextCategoryID='$previousCategoryID' nextStoryID='$previousStoryID'>
+                <span class='material-symbols-rounded'>arrow_back_ios</span>
+                </div>
+              </a>";
+            }
+            else{
+              echo
+              "<a href=''>
+                <div class='navigation_link disabled' nextID='$previousID' nextCategoryID='$previousCategoryID' nextStoryID='$previousStoryID'>
+                <span class='material-symbols-rounded'>arrow_back_ios</span>
+                </div>
+              </a>";
+            }
+          ?>
 
       </div>
     </div>
