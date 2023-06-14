@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../style/blog.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
+    <script src="../script/navigation.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
@@ -144,8 +145,8 @@
         <ul>
           <li><h3>Navigation sortiert nach:<h3></li>
           <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
-          <li><button type="button" id="button_arbeit" class="">In der Kategorie</button></li>
-          <li><button type="button" id="button_freizeit" class="">In der Geschichte</button></li>
+          <li><button type="button" id="button_kategorie" class="">In der Kategorie</button></li>
+          <li><button type="button" id="button_geschichte" class="">In der Geschichte</button></li>
         <!--  <li><button type="button" id="button_ankuendigungen" class="">In den Suchergebnissen</button></li> -->
         </ul>
       </div>
@@ -156,16 +157,16 @@
           if($nextID > 0)
           {
             echo
-            "<a href='blog.php?id=$nextID'>
-              <div class='navigation_link' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
+            "<a href='blog.php?id=$nextID' id='next' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
+              <div class='navigation_link'>
               <span class='material-symbols-rounded'>arrow_back_ios</span>
               </div>
             </a>";
           }
           else{
             echo
-            "<a href=''>
-              <div class='navigation_link disabled' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
+            "<a href='' class='disabled' id='next' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
+              <div class='navigation_link'>
               <span class='material-symbols-rounded'>arrow_back_ios</span>
               </div>
             </a>";
@@ -182,16 +183,16 @@
             if($previousID > 0)
             {
               echo
-              "<a href='blog.php?id=$previousID'>
-                <div class='navigation_link' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
-                <span class='material-symbols-rounded'>arrow_back_ios</span>
+              "<a href='blog.php?id=$previousID' id='previous' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
+                <div class='navigation_link'>
+                <span class='material-symbols-rounded'>arrow_forward_ios</span>
                 </div>
               </a>";
             }
             else{
               echo
-              "<a href=''>
-                <div class='navigation_link disabled' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
+              "<a href='' class='disabled' id='previous' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
+                <div class='navigation_link'>
                 <span class='material-symbols-rounded'>arrow_forward_ios</span>
                 </div>
               </a>";

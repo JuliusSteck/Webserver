@@ -10,3 +10,9 @@ footer ul{
   display: flex;
   flex-direction: column;
 }
+
+.flexlist{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
