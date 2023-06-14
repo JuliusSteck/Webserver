@@ -11,39 +11,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
   buttonAlles.addEventListener("click", function(){
     clear();
-    if(nextLink.nextID != 0){
+    if(nextLink.getAttribute('nextID') != 0){
       nextLink.classList.remove('disabled');
-      nextLink.href = 'blog.php?id=' + nextLink.nextID;
+      nextLink.href = 'blog.php?id=' + nextLink.getAttribute('nextID');
     }
-    if(previousLink.previousID != 0){
+    if(previousLink.getAttribute('previousID') != 0){
       previousLink.classList.remove('disabled');
-      previousLink.href = 'blog.php?id=' + previousLink.previousID;
+      previousLink.href = 'blog.php?id=' + previousLink.getAttribute('previousID');
     }
     styleActive(0);
   });
 
   buttonKategorie.addEventListener("click", function(){
     clear();
-    if(nextLink.nextCategoryID != 0){
+    if(nextLink.getAttribute('nextCategoryID') != 0){
       nextLink.classList.remove('disabled');
-      nextLink.href = 'blog.php?id=' + nextLink.nextCategoryID;
+      nextLink.href = 'blog.php?id=' + nextLink.getAttribute('nextCategoryID');
     }
-    if(previousLink.previousCategoryID != 0){
+    if(previousLink.getAttribute('previousCategoryID') != 0){
       previousLink.classList.remove('disabled');
-      previousLink.href = 'blog.php?id=' + previousLink.previousCategoryID;
+      previousLink.href = 'blog.php?id=' + previousLink.getAttribute('previousCategoryID');
     }
     styleActive(1);
   });
 
   buttonGeschichte.addEventListener("click", function(){
     clear();
-    if(nextLink.nextStoryID != 0){
+    if(nextLink.getAttribute('nextStoryID') != 0){
       nextLink.classList.remove('disabled');
-      nextLink.href = 'blog.php?id=' + nextLink.nextStoryID;
+      nextLink.href = 'blog.php?id=' + nextLink.getAttribute('nextStoryID');
     }
-    if(previousLink.previousStoryID != 0){
+    if(previousLink.getAttribute('previousStoryID') != 0){
       previousLink.classList.remove('disabled');
-      previousLink.href = 'blog.php?id=' + previousLink.previousStoryID;
+      previousLink.href = 'blog.php?id=' + previousLink.getAttribute('previousStoryID');
     }
     styleActive(2);
   });
@@ -57,10 +57,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function styleActive(button){
     buttons.forEach(function(parent){
-      console.log(parent);
       parent.classList.remove("aktiv");
     });
-    console.log(button);
     buttons[button].classList.add("aktiv");
   }
 });
