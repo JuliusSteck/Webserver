@@ -13,5 +13,12 @@ footer ul{
 
 .flexlist{
   display: flex;
-  gap: 20px;
+  gap: 200px;
+}
+
+@media(max-width: 800px){
+  .flexlist{
+    flex-direction: column;
+    gap: 20px;
+  }
 }
