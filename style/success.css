@@ -1,0 +1,17 @@
+#success{
+  margin-top: 100px;
+  margin-bottom: 400px;
+}
+
+@media(max-width: 1200px){
+  #success{
+    margin-top: 50px;
+  }
+
+}
+
+@media(max-width: 800px){
+  #success{
+    margin-top: 30px;
+  }
+}

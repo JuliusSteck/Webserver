@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/podcast.css">
+    <link rel="stylesheet" href="../style/success.css">
     <link rel="stylesheet" href="../style/welcome.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
@@ -31,7 +31,7 @@
 
   <section id="success">
     <div class="container">
-      <h3>Vielen Dank für dein Interesse an meinen Beiträgen, sieh dich doch noch etwas um.</h3>
+
     </div>
   </section>
 

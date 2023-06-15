@@ -27,5 +27,15 @@
 
   $pdo = null;
 
+//  $headers = "From: kontakt@julius-steck.de";
+//  $mailSent = mail($email, "Willkommen zu meinem Newsletter", "Hi $name, \n$message \nViele Grüße \ndein Julius \n\n\nDies ist eine automatisierte Mail, auf Antworten
+//  kann ich nicht reagieren\n<a href='https://julius-steck.de/Webserver/system/unsubscribe.php?id=$subscriber[0]&date=$subscriber[3].php'>Deabbonieren</a>";, $headers);
+
+//  if ($mailSent) {
+//      echo "Email sent successfully.";
+//  } else {
+//      echo "Failed to send email.";
+//  }
+
   header("Location: success.php");
 ?>

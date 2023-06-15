@@ -2,12 +2,14 @@
   require_once '../database_connection.php';
 
   $id = $_GET['id'];
+  $date = $_GET['date']
 
   try {
-    $query = "DELETE FROM newsletter WHERE id = :id";
+    $query = "DELETE FROM newsletter WHERE id = :id AND date = :date";
     $statement = $pdo->prepare($query);
 
     $statement->bindParam(':id', $id, PDO::PARAM_STR);
+    $statement->bindParam(':date', $date, PDO::PARAM_STR);
 
     $statement->execute();
 

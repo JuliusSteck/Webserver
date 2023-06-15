@@ -1,36 +1,48 @@
 <?php
-  require_once '../database_connection.php';
+    require_once '../database_connection.php';
 
-  $headline = $_POST['headline'];
-  $message = $_POST['message'];
+    $headline = $_POST['headline'];
+    $message = $_POST['message'];
 
-  try {
-    $query = "SELECT * FROM newsletter";
-    $statement = $pdo->query($query);
-    $subscribers = array();
+    try {
+        $query = "SELECT * FROM newsletter";
+        $statement = $pdo->query($query);
+        $subscribers = array();
 
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $subscriberID = $row['id'];
-        $subscriberName = $row['name'];
-        $SubscriberEmail = $row['email'];
-        $SubscriberDate = $row['subscribed_date'];
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $subscriberID = $row['id'];
+            $subscriberName = $row['name'];
+            $SubscriberEmail = $row['email'];
+            $SubscriberDate = $row['subscribed_date'];
 
-        $subsrcibers[] = array($subscriberID, $subscriberName, $SubscriberEmail, $SubscriberDate);
+            $subscribers[] = array($subscriberID, $subscriberName, $SubscriberEmail, $SubscriberDate);
+        }
+        $statement = null;
+
+        $count = count($subscribers);
+
+    } catch (PDOException $e) {
+    echo "An error occurred: " . $e->getMessage();
+    exit;
     }
-    $statement = null;
 
-    foreach ($subscribers as $subscriber) {
-        $content = "Hi $subscriber[1], \n $message, \n Deabbonieren: https://julius-steck.de/Webserver/system/unsubscribe.php?id=$subscriber[0].php";
-        mail($subscriber[2], $headline, $content);
+    $pdo = null;
+    if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+      foreach ($subscribers as $subscriber) {
+          $content = "Hi $subscriber[1], \n$message \nViele Grüße \ndein Julius \n\n\nDies ist eine automatisierte Mail, auf Antworten
+          kann ich nicht reagieren\n<a href='https://julius-steck.de/Webserver/system/unsubscribe.php?id=$subscriber[0]&date=$subscriber[3].php'>Deabbonieren</a>";
+          $headers = "From: kontakt@julius-steck.de";
+
+          $mailSent = mail($subscriber[2], $headline, $content, $headers);
+
+          if ($mailSent) {
+              echo "Email sent successfully.";
+          } else {
+              echo "Failed to send email.";
+          }
+        }
     }
 
-  } catch (PDOException $e) {
-  echo "An error occurred: " . $e->getMessage();
-  exit;
-  }
-
-  $pdo = null;
-
-  header("Location: ../de/management.php");
+    header("Location: ../de/success.php");
 
   ?>
