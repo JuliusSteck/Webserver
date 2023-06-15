@@ -42,7 +42,8 @@
           }
         }
     }
-
-    header("Location: ../de/success.php");
+    else{
+      echo "cookie problem";
+    }
 
   ?>

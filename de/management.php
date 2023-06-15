@@ -66,8 +66,8 @@
         $pdo = null;
 
         if($login){
-          setcookie('username', $username, time() + 3600);
-          setcookie('password', $password, time() + 3600);
+          setcookie('username', $username, time() + 3600, "/", ".julius-steck.de", true, false);
+          setcookie('password', $password, time() + 3600, "/", ".julius-steck.de", true, false);
 
           echo
           '<form action="../system/email.php" method="POST">
