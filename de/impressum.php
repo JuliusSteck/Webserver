@@ -56,9 +56,6 @@
         Julius Steck ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder bereit noch dazu verpflichtet.
         <br>
         <br>
-        Plattform der EU-Kommission zur Online-Streitbeilegung:
-        <br>
-        <br>
       </p>
       <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage" class = underline>
         Plattform der EU-Kommision zur Online-Streitbeilegung

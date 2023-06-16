@@ -37,5 +37,5 @@
 //      echo "Failed to send email.";
 //  }
 
-  header("Location: success.php");
+  header("Location: ../de/success.php");
 ?>
