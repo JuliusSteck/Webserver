@@ -31,7 +31,7 @@
       foreach ($subscribers as $subscriber) {
           $content = "Hi $subscriber[1], \n$message \nViele Grüße \ndein Julius \n\n\nDies ist eine automatisierte Mail, auf Antworten
           kann ich nicht reagieren\nDeabbonieren: https://julius-steck.de/Webserver/system/unsubscribe.php?id=$subscriber[0]&date=$subscriber[3].php";
-          $headers = "From: kontakt@julius-steck.de";
+          $headers = "From: newsletter@julius-steck.de";
 
           $mailSent = mail($subscriber[2], $headline, $content, $headers);
 

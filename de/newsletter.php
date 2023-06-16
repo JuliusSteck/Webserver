@@ -31,7 +31,7 @@
 
   <section id="newsletter" class='newsletter'>
     <div class="container">
-      <form id="newsletter-form" action="registration.php" method="post">
+      <form id="newsletter-form" action="../system/registration.php" method="post">
         <label for="name">Name: </label>
         <input type="text" id="name" placeholder="Name" name="name">
         <label for="email">Email:</label>
