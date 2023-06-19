@@ -28,7 +28,7 @@ h1 span{
 
 @media(max-width: 900px){
   #caption{
-    margin-top: 120px;
     height: 70px;
+    margin-top: 120px;
   }
 }

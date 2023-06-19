@@ -130,8 +130,16 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
 }
 
 @media(max-width: 1500px){
+  .container{
+    width: 80%;
+  }
+
   h1{
     font-size: 50px;
+  }
+
+  h2{
+    font-size: 30px;
   }
 }
 
@@ -142,5 +150,9 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
 
   h1{
     font-size: 25px;
+  }
+
+  h2{
+    font-size: 20px;
   }
 }

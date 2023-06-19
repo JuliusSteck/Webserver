@@ -133,12 +133,8 @@ label[for="menu"] span{
     display: block;
   }
 
-  h2{
-    font-size: 30px;
-  }
-
   nav{
-    margin-top: 15px;
+    margin-top: 25px;
   }
 
   nav ul{
@@ -208,10 +204,6 @@ label[for="menu"] span{
 }
 
 @media(max-width: 900px){
-  h2{
-    font-size: 20px;
-  }
-
   label[for="menu"] {
     display: block;
     position: fixed;
