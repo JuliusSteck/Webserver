@@ -14,7 +14,6 @@
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -34,8 +33,7 @@
       <div id="filter" class="filter">
         <input type="checkbox" id="dropdown">
         <label for="dropdown">
-          <!--<span class="material-symbols-rounded">expand_more</span> -->
-          <span class="material-symbols-rounded">arrow_drop_down</span>
+          <img src='../icons/icon_arrow_dropdown.svg' class='icon' alt='dropdown'>
         </label>
 
         <ul>

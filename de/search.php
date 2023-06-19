@@ -4,7 +4,7 @@
     <title>Julius Steck</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/icon.png">
+    <link rel="shortcut icon" href="../icons/icon.png">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
@@ -13,7 +13,6 @@
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -37,7 +36,7 @@
       <div id="filter" class="filter">
         <input type="checkbox" id="dropdown">
         <label for="dropdown">
-          <span class="material-symbols-rounded">arrow_drop_down</span>
+          <img src='../icons/icon_arrow_dropdown.svg' class='icon' alt='dropdown'>
         </label>
 
         <ul>

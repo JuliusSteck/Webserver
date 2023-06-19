@@ -4,14 +4,13 @@
     <title>Julius Steck</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/icon.png">
+    <link rel="shortcut icon" href="../icons/icon.png">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/blog.css">
     <link rel="stylesheet" href="../style/footer.css">
     <script src="../script/header.js"></script>
     <script src="../script/navigation.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -139,7 +138,7 @@
       <div id="filter" class="filter">
         <input type="checkbox" id="dropdown">
         <label for="dropdown">
-          <span class="material-symbols-rounded">arrow_drop_down</span>
+          <img src='../icons/icon_arrow_dropdown.svg' class='icon' alt='dropdown'>
         </label>
 
         <ul>
@@ -159,7 +158,7 @@
             echo
             "<a href='blog.php?id=$nextID' id='next' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
               <div class='navigation_link'>
-              <span class='material-symbols-rounded'>arrow_back_ios</span>
+                <img src='../icons/icon_arrow_backwards.svg' class='icon' alt='forward'>
               </div>
             </a>";
           }
@@ -167,7 +166,7 @@
             echo
             "<a href='' class='disabled' id='next' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
               <div class='navigation_link'>
-              <span class='material-symbols-rounded'>arrow_back_ios</span>
+                <img src='../icons/icon_arrow_backwards.svg' class='icon' alt='forward'>
               </div>
             </a>";
           }
@@ -175,7 +174,7 @@
 
           <a href='welcome.php'>
             <div class="navigation_link home">
-              <span class="material-symbols-rounded">apps</span>
+              <img src='../icons/icon_menu.svg' class='icon' alt='menu'>
             </div>
           </a>
 
@@ -185,7 +184,7 @@
               echo
               "<a href='blog.php?id=$previousID' id='previous' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
                 <div class='navigation_link'>
-                <span class='material-symbols-rounded'>arrow_forward_ios</span>
+                  <img src='../icons/icon_arrow_forward.svg' class='icon' alt='backward'>
                 </div>
               </a>";
             }
@@ -193,7 +192,7 @@
               echo
               "<a href='' class='disabled' id='previous' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
                 <div class='navigation_link'>
-                <span class='material-symbols-rounded'>arrow_forward_ios</span>
+                  <img src='../icons/icon_arrow_forward.svg' class='icon' alt='backward'>
                 </div>
               </a>";
             }

@@ -10,7 +10,7 @@
 
     <input type="checkbox" id="menu">
     <label for="menu">
-        <span class="material-symbols-rounded"> menu</span>
+        <img src='../icons/icon_menu.svg' class='icon'>
     </label>
 
     <nav>
@@ -23,7 +23,7 @@
         <li class="search">
           <input type="checkbox" id="magnifying_glass">
           <label for="magnifying_glass">
-            <span class="material-symbols-rounded">search</span>
+            <img src='../icons/icon_search.svg' class='icon'>
           </label>
 
           <form id="search-form" action="search.php">
