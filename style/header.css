@@ -158,10 +158,6 @@ label[for="menu"] span{
     margin-top: 0px;
   }
 
-  nav ul li a{
-    color: var(--border-color);
-  }
-
   #menu:checked ~ nav ul{
     display: flex;
   }
@@ -209,7 +205,7 @@ label[for="menu"] span{
     color: var(--text-color);
   }
 
-  .inverse img{
+  .inverse label img{
     filter: invert(1);
   }
 }

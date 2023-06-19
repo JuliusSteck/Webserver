@@ -116,6 +116,8 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
 .small{
   height: 24px;
   width: 24px;
+  bottom: -5px;
+  position: relative;
 }
 
 @media(max-width: 1500px){
