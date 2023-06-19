@@ -108,6 +108,15 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
   gap: 5px;
 }
 
+.icon{
+
+}
+
+.small{
+  height: 50%;
+  width: 50%;
+}
+
 @media(max-width: 1500px){
 
 }

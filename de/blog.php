@@ -174,7 +174,7 @@
 
           <a href='welcome.php'>
             <div class="navigation_link home">
-              <img src='../icons/icon_menu.svg' class='icon' alt='menu'>
+              <img src='../icons/icon_apps.svg' class='icon' alt='apps'>
             </div>
           </a>
 

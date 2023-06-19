@@ -6,7 +6,7 @@
         <li><a href="impressum.php" class="underline">Impressum</a></li>
         <li><a href="data_protection.php" class="underline">Datenschutz</a></li>
         <li><a href="login.php" class="underline">Management-Login</a>
-            <img src='../icons/icon_arrow_settings.svg' class='icon' alt='settings'></li>
+            <img src='../icons/icon_settings.svg' class='icon small' alt='settings'></li>
       </ul>
 
       <ul>

@@ -35,7 +35,7 @@
       <form id="login-form" action="management.php" method="post">
         <label for="username">Username: </label>
         <input type="text" id="username" placeholder="Username" name="username">
-        <label for="password">Passwort: </label> <img src='../icons/icon_key.svg' class='icon' alt='key'>
+        <label for="password">Passwort: </label> <img src='../icons/icon_key.svg' class='icon small' alt='key'>
         <input type="text" id="password" placeholder="Password" name="password">
         <button type="submit" id="login-button">Login</button>
       </form>

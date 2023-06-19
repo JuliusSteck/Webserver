@@ -48,12 +48,12 @@
   border-radius: 50%;
 }
 
-.home span{
-  margin-left: 5px
+.disabled img{
+  visibility: hidden;
 }
 
-.disabled span{
-  color: var(--background-color);
+.disabled {
+  visibility: hidden;
 }
 
 .filter ul{
@@ -121,10 +121,6 @@ label[for="dropdown"] span{
     border-radius: 50%;
   }
 
-  .home span{
-    margin-left: 2px
-  }
-
   .filter ul{
     gap: 5px;
     display: none;
@@ -137,14 +133,5 @@ label[for="dropdown"] span{
 
   #dropdown:checked ~ ul{
     display: flex;
-  }
-
-  .layout{
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .element_background{
-    visibility: visible;
-    opacity: 0.7;
   }
 }

@@ -203,11 +203,15 @@ label[for="menu"] span{
   .inverse nav input::placeholder{
     color: var(--border-color);
   }
-}
 
-.inverse img::selection, .inverse p::selection,.inverse span::selection,.inverse a::selection,.inverse h1::selection,.inverse h2::selection,.inverse h3::selection,.inverse h4::selection,.inverse li::selection {
-  background-color: var(--border-color);
-  color: var(--text-color);
+  .inverse img::selection, .inverse p::selection,.inverse span::selection,.inverse a::selection,.inverse h1::selection,.inverse h2::selection,.inverse h3::selection,.inverse h4::selection,.inverse li::selection {
+    background-color: var(--border-color);
+    color: var(--text-color);
+  }
+
+  .inverse img{
+    filter: invert(1);
+  }
 }
 
 @media(max-width: 900px){
