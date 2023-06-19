@@ -43,6 +43,15 @@ a{
   text-decoration: none;
 }
 
+h1 {
+  font-size: 70px;
+  line-height: 1.5;
+}
+
+h2{
+  font-size: 40px;
+}
+
 .center{
   margin: auto;
 }
@@ -121,11 +130,17 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
 }
 
 @media(max-width: 1500px){
-
+  h1{
+    font-size: 50px;
+  }
 }
 
 @media(max-width: 900px){
   .container{
     width: 90%;
+  }
+
+  h1{
+    font-size: 25px;
   }
 }

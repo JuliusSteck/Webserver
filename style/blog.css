@@ -99,6 +99,15 @@ label[for="dropdown"] span{
   color: var(--light-text-color);
 }
 
+.home{
+  margin-top: 3px;
+}
+
+@media(max-width: 1500px){
+
+  }
+}
+
 @media(max-width: 800px){
   #blog{
     margin-top: 150px;

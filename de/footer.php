@@ -13,7 +13,8 @@
         <li><a href="" class="underline">LinkedIn</a></li>
         <li><a href="" class="underline">Instagram</a></li>
         <li><a href="" class="underline">GitHub</a></li>
-        <li><a href="" class="underline">User-Login</a></li>
+        <li><a href="" class="underline">User-Login</a>
+          <img src='../icons/icon_settings.svg' class='icon small' alt='settings'></li>
       </ul>
     </div>
   </div>

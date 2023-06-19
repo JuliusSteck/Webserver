@@ -3,37 +3,23 @@
   margin-bottom: 30px;
 }
 
-h1 {
-  font-size: 70px;
-  color: var(--text-color);
+h1{
   font-weight: normal;
   margin-right: 10px;
-  line-height: 1.5;
 }
 
 h1 span{
-  font-size: 70px;
   padding-top: 10px;
   padding-bottom: 10px;
-  line-height: 1.5;
   background-color: var(--text-color);
   color: var(--background-color);
 }
-
 
 .cursor{
   color: var(--text-color);
 }
 
 @media(max-width: 1500px){
-  h1{
-    font-size: 50px;
-  }
-
-  h1 span{
-    font-size: 50px;
-  }
-
   #caption{
     height: 120px;
     margin-top: 140px;
@@ -44,13 +30,5 @@ h1 span{
   #caption{
     margin-top: 120px;
     height: 70px;
-  }
-
-  h1{
-    font-size: 25px;
-  }
-
-  h1 span{
-    font-size: 25px;
   }
 }

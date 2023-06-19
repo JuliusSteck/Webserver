@@ -27,8 +27,8 @@ header{
 
 .top{
   display: flex;
-  margin-top: 60px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   justify-content: space-between;
 }
 
@@ -51,14 +51,6 @@ header{
   display: none;
 }
 
-h2{
-  font-size: 40px;
-}
-
-nav{
-
-}
-
 nav ul{
   list-style: none;
   display: flex;
@@ -72,6 +64,7 @@ nav ul li{
 
 .search{
   margin-top: 10px;
+  gap: 5px;
 }
 
 #magnifying_glass{
@@ -166,7 +159,7 @@ label[for="menu"] span{
     display: block;
     position: fixed;
     right: 200px;
-    top: 45px;
+    top: 32px;
   }
 
   label[for="magnifying_glass"] {
@@ -207,6 +200,10 @@ label[for="menu"] span{
 
   .inverse label img{
     filter: invert(1);
+  }
+
+  .search{
+    margin-top: 0px;
   }
 }
 
