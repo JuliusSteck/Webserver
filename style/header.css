@@ -159,7 +159,7 @@ label[for="menu"] span{
     display: block;
     position: fixed;
     right: 200px;
-    top: 32px;
+    top: 40px;
   }
 
   label[for="magnifying_glass"] {
@@ -216,6 +216,6 @@ label[for="menu"] span{
     display: block;
     position: fixed;
     right: 30px;
-    top: 45px;
+    top: 40px;
   }
 }
