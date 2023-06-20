@@ -16,6 +16,16 @@
 
 <body>
 
+  <?php
+    include 'header.php';
+
+    if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+    header("Location: management.php");
+    }
+
+    //fix
+  ?>
+
   <section id="caption">
     <div class="container">
       <div class='center'>
