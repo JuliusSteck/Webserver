@@ -80,7 +80,7 @@
           </form>';
 
         }else{
-          header("Location: login.php");
+          header("Location: management-login.php");
         }
        ?>
     </div>
