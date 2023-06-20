@@ -21,23 +21,28 @@
     if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
     header("Location: management.php");
     }
+
+    //fix
   ?>
 
   <section id="caption">
-    <div class="container">
+    <div class="container center">
         <h1>Hier <span  class="flexible_caption">anmelden</span><span id="cursor" class="cursor">_</span> </h1>
     </div>
-
   </section>
 
-  <section id="login" class="login">
+  <section id="login" class="login center">
     <div class="container">
       <form id="login-form" action="management.php" method="post">
         <label for="username">Username: </label>
         <input type="text" id="username" placeholder="Username" name="username">
         <label for="password">Passwort: </label> <img src='../icons/icon_key.svg' class='icon small' alt='key'>
-        <input type="text" id="password" placeholder="Password" name="password">
-        <button type="submit" id="login-button">Login</button>
+        <input type="text" id="password" placeholder="Passwort" name="password">
+        <label for="show_passord">Passwort anzeigen </label>
+        <input type="checkbox" id="show_password">
+        <div class='button_box'>
+          <button type="submit" id="login-button">Login</button>
+        </div>
       </form>
     </div>
   </section>

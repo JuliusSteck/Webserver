@@ -54,6 +54,7 @@ h2{
 
 .center{
   margin: auto;
+  width: max-content;
 }
 
 .container{

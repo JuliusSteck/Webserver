@@ -2,9 +2,10 @@
 <html lang='de'>
 <head>
     <title>Julius Steck</title>
-    <meta http-equiv='content-type' content="text/html; charset=utf-8" >
+    <meta http-equiv='content-type' content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#F2F2F2" />
+    <meta name="theme-color" content="#F2F2F2">
+    <meta name="description" content="Wilkommen zu meinem Blog zu den Themen Technologie, Politik und Freizeit">
     <link rel="shortcut icon" href="../icons/icon.png">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">

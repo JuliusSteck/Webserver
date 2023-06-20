@@ -1,6 +1,9 @@
 #login{
   margin-top: 100px;
   margin-bottom: 100px;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .login input{
@@ -50,6 +53,11 @@
   background: var(--text-color);
   color: var(--border-color);
   cursor: pointer;
+}
+
+.button_box{
+  display: flex;
+  gap: 10px;
 }
 
 @media(max-width: 1200px){
