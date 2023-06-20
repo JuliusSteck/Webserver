@@ -17,14 +17,16 @@
 <body>
 
   <section id="caption">
-    <div class="container center">
+    <div class="container">
+      <div class='center'>
         <h1>Hier <span  class="flexible_caption">anmelden</span><span id="cursor" class="cursor">_</span> </h1>
+      </div>
     </div>
   </section>
 
-  <section id="login" class="login center">
+  <section id="login" class="login">
     <div class="container">
-      <form id="login-form" action="management.php" method="post">
+      <form id="login-form" action="management.php" method="post" class='center'>
         <label for="username">Username: </label>
         <input type="text" id="username" placeholder="Username" name="username">
         <label for="password">Passwort: </label> <img src='../icons/icon_key.svg' class='icon small' alt='key'>
