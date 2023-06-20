@@ -3,7 +3,14 @@
   margin-bottom: 100px;
 }
 
-.newsletter input{
+.login form{
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 50px;
+}
+
+.login input{
   background: none;
   border-radius: 5px;
   border: 2px solid var(--text-color);
@@ -17,22 +24,22 @@
   margin-bottom: 5px;
 }
 
-.newsletter input::placeholder{
+.login input::placeholder{
   color: var(--text-color);
   font-size: 18px;
   font-family: 'Inconsolata', sans-serif;
   opacity: 1;
 }
 
-.newsletter input:focus{
+.login input:focus{
   outline: none;
 }
 
-.newsletter input:focus::placeholder{
+.login input:focus::placeholder{
   opacity: 0.1;
 }
 
-.newsletter button{
+.login button{
   background: none;
   border-radius: 5px;
   border: 2px solid var(--text-color);
@@ -46,10 +53,15 @@
   margin-bottom: 5px;
 }
 
-.newsletter button:hover{
+.login button:hover{
   background: var(--text-color);
   color: var(--border-color);
   cursor: pointer;
+}
+
+.button_box{
+  display: flex;
+  gap: 10px;
 }
 
 @media(max-width: 1200px){
