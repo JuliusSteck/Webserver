@@ -44,7 +44,7 @@ label[for="dropdown"] span{
 }
 
 .element img{
-  width: 100%
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -58,7 +58,6 @@ label[for="dropdown"] span{
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s, visibility 0.2s;
-  border-radius: 5px;
 }
 
 .element:hover .element_background {

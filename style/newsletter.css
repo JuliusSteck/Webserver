@@ -1,6 +1,6 @@
 #newsletter{
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .newsletter form{
@@ -10,7 +10,7 @@
   padding: 50px;
 }
 
-.newsletter input{
+.newsletter input[type="text"], .login input[type="password"]{
   background: none;
   border-radius: 5px;
   border: 2px solid var(--text-color);
@@ -20,23 +20,45 @@
   font-family: 'Inconsolata', sans-serif;
   width: 200px;
   display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.newsletter input::placeholder{
+.newsletter input[type="checkbox"]{
+  background: none;
+  border: 2px solid var(--text-color);
   color: var(--text-color);
-  font-size: 18px;
-  font-family: 'Inconsolata', sans-serif;
-  opacity: 1;
 }
 
-.newsletter input:focus{
+.text_input {
+  position: relative;
+}
+
+.text_input input:focus{
+  border: 2px solid var(--text-color);
   outline: none;
 }
 
-.newsletter input:focus::placeholder{
-  opacity: 0.1;
+.text_input .floating_label {
+  position: absolute;
+  pointer-events: none;
+  top: 5px;
+  left: 10px;
+  transition: 0.2s ease all;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 2px;
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+.text_input input:focus ~ .floating_label,
+.text_input input:not(:focus):valid ~ .floating_label{
+  top: -10px;
+  left: 15px;
+  opacity: 1;
+  font-size: 15px;
+  background-color: var(--background-color);
 }
 
 .newsletter button{
@@ -65,13 +87,13 @@
 }
 
 @media(max-width: 1200px){
-  #login{
+  #newsletter{
     margin-top: 50px;
   }
 }
 
 @media(max-width: 800px){
-  #login{
+  #newsletter{
     margin-top: 30px;
   }
 }

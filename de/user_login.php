@@ -37,17 +37,22 @@
   <section id="login" class="login">
     <div class="container">
       <form id="login-form" action="management.php" method="post" class='center'>
-        <label for="username">Username: </label>
-        <input type="text" id="username" placeholder="Username" name="username">
-        <label for="password">Passwort: </label> <img src='../icons/icon_key.svg' class='icon small' alt='key'>
-        <input type="text" id="password" placeholder="Passwort" name="password">
-        <label for="show_passord">Passwort anzeigen </label>
-        <input type="checkbox" id="show_password">
-        <div class='button_box'>
-          <button type="submit" id="login-button">Login</button>
-          <button type="submit" id="login-button">Registrieren</button>
-          <button type="submit" id="login-button">Passwort vergessen</button>
+        <div class='text_input'>
+          <input type="text" id="username" name="username" required>
+          <lable for="username" class='floating_label'>Username</lable>
         </div>
+        <div class='text_input'>
+          <input type="password" id="password" name="password" required>
+          <lable for="password" class='floating_label'>Passwort</lable>
+        </div>
+        <div class='button_box'>
+          <input type="checkbox" id="show_password">
+          <lable for="show_password">Passwort anzeigen </lable>
+        </div>
+        <br>
+        <button type="submit" id="login-button">Login</button>
+        <button type="submit" id="login-button">Registrieren</button>
+        <button type="submit" id="login-button">Passwort vergessen</button>
       </form>
     </div>
   </section>

@@ -33,10 +33,15 @@
   <section id="newsletter" class='newsletter'>
     <div class="container">
       <form id="newsletter-form" action="../system/registration.php" method="post" class='center'>
-        <label for="name">Name: </label>
-        <input type="text" id="name" placeholder="Name" name="name">
-        <label for="email">Email:</label>
-        <input type="text" id="email" placeholder="EMail" name="email">
+        <div class='text_input'>
+          <input type="text" id="name" name="name" required>
+          <lable for="name" class='floating_label'>Name</lable>
+        </div>
+        <div class='text_input'>
+          <input type="text" id="email" name="email" required>
+          <lable for="email" class='floating_label'>Email</lable>
+        </div>
+        <br>
         <button type="submit" id="registration-button">Abbonieren</button>
       </form>
     </div>
