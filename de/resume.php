@@ -126,10 +126,10 @@
         <div class="position">
           <h4>Sprachen</h4>
           <ul>
-            <li>Deutsch - AG EG-3 Data Governance</li>
-            <li>Englisch -  PX-I Company IT NEV CO China</li>
-            <li>Französisch - EKEK-4 Sound Design</li>
-            <li>Chinesisch - EKEK-4 Sound Design</li>
+            <li>Deutsch - Muttersprache</li>
+            <li>Englisch -  C1/C2</li>
+            <li>Französisch - B2</li>
+            <li>Chinesisch - HSK2</li>
           </ul>
         </div>
 
