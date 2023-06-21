@@ -84,8 +84,9 @@ label[for="magnifying_glass"] span{
 
 nav input{
   background: none;
+  border: 2px solid var(--text-color);
   border-radius: 5px;
-  border: none;
+  border-width: 0px;
   padding: 0px;
   color: var(--text-color);
   font-size: 18px;
@@ -114,7 +115,7 @@ nav button{
 }
 
 #magnifying_glass:checked ~ form input{
-  border: 2px solid var(--text-color);
+  border-width: 2px;
   padding: 5px;
   width: 200px;
   transition: 250ms ease-in-out;
@@ -138,6 +139,11 @@ label[for="menu"] {
 
 label[for="menu"] span{
   font-size: 50px;
+}
+
+.header_scrolled .text_input input:focus ~ .floating_label,
+.header_scrolled .text_input input:not(:focus):valid ~ .floating_label{
+  background-color: var(--border-color);
 }
 
 @media(max-width: 1500px){
@@ -220,6 +226,11 @@ label[for="menu"] span{
 
   .search{
     margin-top: 0px;
+  }
+
+  .inverse .text_input input:focus ~ .floating_label,
+  .inverse .text_input input:not(:focus):valid ~ .floating_label{
+    background-color: var(--text-color);
   }
 }
 
