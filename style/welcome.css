@@ -1,6 +1,6 @@
 #blog{
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 
 .filter ul{
@@ -41,6 +41,8 @@ label[for="dropdown"] span{
 
 .element {
   position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 98%;
 }
 
 .element img{
@@ -54,7 +56,9 @@ label[for="dropdown"] span{
   bottom: 20px;
   left: 20px;
   right: 20px;
+  border-radius: 5px;
   background: var(--border-color);
+  border-radius: 5px;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s, visibility 0.2s;
@@ -64,11 +68,6 @@ label[for="dropdown"] span{
   visibility: visible;
   opacity: 0.7;
 }
-
-.element:hover{
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
 
 .element_description {
   height: 100%;
@@ -144,7 +143,7 @@ label[for="dropdown"] span{
 
 @media(max-width: 800px){
   #blog{
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .filter ul{

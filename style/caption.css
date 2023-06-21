@@ -16,6 +16,7 @@ h1 span{
 
 .cursor{
   color: var(--text-color);
+  transition: opacity 0.2s, visibility 0.2s;
 }
 
 @media(max-width: 1500px){
