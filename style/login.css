@@ -10,46 +10,6 @@
   padding: 50px;
 }
 
-.login input[type="text"], .login input[type="password"]{
-  background: none;
-  border-radius: 5px;
-  border: 2px solid var(--text-color);
-  padding: 5px;
-  color: var(--text-color);
-  font-size: 18px;
-  font-family: 'Inconsolata', sans-serif;
-  width: 200px;
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.login input[type="checkbox"]{
-  background: none;
-  border: 2px solid var(--text-color);
-  color: var(--text-color);
-}
-
-.login button{
-  background: none;
-  border-radius: 5px;
-  border: 2px solid var(--text-color);
-  padding: 5px;
-  color: var(--text-color);
-  font-size: 18px;
-  font-family: 'Inconsolata', sans-serif;
-  width: 214px;
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.login button:hover{
-  background: var(--text-color);
-  color: var(--border-color);
-  cursor: pointer;
-}
-
 .button_box{
   display: flex;
   gap: 10px;

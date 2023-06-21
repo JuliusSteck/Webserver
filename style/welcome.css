@@ -38,7 +38,6 @@ label[for="dropdown"] span{
   gap: 20px;
 }
 
-
 .element {
   position: relative;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -91,27 +90,6 @@ label[for="dropdown"] span{
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 20px;
-}
-
-.layout a{
-  padding-bottom: 0px;
-}
-
-.layout a:hover{
-
-}
-
-.layout a::after{
-  content: ;
-  height: 0px;
-  width: 0%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.layout a:hover::after{
-  width: 0%;
 }
 
 .filter button{
