@@ -130,6 +130,37 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
   position: relative;
 }
 
+.text_input {
+  position: relative;
+}
+
+.text_input input:focus{
+  border-width: 3px;
+  outline: 0;
+}
+
+.text_input .floating_label {
+  position: absolute;
+  pointer-events: none;
+  top: 5px;
+  left: 10px;
+  transition: 0.2s ease all;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 2px;
+  font-size: 18px;
+  opacity: 0.65;
+}
+
+.text_input input:focus ~ .floating_label,
+.text_input input:not(:focus):valid ~ .floating_label{
+  top: -10px;
+  left: 15px;
+  opacity: 1;
+  font-size: 15px;
+  background-color: var(--background-color);
+}
+
 @media(max-width: 1500px){
   .container{
     width: 80%;

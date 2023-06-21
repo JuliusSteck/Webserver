@@ -13,6 +13,11 @@ header{
     left: 0;
     width: 100%;
   }
+
+  .top{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
 
 .header_scrolled{
@@ -27,8 +32,8 @@ header{
 
 .top{
   display: flex;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   justify-content: space-between;
 }
 
@@ -40,7 +45,7 @@ header{
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 100;
+  z-index: 99;
 }
 
 .visible{
@@ -115,6 +120,14 @@ nav button{
   transition: 250ms ease-in-out;
 }
 
+label[for="search"]{
+  display:none;
+}
+
+#magnifying_glass:checked ~ form label{
+  display:block
+}
+
 #menu{
   display: none;
 }
@@ -167,6 +180,10 @@ label[for="menu"] span{
 
   nav input{
     display: block;
+  }
+
+  label[for="search"]{
+    display:block;
   }
 
   .inverse{

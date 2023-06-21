@@ -27,7 +27,10 @@
           </label>
 
           <form id="search-form" action="search.php">
-            <input type="text" id="search-input" placeholder="Suchen" name="search">
+            <div class='text_input'>
+              <input type="text" id="search-input" name="search" required>
+              <lable for="search" class='floating_label'>Suchen</lable>
+            </div>
             <button type="submit" id="search-button">suchen</button>
           </form>
         </li>

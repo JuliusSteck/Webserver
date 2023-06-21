@@ -38,15 +38,15 @@
       <form id="login-form" action="management.php" method="post" class='center'>
         <div class='text_input'>
           <input type="text" id="username" name="username" required>
-          <lable for="username" class='floating_label'>Username</lable>
+          <label for="username" class='floating_label'>Username</label>
         </div>
         <div class='text_input'>
           <input type="password" id="password" name="password" required>
-          <lable for="password" class='floating_label'>Passwort</lable>
+          <label for="password" class='floating_label'>Passwort</label>
         </div>
         <div class='button_box'>
           <input type="checkbox" id="show_password">
-          <lable for="show_password">Passwort anzeigen </lable>
+          <label for="show_password">Passwort anzeigen </label>
         </div>
         <br>
         <button type="submit" id="login-button">Login</button>

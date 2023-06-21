@@ -35,11 +35,11 @@
       <form id="newsletter-form" action="../system/registration.php" method="post" class='center'>
         <div class='text_input'>
           <input type="text" id="name" name="name" required>
-          <lable for="name" class='floating_label'>Name</lable>
+          <label for="name" class='floating_label'>Name</label>
         </div>
         <div class='text_input'>
           <input type="text" id="email" name="email" required>
-          <lable for="email" class='floating_label'>Email</lable>
+          <label for="email" class='floating_label'>Email</label>
         </div>
         <br>
         <button type="submit" id="registration-button">Abbonieren</button>
