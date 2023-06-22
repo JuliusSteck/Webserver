@@ -4,6 +4,31 @@
     $headline = $_POST['headline'];
     $message = $_POST['message'];
 
+    if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+      $username = $_COOKIE['username'];
+      $password = $_COOKIE['password'];
+    }
+
+    $login = false;
+
+    try {
+      $query = "SELECT * FROM users WHERE username = :username AND password = PASSWORD(:password)";
+      $statement = $pdo->prepare($query);
+
+      $statement->bindParam(':username', $username, PDO::PARAM_STR);
+      $statement->bindParam(':password', $password, PDO::PARAM_STR);
+
+      $statement->execute();
+
+      if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+          $admin = $row['admin'];
+      }
+      $statement = null;
+    } catch (PDOException $e) {
+    echo "An error occurred: " . $e->getMessage();
+    }
+
+
     try {
         $query = "SELECT * FROM newsletter";
         $statement = $pdo->query($query);
@@ -27,7 +52,7 @@
     }
 
     $pdo = null;
-    if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+    if ($admin) {
       foreach ($subscribers as $subscriber) {
           $content = "Hi $subscriber[1], \n$message \nViele Grüße \ndein Julius \n\n\nDies ist eine automatisierte Mail, auf Antworten
           kann ich nicht reagieren\nDeabbonieren: https://julius-steck.de/Webserver/system/unsubscribe.php?id=$subscriber[0]&date=$subscriber[3].php";

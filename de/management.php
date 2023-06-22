@@ -53,7 +53,7 @@
           $statement->execute();
 
           if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-              $username = $row['username'];
+              $admin = $row['admin'];
               $login = true;
           }
           $statement = null;
@@ -68,19 +68,30 @@
           setcookie('username', $username, time() + 3600, "/", ".julius-steck.de", true, false);
           setcookie('password', $password, time() + 3600, "/", ".julius-steck.de", true, false);
 
-          echo
-          '<form action="../system/email.php" method="POST">
-              <label for="headline">Betreff:</label>
-              <input type="text" name="headline" id="headline">
+          if($admin){
+            echo
+            '<form action="../system/email.php" method="POST">
+                <div class='text_input'>
+                  <input type="text" id="headline" name="headline" required>
+                  <label for="headline" class='floating_label'>Headline</label>
+                </div>
 
-              <label for="message">Nachricht:</label>
-              <textarea name="message" id="message"></textarea>
+                <div class='text_input'>
+                  <textarea id="message" name="message" required></textarea>
+                  <label for="message" class='floating_label'>Nachricht</label>
+                </div>
 
-              <input type="submit" value="Submit">
-          </form>';
+                <textarea name="message" id="message"></textarea>
+
+                <button type="submit" id="send-button">Senden</button>
+            </form>';
+          } else {
+            echo
+            '<p> user login </p>';
+          }
 
         }else{
-          header("Location: management-login.php");
+          header("Location: login.php");
         }
        ?>
     </div>

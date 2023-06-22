@@ -102,6 +102,9 @@ label[for="dropdown"] span{
   display: block;
   margin-top: 5px;
   position: relative;
+  width: min-content;
+  padding: 0px;
+  margin-bottom: 0px;
 }
 
 .filter button:hover{

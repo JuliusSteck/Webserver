@@ -23,7 +23,6 @@
     header("Location: management.php");
     }
 
-    //fix
   ?>
 
   <section id="caption">

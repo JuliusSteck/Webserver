@@ -82,17 +82,17 @@ label[for="magnifying_glass"] span{
   margin-top: 2px;
 }
 
-nav input{
+nav input[type='text']{
   background: none;
   border: 2px solid var(--text-color);
   border-radius: 5px;
   border-width: 0px;
-  padding: 0px;
   color: var(--text-color);
   font-size: 18px;
   font-family: 'Inconsolata', sans-serif;
   width: 0px;
   transition: 250ms ease-in-out;
+  margin: 0px;
 }
 
 nav input::placeholder{

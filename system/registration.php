@@ -1,25 +1,53 @@
 <?php
   require_once '../database_connection.php';
 
-  try {
   $email = $_POST['email'];
   $name = $_POST['name'];
+  $available = true;
 
-  $query = "INSERT INTO newsletter (email, name) VALUES (:email, :name)";
-  $statement = $pdo->prepare($query);
+  try {
+    $query = "SELECT * FROM newsletter WHERE email = :email";
+    $statement = $pdo->prepare($query);
 
-  $statement->bindParam(':email', $email, PDO::PARAM_STR);
-  $statement->bindParam(':name', $name, PDO::PARAM_STR);
+    $statement->bindParam(':email', $email, PDO::PARAM_STR);
 
-  $statement->execute();
+    $statement->execute();
 
-  if ($statement->rowCount() > 0) {
-    echo "New entry created successfully!";
-  } else {
-    echo "Failed to create a new entry.";
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        $available = false;
+    }
+  } catch (PDOException $e) {
+  echo "An error occurred: " . $e->getMessage();
   }
 
-  $statement = null;
+  try {
+    if($available){
+      $query = "INSERT INTO newsletter (email, name) VALUES (:email, :name)";
+      $statement = $pdo->prepare($query);
+
+      $statement->bindParam(':email', $email, PDO::PARAM_STR);
+      $statement->bindParam(':name', $name, PDO::PARAM_STR);
+
+      $statement->execute();
+
+      if ($statement->rowCount() > 0) {
+        $headers = "From: kontakt@julius-steck.de";
+        $mailSent = mail($email, "Willkommen zu meinem Newsletter", "Hi $name, \nDanke, dass du meinen Newsletter abonniert hast. \nViele Grüße \ndein Julius \n\n\nDies ist eine automatisierte Mail, auf Antworten
+        kann ich nicht reagieren\n", $headers);
+
+        if ($mailSent) {
+            echo "Email sent successfully.";
+        } else {
+            echo "Failed to send email.";
+        }
+
+
+      } else {
+        echo "Failed to create a new entry.";
+      }
+    }
+
+    $statement = null;
   } catch (PDOException $e) {
   echo "An error occurred: " . $e->getMessage();
   exit;
@@ -27,15 +55,9 @@
 
   $pdo = null;
 
-//  $headers = "From: kontakt@julius-steck.de";
-//  $mailSent = mail($email, "Willkommen zu meinem Newsletter", "Hi $name, \n$message \nViele Grüße \ndein Julius \n\n\nDies ist eine automatisierte Mail, auf Antworten
-//  kann ich nicht reagieren\n<a href='https://julius-steck.de/Webserver/system/unsubscribe.php?id=$subscriber[0]&date=$subscriber[3].php'>Deabbonieren</a>";, $headers);
-
-//  if ($mailSent) {
-//      echo "Email sent successfully.";
-//  } else {
-//      echo "Failed to send email.";
-//  }
-
-  header("Location: ../de/success.php");
+  if($available){
+    header("Location: ../de/success.php");
+  } else {
+    header("Location: ../de/failure.php");
+  }
 ?>
