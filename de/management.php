@@ -71,14 +71,14 @@
           if($admin){
             echo
             '<form action="../system/email.php" method="POST">
-                <div class='text_input'>
+                <div class="text_input">
                   <input type="text" id="headline" name="headline" required>
-                  <label for="headline" class='floating_label'>Headline</label>
+                  <label for="headline" class="floating_label">Headline</label>
                 </div>
 
-                <div class='text_input'>
+                <div class="text_input">
                   <textarea id="message" name="message" required></textarea>
-                  <label for="message" class='floating_label'>Nachricht</label>
+                  <label for="message" class="floating_label">Nachricht</label>
                 </div>
 
                 <textarea name="message" id="message"></textarea>

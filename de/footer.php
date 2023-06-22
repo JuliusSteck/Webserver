@@ -2,7 +2,7 @@
   <div class="container">
     <div class='flexlist'>
       <ul>
-        <li><a href="user_login.php" class="underline">Login</a>
+        <li><a href="login.php" class="underline">Login</a>
           <img src='../icons/icon_settings.svg' class='icon small' alt='login'></li>
         <li><a href="newsletter.php" class="underline">Newsletter</a></li>
         <li><a href="impressum.php" class="underline">Impressum</a></li>
