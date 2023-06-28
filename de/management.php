@@ -81,8 +81,6 @@
                   <label for="message" class="floating_label">Nachricht</label>
                 </div>
 
-                <textarea name="message" id="message"></textarea>
-
                 <button type="submit" id="send-button">Senden</button>
             </form>';
           } else {
