@@ -8,18 +8,6 @@ header{
   z-index: 100;
 }
 
-@media(max-width: 1700px){
-  header{
-    left: 0;
-    width: 100%;
-  }
-
-  .top{
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-}
-
 .header_scrolled{
   background: var(--border-color);
   opacity: 0.9;
@@ -144,6 +132,18 @@ label[for="menu"] span{
 .header_scrolled .text_input input:focus ~ .floating_label,
 .header_scrolled .text_input input:not(:focus):valid ~ .floating_label{
   background-color: var(--border-color);
+}
+
+@media(max-width: 1700px){
+  header{
+    left: 0;
+    width: 100%;
+  }
+
+  .top{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
 
 @media(max-width: 1500px){

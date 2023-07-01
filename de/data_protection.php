@@ -40,7 +40,13 @@
         <br>
         Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO):
         <br>
-        Julius Steck Karlshulderstraße 11a 85051 Ingolstadt kontakt@julius-steck.de Tel. +49 01575 1200 817
+        Julius Steck
+        <br>
+        Karlshulderstraße 11a 85051 Ingolstadt
+        <br>
+        Mail: kontakt@julius-steck.de
+        <br>
+        Telefon: +49 01575 1200 817
         <br>
         <br>
 
