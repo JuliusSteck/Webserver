@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../style/management.css">
     <link rel="stylesheet" href="../style/welcome.css">
     <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/popup.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
@@ -21,6 +22,15 @@
   <?php
     include 'header.php';
    ?>
+
+  <noscript>
+    <div class='popup'>
+      <div>
+        <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
+        <button id='button_popup'>Verstanden</button>
+      </div>
+    </div>
+  </noscript>
 
   <section id="caption">
     <div class="container">

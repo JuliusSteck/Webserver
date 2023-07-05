@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../style/newsletter.css">
     <link rel="stylesheet" href="../style/welcome.css">
     <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/popup.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
@@ -21,6 +22,15 @@
   <?php
     include 'header.php';
    ?>
+
+  <noscript>
+    <div class='popup'>
+      <div>
+        <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
+        <button id='button_popup'>Verstanden</button>
+      </div>
+    </div>
+  </noscript>
 
    <section id="caption">
      <div class="container">
@@ -34,11 +44,11 @@
     <div class="container">
       <form id="newsletter-form" action="../system/registration.php" method="post" class='center'>
         <div class='text_input'>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" required maxlength="100">
           <label for="name" class='floating_label'>Name</label>
         </div>
         <div class='text_input'>
-          <input type="text" id="email" name="email" required>
+          <input type="text" id="email" name="email" required maxlength="100">
           <label for="email" class='floating_label'>Email</label>
         </div>
         <br>
