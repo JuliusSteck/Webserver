@@ -130,21 +130,31 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
   position: relative;
 }
 
-.help:hover ~ div{
-  display: block;
+.tooltip {
+  position: relative;
+  display: inline-block;
 }
 
-.information{
-  display: none;
-  border: 1px solid var(--text-color);
+.tooltip p {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--background-color);
   border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 50px;
-  position: relative;
-  top: 5px;
-  left: 5px;
-  width: 200px;
+  padding: 5px;
+  position: absolute;
+  z-index: 2;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
+
+.tooltip:hover p {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 input[type="text"], input[type="password"]{
   background: none;

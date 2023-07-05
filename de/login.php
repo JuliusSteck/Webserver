@@ -50,9 +50,9 @@
         </div>
         <br>
         <button type="submit" id="login-button">Login</button>
-        <img src='../icons/icon_help.svg' class='icon_small help' alt='help'>
-        <div class='information'>
-          <p>Achte darauf, dass du deine Email verschlüsselt verschickst. Die URL sollte mit https:// beginnen </p>
+        <div class='tooltip'>
+          <img src='../icons/icon_help.svg' class='icon_small' alt='help'>
+          <p>Achte darauf, dass du deine Email verschlüsselt verschickst. Die URL sollte mit https:// beginnen.</p>
         </div>
         <button type="submit" id="login-button">Registrieren</button>
         <button type="submit" id="login-button">Passwort vergessen</button>
