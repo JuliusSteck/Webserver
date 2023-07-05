@@ -137,17 +137,18 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
 
 .tooltip p {
   visibility: hidden;
-  width: 120px;
+  width: 200px;
   background-color: var(--background-color);
   border-radius: 5px;
-  padding: 5px;
+  padding: 20px;
   position: absolute;
   z-index: 2;
-  bottom: 125%;
-  left: 50%;
+  bottom: -500%;
+  left: 450%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
+  border: 1px solid var(--text-color);
 }
 
 .tooltip:hover p {
