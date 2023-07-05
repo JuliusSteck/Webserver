@@ -23,7 +23,7 @@
         <li class="search">
           <input type="checkbox" id="magnifying_glass">
           <label for="magnifying_glass">
-            <img src='../icons/icon_search.svg' class='icon small' alt='search'>
+            <img src='../icons/icon_search.svg' class='icon_small' alt='search'>
           </label>
 
           <form id="search-form" action="search.php">

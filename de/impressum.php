@@ -64,16 +64,11 @@
         <br>
         Alle Bilder und Texte auf dieser Website gehören mir.
         <br>
-        <br>
         Kommerzielle Nutzung ist nur mit meinem Einverständniss erlaubt.
-        <br>
         <br>
         Nicht kommerzielle ist unter Verwendung einer Quellenangabe erlaubt.
         <br>
-        <br>
         Nutzung für das Training von KI (Künstlicher Intelligenz) Anwendungen ist in keinem Fall erlaubt.
-        <br>
-        <br>
       </p>
     </div>
   </section>

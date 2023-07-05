@@ -20,9 +20,15 @@ header{
 
 .top{
   display: flex;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 30px;
   justify-content: space-between;
+  transition: 250ms ease-in-out;
+}
+
+.header_scrolled .top{
+  margin-top: 30px;
+  transition: 250ms ease-in-out;
 }
 
 #black{
@@ -141,8 +147,8 @@ label[for="menu"] span{
   }
 
   .top{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
