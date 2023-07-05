@@ -1,4 +1,4 @@
-.popup{
+.noscript{
   border: 1px solid var(--text-color);
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -7,5 +7,7 @@
   left: 100px;
   right: 100px;
   bottom: 100px;
-  height: 30%;;
+  height: 30%;
+  z-index: 101;
+  background-color: var(--background-color);
 }

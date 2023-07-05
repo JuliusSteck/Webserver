@@ -10,13 +10,21 @@
     <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/login.css">
     <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/popup.css">
+    <link rel="stylesheet" href="../style/noscript.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
     <script src="../script/password.js"></script>
 </head>
 
 <body>
+
+<noscript>
+    <div class='popup'>
+      <div>
+        <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
+      </div>
+    </div>
+  </noscript> 
 
   <?php
     include 'header.php';
@@ -26,15 +34,6 @@
     }
 
   ?>
-
-  <noscript>
-    <div class='popup'>
-      <div>
-        <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
-        <button id='button_popup'>Verstanden</button>
-      </div>
-    </div>
-  </noscript> 
 
   <section id="caption">
     <div class="container">
@@ -46,7 +45,7 @@
 
   <section id="login" class="login">
     <div class="container">
-      <form id="login-form" action="management.php" method="post" class='center'>
+      <form id="login-form" action="management.php" method="post" class='center box'>
         <div class='text_input'>
           <input type="text" id="username" name="username" required maxlength="100">
           <label for="username" class='floating_label'>Username</label>

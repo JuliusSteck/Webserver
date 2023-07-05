@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/blog.css">
     <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/popup.css">
+    <link rel="stylesheet" href="../style/noscript.css">
     <script src="../script/header.js"></script>
     <script src="../script/navigation.js"></script>
 </head>
@@ -17,10 +17,9 @@
 <body>
 
 <noscript>
-    <div class='popup'>
+    <div class='noscript'>
       <div>
         <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
-        <button id='button_popup'>Verstanden</button>
       </div>
     </div>
   </noscript>
