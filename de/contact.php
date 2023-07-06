@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/contact.css">
     <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/popup.css">
+    <link rel="stylesheet" href="../style/noscript.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
 </head>
@@ -37,38 +37,38 @@
 
   <section id="contact">
     <div class="container">
-      <form id="contact-form" action="message.php" method="post" class='center box'>
-        <div class='text_input'>
+      <form id="contact-form" action="message.php" method="post" class='center box grid'>
+        <div class='text_input left'>
           <input type="text" id="name" name="name" required maxlength="100">
           <label for="name" class='floating_label'>Name</label>
         </div>
-        <div class='text_input'>
+        <div class='text_input left'>
           <input type="text" id="headline" name="headline" required maxlength="100">
           <label for="headline" class='floating_label'>Betreff</label>
         </div>
         
-        <div class="text_input">
+        <div class="text_input left">
           <input type="text" id="email" name="email" required>
           <label for="email" class="floating_label">Email</label>
         </div>
 
-        <div class="text_input">
-          <textarea id="message" name="message" required></textarea>
-          <label for="message" class="floating_label">Nachricht</label>
+        <button class='left' type="submit" id="send-button">Senden</button>
+
+        <div>
+          <div class='tooltip'>
+            <img src='../icons/icon_help.svg' class='icon_small' alt='help'>
+            <p>Achte darauf, dass du deine Email verschlüsselt verschickst. Die URL sollte mit https:// beginnen.</p>
+          </div>
+          <div class='tooltip'>
+            <img src='../icons/icon_help.svg' class='icon_small' alt='help'>
+            <p>Deine Nachricht wird am Server nicht gespeichert, sondern sofort an mein Email Postfach weiter geleitet.
+              Wo deine Nachricht erhalten bleibt, bis unsere Unterhaltung vorbei ist, oder du eine Löschung wünschst.
+            </p>
+          </div>
         </div>
 
-        <button type="submit" id="send-button">Senden</button>
+        <textarea class='right' id="message" name="message" placeholder='Nachricht' required></textarea>
 
-        <div class='tooltip'>
-          <img src='../icons/icon_help.svg' class='icon_small' alt='help'>
-          <p>Achte darauf, dass du deine Email verschlüsselt verschickst. Die URL sollte mit https:// beginnen.</p>
-        </div>
-        <div class='tooltip'>
-          <img src='../icons/icon_help.svg' class='icon_small' alt='help'>
-          <p>Deine Nachricht wird am Server nicht gespeichert, sondern sofort an mein Email Postfach weiter geleitet.
-            Wo deine Nachricht erhalten bleibt, bis unsere Unterhaltung vorbei ist, oder du eine Löschung wünschst.
-          </p>
-        </div>
       </form>
     </div>
   </section>

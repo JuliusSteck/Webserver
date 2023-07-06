@@ -167,7 +167,7 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
   padding: 50px;
 }
 
-input[type="text"], input[type="password"]{
+input[type="text"], input[type="password"], textarea{
   background: none;
   border-radius: 5px;
   border: 2px solid var(--text-color);
@@ -209,6 +209,7 @@ button:hover{
 
 .text_input {
   position: relative;
+  width: min-content;
 }
 
 .text_input input:focus{

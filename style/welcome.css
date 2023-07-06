@@ -100,11 +100,11 @@ label[for="dropdown"] span{
   font-size: 18px;
   font-family: 'Inconsolata', sans-serif;
   display: block;
-  margin-top: 5px;
   position: relative;
   width: min-content;
   padding: 0px;
   margin-bottom: 0px;
+  padding-bottom: 5px;
 }
 
 .filter button:hover{

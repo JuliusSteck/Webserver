@@ -3,12 +3,25 @@
     margin-bottom: 40px;
   }
   
-  .contact form{
-    border: 1px solid var(--text-color);
-    border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 50px;
-  }
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.left{
+    grid-column: 1;
+}
+
+.right{
+    grid-column: 2;
+    grid-row: 1 / span 4;
+}
+
+textarea{
+    width: 400px;
+    height: 200px;
+}
   
   @media(max-width: 1200px){
     #contact{
@@ -19,5 +32,18 @@
   @media(max-width: 800px){
     #contact{
       margin-top: 20px;
+    }
+
+    .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .right{
+        grid-column: 1;
+        grid-row: 6 / span 1;
+    }
+    
+    textarea{
+        width: 200px;
     }
   }
