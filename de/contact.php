@@ -29,9 +29,9 @@
     include 'header.php';
    ?>
 
-  <section id="caption center">
-    <div class="container">
-        <h1>SChreib <span class="flexible_caption">mir</span><span id="cursor" class="cursor">_</span> </h1>
+  <section id="caption">
+    <div class="container center">
+        <h1>Schreib <span class="flexible_caption">mir</span><span id="cursor" class="cursor">_</span> </h1>
     </div>
   </section>
 
@@ -56,7 +56,7 @@
 
         <button class='left' type="submit" id="send-button">Senden</button>
 
-        <div>
+        <div class='min'>
           <div class='tooltip'>
             <img src='../icons/icon_help.svg' class='icon_small' alt='help'>
             <p>Achte darauf, dass du deine Email verschlüsselt verschickst. Die URL sollte mit https:// beginnen.</p>

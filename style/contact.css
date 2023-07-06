@@ -14,7 +14,7 @@
 }
 
 .right{
-    grid-column: 2;
+    grid-column: 2/ span 10;
     grid-row: 1 / span 4;
 }
 
@@ -23,27 +23,27 @@ textarea{
     height: 200px;
 }
   
-  @media(max-width: 1200px){
-    #contact{
-      margin-top: 50px;
-    }
+@media(max-width: 1200px){
+  #contact{
+    margin-top: 50px;
+  }
+}
+
+@media(max-width: 800px){
+  #contact{
+    margin-top: 20px;
+  }
+
+  .grid{
+      grid-template-columns: 1fr;
+  }
+
+  .right{
+      grid-column: 1;
+      grid-row: 6 / span 1;
   }
   
-  @media(max-width: 800px){
-    #contact{
-      margin-top: 20px;
-    }
-
-    .grid{
-        grid-template-columns: 1fr;
-    }
-
-    .right{
-        grid-column: 1;
-        grid-row: 6 / span 1;
-    }
-    
-    textarea{
-        width: 200px;
-    }
+  textarea{
+      width: 200px;
   }
+}

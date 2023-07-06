@@ -63,7 +63,7 @@
           $search = $_GET['search'];
 
           try {
-            $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover FROM Blog WHERE EntryTitle_de LIKE '%$search%' OR EntryDescription_de LIKE '%$search%'";
+            $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover, Category FROM Blog WHERE EntryTitle_de LIKE '%$search%' OR EntryDescription_de LIKE '%$search%'";
             $statement = $pdo->query($query);
 
             $entries = array();

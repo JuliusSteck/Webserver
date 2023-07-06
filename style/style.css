@@ -211,7 +211,7 @@ button:hover{
   width: min-content;
 }
 
-.text_input input:focus{
+input:focus, textarea:focus{
   border-width: 3px;
   outline: 0;
 }

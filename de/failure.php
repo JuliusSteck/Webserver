@@ -38,7 +38,7 @@
 
   <section id="success">
     <div class="container center">
-        <h3>Fall das Problem nach mehrmaligem Versuchen immer noch auftritt,</h3><a href='contact.php'><h3>schreib mir bitte.</h3></a>
+        <h3>Fall das Problem nach mehrmaligem Versuchen immer noch auftritt, schreib mir bitte.</h3><a href='contact.php'><h3>==> Kontakt</h3></a>
     </div>
   </section>
 
