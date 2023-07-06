@@ -214,7 +214,7 @@ label[for="menu"] span{
   .inverse nav input{
     border: 2px solid var(--border-color);
     color: var(--border-color);
-    width: 80%;
+    width: 200px;
   }
 
   .inverse nav input::placeholder{

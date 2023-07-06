@@ -29,15 +29,15 @@
     include 'header.php';
    ?>
 
-  <section id="caption">
+  <section id="caption center">
     <div class="container">
-        <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
+        <h1>SChreib <span class="flexible_caption">mir</span><span id="cursor" class="cursor">_</span> </h1>
     </div>
   </section>
 
   <section id="contact">
     <div class="container">
-      <form id="contact-form" action="message.php" method="post" class='center box grid'>
+      <form id="contact-form" action="../system/message.php" method="post" class='center box grid'>
         <div class='text_input left'>
           <input type="text" id="name" name="name" required maxlength="100">
           <label for="name" class='floating_label'>Name</label>
@@ -51,6 +51,8 @@
           <input type="text" id="email" name="email" required>
           <label for="email" class="floating_label">Email</label>
         </div>
+
+        <textarea class='right' id="message" name="message" placeholder='Nachricht' required></textarea>
 
         <button class='left' type="submit" id="send-button">Senden</button>
 
@@ -66,8 +68,6 @@
             </p>
           </div>
         </div>
-
-        <textarea class='right' id="message" name="message" placeholder='Nachricht' required></textarea>
 
       </form>
     </div>

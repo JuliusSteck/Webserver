@@ -4,7 +4,7 @@
     $name = $_POST['headline'];
     $email = $_POST['message'];
 
-    $content = "Hi Julius, \n$message \nViele Grüße \ndein $name";
+    $content = "Hi Julius, \n$message \nViele Grüße \ndein $name /n /n$email";
     $headers = "From: $email";
 
     $mailSent = mail("julius.steck.js@gmail.com", $headline, $content, $headers);
