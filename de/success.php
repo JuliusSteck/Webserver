@@ -74,9 +74,35 @@
   </section>
 
   <?php
-  echo "<section id='success'>
+  echo 
+  "<section id='success'>
     <div class='container'>
-        <h3>Hier geht es zu meinem neusten Beitrag</h3><a href='blog.php?id=$entryID'><h3>$entryTitle</h3></a>
+        <h3>Hier geht es zu meinem neusten Beitrag</h3>
+        <a href='blog.php?id=$entryID' class='underline'>$entryTitle</a>
+
+      <br>  
+      <br>  
+      <br>  
+
+
+
+      <div>
+        <div class='title'>
+            <h1>$entryTitle</h1>
+            <h3> $entryDate</h3>
+          </div>
+          ?>
+      </div>
+
+      <div id='layout' class='layout'>
+          <div class='flex' id='column_1'>
+            <p>$entryDescription</p>
+          </div>
+
+          <div class='flex' id='column_2'>
+            <img class='' src='../images/$entryCover' alt='Entry Cover'>
+           </div>
+      </div>  
     </div>
   </section>";
   ?>

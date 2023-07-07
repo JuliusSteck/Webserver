@@ -30,8 +30,10 @@
    ?>
 
   <section id="caption">
-    <div class="container center">
+    <div class="container">
+      <div class='center'>
         <h1>Schreib <span class="flexible_caption">mir</span><span id="cursor" class="cursor">_</span> </h1>
+      </div>
     </div>
   </section>
 

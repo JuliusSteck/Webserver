@@ -9,12 +9,10 @@
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/management.css">
-    <link rel="stylesheet" href="../style/welcome.css">
     <link rel="stylesheet" href="../style/footer.css">
     <link rel="stylesheet" href="../style/noscript.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
-    <script src="../script/layout.js"></script>
 </head>
 
 <body>
@@ -33,7 +31,9 @@
 
   <section id="caption">
     <div class="container">
+      <div class='center'>
         <h1>Das  <span  class="flexible_caption">Management </span><span id="cursor" class="cursor">_</span> </h1>
+      </div>
     </div>
   </section>
 
@@ -48,6 +48,19 @@
         if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
           $username = $_COOKIE['username'];
           $password = $_COOKIE['password'];
+        }
+
+        try {
+          $query = "SELECT COUNT(id) as countNewsletter FROM newsletter ";
+          $statement = $pdo->prepare($query);
+
+          $statement->execute();
+
+          if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+              $countNewsletter = $row['countNewsletter'];
+          }
+        } catch (PDOException $e) {
+        echo "An error occurred: " . $e->getMessage();
         }
 
         $login = false;
@@ -78,23 +91,48 @@
           setcookie('password', $password, time() + 3600, "/", ".julius-steck.de", true, false);
 
           if($admin){
+
             echo
-            '<form action="../system/email.php" method="POST" class="center box">
-                <div class="text_input">
-                  <input type="text" id="headline" name="headline" required>
-                  <label for="headline" class="floating_label">Headline</label>
-                </div>
+            "section id='contact'>
+              <div class='container'>
+                <div id='layout' class='grid'>
+                  <form action='../system/email.php' method='POST' class='center box'>
+                    <h3> Newsletter </h3>
+                    <div class='text_input'>
+                      <input type='text' id='headline' name='headline# required>
+                      <label for='headline' class='floating_label'>Headline</label>
+                    </div>
 
-                <div class="text_input">
-                  <textarea id="message" name="message" required></textarea>
-                  <label for="message" class="floating_label">Nachricht</label>
-                </div>
+                    <div class='text_input'>
+                      <textarea id='message' name='message' required></textarea>
+                      <label for='message' class='floating_label'>Nachricht</label>
+                    </div>
 
-                <button type="submit" id="send-button">Senden</button>
-            </form>';
+                    <button type='submit' id='send-button'>Senden</button>
+
+                    <p>Abbonenten: $countNewsletter</p>
+                  </form>
+
+                  <form action='../system/entry.php' method='POST' class='center box'>
+                  <h3> Beitrag </h3>
+                  <div class='text_input'>
+                    <input type='text' id='headline' name='headline# required>
+                    <label for='headline' class='floating_label'>Headline</label>
+                  </div>
+
+                  <div class='text_input'>
+                    <textarea id='message' name='message' required></textarea>
+                    <label for='message' class='floating_label'>Nachricht</label>
+                  </div>
+
+                  <button type='submit' id='send-button'>Senden</button>
+                </form>
+                </div>
+              </div
+            </section>";
           } else {
             echo
-            '<p> user login </p>';
+            '<p> user login muss noch programmiert werden :)</p>';
           }
 
         }else{
