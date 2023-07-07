@@ -7,22 +7,6 @@
   margin-bottom: 50px;
 }
 
-.flex{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.layout{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: min-content;
-  grid-gap: 20px;
-}
-
-.layout p{
-  text-align: justify;
-}
 
 @media(max-width: 1200px){
   #success{
@@ -34,9 +18,5 @@
 @media(max-width: 800px){
   #success{
     margin-top: 30px;
-  }
-
-  .layout{
-    grid-template-columns: repeat(1, 1fr);
   }
 }

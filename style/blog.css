@@ -7,12 +7,6 @@
   margin-bottom: 50px;
 }
 
-.flex{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .layout{
   display: grid;
   grid-template-columns: repeat(2, 1fr);

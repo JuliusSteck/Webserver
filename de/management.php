@@ -93,43 +93,36 @@
           if($admin){
 
             echo
-            "section id='contact'>
-              <div class='container'>
-                <div id='layout' class='grid'>
-                  <form action='../system/email.php' method='POST' class='center box'>
-                    <h3> Newsletter </h3>
-                    <div class='text_input'>
-                      <input type='text' id='headline' name='headline# required>
-                      <label for='headline' class='floating_label'>Headline</label>
-                    </div>
-
-                    <div class='text_input'>
-                      <textarea id='message' name='message' required></textarea>
-                      <label for='message' class='floating_label'>Nachricht</label>
-                    </div>
-
-                    <button type='submit' id='send-button'>Senden</button>
-
-                    <p>Abbonenten: $countNewsletter</p>
-                  </form>
-
-                  <form action='../system/entry.php' method='POST' class='center box'>
-                  <h3> Beitrag </h3>
-                  <div class='text_input'>
-                    <input type='text' id='headline' name='headline# required>
-                    <label for='headline' class='floating_label'>Headline</label>
-                  </div>
-
-                  <div class='text_input'>
-                    <textarea id='message' name='message' required></textarea>
-                    <label for='message' class='floating_label'>Nachricht</label>
-                  </div>
-
-                  <button type='submit' id='send-button'>Senden</button>
-                </form>
+            "<div id='layout' class='grid'>
+              <form action='../system/email.php' method='POST' class='center box'>
+                <h3> Newsletter </h3>
+                <br>
+                <div class='text_input'>
+                  <input type='text' id='headline' name='headline' required>
+                  <label for='headline' class='floating_label'>Headline</label>
                 </div>
-              </div
-            </section>";
+
+                <textarea id='message' name='message' required placeholder='Nachricht'></textarea>
+
+
+                <button type='submit' id='send-button'>Senden</button>
+
+                <p>Abbonenten: $countNewsletter</p>
+              </form>
+
+              <form action='../system/entry.php' method='POST' class='center box'>
+                <h3> Beitrag </h3>
+                <br>
+                <div class='text_input'>
+                  <input type='text' id='headline' name='headline' required>
+                  <label for='headline' class='floating_label'>Headline</label>
+                </div>
+
+                <textarea id='message' name='message' required placeholder='Nachricht'></textarea>
+
+                <button type='submit' id='send-button'>Senden</button>
+              </form>
+            </div>";
           } else {
             echo
             '<p> user login muss noch programmiert werden :)</p>';

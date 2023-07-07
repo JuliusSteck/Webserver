@@ -9,18 +9,14 @@
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/success.css">
-    <link rel="stylesheet" href="../style/welcome.css">
     <link rel="stylesheet" href="../style/footer.css">
     <link rel="stylesheet" href="../style/noscript.css">
+    <link rel="stylesheet" href="../style/blog.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
 </head>
 
 <body>
-
-  <?php
-    include 'header.php';
-   ?>
 
 <?php
     include 'header.php';
@@ -70,43 +66,39 @@
   <section id="caption">
     <div class="container">
         <h1>Erfolgreich <span  class="flexible_caption">durchgeführt</span><span id="cursor" class="cursor">_</span> </h1>
+        
+
+        <?php
+          echo 
+          "<h3>Hier geht es zu meinem neusten Beitrag</h3>
+          <a href='blog.php?id=$entryID' class='underline'>$entryTitle</a>";
+          ?>
     </div>
   </section>
-
-  <?php
-  echo 
-  "<section id='success'>
-    <div class='container'>
-        <h3>Hier geht es zu meinem neusten Beitrag</h3>
-        <a href='blog.php?id=$entryID' class='underline'>$entryTitle</a>
-
-      <br>  
-      <br>  
-      <br>  
-
-
-
+  
+  <section id="blog">
+    <div class="container">
       <div>
-        <div class='title'>
-            <h1>$entryTitle</h1>
-            <h3> $entryDate</h3>
-          </div>
-          ?>
-      </div>
+        <?php
+        echo
+        "<div class='title'>
+          <h1>$entryTitle</h1>
+          <h3> $entryDate</h3>
+        </div>
 
-      <div id='layout' class='layout'>
+        <div id='layout' class='layout'>
           <div class='flex' id='column_1'>
-            <p>$entryDescription</p>
+            <p> $entryDescription</p>
           </div>
-
           <div class='flex' id='column_2'>
             <img class='' src='../images/$entryCover' alt='Entry Cover'>
-           </div>
-      </div>  
+          </div>
+        </div>";
+        ?>
+      </div>
     </div>
-  </section>";
-  ?>
-
+  </section>
+  
   <?php
     include 'footer.php';
    ?>

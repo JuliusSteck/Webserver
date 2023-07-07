@@ -124,23 +124,20 @@
     <div class="container">
       <div>
         <?php
-          echo
-          "<div class='title'>
-            <h1>$entryTitle</h1>
-            <h3> $entryDate</h3>
-          </div>";
-          ?>
-      </div>
+        echo
+        "<div class='title'>
+          <h1>$entryTitle</h1>
+          <h3> $entryDate</h3>
+        </div>
 
-      <div id="layout" class="layout">
-        <?php
-          echo
-          "<div class='flex' id='column_1'>
+        <div id='layout' class='layout'>
+          <div class='flex' id='column_1'>
             <p> $entryDescription</p>
           </div>
           <div class='flex' id='column_2'>
             <img class='' src='../images/$entryCover' alt='Entry Cover'>
-           </div>";
+          </div>
+        </div>";
         ?>
       </div>
 
