@@ -36,9 +36,21 @@
         $story = $_POST['story'];
         $cover = $_FILES['cover']['tmp_name'];
     
+        $uploadedFilePath = $_FILES['cover']['tmp_name'];
+        $targetDirectory = '../images/';
+        $targetFileName = basename($_FILES['cover']['name']);
+        $targetPath = $targetDirectory . $targetFileName;
+
+        if (move_uploaded_file($uploadedFilePath, $targetPath)) {
+            echo "File uploaded and moved successfully.";
+        } else {
+            echo "Error moving file.";
+        }
+
+
         $coverData = file_get_contents($cover);
     
-        $query = "INSERT INTO Blog (headline_de, message_de, headline_en, message_en, category, story, cover) VALUES (?, ?, ?, ?, ?, ?, ?)"
+        $query = "INSERT INTO Blog (headline_de, message_de, headline_en, message_en, category, story, image, cover) VALUES (?, ?, ?, ?, ?, ?, ?)"
 
         $statement = $pdo->prepare($query);
         $statement->bindParam(1, $headline_de);
@@ -48,6 +60,7 @@
         $statement->bindParam(5, $category);
         $statement->bindParam(6, $story);
         $statement->bindParam(7, $coverData);
+        $statement->bindParam(8,  $targetFileName);
     
         if ($statement->execute()) {
             echo "New entry added successfully.";
