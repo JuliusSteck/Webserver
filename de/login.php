@@ -60,8 +60,6 @@
         </div>
         <br>
         <button type="submit" id="login-button">Login</button>
-        <button type="submit" id="login-button">Registrieren</button>
-        <button type="submit" id="login-button">Passwort vergessen</button>
         <div class='tooltip'>
           <img src='../icons/icon_help.svg' class='icon_small' alt='help'>
           <p>Achte darauf, dass du deine Email verschlüsselt verschickst. Die URL sollte mit https:// beginnen.</p>

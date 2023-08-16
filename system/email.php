@@ -9,8 +9,6 @@
       $password = $_COOKIE['password'];
     }
 
-    $login = false;
-
     try {
       $query = "SELECT * FROM users WHERE username = :username AND password = PASSWORD(:password)";
       $statement = $pdo->prepare($query);
@@ -43,8 +41,6 @@
             $subscribers[] = array($subscriberID, $subscriberName, $SubscriberEmail, $SubscriberDate);
         }
         $statement = null;
-
-        $count = count($subscribers);
 
     } catch (PDOException $e) {
     echo "An error occurred: " . $e->getMessage();

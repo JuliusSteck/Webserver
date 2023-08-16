@@ -110,15 +110,42 @@
                 <p>Abbonenten: $countNewsletter</p>
               </form>
 
-              <form action='../system/entry.php' method='POST' class='center box'>
+              <form action='../system/entry.php' method='POST' enctype='multipart/form-data' class='center box'>
                 <h3> Beitrag </h3>
+
                 <br>
                 <div class='text_input'>
-                  <input type='text' id='headline' name='headline' required>
-                  <label for='headline' class='floating_label'>Headline</label>
+                  <input type='text' id='headline_de' name='headline_de' required>
+                  <label for='headline_de' class='floating_label'>Headline</label>
                 </div>
 
-                <textarea id='message' name='message' required placeholder='Nachricht'></textarea>
+                <textarea id='message' name='message_de' required placeholder='Nachricht'></textarea>
+
+                <br>
+                <div class='text_input'>
+                  <input type='text' id='headline_en' name='headline_en' required>
+                  <label for='headline_en' class='floating_label'>Headline</label>
+                </div>
+
+                <textarea id='message' name='message_en' required placeholder='Nachricht'></textarea>
+
+                <br>
+                <div class='text_input'>
+                  <input type='file' id='cover' name='cover' required>
+                  <label for='cover' class='floating_label'>Headline</label>
+                </div>
+
+                <br>
+                <div class='text_input'>
+                  <input type='text' id='category' name='category' required>
+                  <label for='category' class='floating_label'>Headline</label>
+                </div>
+
+                <br>
+                <div class='text_input'>
+                  <input type='text' id='story' name='story' required>
+                  <label for='story' class='floating_label'>Headline</label>
+                </div>
 
                 <button type='submit' id='send-button'>Senden</button>
               </form>
