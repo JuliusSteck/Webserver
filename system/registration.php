@@ -41,7 +41,6 @@
             echo "Failed to send email.";
         }
 
-
       } else {
         echo "Failed to create a new entry.";
       }

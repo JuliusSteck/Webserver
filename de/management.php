@@ -42,13 +42,7 @@
       <?php
         require_once '../database_connection.php';
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
-          $username = $_COOKIE['username'];
-          $password = $_COOKIE['password'];
-        }
+        require_once '../session.php';
 
         try {
           $query = "SELECT COUNT(id) as countNewsletter FROM newsletter ";
@@ -65,90 +59,74 @@
 
         $login = false;
 
-        try {
-          $query = "SELECT * FROM users WHERE username = :username AND password = PASSWORD(:password)";
-          $statement = $pdo->prepare($query);
-
-          $statement->bindParam(':username', $username, PDO::PARAM_STR);
-          $statement->bindParam(':password', $password, PDO::PARAM_STR);
-
-          $statement->execute();
-
-          if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-              $admin = $row['admin'];
-              $login = true;
-          }
-          $statement = null;
-        } catch (PDOException $e) {
-        echo "An error occurred: " . $e->getMessage();
-        exit;
-        }
-
         $pdo = null;
 
-        if($login){
-          setcookie('username', $username, time() + 3600, "/", ".julius-steck.de", true, false);
-          setcookie('password', $password, time() + 3600, "/", ".julius-steck.de", true, false);
+        if($_SESSION['login']){
+          
 
-          if($admin){
+          if($_SESSION['admin']){
 
             echo
             "<div id='layout' class='grid'>
-              <form action='../system/email.php' method='POST' class='center box'>
-                <h3> Newsletter </h3>
-                <br>
-                <div class='text_input'>
-                  <input type='text' id='headline' name='headline' required>
-                  <label for='headline' class='floating_label'>Headline</label>
-                </div>
+              <div class='flex'>
+                <form action='../system/email.php' method='POST' class='center box'>
+                  <h3> Newsletter </h3>
+                  <br>
+                  <div class='text_input'>
+                    <input type='text' id='headline' name='headline' required>
+                    <label for='headline' class='floating_label'>Headline</label>
+                  </div>
 
-                <textarea id='message' name='message' required placeholder='Nachricht'></textarea>
+                  <textarea id='message' name='message' required placeholder='Nachricht'></textarea>
 
 
-                <button type='submit' id='send-button'>Senden</button>
+                  <button type='submit' id='send-button'>Senden</button>
 
-                <p>Abbonenten: $countNewsletter</p>
-              </form>
+                  <p>Abbonenten: $countNewsletter</p>
+                </form>
+              </div>
 
-              <form action='../system/entry.php' method='POST' enctype='multipart/form-data' class='center box'>
-                <h3> Beitrag </h3>
+              <div class='flex'>
+                <form action='../system/entry.php' method='POST' enctype='multipart/form-data' class='center box'>
+                  <h3> Beitrag </h3>
 
-                <br>
-                <div class='text_input'>
-                  <input type='text' id='headline_de' name='headline_de' required>
-                  <label for='headline_de' class='floating_label'>Headline</label>
-                </div>
+                  <br>
+                  <div class='text_input'>
+                    <input type='text' id='headline_de' name='headline_de' required>
+                    <label for='headline_de' class='floating_label'>Headline Deutsch</label>
+                  </div>
 
-                <textarea id='message' name='message_de' required placeholder='Nachricht'></textarea>
+                  <textarea id='message' name='message_de' required placeholder='Nachricht Deutsch'></textarea>
 
-                <br>
-                <div class='text_input'>
-                  <input type='text' id='headline_en' name='headline_en' required>
-                  <label for='headline_en' class='floating_label'>Headline</label>
-                </div>
+                  <br>
+                  <div class='text_input'>
+                    <input type='text' id='headline_en' name='headline_en' required>
+                    <label for='headline_en' class='floating_label'>Headline Englisch</label>
+                  </div>
 
-                <textarea id='message' name='message_en' required placeholder='Nachricht'></textarea>
+                  <textarea id='message' name='message_en' required placeholder='Nachricht Englisch'></textarea>
 
-                <br>
-                <div class='text_input'>
-                  <input type='file' id='cover' name='cover' required>
-                  <label for='cover' class='floating_label'>Headline</label>
-                </div>
+                  <br>
+                  <div class='text_input'>
+                    <input type='file' id='cover' name='cover' required>
+                    <label for='cover' class='floating_label'>Cover Image</label>
+                  </div>
 
-                <br>
-                <div class='text_input'>
-                  <input type='text' id='category' name='category' required>
-                  <label for='category' class='floating_label'>Headline</label>
-                </div>
+                  <br>
+                  <div class='text_input'>
+                    <input type='text' id='category' name='category' required>
+                    <label for='category' class='floating_label'>Kategorie</label>
+                  </div>
 
-                <br>
-                <div class='text_input'>
-                  <input type='text' id='story' name='story' required>
-                  <label for='story' class='floating_label'>Headline</label>
-                </div>
+                  <br>
+                  <div class='text_input'>
+                    <input type='text' id='story' name='story' required>
+                    <label for='story' class='floating_label'>Geschichte</label>
+                  </div>
 
-                <button type='submit' id='send-button'>Senden</button>
-              </form>
+                  <button type='submit' id='send-button'>Senden</button>
+                </form>
+              </div>
             </div>";
           } else {
             echo
