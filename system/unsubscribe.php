@@ -14,9 +14,9 @@
     $statement->execute();
 
     if ($statement->rowCount() > 0) {
-      echo "New entry created successfully!";
+      header("Location: ../de/success.php");
     } else {
-      echo "Failed to create a new entry.";
+      header("Location: ../de/failure.php");
     }
 
     $statement = null;
@@ -24,7 +24,4 @@
     echo "An error occurred: " . $e->getMessage();
     exit;
     }
-
-  header("Location: ../de/success.php");
-
   ?>

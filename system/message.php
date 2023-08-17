@@ -10,10 +10,8 @@
     $mailSent = mail("julius.steck.js@gmail.com", $headline, $content, $headers);
 
     if ($mailSent) {
-        echo "Email sent successfully.";
         header("Location: ../de/success.php");
     } else {
-        echo "Failed to send email.";
         header("Location: ../de/failiure.php");
     }
   ?>

@@ -1,11 +1,11 @@
 <?php
-require_once '../database_connection.php'; // Make sure to include your database connection configuration
+require_once '../database_connection.php';
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $imageId = $_GET['id'];
 
     try {
-        $query = "SELECT image FROM images WHERE id = :id";
+        $query = "SELECT image FROM Blog WHERE EntryID = :id";
         $statement = $pdo->prepare($query);
         $statement->bindParam(':id', $imageId, PDO::PARAM_INT);
         $statement->execute();
@@ -15,11 +15,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         if ($row && isset($row['image'])) {
             $imageData = $row['image'];
             
-            // Set appropriate headers for image output
-            header("Content-Type: image/jpeg"); // Adjust content type based on your image format
+            header("Content-Type: image/jpeg");
             header("Content-Length: " . strlen($imageData));
             
-            // Output the image data to the browser
             echo $imageData;
         } else {
             echo "Image not found.";

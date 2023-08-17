@@ -37,13 +37,12 @@
         $mailSent = mail($subscriber[2], $headline, $content, $headers);
 
         if ($mailSent) {
-            echo "Email sent successfully.";
+          header("Location: ../de/management.php");
         } else {
-            echo "Failed to send email.";
+          header("Location: ../de/failure.php");
         }
       }
 
-      header("Location: ../de/success.php");
     }
     else{
       echo "cookie problem";

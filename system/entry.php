@@ -52,4 +52,6 @@
 
      $statement = null;
      $pdo = null;
+
+     header("Location: ../de/management.php");
   ?>
