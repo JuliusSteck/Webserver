@@ -92,39 +92,39 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline_de' name='headline_de' required>
+                    <input type='text' id='headline_de' name='headline_de' class='wide' required>
                     <label for='headline_de' class='floating_label'>Headline Deutsch</label>
                   </div>
 
-                  <textarea id='message' name='message_de' required placeholder='Nachricht Deutsch'></textarea>
+                  <textarea id='message' name='message_de' required placeholder='Nachricht Deutsch'  class='wide'></textarea>
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline_en' name='headline_en' required>
+                    <input type='text' id='headline_en' name='headline_en' class='wide' required>
                     <label for='headline_en' class='floating_label'>Headline Englisch</label>
                   </div>
 
-                  <textarea id='message' name='message_en' required placeholder='Nachricht Englisch'></textarea>
+                  <textarea id='message' name='message_en' required placeholder='Nachricht Englisch' class='wide'></textarea>
 
                   <br>
                   <div class='text_input'>
-                    <input type='file' id='cover' name='cover' required>
-                    <label for='cover' class='floating_label'>Cover Image</label>
+                    <input type='file' id='cover' name='cover' class='wide' required>
+                    <label for='cover' class='hovering_label'>Cover Image</label>
                   </div>
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='category' name='category' required>
+                    <input type='text' id='category' name='category' class='wide' required>
                     <label for='category' class='floating_label'>Kategorie</label>
                   </div>
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='story' name='story' required>
+                    <input type='text' id='story' name='story' class='wide' required>
                     <label for='story' class='floating_label'>Geschichte</label>
                   </div>
 
-                  <button type='submit' id='send-button'>Senden</button>
+                  <button type='submit' id='send-button' class='wide'>Senden</button>
                 </form>
               </div>
             </div>";

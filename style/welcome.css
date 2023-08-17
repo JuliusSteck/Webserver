@@ -38,10 +38,12 @@ label[for="dropdown"] span{
   gap: 20px;
 }
 
-.element {
+.element{
   position: relative;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: 98%;
+  opacity: 0; 
+  transition: opacity 0.3s;
 }
 
 .element img{

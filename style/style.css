@@ -163,7 +163,7 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
   padding: 50px;
 }
 
-input[type="text"], input[type="password"], textarea{
+input[type="text"], input[type="password"], input[type="file"], textarea{
   background: none;
   border-radius: 5px;
   border: 2px solid var(--text-color);
@@ -227,6 +227,15 @@ input:focus, textarea:focus{
   border-radius: 2px;
   font-size: 18px;
   opacity: 0.65;
+}
+
+.text_input .hovering_label {
+  position: absolute;
+  pointer-events: none;
+  top: -20px;
+  left: 0px;
+  border-radius: 2px;
+  font-size: 18px;
 }
 
 .text_input input:focus ~ .floating_label,
