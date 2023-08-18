@@ -99,7 +99,7 @@
                 echo
                 "<a href='blog.php?id=$entryID' category='$Category' id='entry_$entryID'>
                   <div class='element'>
-                    <img class='element_image' src='../images/$entryCover' alt='Entry Cover'>
+                    <img class='element_image' src='../system/image.php?id=$entryID' alt='Entry Cover'>
                     <div class='element_background'>
                       <div class='element_description'>
                         <h3>$entryTitle</h3>

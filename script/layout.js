@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   //const lazyElements = document.getElementsByClassName('element');
-  //const lazyElementsArray = Array.from(lazyElements);
+  //const entries = Array.from(lazyElements);
  
   function isElementInViewport(element) {
       const rect = element.getBoundingClientRect();
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function lazyLoad() {
       entries.forEach(element => {
           if (isElementInViewport(element)) {
-              element.style.opacity = 1;
+              element.getElementsByClassName('element')[0].style.opacity = 1;
           }
       });
   }
