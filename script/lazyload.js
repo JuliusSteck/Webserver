@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const lazyElements = document.querySelectorAll('element');
-
+    const lazyElements = document.getElementsByClassName('element');
+    const lazyElementsArray = Array.from(lazyElements);
+   
     function isElementInViewport(element) {
         const rect = element.getBoundingClientRect();
         return (
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function lazyLoad() {
-        lazyElements.forEach(element => {
+        lazyElementsArray.forEach(element => {
             if (isElementInViewport(element)) {
                 element.style.opacity = 1;
             }

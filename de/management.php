@@ -100,7 +100,7 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline_en' name='headline_en' class='wide' required>
+                    <input type='text' id='headline_en' name='headline_en' class='wide'>
                     <label for='headline_en' class='floating_label'>Headline Englisch</label>
                   </div>
 
@@ -109,7 +109,13 @@
                   <br>
                   <div class='text_input'>
                     <input type='file' id='cover' name='cover' class='wide' required>
-                    <label for='cover' class='hovering_label'>Cover Image</label>
+                    <label for='cover' class='hovering_label'>Cover Bild</label>
+                  </div>
+
+                  <br>
+                  <div class='text_input'>
+                    <input type='file' id='picture' name='picture' class='wide'>
+                    <label for='picture' class='hovering_label'>Zusätzliches Bild</label>
                   </div>
 
                   <br>
@@ -120,7 +126,7 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='story' name='story' class='wide' required>
+                    <input type='text' id='story' name='story' class='wide'>
                     <label for='story' class='floating_label'>Geschichte</label>
                   </div>
 

@@ -10,8 +10,12 @@
     grid-gap: 20px;
 }
 
-.wide{
+input[type="text"] .wide, input[type="password"] .wide, input[type="file"] .wide, textarea .wide{
   width: 400px;
+}
+
+textarea{
+  height: 400px;
 }
   
 @media(max-width: 1200px){
@@ -32,5 +36,9 @@
   .right{
       grid-column: 1;
       grid-row: 4 / span 1;
+  }
+
+  input[type="text"] .wide, input[type="password"] .wide, input[type="file"] .wide, textarea .wide{
+    width: 200px;
   }
 }

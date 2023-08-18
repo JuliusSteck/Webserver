@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function restructure(filter){
     var display = [];
     for(var i = 0; i < entries.length; i++){
+      entries[i].getElementsByClassName('element').style.opacity = 0;
       if(entries[i].getAttribute('category') == filter || filter == "all"){
         display.push(entries[i]);
       }
@@ -108,4 +109,28 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(button);
     buttons[button].classList.add("aktiv");
   }
+
+  //const lazyElements = document.getElementsByClassName('element');
+  //const lazyElementsArray = Array.from(lazyElements);
+ 
+  function isElementInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+          rect.top >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+      );
+  }
+
+  function lazyLoad() {
+      entries.forEach(element => {
+          if (isElementInViewport(element)) {
+              element.style.opacity = 1;
+          }
+      });
+  }
+
+  lazyLoad();
+
+  window.addEventListener('scroll', lazyLoad);
 });
+

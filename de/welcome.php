@@ -16,7 +16,6 @@
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
     <script src="../script/layout.js"></script>
-    <script src="../script/lazyload.js"></script>
 </head>
 
 <body>
@@ -120,17 +119,6 @@
          </div>";
         ?>
 
-        <!--
-        class Calculator {
-        public function add($num1, $num2) {
-          return $num1 + $num2;
-          }
-        }
-
-        $calc = new Calculator();
-        $result = $calc->add(5, 3);
-        echo $result;
-        -->
     </div>
   </section>
 
