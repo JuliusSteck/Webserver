@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function restructure(filter){
     var display = [];
     for(var i = 0; i < entries.length; i++){
-      entries[i].getElementsByClassName('element').style.opacity = 0;
+      entries[i].getElementsByClassName('element')[0].style.opacity = 0;
       if(entries[i].getAttribute('category') == filter || filter == "all"){
         display.push(entries[i]);
       }
