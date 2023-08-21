@@ -100,7 +100,7 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline_en' name='headline_en' class='wide'>
+                    <input type='text' id='headline_en' name='headline_en' class='wide' placeholder=' '>
                     <label for='headline_en' class='floating_label'>Headline Englisch</label>
                   </div>
 
@@ -128,12 +128,12 @@
                         <option value='Technology'>Technologie</option>
                         <option value='Politics'>Politik</option>
                     </select>
-                    <label for='category' class='floating_label'>Kategorie</label>
+                    <label for='category' class='hovering_floating_label'>Kategorie</label>
                   </div>
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='story' name='story' class='wide'>
+                    <input type='text' id='story' name='story' class='wide' placeholder=' '>
                     <label for='story' class='floating_label'>Geschichte</label>
                   </div>
 

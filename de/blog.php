@@ -135,7 +135,7 @@
             <p> $entryDescription</p>
           </div>
           <div class='flex' id='column_2'>
-            <img class='' src='../system/image.php?id=$entryID' alt='Entry Cover'>
+            <img class='' src='../images/$entryCover' alt='Entry Cover'>
           </div>
         </div>";
         ?>

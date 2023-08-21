@@ -6,13 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
   var buttonAnkuendigungen = document.getElementById("button_ankuendigungen");
   var buttonTechnologie = document.getElementById("button_technologie");
   var buttonPolitik = document.getElementById("button_politik");
-
-  var count = document.getElementById("count").getAttribute('count');
-  var entries = [];
-  var columns = [];
   var buttons = [buttonAlles, buttonArbeit, buttonFreizeit, buttonAnkuendigungen, buttonTechnologie, buttonPolitik];
 
-  for (var i = 1; i <= count; i++){
+  var lazyElements = document.getElementsByClassName('entry');
+  var entries = [];
+  
+  for (var i = 1; i <= Array.from(lazyElements).length; i++){
     var elementID = "entry_" + i;
     var element = document.getElementById(elementID);
     if (element) {
@@ -20,15 +19,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
-
-  for (var i = 1; i <= 4; i++){
-    var columnID = "column_" + i;
-    var column = document.getElementById(columnID);
-    if (column) {
-      columns.push(column);
-    }
-  }
-
+  var lazyColumns = document.getElementsByClassName('column');
+  var columns = Array.from(lazyColumns);
+  
+  var display = [];
+  
   buttonAlles.addEventListener("click", function(){
     clear();
     restructure("all");
@@ -66,26 +61,26 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function restructure(filter){
-    var display = [];
-    for(var i = 0; i < entries.length; i++){
+    display = [];
+    for(var i = entries.length -1 ; i >= 0; i--){
       if(entries[i].getAttribute('category') == filter || filter == "all"){
         display.push(entries[i]);
       }
     }
 
-    for (var i = 0; i < display.length;  i++){
-      switch (i % 4) {
+    for (var j = 0; j < display.length;  j++){
+      switch (j % 4) {
         case 0:
-          columns[0].appendChild(display[display.length - 1 - i]);
+          columns[0].appendChild(display[j]);
           break;
         case 1:
-          columns[1].appendChild(display[display.length - 1 - i]);
+          columns[1].appendChild(display[j]);
           break;
         case 2:
-          columns[2].appendChild(display[display.length - 1 - i]);
+          columns[2].appendChild(display[j]);
           break;
         case 3:
-          columns[3].appendChild(display[display.length -1 - i]);
+          columns[3].appendChild(display[j]);
           break;
         default:
           break;
@@ -104,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     entries.forEach(function(element){
         element.style.opacity = 0;
+        console.log('clear ' + element);
     });
   }
 
@@ -113,30 +109,33 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     buttons[button].classList.add("aktiv");
   }
-
-  //const lazyElements = document.getElementsByClassName('element');
-  //const entries = Array.from(lazyElements);
  
   function isElementInViewport(element) {
       const rect = element.getBoundingClientRect();
       return (
-          rect.top >= 0 &&
-          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= window.innerHeight &&
+        rect.right <= window.innerWidth
       );
   }
 
   function lazyLoad() {
-    for (var i = 1; i <= count; i++){
-        var element = entries[i - 1];
-        if (isElementInViewport(element) || i <= 4) {
-              element.style.opacity = 1;
-         }
+    for (var i = 0 ; i < display.length; i++){
+        if (isElementInViewport(display[i]) || i < 4) {
+              display[i].style.opacity = 1;
+              console.log('show ' + i + ' '+ display[i]);
+        }
     }
   }
+  
+  clear();
+  
+   window.addEventListener('scroll', lazyLoad);
+   
+   window.onload = function() {
+    restructure("all");
+    }
 
-    clear();
-  restructure("all");
-
-  window.addEventListener('scroll', lazyLoad);
 });
 
