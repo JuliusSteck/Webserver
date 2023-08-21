@@ -163,7 +163,7 @@ img::selection, p::selection, span::selection, a::selection, h1::selection, h2::
   padding: 50px;
 }
 
-input[type="text"], input[type="password"], input[type="file"], textarea{
+input[type="text"], input[type="password"], input[type="file"], textarea, select{
   background: none;
   border-radius: 5px;
   border: 2px solid var(--text-color);

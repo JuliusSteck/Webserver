@@ -96,7 +96,7 @@
                     <label for='headline_de' class='floating_label'>Headline Deutsch</label>
                   </div>
 
-                  <textarea id='message' name='message_de' required placeholder='Nachricht Deutsch'  class='wide'></textarea>
+                  <textarea id='message_de' name='message_de' required placeholder='Nachricht Deutsch'  class='wide'></textarea>
 
                   <br>
                   <div class='text_input'>
@@ -104,7 +104,7 @@
                     <label for='headline_en' class='floating_label'>Headline Englisch</label>
                   </div>
 
-                  <textarea id='message' name='message_en' required placeholder='Nachricht Englisch' class='wide'></textarea>
+                  <textarea id='message_en' name='message_en' required placeholder='Nachricht Englisch' class='wide'></textarea>
 
                   <br>
                   <div class='text_input'>
@@ -121,12 +121,12 @@
                   <br>
                   <div class='text_input'>
                     <select id='category' name='category' class='wide' required>
-                        <option value="">-- Select an option --</option>
-                        <option value='Work'>Work</option>
-                        <option value='Freetime'>Freetime</option>
-                        <option value='Announcement'>Announcement</option>
-                        <option value='Technology'>Technology</option>
-                        <option value='Politics'>Politics</option>
+                        <option value=''>-- Auswahl --</option>
+                        <option value='Work'>Arbeit</option>
+                        <option value='Freetime'>Freizeit</option>
+                        <option value='Announcement'>Annkündigung</option>
+                        <option value='Technology'>Technologie</option>
+                        <option value='Politics'>Politik</option>
                     </select>
                     <label for='category' class='floating_label'>Kategorie</label>
                   </div>

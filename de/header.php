@@ -28,7 +28,7 @@
 
           <form id="search-form" action="search.php">
             <div class='text_input'>
-              <input type="text" id="search-input" name="search" required>
+              <input type="text" id="search" name="search" required>
               <label for="search" class='floating_label'>Suchen</label>
             </div>
             <button type="submit" id="search-button">suchen</button>

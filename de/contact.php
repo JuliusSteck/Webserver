@@ -50,7 +50,7 @@
         </div>
         
         <div class="text_input left">
-          <input type="text" id="email" name="email" required>
+          <input type="email" id="email" name="email" required>
           <label for="email" class="floating_label">Email</label>
         </div>
 

@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
       entries.push(element);
     }
   }
+  
 
   for (var i = 1; i <= 4; i++){
     var columnID = "column_" + i;
@@ -97,18 +98,19 @@ document.addEventListener("DOMContentLoaded", function() {
   function clear(){
     columns.forEach(function(parent){
       while (parent.firstChild) {
-        parent.firstChild.style.opacity = 0;
         parent.removeChild(parent.firstChild);
       }
+    });
+    
+    entries.forEach(function(element){
+        element.style.opacity = 0;
     });
   }
 
   function styleActive(button){
     buttons.forEach(function(parent){
-      console.log(parent);
       parent.classList.remove("aktiv");
     });
-    console.log(button);
     buttons[button].classList.add("aktiv");
   }
 
@@ -124,14 +126,16 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function lazyLoad() {
-      entries.forEach(element => {
-          if (isElementInViewport(element)) {
-              element.getElementsByClassName('element')[0].style.opacity = 1;
-          }
-      });
+    for (var i = 1; i <= count; i++){
+        var element = entries[i - 1];
+        if (isElementInViewport(element) || i <= 4) {
+              element.style.opacity = 1;
+         }
+    }
   }
 
-  lazyLoad();
+    clear();
+  restructure("all");
 
   window.addEventListener('scroll', lazyLoad);
 });

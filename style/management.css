@@ -10,7 +10,7 @@
     grid-gap: 20px;
 }
 
-input[type="text"].wide, input[type="password"].wide, input[type="file"].wide, textarea.wide{
+input[type="text"].wide, input[type="password"].wide, input[type="file"].wide, textarea.wide, select.wide{
   width: 400px;
 }
 
@@ -38,7 +38,7 @@ textarea{
       grid-row: 4 / span 1;
   }
 
-  input[type="text"] .wide, input[type="password"] .wide, input[type="file"] .wide, textarea .wide{
+  input[type="text"].wide, input[type="password"].wide, input[type="file"].wide, textarea.wide, select.wide{
     width: 200px;
   }
 }
