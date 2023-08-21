@@ -3,6 +3,8 @@
 
     require_once '../session.php';
 
+    ob_start();
+
     if ($_SESSION['admin']) {
         $headline_de = $_POST['headline_de'];
         $message_de = $_POST['message_de'];
@@ -49,9 +51,11 @@
       echo "cookie problem";
     }
 
+    ob_end_flush();
 
-     $statement = null;
-     $pdo = null;
+
+    $statement = null;
+    $pdo = null;
 
      header("Location: ../de/management.php");
   ?>

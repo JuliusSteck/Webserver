@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
   function restructure(filter){
     var display = [];
     for(var i = 0; i < entries.length; i++){
-      entries[i].getElementsByClassName('element')[0].style.opacity = 0;
       if(entries[i].getAttribute('category') == filter || filter == "all"){
         display.push(entries[i]);
       }
@@ -91,11 +90,14 @@ document.addEventListener("DOMContentLoaded", function() {
           break;
       }
     }
+
+    lazyLoad();
   }
 
   function clear(){
     columns.forEach(function(parent){
       while (parent.firstChild) {
+        parent.firstChild.style.opacity = 0;
         parent.removeChild(parent.firstChild);
       }
     });

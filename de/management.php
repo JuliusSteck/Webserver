@@ -120,7 +120,14 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='category' name='category' class='wide' required>
+                    <select id='category' name='category' class='wide' required>
+                        <option value="">-- Select an option --</option>
+                        <option value='Work'>Work</option>
+                        <option value='Freetime'>Freetime</option>
+                        <option value='Announcement'>Announcement</option>
+                        <option value='Technology'>Technology</option>
+                        <option value='Politics'>Politics</option>
+                    </select>
                     <label for='category' class='floating_label'>Kategorie</label>
                   </div>
 

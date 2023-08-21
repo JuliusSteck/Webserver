@@ -27,7 +27,7 @@
   <noscript>
     <div class='noscript'>
       <div>
-        <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
+        <h2> JavaScript muss f端r die Nutzung der seite aktiviert sein.</h2>
       </div>
     </div>
   </noscript>
@@ -37,6 +37,7 @@
         <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
     </div>
   </section>
+  
 
   <section id="blog">
     <div class="container">
@@ -50,7 +51,7 @@
           <li><button type="button" id="button_alles" class="aktiv">Alles</button></li>
           <li><button type="button" id="button_arbeit" class="">Arbeit</button></li>
           <li><button type="button" id="button_freizeit" class="">Freizeit</button></li>
-          <li><button type="button" id="button_ankuendigungen" class="">Ankündigungen</button></li>
+          <li><button type="button" id="button_ankuendigungen" class="">Ank端ndigungen</button></li>
           <li><button type="button" id="button_technologie" class="">Technologie</button></li>
           <li><button type="button" id="button_politik" class="">Politik</button></li>
         </ul>
@@ -117,6 +118,7 @@
           echo
           "<div id='count' count='$count'>
          </div>";
+        
         ?>
 
     </div>
