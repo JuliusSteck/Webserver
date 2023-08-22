@@ -41,16 +41,16 @@
     <div class="container">
       <form id="contact-form" action="../system/message.php" method="post" class='center box grid'>
         <div class='text_input left'>
-          <input type="text" id="name" name="name" required maxlength="100">
+          <input type="text" id="name" name="name" required maxlength="100" placeholder=' '>
           <label for="name" class='floating_label'>Name</label>
         </div>
         <div class='text_input left'>
-          <input type="text" id="headline" name="headline" required maxlength="100">
+          <input type="text" id="headline" name="headline" required maxlength="100" placeholder=' '>
           <label for="headline" class='floating_label'>Betreff</label>
         </div>
         
         <div class="text_input left">
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required placeholder=' '>
           <label for="email" class="floating_label">Email</label>
         </div>
 

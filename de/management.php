@@ -73,7 +73,23 @@
                   <h3> Newsletter </h3>
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline' name='headline' required>
+                    <input type='text' id='headline' name='headline' required placeholder=' '>
+                    <label for='headline' class='floating_label'>Headline</label>
+                  </div>
+
+                  <textarea id='message' name='message' required placeholder='Nachricht'></textarea>
+
+
+                  <button type='submit' id='send-button'>Senden</button>
+
+                  <p>Abbonenten: $countNewsletter</p>
+                </form>
+
+                <form action='../system/caption.php' method='POST' class='center box'>
+                  <h3> Captions </h3>
+                  <br>
+                  <div class='text_input'>
+                    <input type='text' id='headline' name='headline' required placeholder=' '>
                     <label for='headline' class='floating_label'>Headline</label>
                   </div>
 
@@ -92,7 +108,7 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline_de' name='headline_de' class='wide' required>
+                    <input type='text' id='headline_de' name='headline_de' class='wide' required placeholder=' '>
                     <label for='headline_de' class='floating_label'>Headline Deutsch</label>
                   </div>
 
@@ -114,7 +130,7 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='file' id='picture' name='picture' class='wide'>
+                    <input type='file' id='picture' name='image' class='wide'>
                     <label for='picture' class='hovering_label'>Zusätzliches Bild</label>
                   </div>
 

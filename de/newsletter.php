@@ -42,11 +42,11 @@
     <div class="container">
       <form id="newsletter-form" action="../system/registration.php" method="post" class='center box'>
         <div class='text_input'>
-          <input type="text" id="name" name="name" required maxlength="100">
+          <input type="text" id="name" name="name" required maxlength="100" placeholder=' '>
           <label for="name" class='floating_label'>Name</label>
         </div>
         <div class='text_input'>
-          <input type="text" id="email" name="email" required maxlength="100">
+          <input type="text" id="email" name="email" required maxlength="100" placeholder=' '>
           <label for="email" class='floating_label'>Email</label>
         </div>
         <br>

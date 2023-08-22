@@ -42,8 +42,8 @@
         $entryDescription = "Bleibt gespannt";
         $entryDate = "in der Zukunft";
         $entryCover = "Julius_Anzug_2020.jpg";
-        $entryStory = $row['-'];
-        $entryCategory = $row['-'];
+        $entryStory = '-';
+        $entryCategory = '-';
       }
 
       $statement = null;

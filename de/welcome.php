@@ -27,7 +27,7 @@
   <noscript>
     <div class='noscript'>
       <div>
-        <h2> JavaScript muss f端r die Nutzung der seite aktiviert sein.</h2>
+        <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
       </div>
     </div>
   </noscript>
@@ -41,24 +41,6 @@
 
   <section id="blog">
     <div class="container">
-      <div id="filter" class="filter">
-        <input type="checkbox" id="dropdown">
-        <label for="dropdown">
-          <img src='../icons/icon_arrow_dropdown.svg' class='icon' alt='dropdown'>
-        </label>
-
-        <ul>
-          <li><button type="button" id="button_alles" class="aktiv">Alles</button></li>
-          <li><button type="button" id="button_arbeit" class="">Arbeit</button></li>
-          <li><button type="button" id="button_freizeit" class="">Freizeit</button></li>
-          <li><button type="button" id="button_ankuendigungen" class="">Ank端ndigungen</button></li>
-          <li><button type="button" id="button_technologie" class="">Technologie</button></li>
-          <li><button type="button" id="button_politik" class="">Politik</button></li>
-        </ul>
-      </div>
-
-      <div id="layout" class="layout">
-
         <?php
           require_once '../database_connection.php';
 
@@ -76,7 +58,6 @@
 
                 $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
             }
-            $count = count($entries);
             $statement = null;
           } catch (PDOException $e) {
           echo "An error occurred: " . $e->getMessage();
@@ -84,6 +65,25 @@
           }
 
           $pdo = null;
+
+          echo'
+            <div id="filter" class="filter">
+            <input type="checkbox" id="dropdown">
+            <label for="dropdown">
+              <img src="../icons/icon_arrow_dropdown.svg" class="icon" alt="dropdown">
+            </label>
+
+            <ul>
+              <li><button type="button" id="button_alles" class="aktiv">Alles</button></li>
+              <li><button type="button" id="button_arbeit" class="">Arbeit</button></li>
+              <li><button type="button" id="button_freizeit" class="">Freizeit</button></li>
+              <li><button type="button" id="button_ankuendigungen" class="">Ankündigungen</button></li>
+              <li><button type="button" id="button_technologie" class="">Technologie</button></li>
+              <li><button type="button" id="button_politik" class="">Politik</button></li>
+            </ul>
+          </div>
+
+          <div id="layout" class="layout">';
 
           for($j = 1; $j < 5; $j++){
             echo "<div class='column flex'>";

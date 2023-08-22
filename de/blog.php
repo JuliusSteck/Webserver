@@ -26,12 +26,13 @@
 
 <?php
   include 'header.php';
+  
   $id = $_GET['id'];
 
   require_once '../database_connection.php';
 
   try {
-    $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover, Category, story FROM Blog WHERE EntryID = $id";
+    $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover, Category, story, EntryCover2 FROM Blog WHERE EntryID = $id";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
@@ -42,6 +43,8 @@
         $entryCover = $row['EntryCover'];
         $entryStory = $row['story'];
         $entryCategory = $row['Category'];
+        $entryCover2 = $row['EntryCover2'];
+
     } else {
       $entryID = 0;
       $entryTitle = "Fortsetzung folgt";
@@ -50,26 +53,29 @@
       $entryCover = "Julius_Anzug_2020.jpg";
       $entryStory = $row['-'];
       $entryCategory = $row['-'];
+      $entryCover2 = NULL;
     }
 
-    $query = "SELECT MAX(EntryID) AS MaxEntryID FROM Blog";
+    $query = "SELECT EntryID FROM Blog WHERE EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $maxEntryID = $row['MaxEntryID'];
-      if($maxEntryID > $entryID){
-        $nextID = $entryID + 1;
-      } else {
-        $nextID = 0;
-      }
+      $nextyID = $row['EntryID'];
+    } else {
+      $nextID = 0;
     }
 
-    if($entryID > 1){
-      $previousID = $entryID - 1;
+    $query = "SELECT EntryID FROM Blog WHERE EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+    $statement = $pdo->query($query);
+
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+      $previousID = $row['EntryID'];
     } else {
       $previousID = 0;
     }
+
 
     $query = "SELECT EntryID FROM Blog WHERE Category = '$entryCategory' AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
     $statement = $pdo->query($query);
@@ -132,7 +138,12 @@
 
         <div id='layout' class='layout'>
           <div class='flex' id='column_1'>
-            <p> $entryDescription</p>
+            <p> $entryDescription</p>";
+            if($entryCover2 != NULL){
+            echo "
+            <img class='' src='../images/$entryCover2' alt='Entry Cover'>";
+            }
+          echo"
           </div>
           <div class='flex' id='column_2'>
             <img class='' src='../images/$entryCover' alt='Entry Cover'>
