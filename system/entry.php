@@ -26,7 +26,8 @@
         $coverData = fopen($targetPath, 'rb');
 
         if (isset($_FILES['image']['tmp_name'])) {
-            $targetFileNameImage = basename($_FILES['cover']['name']);
+            $image = $_FILES['image']['tmp_name'];
+            $targetFileNameImage = basename($_FILES['image']['name']);
             $targetPathImage = $targetDirectory . $targetFileNameImage;
             if (move_uploaded_file($image, $targetPathImage)) {
                 echo "File uploaded and moved successfully.";
@@ -36,7 +37,7 @@
 
             $ImageData = fopen($targetPathImage, 'rb');
 
-            $query = "INSERT INTO Blog (EntryTitle_de, EntryDescription_de, EntryTitle_en, EntryDescription_en, Category, story, image, EntryCover,  EntryDate, type, Image2, EntryCover2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURDATE(), 'entry')";
+            $query = "INSERT INTO Blog (EntryTitle_de, EntryDescription_de, EntryTitle_en, EntryDescription_en, Category, story, image, EntryCover,  EntryDate, type, Image2, EntryCover2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURDATE(), 'entry', ?, ?)";
 
 
             $statement = $pdo->prepare($query);

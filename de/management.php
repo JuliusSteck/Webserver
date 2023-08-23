@@ -89,16 +89,27 @@
                   <h3> Captions </h3>
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline' name='headline' required placeholder=' '>
-                    <label for='headline' class='floating_label'>Headline</label>
+                    <input type='text' id='headline' name='headline' required>
                   </div>
 
-                  <textarea id='message' name='message' required placeholder='Nachricht'></textarea>
+                  <div class='text_input'>
+                    <input type='text' id='headline' name='headline' required>
+                  </div>
 
+                  <div class='text_input'>
+                    <input type='text' id='headline' name='headline' required>
+                  </div>
+
+                  <div class='text_input'>
+                    <input type='text' id='headline' name='headline' required>
+                  </div>
+
+                  <div class='text_input'>
+                    <input type='text' id='headline' name='headline' required>
+                  </div>
 
                   <button type='submit' id='send-button'>Senden</button>
 
-                  <p>Abbonenten: $countNewsletter</p>
                 </form>
               </div>
 
@@ -108,7 +119,7 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline_de' name='headline_de' class='wide' required placeholder=' '>
+                    <input type='text' id='headline_de' name='headline_de' class='wide' required>
                     <label for='headline_de' class='floating_label'>Headline Deutsch</label>
                   </div>
 
@@ -116,7 +127,7 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='headline_en' name='headline_en' class='wide' placeholder=' '>
+                    <input type='text' id='headline_en' name='headline_en' class='wide' required>
                     <label for='headline_en' class='floating_label'>Headline Englisch</label>
                   </div>
 
@@ -149,7 +160,7 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='text' id='story' name='story' class='wide' placeholder=' '>
+                    <input type='text' id='story' name='story' class='wide' required>
                     <label for='story' class='floating_label'>Geschichte</label>
                   </div>
 

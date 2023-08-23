@@ -32,12 +32,6 @@ label[for="dropdown"] span{
   grid-gap: 20px;
 }
 
-.flex{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .column{
 
 }

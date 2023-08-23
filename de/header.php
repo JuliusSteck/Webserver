@@ -34,6 +34,9 @@
             <button type="submit" id="search-button">suchen</button>
           </form>
         </li>
+        <li class="language-toggle">
+          <button id="language-toggle">Englisch</button>
+        </li>
       </ul>
     </nav>
   </div>

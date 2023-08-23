@@ -239,8 +239,7 @@ input:focus, textarea:focus{
 }
 
 .text_input input:focus ~ .floating_label,
-.text_input input:not(:focus):valid ~ .floating_label,
-.text_input input:not(:placeholder-shown) ~ .floating_label{
+.text_input input:not(:focus):valid ~ .floating_label{
   top: -10px;
   left: 15px;
   opacity: 1;
@@ -250,6 +249,12 @@ input:focus, textarea:focus{
 
 .invisible{
   display: none;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @media(max-width: 1500px){

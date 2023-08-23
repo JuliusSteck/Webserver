@@ -10,7 +10,7 @@
     grid-gap: 20px;
 }
 
-input[type="text"].wide, input[type="password"].wide, input[type="file"].wide, textarea.wide, select.wide, button{
+input[type="text"].wide, input[type="password"].wide, input[type="file"].wide, textarea.wide, select.wide, button.wide{
   width: 400px;
 }
 
