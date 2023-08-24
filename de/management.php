@@ -155,7 +155,7 @@
                         <option value='Technology'>Technologie</option>
                         <option value='Politics'>Politik</option>
                     </select>
-                    <label for='category' class='hovering_floating_label'>Kategorie</label>
+                    <label for='category' class='hovering_label'>Kategorie</label>
                   </div>
 
                   <br>

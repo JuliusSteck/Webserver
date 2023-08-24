@@ -26,8 +26,11 @@
 
 <?php
   include 'header.php';
-  
-  $id = $_GET['id'];
+  $id = 0;
+
+  if(isset($_GET['id']){
+    $id = $_GET['id'];
+  }
 
   require_once '../database_connection.php';
 
@@ -51,8 +54,8 @@
       $entryDescription = "Bleibt gespannt";
       $entryDate = "in der Zukunft";
       $entryCover = "Julius_Anzug_2020.jpg";
-      $entryStory = $row['-'];
-      $entryCategory = $row['-'];
+      $entryStory = '-';
+      $entryCategory = '-';
       $entryCover2 = NULL;
     }
 

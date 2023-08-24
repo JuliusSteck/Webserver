@@ -49,8 +49,8 @@
             $statement->bindParam(6, $story);
             $statement->bindParam(7, $coverData, PDO::PARAM_LOB);
             $statement->bindParam(8, $targetFileName);
-            $statement->bindParam(7, $ImageData, PDO::PARAM_LOB);
-            $statement->bindParam(8, $targetFileNameImage);
+            $statement->bindParam(9, $ImageData, PDO::PARAM_LOB);
+            $statement->bindParam(10, $targetFileNameImage);
             
         
             if ($statement->execute()) {

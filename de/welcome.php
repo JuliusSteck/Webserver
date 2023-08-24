@@ -32,12 +32,33 @@
     </div>
   </noscript>
 
-  <section id='caption'>
-    <div class="container">
-        <h1>Ich bin <span id="flexible_caption" class="flexible_caption"> </span><span id="cursor" class="cursor">_</span> </h1>
-    </div>
-  </section>
-  
+
+  <?php
+    require_once '../database_connection.php';
+
+    try {
+      $query = "SELECT Word FROM Words WHERE Language ='german";
+      $statement = $pdo->query($query);
+      $words = array();
+
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+          $entries[] =  $row['Word'];
+      }
+      $statement = null;
+    } catch (PDOException $e) {
+    echo "An error occurred: " . $e->getMessage();
+    exit;
+    }
+
+    $pdo = null;
+
+    echo"
+    <section id='caption'>
+      <div class='container'>
+        <h1>Ich bin <span id='flexible_caption' class='flexible_caption'> </span><span id='cursor' class='cursor'>_</span> </h1>
+      </div>
+    </section>";
+  ?>
 
   <section id="blog">
     <div class="container">
@@ -88,7 +109,7 @@
           for($j = 1; $j < 5; $j++){
             echo "<div class='column flex'>";
 
-            for ($i = 0; $i < $count; $i++) {
+            for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == ($j - 1)){
 
                 $entryID = $entries[$count - ($i + 1)][0];
