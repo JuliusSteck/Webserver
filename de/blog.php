@@ -35,87 +35,97 @@
   require_once '../database_connection.php';
 
   try {
-    $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover, Category, story, EntryCover2 FROM Blog WHERE EntryID = $id";
+    $query = "SELECT id, title_de, date, cover, category, story FROM Blog WHERE id = $id";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $entryID = $row['EntryID'];
-        $entryTitle = $row['EntryTitle_de'];
-        $entryDescription = $row['EntryDescription_de'];
-        $entryDate = $row['EntryDate'];
-        $entryCover = $row['EntryCover'];
+        $entryID = $row['id'];
+        $entryTitle = $row['title_de'];
+        $entryDate = $row['date'];
+        $entryCover = $row['cover'];
         $entryStory = $row['story'];
-        $entryCategory = $row['Category'];
-        $entryCover2 = $row['EntryCover2'];
+        $entryCategory = $row['category'];
 
     } else {
       $entryID = 0;
       $entryTitle = "Fortsetzung folgt";
-      $entryDescription = "Bleibt gespannt";
       $entryDate = "in der Zukunft";
       $entryCover = "Julius_Anzug_2020.jpg";
       $entryStory = '-';
       $entryCategory = '-';
-      $entryCover2 = NULL;
     }
 
-    $query = "SELECT EntryID FROM Blog WHERE EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
+    $query = "SELECT id, chapter_title, content_text, image_path FROM blog_content WHERE blog_id = :id AND chapter_language = 'german'";
+    $statement->bindParam(':id', $imageId, PDO::PARAM_INT);
+    $statement = $pdo->query($query);
+    $chapters = array();
+
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        $entryID = $row['id'];
+        $entryTitle = $row['chapter_title'];
+        $entryDate = $row['content_text'];
+        $entryCover = $row['image_path'];
+
+        $chapters[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
+    }
+
+    $query = "SELECT id FROM Blog WHERE id > $entryID ORDER BY id ASC LIMIT 1;";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $nextyID = $row['EntryID'];
+      $nextyID = $row['id'];
     } else {
       $nextID = 0;
     }
 
-    $query = "SELECT EntryID FROM Blog WHERE EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE id < $entryID ORDER BY id ASC LIMIT 1;";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $previousID = $row['EntryID'];
+      $previousID = $row['id'];
     } else {
       $previousID = 0;
     }
 
 
-    $query = "SELECT EntryID FROM Blog WHERE Category = '$entryCategory' AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id > $entryID ORDER BY id ASC LIMIT 1;";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $nextCategoryID = $row['EntryID'];
+      $nextCategoryID = $row['id'];
     } else {
       $nextCategoryID = 0;
     }
 
-    $query = "SELECT EntryID FROM Blog WHERE Category = '$entryCategory' AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id < $entryID ORDER BY id ASC LIMIT 1;";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $previousCategoryID = $row['EntryID'];
+      $previousCategoryID = $row['id'];
     } else {
       $previousCategoryID = 0;
     }
 
-    $query = "SELECT EntryID FROM Blog WHERE story = '$entryStory' AND EntryID > $entryID ORDER BY EntryID ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id > $entryID ORDER BY id ASC LIMIT 1;";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $nextStoryID = $row['EntryID'];
+      $nextStoryID = $row['id'];
     } else {
       $nextStoryID = 0;
     }
 
-    $query = "SELECT EntryID FROM Blog WHERE story = '$entryStory' AND EntryID < $entryID ORDER BY EntryID ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id < $entryID ORDER BY id ASC LIMIT 1;";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $previousStoryID = $row['EntryID'];
+      $previousStoryID = $row['id'];
     } else {
       $previousStoryID = 0;
     }
@@ -139,19 +149,32 @@
           <h3> $entryDate</h3>
         </div>
 
-        <div id='layout' class='layout'>
+        <div id='layout' class='layout'>";
+
+        for ($i = 0; $i < count($chapters); $i++) {
+        
+            $entryID = $entries[$i][0];
+            $title = $entries[$i][1];
+            $text = $entries[$i][2];
+            $image = $entries[$i][3];
+
+            echo"
+              <div'>
+                <img src='../images/$image' alt='$title'>
+                <p> $text</p>
+              </div>";
+          }
+
+        echo"
           <div class='flex' id='column_1'>
-            <p> $entryDescription</p>";
-            if($entryCover2 != NULL){
-            echo "
-            <img class='' src='../images/$entryCover2' alt='Entry Cover'>";
-            }
-          echo"
+            <p> test</p>
           </div>
           <div class='flex' id='column_2'>
-            <img class='' src='../images/$entryCover' alt='Entry Cover'>
-          </div>
-        </div>";
+            <img class='' src='../images/test' alt='Entry Cover'>
+          </div>";
+
+        echo
+        "</div>";
         ?>
       </div>
 
@@ -166,7 +189,6 @@
           <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
           <li><button type="button" id="button_kategorie" class="">In der Kategorie</button></li>
           <li><button type="button" id="button_geschichte" class="">In der Geschichte</button></li>
-        <!--  <li><button type="button" id="button_suche" class="">In den Suchergebnissen</button></li> -->
         </ul>
       </div>
 

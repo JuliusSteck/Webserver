@@ -85,7 +85,7 @@
                   <p>Abbonenten: $countNewsletter</p>
                 </form>
 
-                <form action='../system/caption.php' method='POST' class='center box'>
+               <!-- <form action='../system/caption.php' method='POST' class='center box'>
                   <h3> Captions </h3>
                   <br>
                   <div class='text_input'>
@@ -111,7 +111,7 @@
                   <button type='submit' id='send-button'>Senden</button>
 
                 </form>
-              </div>
+              </div> -->
 
               <div class='flex'>
                 <form action='../system/entry.php' method='POST' enctype='multipart/form-data' class='center box'>
