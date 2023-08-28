@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/welcome.css">
     <link rel="stylesheet" href="../style/shop.css">
     <link rel="stylesheet" href="../style/footer.css">
     <link rel="stylesheet" href="../style/noscript.css">

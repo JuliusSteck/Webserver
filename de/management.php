@@ -135,18 +135,6 @@
 
                   <br>
                   <div class='text_input'>
-                    <input type='file' id='cover' name='cover' class='wide' required>
-                    <label for='cover' class='hovering_label'>Cover Bild</label>
-                  </div>
-
-                  <br>
-                  <div class='text_input'>
-                    <input type='file' id='picture' name='image' class='wide'>
-                    <label for='picture' class='hovering_label'>Zusätzliches Bild</label>
-                  </div>
-
-                  <br>
-                  <div class='text_input'>
                     <select id='category' name='category' class='wide' required>
                         <option value=''>-- Auswahl --</option>
                         <option value='Work'>Arbeit</option>

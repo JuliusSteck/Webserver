@@ -19,9 +19,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
-  var lazyColumns = document.getElementsByClassName('column');
-  var columns = Array.from(lazyColumns);
-  
+  var columnsAll = Array.from(document.getElementsByClassName('column'));
+  var columns = [];
+
+  function isMobileDevice() {
+    return window.innerWidth <= 800; 
+  }
+
+  function isTabletDevice() {
+    return window.innerWidth <= 1200; 
+  }
+
+  function arrangeColumns(){
+    if (isMobileDevice()) {
+      columns = columnsAll.slice(0,1);
+    } else if (isTabletDevice()){
+      columns = columnsAll.slice(0,2);
+    } else{
+      columns = columnsAll;
+    }
+  }
+
   var display = [];
   
   buttonAlles.addEventListener("click", function(){
@@ -61,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function restructure(filter){
+    arrangeColumns();
     display = [];
     for(var i = entries.length -1 ; i >= 0; i--){
       if(entries[i].getAttribute('category') == filter || filter == "all"){
@@ -69,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     for (var j = 0; j < display.length;  j++){
-      switch (j % 4) {
+      switch (j % columns.length) {
         case 0:
           columns[0].appendChild(display[j]);
           break;
@@ -99,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
     entries.forEach(function(element){
         element.style.opacity = 0;
-        console.log('clear ' + element);
     });
   }
 
@@ -124,18 +142,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for (var i = 0 ; i < display.length; i++){
         if (isElementInViewport(display[i]) || i < 4) {
               display[i].style.opacity = 1;
-              console.log('show ' + i + ' '+ display[i]);
         }
     }
   }
-  
+
   clear();
   
-   window.addEventListener('scroll', lazyLoad);
+  window.addEventListener('scroll', lazyLoad);
    
-   window.onload = function() {
+  window.onload = function() {
     restructure("all");
-    }
+  }
 
 });
-

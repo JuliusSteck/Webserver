@@ -29,9 +29,15 @@
   <?php
     include 'header.php';
 
-    if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+    require_once '../session.php';
+
+    if ($admin) {
     header("Location: management.php");
     }
+
+    if ($login) {
+      header("Location: user.php");
+      }
 
   ?>
 

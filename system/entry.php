@@ -7,9 +7,7 @@
 
     if ($_SESSION['admin']) {
         $headline_de = $_POST['headline_de'];
-        $message_de = $_POST['message_de'];
         $headline_en = $_POST['headline_en'];
-        $message_en = $_POST['message_en'];
         $category = $_POST['category'];
         $story = $_POST['story'];
         $cover = $_FILES['cover']['tmp_name'];
@@ -25,73 +23,32 @@
 
         $coverData = fopen($targetPath, 'rb');
 
-        if (isset($_FILES['image']['tmp_name'])) {
-            $image = $_FILES['image']['tmp_name'];
-            $targetFileNameImage = basename($_FILES['image']['name']);
-            $targetPathImage = $targetDirectory . $targetFileNameImage;
-            if (move_uploaded_file($image, $targetPathImage)) {
-                echo "File uploaded and moved successfully.";
-            } else {
-                echo "Error moving file.";
-            }
+        $query = "INSERT INTO Blog (title_de, title_en, category, story, image, cover,  date) VALUES (?, ?, ?, ?, ?, ?, CURDATE())";
 
-            $ImageData = fopen($targetPathImage, 'rb');
-
-            $query = "INSERT INTO Blog (EntryTitle_de, EntryDescription_de, EntryTitle_en, EntryDescription_en, Category, story, image, EntryCover,  EntryDate, type, Image2, EntryCover2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURDATE(), 'entry', ?, ?)";
-
-
-            $statement = $pdo->prepare($query);
-            $statement->bindParam(1, $headline_de);
-            $statement->bindParam(2, $message_de);
-            $statement->bindParam(3, $headline_en);
-            $statement->bindParam(4, $message_en);
-            $statement->bindParam(5, $category);
-            $statement->bindParam(6, $story);
-            $statement->bindParam(7, $coverData, PDO::PARAM_LOB);
-            $statement->bindParam(8, $targetFileName);
-            $statement->bindParam(9, $ImageData, PDO::PARAM_LOB);
-            $statement->bindParam(10, $targetFileNameImage);
-            
+        $statement = $pdo->prepare($query);
+        $statement->bindParam(1, $headline_de);
+        $statement->bindParam(2, $headline_en);
+        $statement->bindParam(3, $category);
+        $statement->bindParam(4, $story);
+        $statement->bindParam(5, $coverData, PDO::PARAM_LOB);
+        $statement->bindParam(6, $targetFileName);
         
-            if ($statement->execute()) {
-                echo "New entry added successfully.";
-            } else {
-                echo "Error: ";
-            }
-            fclose($ImageData);
-        }else{
     
-            $query = "INSERT INTO Blog (EntryTitle_de, EntryDescription_de, EntryTitle_en, EntryDescription_en, Category, story, image, EntryCover,  EntryDate, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURDATE(), 'entry')";
-
-
-            $statement = $pdo->prepare($query);
-            $statement->bindParam(1, $headline_de);
-            $statement->bindParam(2, $message_de);
-            $statement->bindParam(3, $headline_en);
-            $statement->bindParam(4, $message_en);
-            $statement->bindParam(5, $category);
-            $statement->bindParam(6, $story);
-            $statement->bindParam(7, $coverData, PDO::PARAM_LOB);
-            $statement->bindParam(8, $targetFileName);
-            
-        
-            if ($statement->execute()) {
-                echo "New entry added successfully.";
-            } else {
-                echo "Error: ";
-            }
+        if ($statement->execute()) {
+            echo "New entry added successfully.";
+        } else {
+            echo "Error: ";
         }
+        
         fclose($coverData);
     }
     else{
-      echo "cookie problem";
+      echo "not admin";
     }
 
     ob_end_flush();
-
-
     $statement = null;
     $pdo = null;
 
-     header("Location: ../de/management.php");
-  ?>
+    header("Location: ../de/management.php");
+?>

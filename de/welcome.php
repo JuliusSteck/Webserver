@@ -37,7 +37,7 @@
     require_once '../database_connection.php';
 
     try {
-      $query = "SELECT Word FROM Words WHERE Language ='german";
+      $query = "SELECT Word FROM Words WHERE Language ='german'";
       $statement = $pdo->query($query);
       $words = array();
 
@@ -66,16 +66,16 @@
           require_once '../database_connection.php';
 
           try {
-            $query = "SELECT EntryID, EntryTitle_de, EntryDate, EntryCover, Category FROM Blog";
+            $query = "SELECT id, title_de, date, cover, category FROM Blog";
             $statement = $pdo->query($query);
             $entries = array();
 
             while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                $entryID = $row['EntryID'];
-                $entryTitle = $row['EntryTitle_de'];
-                $entryDate = $row['EntryDate'];
-                $entryCover = $row['EntryCover'];
-                $Category = $row['Category'];
+                $entryID = $row['id'];
+                $entryTitle = $row['title_de'];
+                $entryDate = $row['date'];
+                $entryCover = $row['cover'];
+                $Category = $row['category'];
 
                 $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
             }

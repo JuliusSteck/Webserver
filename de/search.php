@@ -46,20 +46,24 @@
         <?php
           require_once '../database_connection.php';
 
-          $search = $_GET['search'];
+          $search = "";
+
+          if(isset($_GET['search']){
+            $search = $_GET['search'];
+          }
 
           try {
-            $query = "SELECT EntryID, EntryTitle_de, EntryDescription_de, EntryDate, EntryCover, Category FROM Blog WHERE EntryTitle_de LIKE '%$search%' OR EntryDescription_de LIKE '%$search%'";
+            $query = "SELECT id, title_de, title_en, date, cover, category FROM Blog WHERE title_de LIKE '%$search%' OR title_en LIKE '%$search%' OR story LIKE '%$search% OR category LIKE '%$search%";
             $statement = $pdo->query($query);
 
             $entries = array();
 
             while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                $entryID = $row['EntryID'];
-                $entryTitle = $row['EntryTitle_de'];
-                $entryDate = $row['EntryDate'];
-                $entryCover = $row['EntryCover'];
-                $Category = $row['Category'];
+                $entryID = $row['id'];
+                $entryTitle = $row['title_de'];
+                $entryDate = $row['date'];
+                $entryCover = $row['cover'];
+                $Category = $row['category'];
 
                 $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
             }
@@ -94,14 +98,14 @@
           for($j = 1; $j < 5; $j++){
             echo "<div class='column flex'>";
 
-            for ($i = 0; $i < $count; $i++) {
+            for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == ($j - 1)){
 
-                $entryID = $entries[$count - ($i + 1)][0];
-                $entryTitle = $entries[$count - ($i + 1)][1];
-                $entryDate = $entries[$count - ($i + 1)][2];
-                $entryCover = $entries[$count - ($i + 1)][3];
-                $Category = $entries[$count - ($i + 1)][4];
+                $entryID = $entries[count($entries) - ($i + 1)][0];
+                $entryTitle = $entries[count($entries) - ($i + 1)][1];
+                $entryDate = $entries[count($entries) - ($i + 1)][2];
+                $entryCover = $entries[count($entries) - ($i + 1)][3];
+                $Category = $entries[count($entries) - ($i + 1)][4];
 
                 echo
                 "<a href='blog.php?id=$entryID' class='entry' category='$Category' id='entry_$entryID'>
@@ -122,7 +126,7 @@
           }
 
           echo
-          "<div id='count' count='$count'>
+          "<div>
                 <p> Ergebnisse: $count </p>
           </div>";
         ?>

@@ -5,11 +5,12 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $imageId = $_GET['id'];
 
     if (isset($_GET['nr'] && is_numeric($_GET['nr']))) {
-       $imageNr = $_GET['nr'];
+       $chapterId = $_GET['nr'];
        try {
-            $query = "SELECT image2 FROM Blog WHERE EntryID = :id";
+            $query = "SELECT image FROM blog_content WHERE blog_id = :id AND id = :chapter_id;";
             $statement = $pdo->prepare($query);
             $statement->bindParam(':id', $imageId, PDO::PARAM_INT);
+            $statement->bindParam(':chapter_id', $chapterId, PDO::PARAM_INT);
             $statement->execute();
 
             $row = $statement->fetch(PDO::FETCH_ASSOC);
@@ -29,7 +30,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         }
     }else{
         try {
-            $query = "SELECT image FROM Blog WHERE EntryID = :id";
+            $query = "SELECT image FROM Blog WHERE id = :id";
             $statement = $pdo->prepare($query);
             $statement->bindParam(':id', $imageId, PDO::PARAM_INT);
             $statement->execute();
