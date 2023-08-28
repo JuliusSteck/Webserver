@@ -21,23 +21,21 @@
 <noscript>
     <div class='popup'>
       <div>
-        <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
+        <h2> JavaScript muss f端r die Nutzung der seite aktiviert sein.</h2>
       </div>
     </div>
   </noscript> 
 
   <?php
     include 'header.php';
+    
+    require_once '../database_connection.php';
 
     require_once '../session.php';
 
-    if ($admin) {
-    header("Location: management.php");
-    }
-
-    if ($login) {
-      header("Location: user.php");
-      }
+    if ($_SESSION['admin']) {
+        header("Location: management.php");
+    } 
 
   ?>
 
@@ -68,7 +66,7 @@
         <button type="submit" id="login-button">Login</button>
         <div class='tooltip'>
           <img src='../icons/icon_help.svg' class='icon_small' alt='help'>
-          <p>Achte darauf, dass du deine Email verschlüsselt verschickst. Die URL sollte mit https:// beginnen.</p>
+          <p>Achte darauf, dass du deine Email verschl端sselt verschickst. Die URL sollte mit https:// beginnen.</p>
         </div>
       </form>
     </div>

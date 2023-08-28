@@ -93,11 +93,11 @@
             for ($i = 0; $i < count($entries); $i++) {
               if(($i  %  4) == ($j - 1)){
 
-                $entryID = $entries[$count - ($i + 1)][0];
-                $entryTitle = $entries[$count - ($i + 1)][1];
-                $entryDate = $entries[$count - ($i + 1)][2];
-                $entryCover = $entries[$count - ($i + 1)][3];
-                $Category = $entries[$count - ($i + 1)][4];
+                $entryID = $entries[count($entries) - ($i + 1)][0];
+                $entryTitle = $entries[count($entries) - ($i + 1)][1];
+                $entryDate = $entries[count($entries) - ($i + 1)][2];
+                $entryCover = $entries[count($entries) - ($i + 1)][3];
+                $Category = $entries[count($entries) - ($i + 1)][4];
 
                 echo
                 "<a href='blog.php?id=$entryID' class='entry' category='$Category' id='entry_$entryID'>

@@ -53,7 +53,7 @@
           }
 
           try {
-            $query = "SELECT id, title_de, title_en, date, cover, category FROM Blog WHERE title_de LIKE '%$search%' OR title_en LIKE '%$search%' OR story LIKE '%$search% OR category LIKE '%$search%";
+            $query = "SELECT id, title_de, title_en, date, cover, category FROM Blog WHERE title_de LIKE '%$search%' OR title_en LIKE '%$search%' OR story LIKE '%$search%' OR category LIKE '%$search%'";
             $statement = $pdo->query($query);
 
             $entries = array();

@@ -84,8 +84,8 @@
 
                   <p>Abbonenten: $countNewsletter</p>
                 </form>
-
-               <!-- <form action='../system/caption.php' method='POST' class='center box'>
+                <!--
+                <form action='../system/caption.php' method='POST' class='center box'>
                   <h3> Captions </h3>
                   <br>
                   <div class='text_input'>
@@ -110,8 +110,8 @@
 
                   <button type='submit' id='send-button'>Senden</button>
 
-                </form>
-              </div> -->
+                </form>-->
+              </div>
 
               <div class='flex'>
                 <form action='../system/entry.php' method='POST' enctype='multipart/form-data' class='center box'>
@@ -123,15 +123,17 @@
                     <label for='headline_de' class='floating_label'>Headline Deutsch</label>
                   </div>
 
-                  <textarea id='message_de' name='message_de' required placeholder='Nachricht Deutsch'  class='wide'></textarea>
-
                   <br>
                   <div class='text_input'>
                     <input type='text' id='headline_en' name='headline_en' class='wide' required>
                     <label for='headline_en' class='floating_label'>Headline Englisch</label>
                   </div>
 
-                  <textarea id='message_en' name='message_en' required placeholder='Nachricht Englisch' class='wide'></textarea>
+                  <br>
+                  <div class='text_input'>
+                    <input type='file' id='cover' name='cover' class='wide' required>
+                    <label for='cover' class='hovering_label'>Cover Bild</label>
+                  </div>
 
                   <br>
                   <div class='text_input'>

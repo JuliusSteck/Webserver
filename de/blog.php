@@ -19,7 +19,7 @@
 <noscript>
   <div class='noscript'>
     <div>
-      <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
+      <h2> JavaScript muss f端r die Nutzung der seite aktiviert sein.</h2>
     </div>
   </div>
 </noscript>
@@ -28,11 +28,13 @@
   include 'header.php';
   $id = 0;
 
-  if(isset($_GET['id']){
+  if(isset($_GET['id']) && is_numeric($_GET['id'])){
     $id = $_GET['id'];
   }
 
   require_once '../database_connection.php';
+
+  require_once '../session.php';
 
   try {
     $query = "SELECT id, title_de, date, cover, category, story FROM Blog WHERE id = $id";
@@ -55,18 +57,17 @@
       $entryCategory = '-';
     }
 
-    $query = "SELECT id, chapter_title, content_text, image_path FROM blog_content WHERE blog_id = :id AND chapter_language = 'german'";
-    $statement->bindParam(':id', $imageId, PDO::PARAM_INT);
+    $query = "SELECT id, chapter_title, content_text, image_path FROM blog_content WHERE blog_id = $id AND chapter_language = 'german'";
     $statement = $pdo->query($query);
     $chapters = array();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $entryID = $row['id'];
-        $entryTitle = $row['chapter_title'];
-        $entryDate = $row['content_text'];
-        $entryCover = $row['image_path'];
+        $id = $row['id'];
+        $title = $row['chapter_title'];
+        $text = $row['content_text'];
+        $image = $row['image_path'];
 
-        $chapters[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
+        $chapters[] = array($id, $title, $text, $image);
     }
 
     $query = "SELECT id FROM Blog WHERE id > $entryID ORDER BY id ASC LIMIT 1;";
@@ -147,32 +148,48 @@
         "<div class='title'>
           <h1>$entryTitle</h1>
           <h3> $entryDate</h3>
-        </div>
+        </div>";
 
+        if($_SESSION['admin']){
+          echo"<a href='../deleteEntry.php?id=$EntryID'>löschen</a>";
+        }
+
+
+        echo"
         <div id='layout' class='layout'>";
+        for($j = 0; $j < 2; $j++){
+          echo "<div class='column flex'>";
 
-        for ($i = 0; $i < count($chapters); $i++) {
-        
-            $entryID = $entries[$i][0];
+          for ($i = 0; $i < count($chapters); $i++) {
+            $id = $entries[$i][0];
             $title = $entries[$i][1];
             $text = $entries[$i][2];
             $image = $entries[$i][3];
 
-            echo"
+            if(($i  %  2) == $j && $j == 0){
+              echo"
+              <div'>
+                <p> $text</p>
+                <img src='../images/$image' alt='$title'>
+              </div>";
+              if($_SESSION['admin']){
+                echo"<a href='../deleteChapter.php?id=$EntryID&chapter_id=$id'>löschen</a>";
+              }
+            }
+
+            if(($i  %  2) == $j && $j == 1){
+              echo"
               <div'>
                 <img src='../images/$image' alt='$title'>
                 <p> $text</p>
               </div>";
+              if($_SESSION['admin']){
+                echo"<a href='../deleteChapter.php?id=$EntryID&chapter_id=$id'>löschen</a>";
+              }
+            }
           }
-
-        echo"
-          <div class='flex' id='column_1'>
-            <p> test</p>
-          </div>
-          <div class='flex' id='column_2'>
-            <img class='' src='../images/test' alt='Entry Cover'>
-          </div>";
-
+          echo "</div>";
+        }
         echo
         "</div>";
         ?>

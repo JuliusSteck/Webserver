@@ -7,7 +7,7 @@
     $message = $_POST['message'];
 
     $pdo = null;
-    if ($admin) {
+    if ($_SESSION['admin']) {
 
     try {
       $query = "SELECT * FROM newsletter";
