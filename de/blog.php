@@ -151,7 +151,7 @@
         </div>";
 
         if($_SESSION['admin']){
-          echo"<a href='../deleteEntry.php?id=$EntryID'>löschen</a>";
+          echo"<a href='../system/deleteEntry.php?id=$entryID'>löschen</a>";
         }
 
 
@@ -173,7 +173,7 @@
                 <img src='../images/$image' alt='$title'>
               </div>";
               if($_SESSION['admin']){
-                echo"<a href='../deleteChapter.php?id=$EntryID&chapter_id=$id'>löschen</a>";
+                echo"<a href='../system/deleteChapter.php?id=$entryID&chapter_id=$id'>löschen</a>";
               }
             }
 
@@ -184,7 +184,7 @@
                 <p> $text</p>
               </div>";
               if($_SESSION['admin']){
-                echo"<a href='../deleteChapter.php?id=$EntryID&chapter_id=$id'>löschen</a>";
+                echo"<a href='../system/deleteChapter.php?id=$entryID&chapter_id=$id'>löschen</a>";
               }
             }
           }

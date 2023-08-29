@@ -9,14 +9,15 @@
     if ($_SESSION['admin']) {
 
         try {
-        $query = "DELETE FROM Blog WHERE id = ?";
-        $statement->bindParam(1, $id);
-        $statement = $pdo->query($query);
+            $query = "DELETE FROM Blog WHERE id = ?";
+            $statement->bindParam(1, $id);
+            $statement = $pdo->query($query);
 
-        if ($statement->execute()) {
-            echo "New entry added successfully.";
-        } else {
-            echo "Error: ";
+            if ($statement->execute()) {
+                echo "New entry added successfully.";
+            } else {
+                echo "Error: ";
+            }
         }
     }
     else{
