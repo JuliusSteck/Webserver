@@ -3,7 +3,7 @@
 
     require_once '../session.php';
 
-    $id = $_POST['id'];
+    $id = $_GET['id'];
 
     $pdo = null;
     if ($_SESSION['admin']) {

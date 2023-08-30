@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/blog.css">
     <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/noscript.css">
     <script src="../script/header.js"></script>
     <script src="../script/navigation.js"></script>
 </head>
@@ -47,7 +46,7 @@
     $query = "SELECT id, title_de, date, cover, category, story FROM Blog WHERE id = $id";
     $statement = $pdo->query($query);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $entryID = $row['id'];
         $entryTitle = $row['title_de'];
         $entryDate = $row['date'];
@@ -61,7 +60,7 @@
     $statement = $pdo->query($query);
     $chapters = array();
 
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $id = $row['id'];
         $title = $row['chapter_title'];
         $text = $row['content_text'];
@@ -73,8 +72,7 @@
     $query = "SELECT id FROM Blog WHERE id > $entryID ORDER BY id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
       $nextID = $row['id'];
     } else {
       $nextID = 0;
@@ -83,8 +81,7 @@
     $query = "SELECT id FROM Blog WHERE id < $entryID ORDER BY id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
       $previousID = $row['id'];
     } else {
       $previousID = 0;
@@ -94,8 +91,7 @@
     $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id > $entryID ORDER BY id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
       $nextCategoryID = $row['id'];
     } else {
       $nextCategoryID = 0;
@@ -104,8 +100,7 @@
     $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id < $entryID ORDER BY id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
       $previousCategoryID = $row['id'];
     } else {
       $previousCategoryID = 0;
@@ -114,8 +109,7 @@
     $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id > $entryID ORDER BY id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
       $nextStoryID = $row['id'];
     } else {
       $nextStoryID = 0;
@@ -124,26 +118,25 @@
     $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id < $entryID ORDER BY id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
+    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
       $previousStoryID = $row['id'];
     } else {
       $previousStoryID = 0;
     }
 
     $statement = null;
-  } catch (PDOException $e) {
+  } catch (PDOException $e){
   echo "An error occurred: " . $e->getMessage();
   exit;
   }
 
   $pdo = null;
-  ?>
+?>
 
-  <section id="blog">
-    <div class="container">
-      <div>
-        <?php
+<section id="blog">
+  <div class="container">
+    <div>
+      <?php
         echo
         "<div class='title'>
           <h1>$entryID $entryTitle</h1>
@@ -154,61 +147,82 @@
           echo"<a href='../system/deleteEntry.php?id=$entryID'>löschen</a>";
         }
 
-
         echo"
         <div id='layout' class='layout'>";
         for($j = 0; $j < 2; $j++){
           echo "<div class='column flex'>";
 
           for ($i = 0; $i < count($chapters); $i++) {
-            $id = $entries[$i][0];
-            $title = $entries[$i][1];
-            $text = $entries[$i][2];
-            $image = $entries[$i][3];
+            $id = $chapters[$i][0];
+            $title = $chapters[$i][1];
+            $text = $chapters[$i][2];
+            $image = $chapters[$i][3];
 
             if(($i  %  2) == $j && $j == 0){
               echo"
-              <div'>
-                <p> $text</p>
+              <div>";
+
+              if($title != NULL){
+                echo"
+                <h3>$title</h3>
+                <br>";
+              }
+
+              if($image != NULL){
+                echo"
                 <img src='../images/$image' alt='$title'>
-              </div>";
+                <br>";
+              }
+                
+              if($text != NULL){
+                echo"
+                <p> $text</p>";
+              }
+                
               if($_SESSION['admin']){
                 echo"<a href='../system/deleteChapter.php?id=$entryID&chapter_id=$id'>löschen</a>";
               }
+                
+              echo"
+              </div>";
             }
 
             if(($i  %  2) == $j && $j == 1){
               echo"
-              <div'>
+              <div>";
+
+              if($title != NULL){
+                echo"
+                <h3>$title</h3>
+                <br>";
+              }
+                
+              if($text != NULL){
+                echo"
+                <p> $text</p>";
+              }
+
+              if($image != NULL){
+                echo"
                 <img src='../images/$image' alt='$title'>
-                <p> $text</p>
-              </div>";
+                <br>";
+              }
+                
               if($_SESSION['admin']){
                 echo"<a href='../system/deleteChapter.php?id=$entryID&chapter_id=$id'>löschen</a>";
               }
+                
+              echo"
+              </div>";
             }
           }
           echo "</div>";
         }
         echo
         "</div>";
-        ?>
-      </div>
-
-      <div id="filter" class="filter">
-        <input type="checkbox" id="dropdown">
-        <label for="dropdown">
-          <img src='../icons/icon_arrow_dropdown.svg' class='icon' alt='dropdown'>
-        </label>
-
-        <ul>
-          <li><h3>Navigation sortiert nach:<h3></li>
-          <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
-          <li><button type="button" id="button_kategorie" class="">In der Kategorie</button></li>
-          <li><button type="button" id="button_geschichte" class="">In der Geschichte</button></li>
-        </ul>
-      </div>
-
+      ?>
+    </div>
+    
     <?php
       if($_SESSION['admin']){
         echo"
@@ -221,7 +235,7 @@
             <br>
             <div class='text_input'>
               <input type='text' id='title' name='title' class='wide' required>
-              <label for='title' class='floating_label'>Headline Deutsch</label>
+              <label for='title' class='floating_label'>Überschrift</label>
             </div>
 
             <br>
@@ -247,62 +261,73 @@
           </form>
         </div>";
       }
-      ?>
+    ?>
 
-      <div class="navigation">
+    <div id="filter" class="filter">
+      <input type="checkbox" id="dropdown">
+      <label for="dropdown">
+        <img src='../icons/icon_arrow_dropdown.svg' class='icon' alt='dropdown'>
+      </label>
 
-        <?php
-          if($nextID > 0)
-          {
-            echo
-            "<a href='blog.php?id=$nextID' id='next' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
-              <div class='navigation_link'>
-                <img src='../icons/icon_arrow_backwards.svg' class='icon' alt='forward'>
-              </div>
-            </a>";
-          }
-          else{
-            echo
-            "<a href='' class='disabled' id='next' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
-              <div class='navigation_link'>
-                <img src='../icons/icon_arrow_backwards.svg' class='icon' alt='forward'>
-              </div>
-            </a>";
-          }
-        ?>
-
-          <a href='welcome.php'>
-            <div class="navigation_link home">
-              <img src='../icons/icon_apps.svg' class='icon' alt='apps'>
-            </div>
-          </a>
-
-          <?php
-            if($previousID > 0)
-            {
-              echo
-              "<a href='blog.php?id=$previousID' id='previous' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
-                <div class='navigation_link'>
-                  <img src='../icons/icon_arrow_forward.svg' class='icon' alt='backward'>
-                </div>
-              </a>";
-            }
-            else{
-              echo
-              "<a href='' class='disabled' id='previous' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
-                <div class='navigation_link'>
-                  <img src='../icons/icon_arrow_forward.svg' class='icon' alt='backward'>
-                </div>
-              </a>";
-            }
-          ?>
-
-      </div>
+      <ul>
+        <li><h3>Navigation sortiert nach:<h3></li>
+        <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
+        <li><button type="button" id="button_kategorie" class="">In der Kategorie</button></li>
+        <li><button type="button" id="button_geschichte" class="">In der Geschichte</button></li>
+      </ul>
     </div>
-  </section>
 
-  <?php
-    include 'footer.php';
-   ?>
+    <div class="navigation">
+
+      <?php
+        if($nextID > 0){
+          echo
+          "<a href='blog.php?id=$nextID' id='next' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
+            <div class='navigation_link'>
+              <img src='../icons/icon_arrow_backwards.svg' class='icon' alt='forward'>
+            </div>
+          </a>";
+        }
+        else{
+          echo
+          "<a href='' class='disabled' id='next' nextID='$nextID' nextCategoryID='$nextCategoryID' nextStoryID='$nextStoryID'>
+            <div class='navigation_link'>
+              <img src='../icons/icon_arrow_backwards.svg' class='icon' alt='forward'>
+            </div>
+          </a>";
+        }
+      
+        echo"
+        <a href='welcome.php'>
+          <div class="navigation_link home">
+            <img src='../icons/icon_apps.svg' class='icon' alt='apps'>
+          </div>
+        </a>";
+
+        if($previousID > 0){
+          echo
+          "<a href='blog.php?id=$previousID' id='previous' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
+            <div class='navigation_link'>
+              <img src='../icons/icon_arrow_forward.svg' class='icon' alt='backward'>
+            </div>
+          </a>";
+        }
+        else{
+          echo
+          "<a href='' class='disabled' id='previous' previousID='$previousID' previousCategoryID='$previousCategoryID' previousStoryID='$previousStoryID'>
+            <div class='navigation_link'>
+              <img src='../icons/icon_arrow_forward.svg' class='icon' alt='backward'>
+            </div>
+          </a>";
+        }
+      ?>
+    </div>
+  </div>
+</section>
+
+<?php
+  include 'footer.php';
+?>
+
 </body>
 </html>

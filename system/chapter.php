@@ -23,7 +23,7 @@
 
         $imageData = fopen($targetPath, 'rb');
 
-        $query = "INSERT INTO blog_content (blog_id, chapter_title, chapter_text, chapter_language, image, image_path) VALUES (?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO blog_content (blog_id, chapter_title, content_text, chapter_language, image, image_path) VALUES (?, ?, ?, ?, ?, ?)";
 
         $statement = $pdo->prepare($query);
         $statement->bindParam(1, $id);
