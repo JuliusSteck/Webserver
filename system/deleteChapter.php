@@ -20,6 +20,8 @@
             } else {
                 echo "Error: ";
             }
+        }catch (PDOException $e) {
+            echo "An error occurred: " . $e->getMessage();
         }
     }
     else{

@@ -19,7 +19,7 @@
 <noscript>
   <div class='noscript'>
     <div>
-      <h2> JavaScript muss f端r die Nutzung der seite aktiviert sein.</h2>
+      <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
     </div>
   </div>
 </noscript>
@@ -35,6 +35,13 @@
   require_once '../database_connection.php';
 
   require_once '../session.php';
+  
+  $entryID = 0;
+  $entryTitle = "Fortsetzung folgt";
+  $entryDate = "in der Zukunft";
+  $entryCover = "Julius_Anzug_2020.jpg";
+  $entryStory = '-';
+  $entryCategory = '-';
 
   try {
     $query = "SELECT id, title_de, date, cover, category, story FROM Blog WHERE id = $id";
@@ -48,13 +55,6 @@
         $entryStory = $row['story'];
         $entryCategory = $row['category'];
 
-    } else {
-      $entryID = 0;
-      $entryTitle = "Fortsetzung folgt";
-      $entryDate = "in der Zukunft";
-      $entryCover = "Julius_Anzug_2020.jpg";
-      $entryStory = '-';
-      $entryCategory = '-';
     }
 
     $query = "SELECT id, chapter_title, content_text, image_path FROM blog_content WHERE blog_id = $id AND chapter_language = 'german'";
@@ -70,17 +70,17 @@
         $chapters[] = array($id, $title, $text, $image);
     }
 
-    $query = "SELECT id FROM Blog WHERE id > $entryID ORDER BY id ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE id > $entryID ORDER BY id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $nextyID = $row['id'];
+      $nextID = $row['id'];
     } else {
       $nextID = 0;
     }
 
-    $query = "SELECT id FROM Blog WHERE id < $entryID ORDER BY id ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE id < $entryID ORDER BY id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -91,7 +91,7 @@
     }
 
 
-    $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id > $entryID ORDER BY id ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id > $entryID ORDER BY id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -101,7 +101,7 @@
       $nextCategoryID = 0;
     }
 
-    $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id < $entryID ORDER BY id ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id < $entryID ORDER BY id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -111,7 +111,7 @@
       $previousCategoryID = 0;
     }
 
-    $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id > $entryID ORDER BY id ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id > $entryID ORDER BY id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -121,7 +121,7 @@
       $nextStoryID = 0;
     }
 
-    $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id < $entryID ORDER BY id ASC LIMIT 1;";
+    $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id < $entryID ORDER BY id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -146,7 +146,7 @@
         <?php
         echo
         "<div class='title'>
-          <h1>$entryTitle</h1>
+          <h1>$entryID $entryTitle</h1>
           <h3> $entryDate</h3>
         </div>";
 
@@ -208,6 +208,46 @@
           <li><button type="button" id="button_geschichte" class="">In der Geschichte</button></li>
         </ul>
       </div>
+
+    <?php
+      if($_SESSION['admin']){
+        echo"
+        <div class='flex'>
+          <form action='../system/chapter.php' method='POST' enctype='multipart/form-data' class='center box'>
+            <h3> Kapitel </h3>
+
+            <input type='hidden' name='id' value='$entryID'>
+
+            <br>
+            <div class='text_input'>
+              <input type='text' id='title' name='title' class='wide' required>
+              <label for='title' class='floating_label'>Headline Deutsch</label>
+            </div>
+
+            <br>
+            <textarea id='text' name='text' required placeholder='Text'></textarea>
+
+            <br>
+            <div class='text_input'>
+              <input type='file' id='image' name='image' class='wide' required>
+              <label for='image' class='hovering_label'>Cover Bild</label>
+            </div>
+
+            <br>
+            <div class='text_input'>
+              <select id='language' name='language' class='wide' required>
+                  <option value=''>-- Auswahl --</option>
+                  <option value='german'>Deutsch</option>
+                  <option value='english'>Englisch</option>
+              </select>
+              <label for='language' class='hovering_label'>Kategorie</label>
+            </div>
+
+            <button type='submit' id='send-button' class='wide'>Senden</button>
+          </form>
+        </div>";
+      }
+      ?>
 
       <div class="navigation">
 

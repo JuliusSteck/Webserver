@@ -22,6 +22,7 @@
     $statement = null;
     } catch (PDOException $e) {
     echo "An error occurred: " . $e->getMessage();
-    exit;
     }
+
+    exit;
   ?>
