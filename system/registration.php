@@ -55,8 +55,8 @@
   $pdo = null;
 
   if($available){
-    header("Location: ../de/success.php");
+    header("Location: ../de/welcome.php");
   } else {
-    header("Location: ../de/failure.php");
+    header("Location: ../de/welcome.php");
   }
 ?>

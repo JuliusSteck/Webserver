@@ -56,7 +56,9 @@
 
     }
 
-    $query = "SELECT id, chapter_title, content_text, image_path FROM blog_content WHERE blog_id = $id AND chapter_language = 'german'";
+    $query = "SELECT id, chapter_title, content_text, image_path 
+              FROM blog_content 
+              WHERE blog_id = $id AND chapter_language = 'german'";
     $statement = $pdo->query($query);
     $chapters = array();
 
@@ -69,7 +71,11 @@
         $chapters[] = array($id, $title, $text, $image);
     }
 
-    $query = "SELECT id FROM Blog WHERE id > $entryID ORDER BY id ASC LIMIT 1";
+    $query = "SELECT Blog.id, blog_content.id AS 'empty'
+              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
+              WHERE Blog.id > $entryID AND blog_content.id IS NOT NULL 
+              GROUP BY Blog.id 
+              ORDER BY Blog.id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
@@ -78,7 +84,11 @@
       $nextID = 0;
     }
 
-    $query = "SELECT id FROM Blog WHERE id < $entryID ORDER BY id DESC LIMIT 1";
+    $query = "SELECT Blog.id, blog_content.id AS 'empty'
+              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
+              WHERE Blog.id < $entryID AND blog_content.id IS NOT NULL 
+              GROUP BY Blog.id 
+              ORDER BY Blog.id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
@@ -88,7 +98,11 @@
     }
 
 
-    $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id > $entryID ORDER BY id ASC LIMIT 1";
+    $query = "SELECT Blog.id, blog_content.id AS 'empty'
+              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
+              WHERE Blog.category = '$entryCategory' AND Blog.id > $entryID AND blog_content.id IS NOT NULL 
+              GROUP BY Blog.id 
+              ORDER BY Blog.id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
@@ -97,7 +111,11 @@
       $nextCategoryID = 0;
     }
 
-    $query = "SELECT id FROM Blog WHERE category = '$entryCategory' AND id < $entryID ORDER BY id DESC LIMIT 1";
+    $query = "SELECT Blog.id, blog_content.id AS 'empty'
+              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
+              WHERE Blog.category = '$entryCategory' AND Blog.id < $entryID AND blog_content.id IS NOT NULL 
+              GROUP BY Blog.id  
+              ORDER BY Blog.id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
@@ -106,7 +124,11 @@
       $previousCategoryID = 0;
     }
 
-    $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id > $entryID ORDER BY id ASC LIMIT 1";
+    $query = "SELECT Blog.id, blog_content.id AS 'empty'
+              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
+              WHERE Blog.story = '$entryStory' AND Blog.id > $entryID AND blog_content.id IS NOT NULL 
+              GROUP BY Blog.id 
+              ORDER BY Blog.id ASC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
@@ -115,7 +137,11 @@
       $nextStoryID = 0;
     }
 
-    $query = "SELECT id FROM Blog WHERE story = '$entryStory' AND id < $entryID ORDER BY id DESC LIMIT 1";
+    $query = "SELECT Blog.id, blog_content.id AS 'empty'
+              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
+              WHERE Blog.story = '$entryStory' AND Blog.id < $entryID AND blog_content.id IS NOT NULL 
+              GROUP BY Blog.id 
+              ORDER BY Blog.id DESC LIMIT 1";
     $statement = $pdo->query($query);
 
     if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
@@ -140,12 +166,16 @@
         echo
         "<div class='title'>
           <h1>$entryID $entryTitle</h1>
-          <h3> $entryDate</h3>
+          <h3> $entryDate</h3>";
+
+          if($_SESSION['admin']){
+            echo"<a href='../system/deleteEntry.php?id=$entryID'>löschen</a>";
+          }
+
+        echo"
         </div>";
 
-        if($_SESSION['admin']){
-          echo"<a href='../system/deleteEntry.php?id=$entryID'>löschen</a>";
-        }
+        <br>
 
         echo"
         <div id='layout' class='layout'>";
@@ -165,18 +195,22 @@
               if($title != NULL){
                 echo"
                 <h3>$title</h3>
+                <br>
                 <br>";
               }
 
               if($image != NULL){
                 echo"
                 <img src='../images/$image' alt='$title'>
+                <br>
                 <br>";
               }
                 
               if($text != NULL){
                 echo"
-                <p> $text</p>";
+                <p> $text</p>
+                <br>
+                <br>";
               }
                 
               if($_SESSION['admin']){
@@ -194,17 +228,21 @@
               if($title != NULL){
                 echo"
                 <h3>$title</h3>
+                <br>
                 <br>";
               }
                 
               if($text != NULL){
                 echo"
-                <p> $text</p>";
+                <p> $text</p>
+                <br>
+                <br>";
               }
 
               if($image != NULL){
                 echo"
                 <img src='../images/$image' alt='$title'>
+                <br>
                 <br>";
               }
                 
@@ -239,7 +277,7 @@
             </div>
 
             <br>
-            <textarea id='text' name='text' required placeholder='Text'></textarea>
+            <textarea id='text' name='text' class='wide' required placeholder='Text'></textarea>
 
             <br>
             <div class='text_input'>
@@ -299,7 +337,7 @@
       
         echo"
         <a href='welcome.php'>
-          <div class="navigation_link home">
+          <div class='navigation_link home'>
             <img src='../icons/icon_apps.svg' class='icon' alt='apps'>
           </div>
         </a>";

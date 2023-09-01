@@ -6,7 +6,6 @@
     $chapterID = $_POST['chapter_id'];
     $id = $_POST['id'];
 
-    $pdo = null;
     if ($_SESSION['admin']) {
 
         try {
@@ -27,6 +26,8 @@
     else{
       echo "cookie problem";
     }
+
+    $pdo = null;
 
     header("Location: ../de/blog.php?id=$id");
 ?>

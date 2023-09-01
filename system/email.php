@@ -39,7 +39,7 @@
         if ($mailSent) {
           header("Location: ../de/management.php");
         } else {
-          header("Location: ../de/failure.php");
+          header("Location: ../de/management.php");
         }
       }
 

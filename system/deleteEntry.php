@@ -5,7 +5,6 @@
 
     $id = $_GET['id'];
 
-    $pdo = null;
     if ($_SESSION['admin']) {
 
         try {
@@ -25,6 +24,7 @@
     else{
       echo "cookie problem";
     }
+    $pdo = null;
 
     header("Location: ../de/welcome.php");
 ?>

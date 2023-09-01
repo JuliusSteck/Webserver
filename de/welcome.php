@@ -46,7 +46,7 @@
       require_once '../session.php';
 
       try{
-        $query = "SELECT id, title_de, date, cover, category FROM Blog";
+        $query = "SELECT Blog.id, Blog.title_de, Blog.date, Blog.cover, Blog.category, blog_content.id AS 'empty' FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id GROUP BY Blog.id";
         $statement = $pdo->query($query);
         $entries = array();
 
@@ -56,8 +56,12 @@
             $entryDate = $row['date'];
             $entryCover = $row['cover'];
             $Category = $row['category'];
+            $empty = true;
+            if($row['empty'] != NULL){
+              $empty = false;
+            }
 
-            $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
+            $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category, $empty);
         }
         $statement = null;
       } catch (PDOException $e){
@@ -99,8 +103,13 @@
             $Category = $entries[count($entries) - ($i + 1)][4];
 
             echo
-            "<a href='blog.php?id=$entryID' class='entry' category='$Category' id='entry_$entryID'>
-              <div class='element'>
+            "<div class='entry' category='$Category' id='entry_$entryID'>";
+            
+              if(!$empty || $admin){
+              echo "<a href='blog.php?id=$entryID'>";
+              }
+              echo
+              "<div class='element'>
                 <img class='element_image' src='../images/$entryCover' alt='Entry Cover'>
                 <div class='element_background'>
                   <div class='element_description'>
@@ -108,8 +117,13 @@
                     <p> $entryDate</p>
                   </div>
                 </div>
-              </div>
-            </a>";
+              </div>";
+
+              if(!$empty || $admin){
+                echo "</a>";
+               }
+            echo"
+            </div>";
           }
         }
         echo "</div>";

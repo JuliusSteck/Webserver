@@ -177,7 +177,6 @@ input[type="text"], input[type="password"], input[type="file"], input[type="emai
   margin-bottom: 20px;
 }
 
-
 input[type="text"].wide, input[type="password"].wide, input[type="file"].wide, textarea.wide, select.wide, button.wide{
   width: 400px;
 }

@@ -24,5 +24,8 @@
     echo "An error occurred: " . $e->getMessage();
     }
 
-    exit;
-  ?>
+  exit;
+  $pdo = null;
+
+  header("Location: ../de/welcome.php");
+?>
