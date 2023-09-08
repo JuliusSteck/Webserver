@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>Julius Steck</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../icons/icon.png">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/login.css">
-    <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/noscript.css">
-    <script src="../script/header.js"></script>
-    <script src="../script/caption.js"></script>
-    <script src="../script/password.js"></script>
+  <title>Julius Steck</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../icons/icon.png">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/header.css">
+  <link rel="stylesheet" href="../style/caption.css">
+  <link rel="stylesheet" href="../style/login.css">
+  <link rel="stylesheet" href="../style/footer.css">
+  <link rel="stylesheet" href="../style/noscript.css">
+  <script src="../script/header.js"></script>
+  <script src="../script/caption.js"></script>
+  <script src="../script/password.js"></script>
 </head>
 
 <body>
-
-<noscript>
+  <noscript>
     <div class='popup'>
       <div>
         <h2> JavaScript muss f端r die Nutzung der seite aktiviert sein.</h2>
@@ -28,15 +27,14 @@
 
   <?php
     include 'header.php';
-    
     require_once '../database_connection.php';
-
     require_once '../session.php';
 
     if ($_SESSION['admin']) {
         header("Location: management.php");
     } 
 
+    require_once '../close_database_connection.php';
   ?>
 
   <section id="caption">
@@ -74,6 +72,6 @@
 
   <?php
     include 'footer.php';
-   ?>
+  ?>
 </body>
 </html>

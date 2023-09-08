@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>Julius Steck</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../icons/icon.png">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/data_protection.css">
-    <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/noscript.css">
-    <script src="../script/header.js"></script>
-    <script src="../script/caption.js"></script>
+  <title>Julius Steck</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../icons/icon.png">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/header.css">
+  <link rel="stylesheet" href="../style/caption.css">
+  <link rel="stylesheet" href="../style/data_protection.css">
+  <link rel="stylesheet" href="../style/footer.css">
+  <link rel="stylesheet" href="../style/noscript.css">
+  <script src="../script/header.js"></script>
+  <script src="../script/caption.js"></script>
 </head>
 
 <body>
-
   <?php
     include 'header.php';
-   ?>
+  ?>
 
   <noscript>
     <div class='noscript'>
@@ -29,11 +28,11 @@
     </div>
   </noscript>
 
-   <section id="caption">
-     <div class="container">
-         <h1>Das ist <span class="flexible_caption"> Datenschutz</span><span id="cursor" class="cursor">_</span> </h1>
-     </div>
-   </section>
+  <section id="caption">
+    <div class="container">
+        <h1>Das ist <span class="flexible_caption"> Datenschutz</span><span id="cursor" class="cursor">_</span> </h1>
+    </div>
+  </section>
 
   <section id="data_protection">
     <div class="container">
@@ -120,51 +119,52 @@
         <br>
       </p>
 
-        <!--  VI. Betroffenenrechte
+      <!--  VI. Betroffenenrechte
 
-          1. Auskunftsrecht
-          Du hast gemäß Art. 15 DSGVO das Recht, Auskunft darüber zu erhalten, ob und welche deiner personenbezogenen verarbeitet.
-          Ferner bist du berechtigt, den Verarbeitungszweck, die Kategorien von Empfängern, die Kategorien von personenbezogenen Daten,
-          die geplante Speicherdauer, die Herkunft der Daten, den Einsatz einer automatisierten Entscheidungsfindung und
-          (im Falle eines Drittlandtransfers) die geeigneten Garantien zu erfahren sowie eine Kopie deiner Daten zu erhalten.
+      1. Auskunftsrecht
+      Du hast gemäß Art. 15 DSGVO das Recht, Auskunft darüber zu erhalten, ob und welche deiner personenbezogenen verarbeitet.
+      Ferner bist du berechtigt, den Verarbeitungszweck, die Kategorien von Empfängern, die Kategorien von personenbezogenen Daten,
+      die geplante Speicherdauer, die Herkunft der Daten, den Einsatz einer automatisierten Entscheidungsfindung und
+      (im Falle eines Drittlandtransfers) die geeigneten Garantien zu erfahren sowie eine Kopie deiner Daten zu erhalten.
 
-          2. Recht auf Berichtigung
-          Du bist gemäß Art. 16 DSGVO berechtigt, die Korrektur fehlerhafter oder unzutreffender Daten zu verlangen.
-          Die meisten deiner personenbezogenen Daten kannst du direkt in der App ändern.
+      2. Recht auf Berichtigung
+      Du bist gemäß Art. 16 DSGVO berechtigt, die Korrektur fehlerhafter oder unzutreffender Daten zu verlangen.
+      Die meisten deiner personenbezogenen Daten kannst du direkt in der App ändern.
 
-          3. Recht auf Löschung und Einschränkung der Verarbeitung
-          Du bist gemäß den Art. 17 und 18 DSGVO berechtigt, die sofortige Löschung oder Einschränkung der Verarbeitung deiner
-          personenbezogenen Daten zu verlangen. Das Recht auf Löschung und Einschränkung der Verarbeitung personenbezogener Daten
-          kann unter Umständen durch ein vorliegendes Erfordernis der Verarbeitung personenbezogener Daten (z.B. zur Erfüllung einer
-          rechtlichen Pflicht oder zur Verteidigung von Rechtsansprüchen) eingeschränkt sein. Am einfachsten forderst du die Löschung
-          deiner personenbezogenen Daten an, indem du in den App-Einstellungen auf „Account löschen“ gehst.
+      3. Recht auf Löschung und Einschränkung der Verarbeitung
+      Du bist gemäß den Art. 17 und 18 DSGVO berechtigt, die sofortige Löschung oder Einschränkung der Verarbeitung deiner
+      personenbezogenen Daten zu verlangen. Das Recht auf Löschung und Einschränkung der Verarbeitung personenbezogener Daten
+      kann unter Umständen durch ein vorliegendes Erfordernis der Verarbeitung personenbezogener Daten (z.B. zur Erfüllung einer
+      rechtlichen Pflicht oder zur Verteidigung von Rechtsansprüchen) eingeschränkt sein. Am einfachsten forderst du die Löschung
+      deiner personenbezogenen Daten an, indem du in den App-Einstellungen auf „Account löschen“ gehst.
 
-          4. Recht auf Datenübertragbarkeit
-          Du bist unter den Voraussetzungen von Art. 20 DSGVO berechtigt, eine Kopie deiner personenbezogenen Daten in strukturierter,
-          gängiger und maschinenlesbarer Form zu erhalten.
+      4. Recht auf Datenübertragbarkeit
+      Du bist unter den Voraussetzungen von Art. 20 DSGVO berechtigt, eine Kopie deiner personenbezogenen Daten in strukturierter,
+      gängiger und maschinenlesbarer Form zu erhalten.
 
-          5. Widerrufsrecht
-          Du hast das Recht, deine erteilte Einwilligung in die Verarbeitung personenbezogener Daten jederzeit mit der Wirkung für die
-          Zukunft zu widerrufen.
+      5. Widerrufsrecht
+      Du hast das Recht, deine erteilte Einwilligung in die Verarbeitung personenbezogener Daten jederzeit mit der Wirkung für die
+      Zukunft zu widerrufen.
 
-          6. Widerspruchsrecht
-          Du bist berechtigt, unter den Voraussetzungen von Art. 21 DSGVO Widerspruch gegen die Verarbeitung deiner personenbezogenen Daten
-          einzulegen. Sollten unsere Interessen einer Beendigung der Verarbeitung entgegenstehen, so kann es sein, dass unter
-          Berücksichtigung des Art. 21 DSGVO deine Daten weiterhin von Neerby verarbeitet werden.
+      6. Widerspruchsrecht
+      Du bist berechtigt, unter den Voraussetzungen von Art. 21 DSGVO Widerspruch gegen die Verarbeitung deiner personenbezogenen Daten
+      einzulegen. Sollten unsere Interessen einer Beendigung der Verarbeitung entgegenstehen, so kann es sein, dass unter
+      Berücksichtigung des Art. 21 DSGVO deine Daten weiterhin von Neerby verarbeitet werden.
 
-          7. Beschwerderecht bei einer Aufsichtsbehörde
-          Du bist berechtigt, unter den Voraussetzungen des Art. 77 DSGVO Beschwerde bei einer Aufsichtsbehörde einzureichen, wenn du
-          der Meinung bist, dass die Verarbeitung deiner personenbezogenen Daten gegen die DSGVO verstößt. Die für
-          Neerby zuständige Aufsichtsbehörde ist der bayrische Landesbeauftragte für den Datenschutz, Wagmüllerstraße 18, 80538 München.
+      7. Beschwerderecht bei einer Aufsichtsbehörde
+      Du bist berechtigt, unter den Voraussetzungen des Art. 77 DSGVO Beschwerde bei einer Aufsichtsbehörde einzureichen, wenn du
+      der Meinung bist, dass die Verarbeitung deiner personenbezogenen Daten gegen die DSGVO verstößt. Die für
+      Neerby zuständige Aufsichtsbehörde ist der bayrische Landesbeauftragte für den Datenschutz, Wagmüllerstraße 18, 80538 München.
 
-          VII. Drittlandtransfer
+      VII. Drittlandtransfer
 
-          Deine Daten werden nicht an Länder außerhalb der EU bzw. des EWR oder an internationale Organisationen übertragen. -->
+      Deine Daten werden nicht an Länder außerhalb der EU bzw. des EWR oder an internationale Organisationen übertragen. -->
+
     </div>
   </section>
 
   <?php
     include 'footer.php';
-   ?>
+  ?>
 </body>
 </html>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>Julius Steck</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../icons/icon.png">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/blog.css">
-    <link rel="stylesheet" href="../style/footer.css">
-    <script src="../script/header.js"></script>
-    <script src="../script/navigation.js"></script>
+  <title>Julius Steck</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../icons/icon.png">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/header.css">
+  <link rel="stylesheet" href="../style/blog.css">
+  <link rel="stylesheet" href="../style/footer.css">
+  <script src="../script/header.js"></script>
+  <script src="../script/navigation.js"></script>
 </head>
 
 <body>
@@ -34,6 +34,8 @@
   require_once '../database_connection.php';
 
   require_once '../session.php';
+
+  require_once '../database_methods.php';
   
   $entryID = 0;
   $entryTitle = "Fortsetzung folgt";
@@ -43,120 +45,30 @@
   $entryCategory = '-';
 
   try {
-    $query = "SELECT id, title_de, date, cover, category, story FROM Blog WHERE id = $id";
-    $statement = $pdo->query($query);
+    $entry = getEntry($id);
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-        $entryID = $row['id'];
-        $entryTitle = $row['title_de'];
-        $entryDate = $row['date'];
-        $entryCover = $row['cover'];
-        $entryStory = $row['story'];
-        $entryCategory = $row['category'];
-
-    }
-
-    $query = "SELECT id, chapter_title, content_text, image_path 
-              FROM blog_content 
-              WHERE blog_id = $id AND chapter_language = 'german'";
-    $statement = $pdo->query($query);
-    $chapters = array();
-
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-        $id = $row['id'];
-        $title = $row['chapter_title'];
-        $text = $row['content_text'];
-        $image = $row['image_path'];
-
-        $chapters[] = array($id, $title, $text, $image);
-    }
-
-    $query = "SELECT Blog.id, blog_content.id AS 'empty'
-              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
-              WHERE Blog.id > $entryID AND blog_content.id IS NOT NULL 
-              GROUP BY Blog.id 
-              ORDER BY Blog.id ASC LIMIT 1";
-    $statement = $pdo->query($query);
-
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-      $nextID = $row['id'];
-    } else {
-      $nextID = 0;
-    }
-
-    $query = "SELECT Blog.id, blog_content.id AS 'empty'
-              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
-              WHERE Blog.id < $entryID AND blog_content.id IS NOT NULL 
-              GROUP BY Blog.id 
-              ORDER BY Blog.id DESC LIMIT 1";
-    $statement = $pdo->query($query);
-
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-      $previousID = $row['id'];
-    } else {
-      $previousID = 0;
-    }
+    $entryID = $entry[0];
+    $entryTitle = $entry[1];
+    $entryDate = $entry[2];
+    $entryCover = $entry[3];
+    $entryStory = $entry[4];
+    $entryCategory = $entry[5];
 
 
-    $query = "SELECT Blog.id, blog_content.id AS 'empty'
-              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
-              WHERE Blog.category = '$entryCategory' AND Blog.id > $entryID AND blog_content.id IS NOT NULL 
-              GROUP BY Blog.id 
-              ORDER BY Blog.id ASC LIMIT 1";
-    $statement = $pdo->query($query);
+    $nextID = getNextNotEmptyId();
+    $nextCategoryID = getNextNotEmptyIdByCategory();
+    $nextStoryID = getNextNotEmptyIdByStory();
+    $previousID = getPreviousNotEmptyId();
+    $previousCategoryID = getPreviousNotEmptyIdByCategory();
+    $previousStoryID = getPreviousNotEmptyIdByStory();
 
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-      $nextCategoryID = $row['id'];
-    } else {
-      $nextCategoryID = 0;
-    }
-
-    $query = "SELECT Blog.id, blog_content.id AS 'empty'
-              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
-              WHERE Blog.category = '$entryCategory' AND Blog.id < $entryID AND blog_content.id IS NOT NULL 
-              GROUP BY Blog.id  
-              ORDER BY Blog.id DESC LIMIT 1";
-    $statement = $pdo->query($query);
-
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-      $previousCategoryID = $row['id'];
-    } else {
-      $previousCategoryID = 0;
-    }
-
-    $query = "SELECT Blog.id, blog_content.id AS 'empty'
-              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
-              WHERE Blog.story = '$entryStory' AND Blog.id > $entryID AND blog_content.id IS NOT NULL 
-              GROUP BY Blog.id 
-              ORDER BY Blog.id ASC LIMIT 1";
-    $statement = $pdo->query($query);
-
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-      $nextStoryID = $row['id'];
-    } else {
-      $nextStoryID = 0;
-    }
-
-    $query = "SELECT Blog.id, blog_content.id AS 'empty'
-              FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
-              WHERE Blog.story = '$entryStory' AND Blog.id < $entryID AND blog_content.id IS NOT NULL 
-              GROUP BY Blog.id 
-              ORDER BY Blog.id DESC LIMIT 1";
-    $statement = $pdo->query($query);
-
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-      $previousStoryID = $row['id'];
-    } else {
-      $previousStoryID = 0;
-    }
-
-    $statement = null;
+    $chapters = getChapters($id);
   } catch (PDOException $e){
   echo "An error occurred: " . $e->getMessage();
   exit;
   }
 
-  $pdo = null;
+  require_once '../close_database_connection.php';
 ?>
 
 <section id="blog">
@@ -173,9 +85,8 @@
           }
 
         echo"
-        </div>";
-
-        <br>
+        </div>
+        <br>";
 
         echo"
         <div id='layout' class='layout'>";

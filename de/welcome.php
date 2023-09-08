@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang='de'>
 <head>
-    <title>Julius Steck</title>
-    <meta http-equiv='content-type' content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#F2F2F2">
-    <meta name="description" content="Wilkommen zu meinem Blog zu den Themen Technologie, Politik und Freizeit">
-    <link rel="shortcut icon" href="../icons/icon.png">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/welcome.css">
-    <link rel="stylesheet" href="../style/footer.css">
-    <script src="../script/header.js"></script>
-    <script src="../script/caption.js"></script>
-    <script src="../script/layout.js"></script>
+  <title>Julius Steck</title>
+  <meta http-equiv='content-type' content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F2F2F2">
+  <meta name="description" content="Wilkommen zu meinem Blog zu den Themen Technologie, Politik und Freizeit">
+  <link rel="shortcut icon" href="../icons/icon.png">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/header.css">
+  <link rel="stylesheet" href="../style/caption.css">
+  <link rel="stylesheet" href="../style/welcome.css">
+  <link rel="stylesheet" href="../style/footer.css">
+  <script src="../script/header.js"></script>
+  <script src="../script/caption.js"></script>
+  <script src="../script/layout.js"></script>
 </head>
 
 <body>
@@ -37,58 +37,42 @@
   </div>
 </section>
 
-
 <section id="blog">
   <div class="container">
+    <div id="filter" class="filter">
+      <input type="checkbox" id="dropdown">
+      <label for="dropdown">
+        <img src="../icons/icon_arrow_dropdown.svg" class="icon" alt="dropdown">
+      </label>
+
+      <ul>
+        <li><button type="button" id="button_alles" class="aktiv">Alles</button></li>
+        <li><button type="button" id="button_arbeit" class="">Arbeit</button></li>
+        <li><button type="button" id="button_freizeit" class="">Freizeit</button></li>
+        <li><button type="button" id="button_ankuendigungen" class="">Ankündigungen</button></li>
+        <li><button type="button" id="button_technologie" class="">Technologie</button></li>
+        <li><button type="button" id="button_politik" class="">Politik</button></li>
+      </ul>
+    </div>
+
+    <div id="layout" class="layout">
+
     <?php
       require_once '../database_connection.php';
 
       require_once '../session.php';
 
+      require_once '../database_methods.php';
+
       try{
-        $query = "SELECT Blog.id, Blog.title_de, Blog.date, Blog.cover, Blog.category, blog_content.id AS 'empty' FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id GROUP BY Blog.id";
-        $statement = $pdo->query($query);
-        $entries = array();
-
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-            $entryID = $row['id'];
-            $entryTitle = $row['title_de'];
-            $entryDate = $row['date'];
-            $entryCover = $row['cover'];
-            $Category = $row['category'];
-            $empty = true;
-            if($row['empty'] != NULL){
-              $empty = false;
-            }
-
-            $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category, $empty);
-        }
+        $entries = getEntries();
         $statement = null;
       } catch (PDOException $e){
       echo "An error occurred: " . $e->getMessage();
       exit;
       }
 
-      $pdo = null;
-
-      echo'
-      <div id="filter" class="filter">
-        <input type="checkbox" id="dropdown">
-        <label for="dropdown">
-          <img src="../icons/icon_arrow_dropdown.svg" class="icon" alt="dropdown">
-        </label>
-
-        <ul>
-          <li><button type="button" id="button_alles" class="aktiv">Alles</button></li>
-          <li><button type="button" id="button_arbeit" class="">Arbeit</button></li>
-          <li><button type="button" id="button_freizeit" class="">Freizeit</button></li>
-          <li><button type="button" id="button_ankuendigungen" class="">Ankündigungen</button></li>
-          <li><button type="button" id="button_technologie" class="">Technologie</button></li>
-          <li><button type="button" id="button_politik" class="">Politik</button></li>
-        </ul>
-      </div>
-
-      <div id="layout" class="layout">';
+      require_once '../close_database_connection.php';
 
       for($j = 1; $j < 5; $j++){
         echo "<div class='column flex'>";
@@ -101,11 +85,12 @@
             $entryDate = $entries[count($entries) - ($i + 1)][2];
             $entryCover = $entries[count($entries) - ($i + 1)][3];
             $Category = $entries[count($entries) - ($i + 1)][4];
+            $empty = $entries[count($entries) - ($i + 1)][5];
 
             echo
             "<div class='entry' category='$Category' id='entry_$entryID'>";
             
-              if(!$empty || $admin){
+              if(!$empty || $_SESSION['admin']){
               echo "<a href='blog.php?id=$entryID'>";
               }
               echo
@@ -119,9 +104,9 @@
                 </div>
               </div>";
 
-              if(!$empty || $admin){
+              if(!$empty || $_SESSION['admin']){
                 echo "</a>";
-               }
+              }
             echo"
             </div>";
           }
@@ -129,6 +114,7 @@
         echo "</div>";
       }
     ?>
+    </div>
   </div>
 </section>
 

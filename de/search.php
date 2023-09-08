@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang='de'>
 <head>
-    <title>Julius Steck</title>
-    <meta http-equiv='content-type' content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#F2F2F2">
-    <meta name="description" content="Wilkommen zu meinem Blog zu den Themen Technologie, Politik und Freizeit">
-    <link rel="shortcut icon" href="../icons/icon.png">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/caption.css">
-    <link rel="stylesheet" href="../style/welcome.css">
-    <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/noscript.css">
-    <script src="../script/header.js"></script>
-    <script src="../script/caption.js"></script>
-    <script src="../script/layout.js"></script>
+  <title>Julius Steck</title>
+  <meta http-equiv='content-type' content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F2F2F2">
+  <meta name="description" content="Wilkommen zu meinem Blog zu den Themen Technologie, Politik und Freizeit">
+  <link rel="shortcut icon" href="../icons/icon.png">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/header.css">
+  <link rel="stylesheet" href="../style/caption.css">
+  <link rel="stylesheet" href="../style/welcome.css">
+  <link rel="stylesheet" href="../style/footer.css">
+  <link rel="stylesheet" href="../style/noscript.css">
+  <script src="../script/header.js"></script>
+  <script src="../script/caption.js"></script>
+  <script src="../script/layout.js"></script>
 </head>
 
 <body>
-
   <?php
     include 'header.php';
 
-    $Word = $_GET['search'];
-     echo
-     "<section id='caption'>
-       <div class='container'>
-           <h1>Suche: <span class='flexible_caption'>$Word </span><span id='cursor' class='cursor'>_</span> </h1>
-       </div>
-     </section>";
-   ?>
+    $search = "";
+    if(isset($_GET['search'])){
+      $search = $_GET['search'];
+    }
+
+    echo
+    "<section id='caption'>
+      <div class='container'>
+          <h1>Suche: <span class='flexible_caption'>$search </span><span id='cursor' class='cursor'>_</span> </h1>
+      </div>
+    </section>";
+  ?>
 
   <noscript>
     <div class='noscript'>
@@ -43,57 +46,32 @@
 
   <section id="blog">
     <div class="container">
+      <div id="filter" class="filter">
+        <input type="checkbox" id="dropdown">
+        <label for="dropdown">
+          <img src="../icons/icon_arrow_dropdown.svg" class="icon" alt="dropdown">
+        </label>
+
+        <ul>
+          <li><button type="button" id="button_alles" class="aktiv">Alles</button></li>
+          <li><button type="button" id="button_arbeit" class="">Arbeit</button></li>
+          <li><button type="button" id="button_freizeit" class="">Freizeit</button></li>
+          <li><button type="button" id="button_ankuendigungen" class="">Ankündigungen</button></li>
+          <li><button type="button" id="button_technologie" class="">Technologie</button></li>
+          <li><button type="button" id="button_politik" class="">Politik</button></li>
+        </ul>
+      </div>
+
+      <div id="layout" class="layout">
         <?php
           require_once '../database_connection.php';
+          require_once '../session';
+          require_once '../system/database_methods.php';
 
-          $search = "";
-
-          if(isset($_GET['search'])){
-            $search = $_GET['search'];
-          }
-
-          try {
-            $query = "SELECT id, title_de, title_en, date, cover, category FROM Blog WHERE title_de LIKE '%$search%' OR title_en LIKE '%$search%' OR story LIKE '%$search%' OR category LIKE '%$search%'";
-            $statement = $pdo->query($query);
-
-            $entries = array();
-
-            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                $entryID = $row['id'];
-                $entryTitle = $row['title_de'];
-                $entryDate = $row['date'];
-                $entryCover = $row['cover'];
-                $Category = $row['category'];
-
-                $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
-            }
-            $count = count($entries);
-            $statement = null;
-          } catch (PDOException $e) {
-          echo "An error occurred: " . $e->getMessage();
-          exit;
-          }
-
-          $pdo = null;
-
-          echo'
-            <div id="filter" class="filter">
-            <input type="checkbox" id="dropdown">
-            <label for="dropdown">
-              <img src="../icons/icon_arrow_dropdown.svg" class="icon" alt="dropdown">
-            </label>
-
-            <ul>
-              <li><button type="button" id="button_alles" class="aktiv">Alles</button></li>
-              <li><button type="button" id="button_arbeit" class="">Arbeit</button></li>
-              <li><button type="button" id="button_freizeit" class="">Freizeit</button></li>
-              <li><button type="button" id="button_ankuendigungen" class="">Ankündigungen</button></li>
-              <li><button type="button" id="button_technologie" class="">Technologie</button></li>
-              <li><button type="button" id="button_politik" class="">Politik</button></li>
-            </ul>
-          </div>
-
-          <div id="layout" class="layout">';
+          $entries = searchEntries($search);)
+          $count = count($entries);
+            
+          require_once '../close_database_methods.php';
 
           for($j = 1; $j < 5; $j++){
             echo "<div class='column flex'>";
@@ -121,7 +99,6 @@
                 </a>";
               }
             }
-
             echo "</div>";
           }
 
@@ -130,7 +107,7 @@
                 <p> Ergebnisse: $count </p>
           </div>";
         ?>
-
+      </div>
     </div>
   </section>
 

@@ -1,33 +1,32 @@
 <?php
     require_once '../database_connection.php';
-
     require_once '../session.php';
+    require_once 'database_methods.php';
 
-    $chapterID = $_POST['chapter_id'];
-    $id = $_POST['id'];
-
-    if ($_SESSION['admin']) {
-
-        try {
-            $query = "DELETE FROM blog_content WHERE id = ? AND blog_id = ?";
-            $statement->bindParam(1, $chapterID);
-            $statement->bindParam(2, $id);
-            $statement = $pdo->query($query);
-
-            if ($statement->execute()) {
-                echo "New entry added successfully.";
+    try {
+        ob_start();
+        if (isset($_GET['id']) && is_numeric($_GET['id']) && isset($_GET['chapter_id']) && is_numeric($_GET['chapter_id'])){
+            $chapterID = $_GET['chapter_id'];
+            $id = $_GET['id'];
+            if ($_SESSION['admin']){
+                deleteChapterById($id, $chapterID);
+                $_SESSION['message'] = "Löschen erfolgreich";
+                echo "Erfolg";
             } else {
-                echo "Error: ";
+                $_SESSION['message'] = "Nicht berechtigt";
+                echo "nicht berechtigt";
             }
-        }catch (PDOException $e) {
-            echo "An error occurred: " . $e->getMessage();
+        }else{
+            $_SESSION['message'] = "Invalid ID provided.";
+            echo "invalid ID";
         }
-    }
-    else{
-      echo "cookie problem";
+    } catch (PDOException $e){
+        $_SESSION['message'] = "Datenbank-Fehler: " . $e->getMessage();
+        echo "Datenbank Fehler";
+    } finally{
+        ob_end_flush();
     }
 
-    $pdo = null;
-
+    require_once '../close_database_connection.php';
     header("Location: ../de/blog.php?id=$id");
 ?>

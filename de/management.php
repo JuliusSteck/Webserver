@@ -16,10 +16,9 @@
 </head>
 
 <body>
-
   <?php
     include 'header.php';
-   ?>
+  ?>
 
   <noscript>
     <div class='noscript'>
@@ -41,31 +40,15 @@
     <div class="container">
       <?php
         require_once '../database_connection.php';
-
         require_once '../session.php';
+        require_once '../database_methods.php';
 
-        try {
-          $query = "SELECT COUNT(id) as countNewsletter FROM newsletter ";
-          $statement = $pdo->prepare($query);
+        $countNewsletter = countSubscribers();
 
-          $statement->execute();
-
-          if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-              $countNewsletter = $row['countNewsletter'];
-          }
-        } catch (PDOException $e) {
-        echo "An error occurred: " . $e->getMessage();
-        }
-
-        $login = false;
-
-        $pdo = null;
+        require_once '../close_database_connection.php';
 
         if($_SESSION['login']){
-          
-
           if($_SESSION['admin']){
-
             echo
             "<div id='layout' class='grid'>
               <div class='flex'>
@@ -162,16 +145,15 @@
             echo
             '<p> user login muss noch programmiert werden :)</p>';
           }
-
         }else{
           header("Location: login.php");
         }
-       ?>
+      ?>
     </div>
   </section>
 
   <?php
     include 'footer.php';
-   ?>
+  ?>
 </body>
 </html>
