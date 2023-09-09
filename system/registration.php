@@ -1,62 +1,48 @@
 <?php
   require_once '../database_connection.php';
-
-  $email = $_POST['email'];
-  $name = $_POST['name'];
-  $available = true;
+  require_once '../session.php';
+  require_once 'database_methods.php';
 
   try {
-    $query = "SELECT * FROM newsletter WHERE email = :email";
-    $statement = $pdo->prepare($query);
-
-    $statement->bindParam(':email', $email, PDO::PARAM_STR);
-
-    $statement->execute();
-
-    if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $available = false;
-    }
-  } catch (PDOException $e) {
-  echo "An error occurred: " . $e->getMessage();
-  }
-
-  try {
-    if($available){
-      $query = "INSERT INTO newsletter (email, name) VALUES (:email, :name)";
-      $statement = $pdo->prepare($query);
-
-      $statement->bindParam(':email', $email, PDO::PARAM_STR);
-      $statement->bindParam(':name', $name, PDO::PARAM_STR);
-
-      $statement->execute();
-
-      if ($statement->rowCount() > 0) {
+    ob_start();
+    if (isset($_GET['email']) && isset($_GET['name'])){
+      $email = $_POST['email'];
+      $name = $_POST['name'];
+      if (checkEmail($email)){
+        insertSubscriber($email, $name)
         $headers = "From: kontakt@julius-steck.de";
-        $mailSent = mail($email, "Willkommen zu meinem Newsletter", "Hi $name, \nDanke, dass du meinen Newsletter abonniert hast. \nViele Grüße \ndein Julius \n\n\nDies ist eine automatisierte Mail, auf Antworten
+        $mailSent = mail($email, "Willkommen zu meinem Newsletter", 
+        "Hi $name, \n
+        Danke, dass du meinen Newsletter abonniert hast. \n
+        Viele Grüße \n
+        dein Julius \n\n\n
+        
+        
+        Dies ist eine automatisierte Mail, auf Antworten
         kann ich nicht reagieren\n", $headers);
 
         if ($mailSent) {
-            echo "Email sent successfully.";
+          echo "Email sent successfully.";
         } else {
-            echo "Failed to send email.";
+          echo "Failed to send email.";
         }
-
+        $_SESSION['message'] = "Erfolgreich";
+        echo "erfolgreich";
       } else {
-        echo "Failed to create a new entry.";
+        $_SESSION['message'] = "Email in Verwendung";
+        echo "Email in Verwendung";
       }
+    }else{
+      $_SESSION['message'] = "Invalid Input";
+      echo "invalid Input";
     }
-
-    $statement = null;
-  } catch (PDOException $e) {
-  echo "An error occurred: " . $e->getMessage();
-  exit;
+  } catch (PDOException $e){
+    $_SESSION['message'] = "Datenbank-Fehler: " . $e->getMessage();
+    echo "Datenbank-Fehler";
+  } finally{
+    ob_end_flush();
   }
 
-  $pdo = null;
-
-  if($available){
-    header("Location: ../de/welcome.php");
-  } else {
-    header("Location: ../de/welcome.php");
-  }
+  require_once '../close_database_connection.php';
+  header("Location: ../de/newsletter.php");
 ?>

@@ -25,17 +25,15 @@
 
 <?php
   include 'header.php';
-  $id = 0;
 
+  require_once '../database_connection.php';
+  require_once '../session.php';
+  require_once '../system/database_methods.php';
+
+  $id = 0;
   if(isset($_GET['id']) && is_numeric($_GET['id'])){
     $id = $_GET['id'];
   }
-
-  require_once '../database_connection.php';
-
-  require_once '../session.php';
-
-  require_once '../database_methods.php';
   
   $entryID = 0;
   $entryTitle = "Fortsetzung folgt";

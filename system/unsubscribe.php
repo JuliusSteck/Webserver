@@ -1,31 +1,28 @@
 <?php
   require_once '../database_connection.php';
-
-  $id = $_GET['id'];
-  $date = $_GET['date']
+  require_once '../session.php';
+  require_once 'database_methods.php';
 
   try {
-    $query = "DELETE FROM newsletter WHERE id = :id AND date = :date";
-    $statement = $pdo->prepare($query);
+    ob_start();
+    if (isset($_GET['id']) && isset($_GET['date']) && is_numeric($_GET['id'])){
+      $id = $_GET['id'];
+      $date = $_GET['date']
 
-    $statement->bindParam(':id', $id, PDO::PARAM_STR);
-    $statement->bindParam(':date', $date, PDO::PARAM_STR);
-
-    $statement->execute();
-
-    if ($statement->rowCount() > 0) {
-      header("Location: ../de/success.php");
-    } else {
-      header("Location: ../de/failure.php");
+      deleteSubscriber($id, $date);
+      $_SESSION['message'] = "Erfolgreich";
+      echo "erfolgreich";
+    }else{
+      $_SESSION['message'] = "Invalid Data";
+      echo "invalid Data";
     }
+  } catch (PDOException $e){
+    $_SESSION['message'] = "Datenbank-Fehler: " . $e->getMessage();
+    echo "Datenbank-Fehler";
+  } finally{
+    ob_end_flush();
+  }
 
-    $statement = null;
-    } catch (PDOException $e) {
-    echo "An error occurred: " . $e->getMessage();
-    }
-
-  exit;
-  $pdo = null;
-
-  header("Location: ../de/welcome.php");
+  require_once '../close_database_connection.php';
+  header("Location: ../de/newsletter.php");
 ?>

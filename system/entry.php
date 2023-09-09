@@ -1,54 +1,46 @@
 <?php
     require_once '../database_connection.php';
-
     require_once '../session.php';
+    require_once 'database_methods.php';
 
-    ob_start();
+    try {
+        ob_start();
+        if (isset($_GET['id']) && is_numeric($_GET['id'])){
+            $headline_de = $_POST['headline_de'];
+            $headline_en = $_POST['headline_en'];
+            $category = $_POST['category'];
+            $story = $_POST['story'];
+            $cover = $_FILES['cover']['tmp_name'];
+            $targetDirectory = '../images/';
+            $targetFileName = basename($_FILES['cover']['name']);
+            $targetPath = $targetDirectory . $targetFileName;
+            if ($_SESSION['admin']){
+                if (move_uploaded_file($cover, $targetPath)) {
+                    echo "File uploaded and moved successfully.";
+                } else {
+                    echo "Error moving file.";
+                }
+                $coverData = fopen($targetPath, 'rb');
 
-    if ($_SESSION['admin']) {
-        $headline_de = $_POST['headline_de'];
-        $headline_en = $_POST['headline_en'];
-        $category = $_POST['category'];
-        $story = $_POST['story'];
-        $cover = $_FILES['cover']['tmp_name'];
-        $targetDirectory = '../images/';
-        $targetFileName = basename($_FILES['cover']['name']);
-        $targetPath = $targetDirectory . $targetFileName;
-
-        if (move_uploaded_file($cover, $targetPath)) {
-            echo "File uploaded and moved successfully.";
-        } else {
-            echo "Error moving file.";
+                insertChapter($headline_de, $headline_en, $category, $story, $coverData, $targetFileName)
+                fclose($coverData);
+                $_SESSION['message'] = "Erfolgreich";
+                echo "erfolgreich";
+            } else {
+                $_SESSION['message'] = "Nicht berechtigt";
+                echo "nicht berechtigt";
+            }
+        }else{
+            $_SESSION['message'] = "Invalid ID provided.";
+            echo "invalid ID";
         }
-
-        $coverData = fopen($targetPath, 'rb');
-
-        $query = "INSERT INTO Blog (title_de, title_en, category, story, image, cover,  date) VALUES (?, ?, ?, ?, ?, ?, CURDATE())";
-
-        $statement = $pdo->prepare($query);
-        $statement->bindParam(1, $headline_de);
-        $statement->bindParam(2, $headline_en);
-        $statement->bindParam(3, $category);
-        $statement->bindParam(4, $story);
-        $statement->bindParam(5, $coverData, PDO::PARAM_LOB);
-        $statement->bindParam(6, $targetFileName);
-        
-    
-        if ($statement->execute()) {
-            echo "New entry added successfully.";
-        } else {
-            echo "Error: ";
-        }
-        
-        fclose($coverData);
-    }
-    else{
-      echo "not admin";
+    } catch (PDOException $e){
+        $_SESSION['message'] = "Datenbank-Fehler: " . $e->getMessage();
+        echo "Datenbank-Fehler";
+    } finally{
+        ob_end_flush();
     }
 
-    ob_end_flush();
-    $statement = null;
-    $pdo = null;
-
-    header("Location: ../de/management.php");
+    require_once '../close_database_connection.php';
+    header("Location: ../de/blog.php?id=$id");
 ?>

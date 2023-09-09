@@ -59,10 +59,8 @@
 
     <?php
       require_once '../database_connection.php';
-
       require_once '../session.php';
-
-      require_once '../database_methods.php';
+      require_once '../system/database_methods.php';
 
       try{
         $entries = getEntries();
