@@ -5,11 +5,11 @@
 
   try {
     ob_start();
-    if (isset($_GET['email']) && isset($_GET['name'])){
+    if (isset($_POST['email']) && isset($_POST['name'])){
       $email = $_POST['email'];
       $name = $_POST['name'];
       if (checkEmail($email)){
-        insertSubscriber($email, $name)
+        insertSubscriber($email, $name);
         $headers = "From: kontakt@julius-steck.de";
         $mailSent = mail($email, "Willkommen zu meinem Newsletter", 
         "Hi $name, \n

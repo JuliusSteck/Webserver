@@ -68,7 +68,7 @@
           require_once '../session';
           require_once '../system/database_methods.php';
 
-          $entries = searchEntries($search);)
+          $entries = searchEntries($search);
           $count = count($entries);
             
           require_once '../close_database_methods.php';

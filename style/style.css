@@ -262,6 +262,18 @@ input:focus, textarea:focus{
   gap: 20px;
 }
 
+.popup{
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 50px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom:0;
+  height: 200px;
+}
+
 @media(max-width: 1500px){
   .container{
     width: 80%;

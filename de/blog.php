@@ -12,7 +12,6 @@
   <script src="../script/header.js"></script>
   <script src="../script/navigation.js"></script>
 </head>
-
 <body>
 
 <noscript>
@@ -52,13 +51,12 @@
     $entryStory = $entry[4];
     $entryCategory = $entry[5];
 
-
-    $nextID = getNextNotEmptyId();
-    $nextCategoryID = getNextNotEmptyIdByCategory();
-    $nextStoryID = getNextNotEmptyIdByStory();
-    $previousID = getPreviousNotEmptyId();
-    $previousCategoryID = getPreviousNotEmptyIdByCategory();
-    $previousStoryID = getPreviousNotEmptyIdByStory();
+    $nextID = getNextNotEmptyId($entryID);
+    $nextCategoryID = getNextNotEmptyIdByCategory($entryID, $entryCategory);
+    $nextStoryID = getNextNotEmptyIdByStory($entryID, $entryStory);
+    $previousID = getPreviousNotEmptyId($entryID);
+    $previousCategoryID = getPreviousNotEmptyIdByCategory($entryID, $entryCategory);
+    $previousStoryID = getPreviousNotEmptyIdByStory($entryID, $entryStory);
 
     $chapters = getChapters($id);
   } catch (PDOException $e){
@@ -81,7 +79,6 @@
           if($_SESSION['admin']){
             echo"<a href='../system/deleteEntry.php?id=$entryID'>löschen</a>";
           }
-
         echo"
         </div>
         <br>";

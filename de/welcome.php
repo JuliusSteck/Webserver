@@ -15,12 +15,24 @@
   <script src="../script/header.js"></script>
   <script src="../script/caption.js"></script>
   <script src="../script/layout.js"></script>
+  <script src="../script/popup.js"></script>
 </head>
 
 <body>
 
 <?php
   include 'header.php';
+
+  if($_SESSION['message'] != NULL){
+    echo"
+    <div id='popup' class='popup'>
+      <h3>$_SESSION['message']</h3>
+      <input type='checkbox' id='close'>
+      <label for='close'>
+        <img src=''../icons/icon_close.svg' class='icon' alt='close'>
+      </label>
+    </div>";
+  }
 ?>
 
 <noscript>
@@ -64,7 +76,6 @@
 
       try{
         $entries = getEntries();
-        $statement = null;
       } catch (PDOException $e){
       echo "An error occurred: " . $e->getMessage();
       exit;

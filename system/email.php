@@ -5,7 +5,7 @@
 
   try {
     ob_start();
-    if (isset($_GET['headline']) && isset($_GET['message'])){
+    if (isset($_POST['headline']) && isset($_POST['message'])){
       $headline = $_POST['headline'];
       $message = $_POST['message'];
       if ($_SESSION['admin']){

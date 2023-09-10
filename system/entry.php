@@ -5,7 +5,7 @@
 
     try {
         ob_start();
-        if (isset($_GET['id']) && is_numeric($_GET['id'])){
+        if (isset($_POST['headline_de']) && $_POST['headline_en']){
             $headline_de = $_POST['headline_de'];
             $headline_en = $_POST['headline_en'];
             $category = $_POST['category'];
@@ -22,7 +22,7 @@
                 }
                 $coverData = fopen($targetPath, 'rb');
 
-                insertChapter($headline_de, $headline_en, $category, $story, $coverData, $targetFileName)
+                insertEntry($headline_de, $headline_en, $category, $story, $coverData, $targetFileName);
                 fclose($coverData);
                 $_SESSION['message'] = "Erfolgreich";
                 echo "erfolgreich";
@@ -42,5 +42,5 @@
     }
 
     require_once '../close_database_connection.php';
-    header("Location: ../de/blog.php?id=$id");
+    header("Location: ../de/management.php");
 ?>

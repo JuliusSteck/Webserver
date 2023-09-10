@@ -1,5 +1,11 @@
 <?php
-  function getEntry($id){
+  function getEntry($id, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT id, title_de, date, cover, category, story 
               FROM Blog 
               WHERE id = ?";
@@ -21,7 +27,13 @@
     return $entry;
   }
 
-  function getChapters($id){
+  function getChapters($id, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT id, chapter_title, content_text, image_path 
               FROM blog_content 
               WHERE blog_id = ? AND chapter_language = 'german'";
@@ -42,7 +54,13 @@
   }
 
 
-  function getNextNotEmptyId($id){
+  function getNextNotEmptyId($id, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id, blog_content.id AS 'empty'
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               WHERE Blog.id > ? AND blog_content.id IS NOT NULL 
@@ -59,7 +77,13 @@
     return $nextID;
   }
 
-  function getPreviousNotEmptyId($id){
+  function getPreviousNotEmptyId($id, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id, blog_content.id AS 'empty'
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               WHERE Blog.id < ? AND blog_content.id IS NOT NULL 
@@ -77,7 +101,13 @@
   }
   
 
-  function getNextId($id){
+  function getNextId($id, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id
               FROM Blog
               WHERE Blog.id > ?
@@ -94,7 +124,13 @@
     return $nextID;
   }
 
-  function getPreviousId($id){
+  function getPreviousId($id, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id
               FROM Blog 
               WHERE Blog.id < ?
@@ -111,7 +147,13 @@
     return $previousID;
   }
   
-  function getNextNotEmptyIdByCategory($id, $entryCategory){
+  function getNextNotEmptyIdByCategory($id, $entryCategory, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id, blog_content.id AS 'empty'
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               WHERE Blog.category = ? AND Blog.id > ? AND blog_content.id IS NOT NULL 
@@ -128,7 +170,13 @@
      }
      return $nextID;
   }
-  function getPreviousNotEmptyIdByCategory($id, $entryCategory){
+  function getPreviousNotEmptyIdByCategory($id, $entryCategory, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id, blog_content.id AS 'empty'
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               WHERE Blog.category = ? AND Blog.id < ? AND blog_content.id IS NOT NULL 
@@ -146,7 +194,13 @@
     return $previousID;
   }
 
-  function getNextIdByCategory($id, $entryCategory){
+  function getNextIdByCategory($id, $entryCategory, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id
               FROM Blog
               WHERE Blog.category = ? AND Blog.id > ? 
@@ -164,7 +218,13 @@
     return $nextID;
   }
 
-  function getPreviousIdByCategory($id, $entryCategory){
+  function getPreviousIdByCategory($id, $entryCategory, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id
               FROM Blog
               WHERE Blog.category = ? AND Blog.id < ?
@@ -182,7 +242,13 @@
     return $previousID;
   }
 
-  function getNextNotEmptyIdByStory($id, $entryStory){
+  function getNextNotEmptyIdByStory($id, $entryStory, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id, blog_content.id AS 'empty'
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               WHERE Blog.story = ? AND Blog.id > ? AND blog_content.id IS NOT NULL 
@@ -200,7 +266,13 @@
     return $nextID;
   }
 
-  function getPreviousNotEmptyIdByStory($id, $entryStory){
+  function getPreviousNotEmptyIdByStory($id, $entryStory, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id, blog_content.id AS 'empty'
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               WHERE Blog.story = ? AND Blog.id < ? AND blog_content.id IS NOT NULL 
@@ -218,7 +290,13 @@
     return $previousID;
   }
 
-  function getNextIdByStory($id, $entryStory){
+  function getNextIdByStory($id, $entryStory, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id
               FROM Blog
               WHERE Blog.story = ? AND Blog.id > ?
@@ -236,7 +314,13 @@
     return $nextID;
   }
 
-  function getNextIdByStory($id, $entryStory){
+  function getPreviousIdByStory($id, $entryStory, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id
               FROM Blog
               WHERE Blog.story = ? AND Blog.id < ?
@@ -254,26 +338,44 @@
     return $previousID;
   }
 
-  function deleteChapterById($id, $chapter){
+  function deleteChapterById($id, $chapter, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "DELETE 
               FROM blog_content 
               WHERE id = ? AND blog_id = ?";
     $statement = $pdo->prepare($query);
     $statement->bindParam(1, $chapter);
     $statement->bindParam(2, $id);
-    $statement->execute()
+    $statement->execute();
   }
 
-  function deleteEntryById($id){
+  function deleteEntryById($id, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "DELETE 
               FROM Blog 
               WHERE id = ?";
     $statement = $pdo->prepare($query);
     $statement->bindParam(1, $id);
-    $statement->execute()
+    $statement->execute();
   }
 
-  function insertChapter($id, $title, $text, $language, $imageData, $targetFileName){
+  function insertChapter($id, $title, $text, $language, $imageData, $targetFileName, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "INSERT INTO blog_content (blog_id, chapter_title, content_text, chapter_language, image, image_path) 
               VALUES (?, ?, ?, ?, ?, ?)";
     $statement = $pdo->prepare($query);
@@ -283,10 +385,16 @@
     $statement->bindParam(4, $language);
     $statement->bindParam(5, $imageData, PDO::PARAM_LOB);
     $statement->bindParam(6, $targetFileName);
-    $statement->execute()
+    $statement->execute();
   }
 
-  function insertEntry($headline_de, $headline_en, $category, $story, $coverData, $targetFileName){
+  function insertEntry($headline_de, $headline_en, $category, $story, $coverData, $targetFileName, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "INSERT INTO Blog (title_de, title_en, category, story, image, cover,  date) 
               VALUES (?, ?, ?, ?, ?, ?, CURDATE())";
     $statement = $pdo->prepare($query);
@@ -296,13 +404,19 @@
     $statement->bindParam(4, $story);
     $statement->bindParam(5, $coverData, PDO::PARAM_LOB);
     $statement->bindParam(6, $targetFileName);
-    $statement->execute()
+    $statement->execute();
   }
 
-  function getSubscribers(){
+  function getSubscribers($pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT * FROM newsletter";
     $statement = $pdo->prepare($query);
-    $statement->execute()
+    $statement->execute();
 
     $subscribers = array();
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
@@ -316,7 +430,13 @@
     return $subscribers;
   }
 
-  function checkEmail($email){
+  function checkEmail($email, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT * 
               FROM newsletter 
               WHERE email = :email";
@@ -331,7 +451,13 @@
     return $available;
   }
 
-  function insertSubscriber($email, $name){
+  function insertSubscriber($email, $name, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "INSERT INTO newsletter (email, name) 
               VALUES (:email, :name)";
     $statement = $pdo->prepare($query);
@@ -340,7 +466,13 @@
     $statement->execute();
   }
 
-  function deleteSubscriber($id, $date){
+  function deleteSubscriber($id, $date, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "DELETE FROM newsletter 
               WHERE id = :id AND date = :date";
     $statement = $pdo->prepare($query);
@@ -349,7 +481,13 @@
     $statement->execute();
   }
 
-  function getEntries(){
+  function getEntries($pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT Blog.id, Blog.title_de, Blog.date, Blog.cover, Blog.category, blog_content.id AS 'empty' 
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               GROUP BY Blog.id";
@@ -372,7 +510,13 @@
     return $entries;
   }
   
-  function countSubscribers(){
+  function countSubscribers($pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT COUNT(id) as countNewsletter 
               FROM newsletter ";
     $statement = $pdo->prepare($query);
@@ -385,7 +529,13 @@
     return $countNewsletter;
   }
 
-  function searchEntries($search){
+  function searchEntries($search, $pdo = null, $statement = null){
+    if ($pdo === null){
+      global $pdo; 
+    }
+    if ($statement === null){
+        global $statement;
+    }
     $query = "SELECT id, title_de, title_en, date, cover, category 
               FROM Blog 
               WHERE title_de LIKE '%$search%' OR title_en LIKE '%$search%' OR story LIKE '%$search%' OR category LIKE '%$search%'";

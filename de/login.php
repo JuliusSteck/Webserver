@@ -20,7 +20,7 @@
   <noscript>
     <div class='popup'>
       <div>
-        <h2> JavaScript muss f端r die Nutzung der seite aktiviert sein.</h2>
+        <h2> JavaScript muss für die Nutzung der seite aktiviert sein.</h2>
       </div>
     </div>
   </noscript> 
