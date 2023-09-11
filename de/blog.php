@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../style/footer.css">
   <script src="../script/header.js"></script>
   <script src="../script/navigation.js"></script>
+  <script src="../script/search.js"></script>
 </head>
 <body>
 
@@ -83,7 +84,7 @@
       <?php
         echo
         "<div class='title'>
-          <h1>$entryID $entryTitle</h1>
+          <h1>$entryTitle</h1>
           <h3> $entryDate</h3>";
 
           if($_SESSION['admin']){
@@ -188,6 +189,16 @@
 
             <br>
             <div class='text_input'>
+              <select id='language' name='language' class='wide' required>
+                  <option value=''>-- Auswahl --</option>
+                  <option value='german'>Deutsch</option>
+                  <option value='english'>Englisch</option>
+              </select>
+              <label for='language' class='hovering_label'>Sprache</label>
+            </div>
+
+            <br>
+            <div class='text_input'>
               <input type='text' id='title' name='title' class='wide' required>
               <label for='title' class='floating_label'>Überschrift</label>
             </div>
@@ -198,17 +209,7 @@
             <br>
             <div class='text_input'>
               <input type='file' id='image' name='image' class='wide' required>
-              <label for='image' class='hovering_label'>Cover Bild</label>
-            </div>
-
-            <br>
-            <div class='text_input'>
-              <select id='language' name='language' class='wide' required>
-                  <option value=''>-- Auswahl --</option>
-                  <option value='german'>Deutsch</option>
-                  <option value='english'>Englisch</option>
-              </select>
-              <label for='language' class='hovering_label'>Kategorie</label>
+              <label for='image' class='hovering_label'>Bild</label>
             </div>
 
             <button type='submit' id='send-button' class='wide'>Senden</button>

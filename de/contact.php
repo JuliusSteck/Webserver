@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../style/noscript.css">
   <script src="../script/header.js"></script>
   <script src="../script/caption.js"></script>
+  <script src="../script/search.js"></script>
 </head>
 
 <body>

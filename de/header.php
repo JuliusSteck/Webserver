@@ -31,6 +31,9 @@
               <input type="text" id="search" name="search" required>
               <label for="search" class='floating_label'>Suchen</label>
             </div>
+
+            <ul id="suggestionList" class="suggestionList"></ul>
+
             <button type="submit" id="search-button">suchen</button>
           </form>
         </li>

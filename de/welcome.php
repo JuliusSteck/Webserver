@@ -16,6 +16,8 @@
   <script src="../script/caption.js"></script>
   <script src="../script/layout.js"></script>
   <script src="../script/popup.js"></script>
+  <script src="../script/search.js"></script>
+  <script src="../script/load.js"></script>
 </head>
 
 <body>

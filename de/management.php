@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../style/noscript.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
+    <script src="../script/search.js"></script>
 </head>
 
 <body>
@@ -32,8 +33,6 @@
         </label>
       </div>";
     }
-
-    require_once '../close_database_connection.php';
   ?>
 
   <noscript>
@@ -55,10 +54,6 @@
   <section id="management">
     <div class="container">
       <?php
-        require_once '../database_connection.php';
-        require_once '../session.php';
-        require_once '../system/database_methods.php';
-
         $countNewsletter = countSubscribers();
 
         require_once '../close_database_connection.php';

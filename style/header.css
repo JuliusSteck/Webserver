@@ -140,6 +140,20 @@ label[for="menu"] span{
   background-color: var(--border-color);
 }
 
+.suggestionList{
+  position: absolute;
+  width: 200px;
+  top: 0;
+  left: 0;
+  list-style: none;
+  
+}
+
+.suggestionList li{
+  width: 200px;
+  height: 20px;
+}
+
 @media(max-width: 1700px){
   header{
     left: 0;

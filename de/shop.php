@@ -14,6 +14,7 @@
   <script src="../script/header.js"></script>
   <script src="../script/caption.js"></script>
   <script src="../script/layout.js"></script>
+  <script src="../script/search.js"></script>
 </head>
 
 <body>
