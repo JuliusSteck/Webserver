@@ -22,7 +22,7 @@
                 }
                 $imageData = fopen($targetPath, 'rb');
 
-                insertChapter($id, $title, $text, $language, $imageData, $targetFileName)
+                insertChapter($id, $title, $text, $language, $imageData, $targetFileName);
                 fclose($imageData);
                 $_SESSION['message'] = "Erfolgreich";
                 echo "erfolgreich";

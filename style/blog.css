@@ -103,7 +103,17 @@ label[for="dropdown"] span{
   margin-top: 3px;
 }
 
-@media(max-width: 1500px){
+.chapter{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chapter img{
+  margin: auto;
+}
+
+@media(max-width: 1200px){
 
 }
 

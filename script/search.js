@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const search = document.getElementById("searchInput");
+    const search = document.getElementById("search");
     const suggestionList = document.getElementById("suggestionList");
 
     searchInput.addEventListener("keyup", function() {

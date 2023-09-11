@@ -19,7 +19,7 @@ h1 span{
   transition: opacity 0.2s, visibility 0.2s;
 }
 
-@media(max-width: 1500px){
+@media(max-width: 1200px){
   #caption{
     height: 80px;
     margin-top: 120px;

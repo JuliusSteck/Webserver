@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../style/footer.css">
   <script src="../script/header.js"></script>
   <script src="../script/navigation.js"></script>
+  <script src="../script/popup.js"></script>
   <script src="../script/search.js"></script>
 </head>
 <body>
@@ -107,27 +108,21 @@
 
             if(($i  %  2) == $j && $j == 0){
               echo"
-              <div>";
+              <div class='chapter'>";
 
               if($title != NULL){
                 echo"
-                <h3>$title</h3>
-                <br>
-                <br>";
+                <h3>$title</h3>";
               }
 
               if($image != NULL){
                 echo"
-                <img src='../images/$image' alt='$title'>
-                <br>
-                <br>";
+                <img src='../images/$image' alt='$title'>";
               }
                 
               if($text != NULL){
                 echo"
-                <p> $text</p>
-                <br>
-                <br>";
+                <p> $text</p>";
               }
                 
               if($_SESSION['admin']){
@@ -140,27 +135,21 @@
 
             if(($i  %  2) == $j && $j == 1){
               echo"
-              <div>";
+              <div class ='chapter'>";
 
               if($title != NULL){
                 echo"
-                <h3>$title</h3>
-                <br>
-                <br>";
+                <h3>$title</h3>";
               }
                 
               if($text != NULL){
                 echo"
-                <p> $text</p>
-                <br>
-                <br>";
+                <p> $text</p>";
               }
 
               if($image != NULL){
                 echo"
-                <img src='../images/$image' alt='$title'>
-                <br>
-                <br>";
+                <img src='../images/$image' alt='$title'>";
               }
                 
               if($_SESSION['admin']){
@@ -181,10 +170,14 @@
     <?php
       if($_SESSION['admin']){
         echo"
+        <br>
+        <br>
         <div class='flex'>
           <form action='../system/chapter.php' method='POST' enctype='multipart/form-data' class='center box'>
             <h3> Kapitel </h3>
 
+            <br>
+            <br>
             <input type='hidden' name='id' value='$entryID'>
 
             <br>

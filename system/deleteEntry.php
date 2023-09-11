@@ -8,7 +8,7 @@
         if (isset($_GET['id']) && is_numeric($_GET['id'])){
             $id = $_GET['id'];
             if ($_SESSION['admin']){
-                deleteEntryById($Id);
+                deleteEntryById($id);
                 $_SESSION['message'] = "Erfolgreich";
                 echo "erfolgreich";
             } else {

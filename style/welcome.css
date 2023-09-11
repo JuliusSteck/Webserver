@@ -94,6 +94,10 @@ label[for="dropdown"] span{
   margin-bottom: 20px;
 }
 
+.element:hover .element_description {
+  transform: translateY(-5px);
+}
+
 .filter button{
   background: none;
   padding-bottom: 5px;
