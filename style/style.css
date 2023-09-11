@@ -262,16 +262,30 @@ input:focus, textarea:focus{
   gap: 20px;
 }
 
-.popup{
+.popup {
   border: 1px solid var(--text-color);
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 50px;
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom:0;
-  height: 200px;
+  left: 300px;
+  bottom: 100px;
+  background-color: var(--background-color);
+  z-index: 3;
+  display: flex;
+  gap: 20px;
+}
+
+#close{
+  display: none;
+}
+
+label[for="close"] span{
+  font-size: 25px;
+}
+
+.popup h3{
+  margin-top: 15px;
 }
 
 @media(max-width: 1500px){
@@ -303,6 +317,12 @@ input:focus, textarea:focus{
 
   input[type="text"].wide, input[type="password"].wide, input[type="file"].wide, textarea.wide, select.wide, button.wide{
     width: 200px;
+  }
+
+  .popup {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
   }
 }
 

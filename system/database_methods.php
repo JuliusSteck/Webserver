@@ -22,7 +22,7 @@
         $entryStory = $row['story'];
         $entryCategory = $row['category'];
 
-        $entry = array($EntryID, $entryTitle, $entryDate, $entryCover, $entryStory, $entryCategory);
+        $entry = array($entryID, $entryTitle, $entryDate, $entryCover, $entryStory, $entryCategory);
     }
     return $entry;
   }

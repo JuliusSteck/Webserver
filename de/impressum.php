@@ -19,6 +19,22 @@
 
   <?php
     include 'header.php';
+    require_once '../database_connection.php';
+    require_once '../session.php';
+    require_once '../system/database_methods.php';
+  
+    if(isset($_SESSION['message']) && !empty($_SESSION['message'])){
+      echo "
+      <div id='popup' class='popup'>
+        <h3>{$_SESSION['message']}</h3>
+        <input type='checkbox' id='close'>
+        <label for='close'>
+          <img src='../icons/icon_close.svg' class='icon' alt='close'>
+        </label>
+      </div>";
+    }
+
+    require_once '../close_database_connection.php';
   ?>
 
   <noscript>

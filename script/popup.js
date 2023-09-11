@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const popup = document.getElementById("popup");
 
   buttonClose.addEventListener("change", () => {
-    if ( buttonClose.checked) {
+    if (buttonClose.checked) {
       popup.classList.add("invisible");
 
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", "../system/.php", true);
+      xhr.open("POST", "../system/info.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       var postData = "newMessage=" + encodeURIComponent("New asynchronous message");
 
