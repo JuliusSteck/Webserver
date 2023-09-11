@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const search = document.getElementById("search");
     const suggestionList = document.getElementById("suggestionList");
 
-    searchInput.addEventListener("keyup", function() {
+    search.addEventListener("keyup", function() {
         const searchTerm = search.value;
         suggestionList.innerHTML = "";
 
@@ -29,10 +29,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-
-// const suggestions = [
-//   { text: "Suggestion 1", id: "suggestion-1" },
-//   { text: "Suggestion 2", id: "suggestion-2" },
-//   { text: "Suggestion 3", id: "suggestion-3" },
-// ];

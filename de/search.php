@@ -84,7 +84,7 @@
           $entries = searchEntries($search);
           $count = count($entries);
             
-          require_once '../close_database_methods.php';
+          require_once '../close_database_connection.php';
 
           for($j = 1; $j < 5; $j++){
             echo "<div class='column flex'>";

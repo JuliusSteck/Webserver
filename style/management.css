@@ -14,7 +14,7 @@ textarea{
   height: 150px;
 }
   
-@media(max-width: 1200px){
+@media(max-width: 1350px){
   #management{
     margin-top: 50px;
   }

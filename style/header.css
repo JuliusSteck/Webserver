@@ -166,7 +166,7 @@ label[for="menu"] span{
   }
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1350px){
   .top{
     display: block;
   }

@@ -33,7 +33,7 @@
   width: 25%;
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1350px){
   #resume{
     margin-top: 50px;
   }
