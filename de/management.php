@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../style/caption.css">
     <link rel="stylesheet" href="../style/management.css">
     <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/noscript.css">
     <script src="../script/header.js"></script>
     <script src="../script/caption.js"></script>
     <script src="../script/popup.js"></script>
@@ -103,7 +102,7 @@
                     <input type='text' id='headline' name='headline' required>
                   </div>
 
-                  <button type='submit' id='send-button'>Senden</button>
+                  <button type='submit' id='deliveryd-button'>Senden</button>
 
                 </form>-->
               </div>
@@ -149,7 +148,7 @@
                     <label for='story' class='floating_label'>Geschichte</label>
                   </div>
 
-                  <button type='submit' id='send-button' class='wide'>Senden</button>
+                  <button type='submit' id='subbmit-button' class='wide'>Senden</button>
                 </form>
               </div>
             </div>";

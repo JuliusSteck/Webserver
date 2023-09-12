@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="../style/caption.css">
   <link rel="stylesheet" href="../style/welcome.css">
   <link rel="stylesheet" href="../style/footer.css">
-  <link rel="stylesheet" href="../style/noscript.css">
   <script src="../script/header.js"></script>
   <script src="../script/caption.js"></script>
   <script src="../script/layout.js"></script>

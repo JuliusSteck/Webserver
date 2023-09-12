@@ -32,10 +32,6 @@ label[for="dropdown"] span{
   grid-gap: 20px;
 }
 
-.column{
-
-}
-
 .entry{
   transition: opacity 0.6s;
 }
@@ -62,7 +58,7 @@ label[for="dropdown"] span{
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.2s, visibility 0.2s;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 }
 
 .element:hover .element_background {

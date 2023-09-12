@@ -32,7 +32,9 @@
               <label for="search" class='floating_label'>Suchen</label>
             </div>
 
-            <ul id="suggestionList" class="suggestionList"></ul>
+            <div class='relative'>
+              <ul id="suggestionList" class="suggestionList box"></ul>
+            </div>
 
             <button type="submit" id="search-button">suchen</button>
           </form>

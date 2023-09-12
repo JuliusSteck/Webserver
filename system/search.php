@@ -7,16 +7,17 @@
 
     $query = isset($_GET['query']) ? trim($_GET['query']) : '';
     $entries = searchEntries($query);
-    //order entries
-    
-    if (!empty($query)){
-        for ($i = 0; $i <= 4; $i++){
-            $suggestions[] = $entries[$i];
-        }
+    for ($i = 0; $i < count($entries); $i++){
+        $suggestions[] = $entries[$i][1];
+        $suggestions[] = $entries[$i][4];
+        $suggestions[] = $entries[$i][5];
     }
+    
+    $uniqueArray = array_unique($suggestions);
+    $slicedArray = array_slice($uniqueArray, 0, 5);
 
     header('Content-Type: application/json');
-    echo json_encode($suggestions);
+    echo json_encode($slicedArray);
 
     require_once '../close_database_connection.php';
 ?>

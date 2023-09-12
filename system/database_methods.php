@@ -488,7 +488,7 @@
     if ($statement === null){
         global $statement;
     }
-    $query = "SELECT Blog.id, Blog.title_de, Blog.date, Blog.cover, Blog.category, blog_content.id AS 'empty' 
+    $query = "SELECT Blog.id, Blog.title_de, Blog.date, Blog.cover, Blog.category, blog_content.id AS 'empty', Blog.stroy
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               GROUP BY Blog.id";
     $statement = $pdo->prepare($query);
@@ -501,11 +501,12 @@
       $entryDate = $row['date'];
       $entryCover = $row['cover'];
       $Category = $row['category'];
+      $entryStory = $row['story'];
       $empty = true;
       if($row['empty'] != NULL){
         $empty = false;
       }
-      $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category, $empty);
+      $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category, $empty, $entryStory);
     }
     return $entries;
   }
@@ -536,7 +537,7 @@
     if ($statement === null){
         global $statement;
     }
-    $query = "SELECT id, title_de, title_en, date, cover, category 
+    $query = "SELECT id, title_de, title_en, date, cover, category, story 
               FROM Blog 
               WHERE title_de LIKE '%$search%' OR title_en LIKE '%$search%' OR story LIKE '%$search%' OR category LIKE '%$search%'";
     $statement = $pdo->prepare($query);
@@ -549,8 +550,9 @@
         $entryDate = $row['date'];
         $entryCover = $row['cover'];
         $Category = $row['category'];
+        $entryStory = $row['story'];
 
-        $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category);
+        $entries[] = array($entryID, $entryTitle, $entryDate, $entryCover, $Category, $entryStory);
     }
     return $entries;
   }

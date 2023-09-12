@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="../style/caption.css">
   <link rel="stylesheet" href="../style/login.css">
   <link rel="stylesheet" href="../style/footer.css">
-  <link rel="stylesheet" href="../style/noscript.css">
   <script src="../script/header.js"></script>
   <script src="../script/caption.js"></script>
   <script src="../script/password.js"></script>

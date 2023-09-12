@@ -218,7 +218,7 @@
       </label>
 
       <ul>
-        <li><h3>Navigation sortiert nach:<h3></li>
+        <li><h3>Navigation sortiert nach:</h3></li>
         <li><button type="button" id="button_alles" class="aktiv">Chronologisch</button></li>
         <li><button type="button" id="button_kategorie" class="">In der Kategorie</button></li>
         <li><button type="button" id="button_geschichte" class="">In der Geschichte</button></li>

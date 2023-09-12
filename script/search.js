@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (searchTerm.trim() !== "") {
             const xhr = new XMLHttpRequest();
-            xhr.open("GET", `search.php?query=${encodeURIComponent(searchTerm)}`, true);
+            xhr.open("GET", `../system/search.php?query=${encodeURIComponent(searchTerm)}`, true);
 
             xhr.onload = function() {
                 if (xhr.status === 200) {
