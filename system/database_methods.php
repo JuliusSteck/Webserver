@@ -488,7 +488,7 @@
     if ($statement === null){
         global $statement;
     }
-    $query = "SELECT Blog.id, Blog.title_de, Blog.date, Blog.cover, Blog.category, blog_content.id AS 'empty', Blog.stroy
+    $query = "SELECT Blog.id, Blog.title_de, Blog.date, Blog.cover, Blog.category, blog_content.id AS 'empty', Blog.story
               FROM Blog LEFT JOIN blog_content ON Blog.id = blog_content.blog_id 
               GROUP BY Blog.id";
     $statement = $pdo->prepare($query);

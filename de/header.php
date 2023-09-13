@@ -33,7 +33,7 @@
             </div>
 
             <div class='relative'>
-              <ul id="suggestionList" class="suggestionList box"></ul>
+              <ul id="suggestionList" class="suggestionList"></ul>
             </div>
 
             <button type="submit" id="search-button">suchen</button>

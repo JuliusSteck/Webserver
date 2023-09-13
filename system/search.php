@@ -9,8 +9,8 @@
     $entries = searchEntries($query);
     for ($i = 0; $i < count($entries); $i++){
         $suggestions[] = $entries[$i][1];
-        $suggestions[] = $entries[$i][4];
-        $suggestions[] = $entries[$i][5];
+        //$suggestions[] = $entries[$i][4];
+        //$suggestions[] = $entries[$i][5];
     }
     
     $uniqueArray = array_unique($suggestions);

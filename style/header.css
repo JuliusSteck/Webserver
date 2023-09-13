@@ -146,20 +146,32 @@ label[for="menu"] span{
 
 .suggestionList{
   position: absolute;
-  width: 0px;
   top: 5px;
   left: 0px;
   list-style: none;
+  background-color: var(--background-color);
   display: block;
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
+  border-width: 0px;
+  width: 0px;
+  transition: 250ms ease-in-out;
+  padding: 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.header_scrolled .suggestionList{
   background-color: var(--border-color);
+  transition: 250ms ease-in-out;
 }
 
 .suggestionList li{
-  width: 200px;
-  height: 20px;
+  opacity: 0;
   margin-top: 0px;
-  padding: 5px;
   position: relative;
+  padding: 5px;
+  width: 170px;
+  transition: 50ms ease-in-out;
 }
 
 .suggestionList li::after {
@@ -170,16 +182,8 @@ label[for="menu"] span{
   height: 1px;
   background-color: var(--text-color);
   bottom: 0;
-}
-
-.suggestionList li::after {
-  content: "";
-  position: absolute;
-  left: 15px;
-  width: 170px;
-  height: 1px;
-  background-color: var(--text-color);
-  bottom: 0;
+  transition: 250ms ease-in-out;
+  opacity: 0;
 }
 
 .suggestionList li:last-child::after {
@@ -188,11 +192,25 @@ label[for="menu"] span{
 
 #magnifying_glass:checked ~ form .suggestionList{
   border-width: 2px;
-  width: 200px;
   padding: 5px;
-  display: block;
-  background-color: var(--border-color);
+  width: 200px;
+  transition: 50ms ease-in-out;
+}
+
+#magnifying_glass:checked ~ form .suggestionList li{
   transition: 250ms ease-in-out;
+  opacity: 1;
+}
+
+#magnifying_glass:checked ~ form .suggestionList li::after{
+  transition: 250ms ease-in-out;
+  opacity: 1;
+}
+
+.suggestionList:empty, .inverse .suggestionList:empty,#magnifying_glass:checked ~ form .suggestionList:empty, .inverse .suggestionList:empty{
+  border-width: 0px;
+  padding: 0px;
+  
 }
 
 @media(max-width: 1700px){
@@ -296,12 +314,21 @@ label[for="menu"] span{
 
   .inverse .suggestionList{
     background: none;
-    color: var(--border-color);
+    border-color: var(--border-color);
+    border-width: 2px;
+    padding: 5px;
+    width: 200px;
   }
 
-  
+  .inverse .suggestionList li{
+    opacity: 1;
+    background: none;
+  }
+
   .inverse .suggestionList li::after {
     background-color: var(--border-color);
+    transition: 250ms ease-in-out;
+    opacity: 1;
   }
 }
 
