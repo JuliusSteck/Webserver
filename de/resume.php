@@ -64,7 +64,7 @@
       <div class='chapter'>
         <div class="position">
           <h4>Junior Consultant</h4>
-          <p> Februar 2023 - heute </p>
+          <p> Februar 2023 - Juli 2023 </p>
           <a href="https://www.achtzig20.de"> 8020.eco</a>
           <ul>
             <li>Volkswagen - AG EG-3 Data Governance</li>
@@ -94,6 +94,15 @@
 
       <div class='chapter'>
         <div class="position">
+          <h4>Mathematik</h4>
+          <p> September 2023 - heute</p>
+          <a href="https://www.tum.de">Technische Universität München</a>
+          <ul>
+            <li>Notenschnitt: 2.0</li>
+          </ul>
+        </div>
+
+        <div class="position">
           <h4>Data Science</h4>
           <p> Februar 2023 - heute </p>
           <a href="https://www.thi.de"> Technische Hochschule Ingolstadt</a>
@@ -111,16 +120,14 @@
           </ul>
         </div>
 
-      <!--  <div class="position">
-          <h4>Mathematik</h4>
-          <p> September 2023 - </p>
-          <a href="https://www.tum.de"> Technische Universität München</a>
+        <div class="position">
+          <h4>Abitur</h4>
+          <p> September 2011 - Juni 2019</p>
+          <a href="https://www.apian.de">Apian Gymnasium Ingolstadt</a>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Notenschnitt: 1.8</li>
           </ul>
-        </div> -->
+        </div>
       </div>
 
       <div class="devider">
@@ -203,7 +210,7 @@
       </div>
 
       <br>
-      <a href="../files/Julius_Steck_Lebenslauf_01.07.2023.pdf">Lebenslauf Download</a>
+      <a href="../files/Julius_Steck_Lebenslauf_04.10.2023.pdf">Lebenslauf Download</a>
       
     </div>
   </section>

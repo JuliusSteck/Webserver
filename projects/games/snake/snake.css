@@ -1,0 +1,36 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 10fr);
+    gap: 10px;
+}
+
+.grid-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: black;
+}
+
+.head{
+    background-color: black;
+}
+
+.body{
+    background-color: black;
+}
+
+.turn_right_up{
+    background-color: black;
+}
+
+.turn_right_down{
+    background-color: black;
+}
+
+.turn_left_up{
+    background-color: black;
+}
+
+.turn_left_down{
+    background-color: black;
+}
+
