@@ -13,7 +13,7 @@
         <li><a href="https://de.linkedin.com/in/julius-steck-30851916a" class="underline">LinkedIn</a></li>
         <li><a href="https://www.instagram.com/julius_steck/" class="underline">Instagram</a></li>
         <li><a href="https://github.com/JuliusSteck" class="underline">GitHub</a></li>
-        <li>Copyright Julius Steck 2023</li>
+        <li>Copyright Julius Steck 2024</li>
       </ul>
     </div>
   </div>

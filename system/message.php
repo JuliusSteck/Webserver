@@ -5,7 +5,7 @@
 
     try {
         ob_start();
-        if (isset($_POST['headline']) && isset($_POST['message']) && isset($_POST['name']) && isset($_POST['email']))){
+        if (isset($_POST['headline']) && isset($_POST['message']) && isset($_POST['name']) && isset($_POST['email'])){
             $headline = $_POST['headline'];
             $message = $_POST['message'];
             $name = $_POST['name'];
@@ -39,5 +39,5 @@
     }
 
     require_once '../close_database_connection.php';
-    header("Location: ../de/blog.php?id=$id");
+    header("Location: ../de/message.php");
 ?>

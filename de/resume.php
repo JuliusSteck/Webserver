@@ -63,6 +63,16 @@
 
       <div class='chapter'>
         <div class="position">
+          <h4>Praktikant</h4>
+          <p> September 2024 - März 2025 </p>
+          <a href="https://www.munichre.com"> Munich RE</a>
+          <ul>
+            
+          </ul>
+        </div>
+      
+      <div class='chapter'>
+        <div class="position">
           <h4>Junior Consultant</h4>
           <p> Februar 2023 - Juli 2023 </p>
           <a href="https://www.achtzig20.de"> 8020.eco</a>
@@ -98,16 +108,16 @@
           <p> September 2023 - heute</p>
           <a href="https://www.tum.de">Technische Universität München</a>
           <ul>
-            <li>Notenschnitt: 2.0</li>
+            <li>Notenschnitt: 0.0</li>
           </ul>
         </div>
 
         <div class="position">
           <h4>Data Science</h4>
-          <p> Februar 2023 - heute </p>
+          <p> September 2022 - heute </p>
           <a href="https://www.thi.de"> Technische Hochschule Ingolstadt</a>
           <ul>
-            <li>Notenschnitt: 1.0</li>
+            <li>Notenschnitt: 1.6</li>
           </ul>
         </div>
 
@@ -194,12 +204,14 @@
             <li>Kraftsport</li>
             <li>Segeln</li>
             <li>Klavier</li>
+            <li>Schach</li>
           </ul>
         </div>
 
         <div class="position">
           <h4>Engagement</h4>
           <ul>
+            <li>Fachschaft THI & TUM</li>
             <li>Jugendarbeit Evangelische Gemeinde Brunnenreuth</li>
             <li>Neuland Ingolstadt e.V.</li>
             <li>Students' Life e.V.</li>
@@ -210,7 +222,7 @@
       </div>
 
       <br>
-      <a href="../files/Julius_Steck_Lebenslauf_04.10.2023.pdf">Lebenslauf Download</a>
+      <a href="../files/Lebenslauf_Julius_Steck_2024.pdf">Lebenslauf Download</a>
       
     </div>
   </section>
