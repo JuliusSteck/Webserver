@@ -474,7 +474,7 @@
         global $statement;
     }
     $query = "DELETE FROM newsletter 
-              WHERE id = :id AND date = :date";
+              WHERE id = :id AND subscribed_date = :date";
     $statement = $pdo->prepare($query);
     $statement->bindParam(':id', $id, PDO::PARAM_STR);
     $statement->bindParam(':date', $date, PDO::PARAM_STR);

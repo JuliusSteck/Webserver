@@ -7,7 +7,7 @@
     ob_start();
     if (isset($_GET['id']) && isset($_GET['date']) && is_numeric($_GET['id'])){
       $id = $_GET['id'];
-      $date = $_GET['date']
+      $date = $_GET['date'];
 
       deleteSubscriber($id, $date);
       $_SESSION['message'] = "Erfolgreich";

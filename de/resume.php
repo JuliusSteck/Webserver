@@ -60,18 +60,17 @@
         <h3> Arbeitserfahrung</h3>
         <div class="line"></div>
       </div>
-
+      
       <div class='chapter'>
         <div class="position">
-          <h4>Praktikant</h4>
+        <h4>Praktikant</h4>
           <p> September 2024 - März 2025 </p>
           <a href="https://www.munichre.com"> Munich RE</a>
           <ul>
             
           </ul>
         </div>
-      
-      <div class='chapter'>
+
         <div class="position">
           <h4>Junior Consultant</h4>
           <p> Februar 2023 - Juli 2023 </p>
